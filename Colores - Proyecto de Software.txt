@@ -1,0 +1,11 @@
+HEXADECIMAL	RGB			DESCRIPCIÓN
+
+#222831		rgb(34, 40, 49)		Negro azul marino
+#303841		rgb(48,56,65)		Negro azulado
+#3A4750		rgb(58,71,80)		Negro azulado más claro
+#D72323		rgb(215,35,35)		Rojo
+#EEEEEE		rgb(238,238,238)	Blanco
+#29252C		rgb(41,37,44)		Negro azulado más oscuro
+#33425B		rgb(51,66,91)		Azul grisaseo
+#D8e9F0		rgb(216,233,240)	Blanco #2
+#F33535		rgb(243,53,53)		Rojo #2

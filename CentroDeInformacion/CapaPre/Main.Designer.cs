@@ -37,14 +37,14 @@
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportarUsuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
-            this.ImportarUsuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain.SuspendLayout();
             this.panelVentana.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
@@ -167,6 +167,46 @@
             this.configuracionMenu.MouseEnter += new System.EventHandler(this.CambiarColorMenuItem);
             this.configuracionMenu.MouseLeave += new System.EventHandler(this.ResetColorMenuItem);
             // 
+            // ImportarUsuariosMenuItem
+            // 
+            this.ImportarUsuariosMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ImportarUsuariosMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.ImportarUsuariosMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.ImportarUsuariosMenuItem.Name = "ImportarUsuariosMenuItem";
+            this.ImportarUsuariosMenuItem.Size = new System.Drawing.Size(336, 22);
+            this.ImportarUsuariosMenuItem.Text = "Importar Usuarios";
+            this.ImportarUsuariosMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // AgregarAdminMenuItem
+            // 
+            this.AgregarAdminMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.AgregarAdminMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarAdminMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.AgregarAdminMenuItem.Name = "AgregarAdminMenuItem";
+            this.AgregarAdminMenuItem.Size = new System.Drawing.Size(336, 22);
+            this.AgregarAdminMenuItem.Text = "Agregar nuevo administrador";
+            this.AgregarAdminMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // CambiarMiContraMenuItem
+            // 
+            this.CambiarMiContraMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CambiarMiContraMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.CambiarMiContraMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.CambiarMiContraMenuItem.Name = "CambiarMiContraMenuItem";
+            this.CambiarMiContraMenuItem.Size = new System.Drawing.Size(336, 22);
+            this.CambiarMiContraMenuItem.Text = "Cambiar mi contraseña";
+            this.CambiarMiContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // CambiarOtraContraMenuItem
+            // 
+            this.CambiarOtraContraMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CambiarOtraContraMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.CambiarOtraContraMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.CambiarOtraContraMenuItem.Name = "CambiarOtraContraMenuItem";
+            this.CambiarOtraContraMenuItem.Size = new System.Drawing.Size(336, 22);
+            this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
+            this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
@@ -213,42 +253,6 @@
             this.pictureClose.TabIndex = 0;
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // ImportarUsuariosMenuItem
-            // 
-            this.ImportarUsuariosMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ImportarUsuariosMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.ImportarUsuariosMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.ImportarUsuariosMenuItem.Name = "ImportarUsuariosMenuItem";
-            this.ImportarUsuariosMenuItem.Size = new System.Drawing.Size(336, 22);
-            this.ImportarUsuariosMenuItem.Text = "Importar Usuarios";
-            // 
-            // CambiarMiContraMenuItem
-            // 
-            this.CambiarMiContraMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.CambiarMiContraMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.CambiarMiContraMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.CambiarMiContraMenuItem.Name = "CambiarMiContraMenuItem";
-            this.CambiarMiContraMenuItem.Size = new System.Drawing.Size(336, 22);
-            this.CambiarMiContraMenuItem.Text = "Cambiar mi contraseña";
-            // 
-            // CambiarOtraContraMenuItem
-            // 
-            this.CambiarOtraContraMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.CambiarOtraContraMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.CambiarOtraContraMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.CambiarOtraContraMenuItem.Name = "CambiarOtraContraMenuItem";
-            this.CambiarOtraContraMenuItem.Size = new System.Drawing.Size(336, 22);
-            this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
-            // 
-            // AgregarAdminMenuItem
-            // 
-            this.AgregarAdminMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.AgregarAdminMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarAdminMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.AgregarAdminMenuItem.Name = "AgregarAdminMenuItem";
-            this.AgregarAdminMenuItem.Size = new System.Drawing.Size(336, 22);
-            this.AgregarAdminMenuItem.Text = "Agregar nuevo administrador";
             // 
             // Main
             // 

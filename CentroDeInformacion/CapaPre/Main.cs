@@ -12,16 +12,13 @@ namespace CapaPre
 
         #region Instancias
 
-        /*private Usuarios.Usuarios usuarios = new Usuarios.Usuarios();
-        private Configuracion configuracion = new Configuracion();
-        private Entidad entidad = new Entidad();*/
         private Negocio negocio = new Negocio();
+        MyPassword mypassword = new MyPassword();
+        OthersPasswords otherspasswords = new OthersPasswords();
 
         #endregion Instancias
 
-        private ToolStripMenuItem[] menuitem;
         private Control[] arreglo;
-        private byte item;
         private byte menu;
         private string[] Admin = new string[2];
         private char superUsuario = 'N';
@@ -42,13 +39,13 @@ namespace CapaPre
             lbTitulo.Text = "Sistema de Control de Usuarios. Bienvenido: " + user;
         }
 
-        public void MostrarForm(Form Formulario, DockStyle Estilo)
+        public void MostrarForm(Control ctlUser, DockStyle Estilo)
         {
             panelContenido.Controls.Clear();
-            Formulario.TopLevel = false;
-            Formulario.Parent = panelContenido;
-            Formulario.Dock = Estilo;
-            Formulario.Show();
+            //ctlUser.TopLevelControl = false;
+            ctlUser.Parent = panelContenido;
+            ctlUser.Dock = Estilo;
+            ctlUser.Show();
         }
 
         private void EventoClick(object sender, EventArgs e)
@@ -78,9 +75,34 @@ namespace CapaPre
             menu = 0;
         }
 
+        private void EventoClickMenuItem(object sender, EventArgs e)
+        {
+            byte item = 0;
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, ImportarUsuariosMenuItem, AgregarAdminMenuItem, CambiarMiContraMenuItem, CambiarOtraContraMenuItem };
+            for (; item < menuitem.Length; item++)
+            {
+                if (menuitem[item] == sender)
+                    break;
+            }
+            switch (item)
+            {
+                case 0:
+                    break;
+
+                case 3:
+                    MostrarForm(mypassword, DockStyle.Fill);
+                    break;
+                case 4:
+                    MostrarForm(otherspasswords, DockStyle.Fill);
+                    break;
+            }
+            item = 0;
+        }
+
         private void CambiarColorMenuItem(object sender, EventArgs e)
         {
-            menuitem = new ToolStripMenuItem[] { usuariosMenu, reportesMenu, configuracionMenu };
+            byte item = 0;
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, reportesMenu, configuracionMenu };
             for (; item < menuitem.Length; item++)
             {
                 if (menuitem[item] == sender)
@@ -97,7 +119,8 @@ namespace CapaPre
 
         private void ResetColorMenuItem(object sender, EventArgs e)
         {
-            menuitem = new ToolStripMenuItem[] { usuariosMenu, reportesMenu, configuracionMenu };
+            byte item = 0;
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, reportesMenu, configuracionMenu };
             for (; item < menuitem.Length; item++)
             {
                 if (menuitem[item] == sender)

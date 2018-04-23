@@ -1,0 +1,45 @@
+--TABLA "Administradores"
+CREATE TABLE Administradores(
+nc VARCHAR(9) NOT NULL PRIMARY KEY,
+nombres VARCHAR(20) NOT NULL,
+apellidopat VARCHAR(20) NOT NULL,
+apellidomat VARCHAR(20) NOT NULL,
+sexo CHAR(1) NOT NULL,
+password VARCHAR(32) NOT NULL,
+foto IMAGE NULL,
+hora TIME(7) NOT NULL,
+fecha DATE NOT NULL,
+superus CHAR(1) NOT NULL)
+
+--TABLA "Usuarios"
+CREATE TABLE Usuarios(
+nc VARCHAR(9) NOT NULL PRIMARY KEY,
+nombres VARCHAR(20) NOT NULL,
+apellidopat VARCHAR(20) NOT NULL,
+apellidomat VARCHAR(20) NOT NULL,
+sexo CHAR(1) NOT NULL,
+--password VARCHAR(32) NOT NULL,
+foto IMAGE NULL,
+hora TIME(7) NOT NULL,
+fecha DATE NOT NULL)--,
+--superus CHAR(1) NOT NULL)
+
+--TABLA "Servicios"
+CREATE TABLE Servicios(
+id TINYINT NOT NULL PRIMARY KEY,
+servicio VARCHAR(60) NOT NULL)
+
+--TABLA "Movimientos"
+CREATE TABLE Movimientos(
+id INT NOT NULL PRIMARY KEY,
+nc VARCHAR(9) NOT NULL,
+servicio TINYINT NOT NULL,
+hora TIME(7) NOT NULL,
+fecha DATE NOT NULL)
+
+--TABLA "RegLogeo"
+CREATE TABLE RegLogeo(
+registro INT NOT NULL PRIMARY KEY,
+nc VARCHAR(9) NOT NULL,
+hora TIME(7),
+fecha DATE)

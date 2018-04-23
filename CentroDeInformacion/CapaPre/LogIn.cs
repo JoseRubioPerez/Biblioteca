@@ -49,15 +49,25 @@ namespace CapaPre
             {
                 case 0:
                     dt = negocio.Sesion(txtUser.Text.Trim(), txtPassword.Text.Trim());
-                    if (dt.Rows.Count > 0)
+                    try
                     {
-                        Main main = new Main(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), Convert.ToChar(dt.Rows[0][2].ToString()));
-                        main.Show();
-                        this.Hide();
+                        if (dt.Rows.Count > 0)
+                        {
+                            Main main = new Main(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), Convert.ToChar(dt.Rows[0][2].ToString()));
+                            main.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            Question pregunta = new Question((byte)TipoIcono.Danger, "Inicio de Sesión", "Usuario o contraseña incorrecta", "Verifica que el usuario y\ncontraseña sean correctos.", false);
+                            pregunta.Show();
+                            pregunta.Focus();
+                        }
                     }
-                    else
+                    catch(Exception)
                     {
-                        Question pregunta = new Question((byte)TipoIcono.Danger, "Inicio de Sesión", "Usuario o contraseña incorrecta", "Verifica que el usuario y\ncontraseña sean correctos.", false);
+                        Question pregunta = new Question((byte)TipoIcono.Danger, "Error de conexión", "Error al conectar a la base de datos", "1. Verifique que su archivo App.config tenga escrito correctamente el nombre " +
+                            "de su instancia SQL y el nombre de pase de datos.\n2. Asegurse de que en su manejador de base de datos tenga la base de datos \"pBiblioteca\".", false);
                         pregunta.Show();
                         pregunta.Focus();
                     }
