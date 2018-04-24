@@ -1,5 +1,0 @@
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaDatos\bin\Debug\CapaDatos.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaDatos\obj\Debug\CapaDatos.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaDatos\obj\Debug\CapaDatos.pdb

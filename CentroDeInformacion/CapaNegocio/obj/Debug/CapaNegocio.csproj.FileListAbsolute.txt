@@ -1,7 +1,0 @@
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\bin\Debug\CapaNegocio.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\bin\Debug\CapaDatos.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\bin\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\obj\Debug\CapaNegocio.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CentroDeInformacion\CapaNegocio\obj\Debug\CapaNegocio.pdb
