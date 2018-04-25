@@ -1,5 +1,5 @@
-﻿using CapaNegocio;
-using CapaEntidad;
+﻿using CapaEntidad;
+using CapaNegocio;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,7 +10,6 @@ namespace CapaPre
 
     public partial class Main : Form
     {
-
         #region Instancias
 
         private Entidad entidad = new Entidad();
@@ -42,6 +41,11 @@ namespace CapaPre
             myPassword1.Admin[0] = user;
             myPassword1.Admin[1] = password;
             myPassword1.supersu = supersu;
+            //Main -> othersPasswords1
+            othersPasswords1.Admin[0] = user;
+            othersPasswords1.Admin[1] = password;
+            othersPasswords1.supersu = supersu;
+
             lbTitulo.Text = "Sistema de Control de Usuarios. Bienvenido: " + entidad.getAdminNC();
             OcultarControlUsers();
         }
@@ -49,17 +53,8 @@ namespace CapaPre
         public void OcultarControlUsers()
         {
             UserControl[] ctlUser = new UserControl[] { myPassword1, othersPasswords1 };
-            for(int i = 0; i < ctlUser.Length; i++)
+            for (int i = 0; i < ctlUser.Length; i++)
                 ctlUser[i].Visible = false;
-        }
-
-        public void MostrarForm(Control ctlUser, DockStyle Estilo)
-        {
-            panelContenido.Controls.Clear();
-            //ctlUser.TopLevelControl = false;
-            ctlUser.Parent = panelContenido;
-            ctlUser.Dock = Estilo;
-            ctlUser.Show();
         }
 
         public void MostrarCtrl(UserControl ctlUser, DockStyle Estilo)
@@ -116,6 +111,7 @@ namespace CapaPre
                 case 3:
                     MostrarCtrl(myPassword1, DockStyle.Fill);
                     break;
+
                 case 4:
                     MostrarCtrl(othersPasswords1, DockStyle.Fill);
                     break;
@@ -165,6 +161,20 @@ namespace CapaPre
             {
                 case CloseReason.UserClosing: e.Cancel = true; break;
                 case CloseReason.ApplicationExitCall: e.Cancel = false; break;
+            }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if (entidad.getAdminSuperSu() == 'S')
+            {
+                AgregarAdminMenuItem.Visible = true;
+                CambiarOtraContraMenuItem.Visible = true;
+            }
+            else
+            {
+                AgregarAdminMenuItem.Visible = false;
+                CambiarOtraContraMenuItem.Visible = false;
             }
         }
     }

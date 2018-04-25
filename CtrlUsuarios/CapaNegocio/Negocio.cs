@@ -1,10 +1,8 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDatos;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CapaNegocio
 {
@@ -45,5 +43,38 @@ namespace CapaNegocio
             TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar);
             data = datos.Procedimiento("ChangePassword", Valor, Parametros, TipoDato);
         }
+
+        public void ChangeOthersPassword(string nc, string newpassword)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Valor.Add(newpassword);
+            Parametros.Add("@nc"); Parametros.Add("@newpass");
+            TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar);
+            data = datos.Procedimiento("ChangeOtherPassword", Valor, Parametros, TipoDato);
+        }
+
+        public void ComboAdministradores(ComboBox combo, string NombreProcedure)
+        {
+            try
+            {
+                combo.Items.Clear();
+                data = datos.CompletarComboBox(NombreProcedure);
+                for (int i = 0; i < data.Rows.Count; i++)
+                    combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+            }
+            catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
+        }
+
+        /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
+        {
+            try
+            {
+                combo.Items.Clear();
+                data = datos.CompletarComboBox(NombreProcedure);
+                for (int i = 0; i < data.Rows.Count; i++)
+                    combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+            }
+            catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
+        }*/
     }
 }

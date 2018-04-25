@@ -32,6 +32,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelVentana = new System.Windows.Forms.Panel();
             this.panelContenido = new System.Windows.Forms.Panel();
+            this.othersPasswords1 = new CapaPre.OthersPasswords();
             this.myPassword1 = new CapaPre.MyPassword();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -46,7 +47,6 @@
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
-            this.othersPasswords1 = new CapaPre.OthersPasswords();
             this.panelMain.SuspendLayout();
             this.panelVentana.SuspendLayout();
             this.panelContenido.SuspendLayout();
@@ -98,6 +98,17 @@
             this.panelContenido.Name = "panelContenido";
             this.panelContenido.Size = new System.Drawing.Size(1140, 507);
             this.panelContenido.TabIndex = 1;
+            // 
+            // othersPasswords1
+            // 
+            this.othersPasswords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.othersPasswords1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.othersPasswords1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.othersPasswords1.Location = new System.Drawing.Point(108, 0);
+            this.othersPasswords1.Margin = new System.Windows.Forms.Padding(4);
+            this.othersPasswords1.Name = "othersPasswords1";
+            this.othersPasswords1.Size = new System.Drawing.Size(100, 100);
+            this.othersPasswords1.TabIndex = 1;
             // 
             // myPassword1
             // 
@@ -270,17 +281,6 @@
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
             // 
-            // othersPasswords1
-            // 
-            this.othersPasswords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.othersPasswords1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.othersPasswords1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.othersPasswords1.Location = new System.Drawing.Point(108, 0);
-            this.othersPasswords1.Margin = new System.Windows.Forms.Padding(4);
-            this.othersPasswords1.Name = "othersPasswords1";
-            this.othersPasswords1.Size = new System.Drawing.Size(100, 100);
-            this.othersPasswords1.TabIndex = 1;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -298,6 +298,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Control de Usuarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CancelarF4);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panelVentana.ResumeLayout(false);
