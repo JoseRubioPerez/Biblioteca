@@ -29,5 +29,15 @@ END
 CREATE PROCEDURE ComboAdministradores
 AS
 BEGIN
-SELECT nc, nombres, apellidopat, apellidomat FROM dbo.Administradores WHERE superus = 'N'
+SELECT nc, nombres, apellidopat, apellidomat FROM dbo.Administradores WHERE superus = 'N' ORDER BY nc
 END
+
+--SP PARA CARGAR TODOS LOS ADMINISTRADORES DEL SISTEMA SIN CARGAR LA CONTRASEÑA
+CREATE PROCEDURE CargarAdministradores
+AS
+SELECT nc, nombres, apellidopat, apellidomat, sexo, hora, fecha, superus FROM dbo.Administradores
+
+--SP PARA CARGAR TODOS LOS USUARIOS DEL SISTEMA
+CREATE PROCEDURE CargarUsuarios
+AS
+SELECT nc, nombres, apellidopat, apellidomat, sexo, hora, fecha FROM dbo.Usuarios

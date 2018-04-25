@@ -65,6 +65,12 @@ namespace CapaNegocio
             catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
         }
 
+        public DataTable SelectAll(string nameProcedure)
+        {
+            data = datos.Procedimiento(nameProcedure);
+            return data;
+        }
+
         /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
         {
             try

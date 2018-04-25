@@ -22,6 +22,8 @@ namespace CapaPre
             InitializeComponent();
             txtNewPassword.Enabled = false;
             txtConfirmPassword.Enabled = false;
+            lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+            lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
         }
 
         public void Limpiar()
@@ -109,11 +111,15 @@ namespace CapaPre
             {
                 txtNewPassword.Enabled = false;
                 txtConfirmPassword.Enabled = false;
+                lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+                lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
             }
             else
             {
                 txtNewPassword.Enabled = true;
                 txtConfirmPassword.Enabled = true;
+                lbError1.Text = "";
+                lbError2.Text = "";
             }
         }
     }

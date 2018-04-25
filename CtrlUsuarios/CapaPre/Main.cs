@@ -52,7 +52,7 @@ namespace CapaPre
 
         public void OcultarControlUsers()
         {
-            UserControl[] ctlUser = new UserControl[] { myPassword1, othersPasswords1 };
+            UserControl[] ctlUser = new UserControl[] { myPassword1, othersPasswords1, newAdmin1 };
             for (int i = 0; i < ctlUser.Length; i++)
                 ctlUser[i].Visible = false;
         }
@@ -62,7 +62,10 @@ namespace CapaPre
             if (ctlUser.Visible)
                 ctlUser.BringToFront();
             else
+            {
                 ctlUser.Show();
+                ctlUser.BringToFront();
+            }
             ctlUser.Parent = panelContenido;
             ctlUser.Dock = Estilo;
         }
@@ -106,6 +109,10 @@ namespace CapaPre
             switch (item)
             {
                 case 0:
+                    break;
+
+                case 2:
+                    MostrarCtrl(newAdmin1, DockStyle.Fill);
                     break;
 
                 case 3:

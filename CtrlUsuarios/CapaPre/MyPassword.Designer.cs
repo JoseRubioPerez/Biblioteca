@@ -48,6 +48,8 @@
             this.pictureShowPass2 = new System.Windows.Forms.PictureBox();
             this.pictureShowPass1 = new System.Windows.Forms.PictureBox();
             this.lbTitulo = new System.Windows.Forms.Label();
+            this.lbError1 = new System.Windows.Forms.Label();
+            this.lbError2 = new System.Windows.Forms.Label();
             this.panelConfirmPassword.SuspendLayout();
             this.TableContenido.SuspendLayout();
             this.panelContenido.SuspendLayout();
@@ -60,7 +62,7 @@
             // 
             this.lbMyPassword.AutoSize = true;
             this.lbMyPassword.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.lbMyPassword.Location = new System.Drawing.Point(186, 64);
+            this.lbMyPassword.Location = new System.Drawing.Point(140, 64);
             this.lbMyPassword.Name = "lbMyPassword";
             this.lbMyPassword.Size = new System.Drawing.Size(195, 27);
             this.lbMyPassword.TabIndex = 1;
@@ -70,7 +72,7 @@
             // 
             this.lbNewPassword.AutoSize = true;
             this.lbNewPassword.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.lbNewPassword.Location = new System.Drawing.Point(186, 151);
+            this.lbNewPassword.Location = new System.Drawing.Point(140, 151);
             this.lbNewPassword.Name = "lbNewPassword";
             this.lbNewPassword.Size = new System.Drawing.Size(196, 27);
             this.lbNewPassword.TabIndex = 2;
@@ -80,7 +82,7 @@
             // 
             this.lbConfirmPassword.AutoSize = true;
             this.lbConfirmPassword.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.lbConfirmPassword.Location = new System.Drawing.Point(86, 238);
+            this.lbConfirmPassword.Location = new System.Drawing.Point(40, 238);
             this.lbConfirmPassword.Name = "lbConfirmPassword";
             this.lbConfirmPassword.Size = new System.Drawing.Size(295, 27);
             this.lbConfirmPassword.TabIndex = 3;
@@ -92,11 +94,12 @@
             this.txtMyPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMyPassword.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.txtMyPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.txtMyPassword.Location = new System.Drawing.Point(388, 67);
+            this.txtMyPassword.Location = new System.Drawing.Point(342, 67);
             this.txtMyPassword.MaximumSize = new System.Drawing.Size(282, 20);
             this.txtMyPassword.MinimumSize = new System.Drawing.Size(282, 20);
             this.txtMyPassword.Name = "txtMyPassword";
-            this.txtMyPassword.Size = new System.Drawing.Size(282, 26);
+            this.txtMyPassword.PasswordChar = '*';
+            this.txtMyPassword.Size = new System.Drawing.Size(282, 20);
             this.txtMyPassword.TabIndex = 1;
             this.txtMyPassword.TextChanged += new System.EventHandler(this.Coincidencia);
             // 
@@ -106,11 +109,12 @@
             this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewPassword.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(388, 154);
+            this.txtNewPassword.Location = new System.Drawing.Point(342, 154);
             this.txtNewPassword.MaximumSize = new System.Drawing.Size(282, 20);
             this.txtNewPassword.MinimumSize = new System.Drawing.Size(282, 20);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(282, 26);
+            this.txtNewPassword.PasswordChar = '*';
+            this.txtNewPassword.Size = new System.Drawing.Size(282, 20);
             this.txtNewPassword.TabIndex = 2;
             // 
             // txtConfirmPassword
@@ -119,17 +123,18 @@
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(388, 241);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(342, 241);
             this.txtConfirmPassword.MaximumSize = new System.Drawing.Size(282, 20);
             this.txtConfirmPassword.MinimumSize = new System.Drawing.Size(282, 20);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(282, 26);
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(282, 20);
             this.txtConfirmPassword.TabIndex = 3;
             // 
             // panelMyPassword
             // 
             this.panelMyPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelMyPassword.Location = new System.Drawing.Point(388, 90);
+            this.panelMyPassword.Location = new System.Drawing.Point(342, 90);
             this.panelMyPassword.MaximumSize = new System.Drawing.Size(282, 3);
             this.panelMyPassword.MinimumSize = new System.Drawing.Size(282, 3);
             this.panelMyPassword.Name = "panelMyPassword";
@@ -139,7 +144,7 @@
             // panelNewPassword
             // 
             this.panelNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelNewPassword.Location = new System.Drawing.Point(388, 177);
+            this.panelNewPassword.Location = new System.Drawing.Point(342, 177);
             this.panelNewPassword.MaximumSize = new System.Drawing.Size(282, 3);
             this.panelNewPassword.MinimumSize = new System.Drawing.Size(282, 3);
             this.panelNewPassword.Name = "panelNewPassword";
@@ -152,7 +157,7 @@
             this.panelConfirmPassword.Controls.Add(this.panel1);
             this.panelConfirmPassword.Controls.Add(this.textBox1);
             this.panelConfirmPassword.Controls.Add(this.label1);
-            this.panelConfirmPassword.Location = new System.Drawing.Point(388, 264);
+            this.panelConfirmPassword.Location = new System.Drawing.Point(342, 264);
             this.panelConfirmPassword.MaximumSize = new System.Drawing.Size(282, 3);
             this.panelConfirmPassword.MinimumSize = new System.Drawing.Size(282, 3);
             this.panelConfirmPassword.Name = "panelConfirmPassword";
@@ -195,9 +200,9 @@
             // TableContenido
             // 
             this.TableContenido.ColumnCount = 3;
-            this.TableContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.TableContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.TableContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.TableContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.TableContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.TableContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.TableContenido.Controls.Add(this.panelContenido, 1, 1);
             this.TableContenido.Controls.Add(this.lbTitulo, 0, 0);
             this.TableContenido.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -211,6 +216,8 @@
             // 
             // panelContenido
             // 
+            this.panelContenido.Controls.Add(this.lbError2);
+            this.panelContenido.Controls.Add(this.lbError1);
             this.panelContenido.Controls.Add(this.panelMyPassword);
             this.panelContenido.Controls.Add(this.panelConfirmPassword);
             this.panelContenido.Controls.Add(this.panelNewPassword);
@@ -226,9 +233,9 @@
             this.panelContenido.Controls.Add(this.txtConfirmPassword);
             this.panelContenido.Controls.Add(this.pictureShowPass1);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(174, 99);
+            this.panelContenido.Location = new System.Drawing.Point(60, 99);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(792, 405);
+            this.panelContenido.Size = new System.Drawing.Size(1020, 405);
             this.panelContenido.TabIndex = 15;
             // 
             // btnCancelar
@@ -237,7 +244,7 @@
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(666, 303);
+            this.btnCancelar.Location = new System.Drawing.Point(620, 303);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(40, 40);
             this.btnCancelar.TabIndex = 5;
@@ -250,7 +257,7 @@
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(604, 303);
+            this.btnAceptar.Location = new System.Drawing.Point(558, 303);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(40, 40);
             this.btnAceptar.TabIndex = 4;
@@ -261,7 +268,7 @@
             // 
             this.pictureShowPass3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureShowPass3.Image = global::CapaPre.Properties.Resources.Showpass;
-            this.pictureShowPass3.Location = new System.Drawing.Point(676, 236);
+            this.pictureShowPass3.Location = new System.Drawing.Point(630, 236);
             this.pictureShowPass3.MaximumSize = new System.Drawing.Size(30, 30);
             this.pictureShowPass3.MinimumSize = new System.Drawing.Size(30, 30);
             this.pictureShowPass3.Name = "pictureShowPass3";
@@ -275,7 +282,7 @@
             // 
             this.pictureShowPass2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureShowPass2.Image = global::CapaPre.Properties.Resources.Showpass;
-            this.pictureShowPass2.Location = new System.Drawing.Point(676, 149);
+            this.pictureShowPass2.Location = new System.Drawing.Point(630, 149);
             this.pictureShowPass2.MaximumSize = new System.Drawing.Size(30, 30);
             this.pictureShowPass2.MinimumSize = new System.Drawing.Size(30, 30);
             this.pictureShowPass2.Name = "pictureShowPass2";
@@ -289,7 +296,7 @@
             // 
             this.pictureShowPass1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureShowPass1.Image = global::CapaPre.Properties.Resources.Showpass;
-            this.pictureShowPass1.Location = new System.Drawing.Point(676, 62);
+            this.pictureShowPass1.Location = new System.Drawing.Point(630, 62);
             this.pictureShowPass1.MaximumSize = new System.Drawing.Size(30, 30);
             this.pictureShowPass1.MinimumSize = new System.Drawing.Size(30, 30);
             this.pictureShowPass1.Name = "pictureShowPass1";
@@ -315,6 +322,26 @@
             this.lbTitulo.Text = "Aquí podrás cambiar tu contraseña como administrador\r\nRecuerda ser cuidadoso y no" +
     " abusar de los cambios de contraseña";
             this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbError1
+            // 
+            this.lbError1.AutoSize = true;
+            this.lbError1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbError1.Location = new System.Drawing.Point(666, 161);
+            this.lbError1.Name = "lbError1";
+            this.lbError1.Size = new System.Drawing.Size(314, 19);
+            this.lbError1.TabIndex = 12;
+            this.lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+            // 
+            // lbError2
+            // 
+            this.lbError2.AutoSize = true;
+            this.lbError2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbError2.Location = new System.Drawing.Point(666, 248);
+            this.lbError2.Name = "lbError2";
+            this.lbError2.Size = new System.Drawing.Size(314, 19);
+            this.lbError2.TabIndex = 13;
+            this.lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
             // 
             // MyPassword
             // 
@@ -361,5 +388,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbError2;
+        private System.Windows.Forms.Label lbError1;
     }
 }

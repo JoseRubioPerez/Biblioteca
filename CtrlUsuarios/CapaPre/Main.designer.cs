@@ -36,6 +36,7 @@
             this.myPassword1 = new CapaPre.MyPassword();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,10 +44,10 @@
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
+            this.newAdmin1 = new CapaPre.NewAdmin();
             this.panelMain.SuspendLayout();
             this.panelVentana.SuspendLayout();
             this.panelContenido.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             // panelContenido
             // 
+            this.panelContenido.Controls.Add(this.newAdmin1);
             this.panelContenido.Controls.Add(this.othersPasswords1);
             this.panelContenido.Controls.Add(this.myPassword1);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,6 +147,17 @@
             this.menuStrip1.Size = new System.Drawing.Size(1140, 59);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
+            this.lbTitulo.TabIndex = 3;
+            this.lbTitulo.Text = "Sistema de Control de Usuarios";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usuariosMenu
             // 
@@ -234,17 +247,6 @@
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
             // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
-            this.lbTitulo.TabIndex = 3;
-            this.lbTitulo.Text = "Sistema de Control de Usuarios";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureIcon
             // 
             this.pictureIcon.Image = global::CapaPre.Properties.Resources.usuarios;
@@ -280,6 +282,17 @@
             this.pictureClose.TabIndex = 0;
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // newAdmin1
+            // 
+            this.newAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.newAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.newAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.newAdmin1.Location = new System.Drawing.Point(216, 0);
+            this.newAdmin1.Margin = new System.Windows.Forms.Padding(4);
+            this.newAdmin1.Name = "newAdmin1";
+            this.newAdmin1.Size = new System.Drawing.Size(100, 100);
+            this.newAdmin1.TabIndex = 2;
             // 
             // Main
             // 
@@ -334,6 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
         private MyPassword myPassword1;
         private OthersPasswords othersPasswords1;
+        private NewAdmin newAdmin1;
     }
 }
 
