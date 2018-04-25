@@ -69,6 +69,12 @@
     <Compile Include="MyPassword.Designer.cs">
       <DependentUpon>MyPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewAdmin.Designer.cs">
+      <DependentUpon>NewAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="OthersPasswords.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyPassword.resx">
       <DependentUpon>MyPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdmin.resx">
+      <DependentUpon>NewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OthersPasswords.resx">
+      <DependentUpon>OthersPasswords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

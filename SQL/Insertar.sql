@@ -15,10 +15,14 @@ INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,hora,fecha) VA
 
 --INSERTAR UN ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
-('14540074','José Luis','Rubio','Pérez','H','1234',CONVERT(varchar,GETDATE(),108),CONVERT(varchar,GETDATE(),103),'S')
+('14540074','José Luis','Rubio','Pérez','H','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'S')
 --INSERTAR OTRO ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
 ('14540076','Oscar Uriel','Nuñez','Portillo','H','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'S')
+
+--INSERTAR OTRO ADMINISTRADOR (SIN FOTO)
+INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
+('14540077','Karla','Gómez','Baray','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
 
 --PRUEBAS QUE ESTUVE REALIZANDO
 

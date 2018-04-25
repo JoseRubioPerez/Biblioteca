@@ -15,3 +15,23 @@ C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Deb
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.exe
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.MyPassword.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.exe.config
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.exe
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaEntidad.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaNegocio.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaDatos.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaEntidad.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaNegocio.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaDatos.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csprojResolveAssemblyReference.cache
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.LogIn.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.LogOut.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Main.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.MyPassword.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Properties.Resources.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Question.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csproj.GenerateResource.Cache
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.exe
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.OthersPasswords.resources

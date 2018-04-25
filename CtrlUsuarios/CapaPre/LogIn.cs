@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CapaNegocio;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio;
-using System.Runtime.InteropServices;
 
 namespace CapaPre
 {
@@ -64,7 +57,7 @@ namespace CapaPre
                             pregunta.Focus();
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         Question pregunta = new Question((byte)TipoIcono.Danger, "Error de conexión", "Error al conectar a la base de datos", "1. Verifique que su archivo App.config tenga escrito correctamente el nombre " +
                             "de su instancia SQL y el nombre de pase de datos.\n2. Asegurse de que en su manejador de base de datos tenga la base de datos \"pBiblioteca\".", false);
@@ -86,7 +79,7 @@ namespace CapaPre
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
-            if(txtUser.Text == "Usuario" || txtUser.Text == "")
+            if (txtUser.Text == "Usuario" || txtUser.Text == "")
                 txtUser.Text = "";
         }
 
