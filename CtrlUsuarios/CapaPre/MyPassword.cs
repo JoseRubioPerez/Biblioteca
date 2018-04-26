@@ -77,30 +77,9 @@ namespace CapaPre
                     txtConfirmPassword.PasswordChar = '*';
                     txtMyPassword.Focus();
                     break;
-
-                case 2:
-                    switch (txtMyPassword.PasswordChar)
-                    {
-                        case '\0': txtMyPassword.PasswordChar = '*'; break;
-                        case '*': txtMyPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
-
-                case 3:
-                    switch (txtNewPassword.PasswordChar)
-                    {
-                        case '\0': txtNewPassword.PasswordChar = '*'; break;
-                        case '*': txtNewPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
-
-                case 4:
-                    switch (txtConfirmPassword.PasswordChar)
-                    {
-                        case '\0': txtConfirmPassword.PasswordChar = '*'; break;
-                        case '*': txtConfirmPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
+                case 2: txtMyPassword.PasswordChar = (txtMyPassword.PasswordChar == '*') ? '\0' : '*'; break;
+                case 3: txtNewPassword.PasswordChar = (txtNewPassword.PasswordChar == '*') ? '\0' : '*'; break;
+                case 4: txtConfirmPassword.PasswordChar = (txtConfirmPassword.PasswordChar == '*') ? '\0' : '*'; break;
             }
             menu = 0;
         }

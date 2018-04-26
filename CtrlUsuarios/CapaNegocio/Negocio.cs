@@ -58,7 +58,7 @@ namespace CapaNegocio
             try
             {
                 combo.Items.Clear();
-                data = datos.CompletarComboBox(NombreProcedure);
+                data = datos.Procedimiento(NombreProcedure);
                 for (int i = 0; i < data.Rows.Count; i++)
                     combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
             }
@@ -68,6 +68,24 @@ namespace CapaNegocio
         public DataTable SelectAll(string nameProcedure)
         {
             data = datos.Procedimiento(nameProcedure);
+            return data;
+        }
+
+        public DataTable AddNewAdmin(string nc, string nombres, string apellidopat, string apellidomat, char sexo, string password, char supersu)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Valor.Add(nombres); Valor.Add(apellidopat); Valor.Add(apellidomat); Valor.Add(sexo); Valor.Add(password); Valor.Add(supersu);
+            Parametros.Add("@nc"); Parametros.Add("@nombres"); Parametros.Add("@apellidopat"); Parametros.Add("@apellidomat"); Parametros.Add("@sexo"); Parametros.Add("@password"); Parametros.Add("@supersu");
+            TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.Char); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.Char);
+            data = datos.Procedimiento("AddNewAdmin", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable ExistUserOrAdmin(string nc, string NameProcedure)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            data = datos.Procedimiento(NameProcedure, Valor, Parametros, TipoDato);
             return data;
         }
 

@@ -41,3 +41,22 @@ SELECT nc, nombres, apellidopat, apellidomat, sexo, hora, fecha, superus FROM db
 CREATE PROCEDURE CargarUsuarios
 AS
 SELECT nc, nombres, apellidopat, apellidomat, sexo, hora, fecha FROM dbo.Usuarios
+
+--SP PARA AGREGAR UN NUEVO ADMINISTRADOR SIN FOTO
+CREATE PROCEDURE AddNewAdmin
+@nc VARCHAR(9),
+@nombres VARCHAR(20),
+@apellidopat VARCHAR(20),
+@apellidomat VARCHAR(20),
+@sexo CHAR(1),
+@password VARCHAR(32),
+@supersu CHAR(1)
+AS
+INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
+(@nc,@nombres,@apellidopat,@apellidomat,@sexo,@password,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),@supersu)
+
+--SP PARA COMPROBAR EXISTENCIA DE UN ADMINISTRADOR EN EL SISTEM
+CREATE PROCEDURE ExistAdmin
+@nc AS VARCHAR(9)
+AS
+SELECT * FROM dbo.Administradores WHERE nc = @nc

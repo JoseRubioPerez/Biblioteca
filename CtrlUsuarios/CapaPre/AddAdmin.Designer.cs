@@ -96,6 +96,7 @@
             this.GridAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridAdmin.Size = new System.Drawing.Size(1014, 147);
             this.GridAdmin.TabIndex = 0;
+            this.GridAdmin.TabStop = false;
             // 
             // panelEditSuperUs
             // 
@@ -291,6 +292,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 39);
             this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar la edición";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -319,6 +321,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(203, 39);
             this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabStop = false;
             this.btnAceptar.Text = "Aceptar y terminar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
