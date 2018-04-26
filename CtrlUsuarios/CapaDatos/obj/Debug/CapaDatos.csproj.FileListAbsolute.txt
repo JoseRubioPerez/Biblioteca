@@ -2,4 +2,3 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\bin\Debug\Capa
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache

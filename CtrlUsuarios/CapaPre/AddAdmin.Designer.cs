@@ -83,14 +83,17 @@
             this.GridAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.GridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GridAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridAdmin.Location = new System.Drawing.Point(3, 3);
+            this.GridAdmin.MultiSelect = false;
             this.GridAdmin.Name = "GridAdmin";
             this.GridAdmin.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
             this.GridAdmin.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridAdmin.Size = new System.Drawing.Size(1014, 147);
             this.GridAdmin.TabIndex = 0;
             // 

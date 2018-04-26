@@ -36,7 +36,6 @@
             this.myPassword1 = new CapaPre.MyPassword();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,11 +43,12 @@
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
-            this.newAdmin1 = new CapaPre.NewAdmin();
             this.panelMain.SuspendLayout();
+            this.newAdmin1 = new CapaPre.NewAdmin();
             this.panelVentana.SuspendLayout();
             this.panelContenido.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
@@ -60,8 +60,8 @@
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
             this.panelMain.Controls.Add(this.panelVentana);
@@ -77,8 +77,8 @@
             // 
             // panelVentana
             // 
-            this.panelVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.panelVentana.Controls.Add(this.panelContenido);
@@ -147,17 +147,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1140, 59);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
-            this.lbTitulo.TabIndex = 3;
-            this.lbTitulo.Text = "Sistema de Control de Usuarios";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usuariosMenu
             // 
@@ -246,6 +235,17 @@
             this.CambiarOtraContraMenuItem.Size = new System.Drawing.Size(336, 22);
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
+            this.lbTitulo.TabIndex = 3;
+            this.lbTitulo.Text = "Sistema de Control de Usuarios";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureIcon
             // 
@@ -350,4 +350,3 @@
         private NewAdmin newAdmin1;
     }
 }
-
