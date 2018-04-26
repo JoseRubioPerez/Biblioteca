@@ -31,7 +31,16 @@
             this.lbTitulo = new System.Windows.Forms.Label();
             this.tableNewAdmin = new System.Windows.Forms.TableLayoutPanel();
             this.panelContenido = new System.Windows.Forms.Panel();
+            this.addAdmin1 = new CapaPre.AddAdmin();
+            this.editAdmin1 = new CapaPre.EditAdmin();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.panelAddAdmin = new System.Windows.Forms.Panel();
+            this.panelEditAdmin = new System.Windows.Forms.Panel();
             this.tableNewAdmin.SuspendLayout();
+            this.panelContenido.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitulo
@@ -51,27 +60,125 @@
             // tableNewAdmin
             // 
             this.tableNewAdmin.ColumnCount = 3;
-            this.tableNewAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableNewAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableNewAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableNewAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableNewAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableNewAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableNewAdmin.Controls.Add(this.lbTitulo, 0, 0);
-            this.tableNewAdmin.Controls.Add(this.panelContenido, 1, 1);
+            this.tableNewAdmin.Controls.Add(this.panelContenido, 1, 2);
+            this.tableNewAdmin.Controls.Add(this.panel1, 1, 1);
             this.tableNewAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableNewAdmin.Location = new System.Drawing.Point(0, 0);
             this.tableNewAdmin.Name = "tableNewAdmin";
-            this.tableNewAdmin.RowCount = 2;
+            this.tableNewAdmin.RowCount = 3;
             this.tableNewAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableNewAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableNewAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.29274F));
+            this.tableNewAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.70726F));
             this.tableNewAdmin.Size = new System.Drawing.Size(1140, 507);
             this.tableNewAdmin.TabIndex = 18;
             // 
             // panelContenido
             // 
+            this.panelContenido.Controls.Add(this.addAdmin1);
+            this.panelContenido.Controls.Add(this.editAdmin1);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(117, 83);
+            this.panelContenido.Location = new System.Drawing.Point(60, 190);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(906, 421);
+            this.panelContenido.Size = new System.Drawing.Size(1020, 314);
             this.panelContenido.TabIndex = 18;
+            // 
+            // addAdmin1
+            // 
+            this.addAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.addAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.addAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.addAdmin1.Location = new System.Drawing.Point(112, 4);
+            this.addAdmin1.Margin = new System.Windows.Forms.Padding(4);
+            this.addAdmin1.Name = "addAdmin1";
+            this.addAdmin1.Size = new System.Drawing.Size(100, 100);
+            this.addAdmin1.TabIndex = 1;
+            // 
+            // editAdmin1
+            // 
+            this.editAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.editAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.editAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.editAdmin1.Location = new System.Drawing.Point(4, 4);
+            this.editAdmin1.Margin = new System.Windows.Forms.Padding(4);
+            this.editAdmin1.Name = "editAdmin1";
+            this.editAdmin1.Size = new System.Drawing.Size(100, 100);
+            this.editAdmin1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelEditAdmin);
+            this.panel1.Controls.Add(this.panelAddAdmin);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(60, 83);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1020, 101);
+            this.panel1.TabIndex = 20;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.btnEdit.Image = global::CapaPre.Properties.Resources.edit;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEdit.Location = new System.Drawing.Point(533, 0);
+            this.btnEdit.MaximumSize = new System.Drawing.Size(200, 83);
+            this.btnEdit.MinimumSize = new System.Drawing.Size(200, 83);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(200, 83);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Editar administrador";
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.btnAdd.Image = global::CapaPre.Properties.Resources.add;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAdd.Location = new System.Drawing.Point(284, 0);
+            this.btnAdd.MaximumSize = new System.Drawing.Size(200, 83);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(200, 83);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(200, 83);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Nuevo administrador";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // panelAddAdmin
+            // 
+            this.panelAddAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panelAddAdmin.Location = new System.Drawing.Point(284, 89);
+            this.panelAddAdmin.Name = "panelAddAdmin";
+            this.panelAddAdmin.Size = new System.Drawing.Size(200, 4);
+            this.panelAddAdmin.TabIndex = 2;
+            // 
+            // panelEditAdmin
+            // 
+            this.panelEditAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panelEditAdmin.Location = new System.Drawing.Point(533, 89);
+            this.panelEditAdmin.Name = "panelEditAdmin";
+            this.panelEditAdmin.Size = new System.Drawing.Size(200, 4);
+            this.panelEditAdmin.TabIndex = 3;
             // 
             // NewAdmin
             // 
@@ -81,11 +188,13 @@
             this.Controls.Add(this.tableNewAdmin);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NewAdmin";
             this.Size = new System.Drawing.Size(1140, 507);
             this.tableNewAdmin.ResumeLayout(false);
             this.tableNewAdmin.PerformLayout();
+            this.panelContenido.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,5 +203,12 @@
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.TableLayoutPanel tableNewAdmin;
         private System.Windows.Forms.Panel panelContenido;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private EditAdmin editAdmin1;
+        private AddAdmin addAdmin1;
+        private System.Windows.Forms.Panel panelAddAdmin;
+        private System.Windows.Forms.Panel panelEditAdmin;
     }
 }

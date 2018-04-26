@@ -54,20 +54,19 @@ namespace CapaDatos
             return dt;
         }
 
-        public DataTable CompletarComboBox(string NombreProcedure)
+        public DataTable Procedimiento(string NameProcedure)
         {
             try
             {
-                conex.Open();
-                cmd = new SqlCommand(NombreProcedure, conex);
+                cmd = new SqlCommand(NameProcedure, conex);
                 cmd.CommandType = CommandType.StoredProcedure;
+                conex.Open();
                 cmd.ExecuteNonQuery();
                 conex.Close();
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
-                conex.Close();
-                Console.WriteLine("Método: \"CC01\" realizada con éxito.");
+                Console.WriteLine("Compilación: \"P02\" realizada con éxito.");
             }
             catch (Exception e) { Console.WriteLine("Error: " + e.Message); }
             finally { conex.Close(); }

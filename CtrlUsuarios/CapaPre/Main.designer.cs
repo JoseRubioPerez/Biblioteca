@@ -48,6 +48,7 @@
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
+            this.newAdmin1 = new CapaPre.NewAdmin();
             this.panelVentana.SuspendLayout();
             this.panelContenido.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
@@ -59,8 +60,8 @@
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
             this.panelMain.Controls.Add(this.panelVentana);
@@ -76,8 +77,8 @@
             // 
             // panelVentana
             // 
-            this.panelVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.panelVentana.Controls.Add(this.panelContenido);
@@ -90,6 +91,7 @@
             // 
             // panelContenido
             // 
+            this.panelContenido.Controls.Add(this.newAdmin1);
             this.panelContenido.Controls.Add(this.othersPasswords1);
             this.panelContenido.Controls.Add(this.myPassword1);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -281,6 +283,17 @@
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
             // 
+            // newAdmin1
+            // 
+            this.newAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.newAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.newAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.newAdmin1.Location = new System.Drawing.Point(216, 0);
+            this.newAdmin1.Margin = new System.Windows.Forms.Padding(4);
+            this.newAdmin1.Name = "newAdmin1";
+            this.newAdmin1.Size = new System.Drawing.Size(100, 100);
+            this.newAdmin1.TabIndex = 2;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -334,6 +347,6 @@
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
         private MyPassword myPassword1;
         private OthersPasswords othersPasswords1;
+        private NewAdmin newAdmin1;
     }
 }
-

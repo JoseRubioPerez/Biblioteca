@@ -22,6 +22,8 @@ namespace CapaPre
             InitializeComponent();
             txtNewPassword.Enabled = false;
             txtConfirmPassword.Enabled = false;
+            lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+            lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
         }
 
         public void Limpiar()
@@ -75,30 +77,9 @@ namespace CapaPre
                     txtConfirmPassword.PasswordChar = '*';
                     txtMyPassword.Focus();
                     break;
-
-                case 2:
-                    switch (txtMyPassword.PasswordChar)
-                    {
-                        case '\0': txtMyPassword.PasswordChar = '*'; break;
-                        case '*': txtMyPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
-
-                case 3:
-                    switch (txtNewPassword.PasswordChar)
-                    {
-                        case '\0': txtNewPassword.PasswordChar = '*'; break;
-                        case '*': txtNewPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
-
-                case 4:
-                    switch (txtConfirmPassword.PasswordChar)
-                    {
-                        case '\0': txtConfirmPassword.PasswordChar = '*'; break;
-                        case '*': txtConfirmPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
+                case 2: txtMyPassword.PasswordChar = (txtMyPassword.PasswordChar == '*') ? '\0' : '*'; break;
+                case 3: txtNewPassword.PasswordChar = (txtNewPassword.PasswordChar == '*') ? '\0' : '*'; break;
+                case 4: txtConfirmPassword.PasswordChar = (txtConfirmPassword.PasswordChar == '*') ? '\0' : '*'; break;
             }
             menu = 0;
         }
@@ -109,11 +90,15 @@ namespace CapaPre
             {
                 txtNewPassword.Enabled = false;
                 txtConfirmPassword.Enabled = false;
+                lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+                lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
             }
             else
             {
                 txtNewPassword.Enabled = true;
                 txtConfirmPassword.Enabled = true;
+                lbError1.Text = "";
+                lbError2.Text = "";
             }
         }
     }

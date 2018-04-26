@@ -12,17 +12,20 @@ INSERT INTO dbo.Usuarios ( nc ,nombres ,apellidopat,apellidomat,sexo,foto,hora,f
 VALUES  ('14540075','César Raúl','González','López','H',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
 INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,hora,fecha) VALUES
 ('14540074','José Luis','Rubio','Pérez','H',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
+INSERT INTO Usuarios(nc,nombres,apellidopat,apellidomat,sexo,hora,fecha) VALUES
+('14540077','Karla','Gómez','Baray','M',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
+INSERT INTO Usuarios(nc,nombres,apellidopat,apellidomat,sexo,hora,fecha) VALUES
+('14540078','Daniela','Ramirez','Hernandez','M',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
 
 --INSERTAR UN ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
 ('14540074','José Luis','Rubio','Pérez','H','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'S')
---INSERTAR OTRO ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
 ('14540076','Oscar Uriel','Nuñez','Portillo','H','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'S')
-
---INSERTAR OTRO ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
 ('14540077','Karla','Gómez','Baray','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
+INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
+('14540078','Daniela','Ramirez','Hernandez','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
 
 --PRUEBAS QUE ESTUVE REALIZANDO
 
