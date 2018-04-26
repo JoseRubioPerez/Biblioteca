@@ -27,29 +27,31 @@ namespace CapaPre
         {
             InitializeComponent();
             OcultarControlUsers();
+            panelAddAdmin.Visible = false;
+            panelEditAdmin.Visible = false;
         }
 
-        public void ColumnasGridAdd()
+        private void ColumnasGridAdd()
         {
             for(byte i = 0; i < addAdmin1.GridAdmin.Columns.Count; i++)
                 addAdmin1.GridAdmin.Columns[i].HeaderText = nombreColumnas[i];
         }
 
-        public void ColumnasGridEdit()
+        private void ColumnasGridEdit()
         {
             for (byte i = 0; i < addAdmin1.GridAdmin.Columns.Count; i++)
                 editAdmin1.GridAdmin.Columns[i].HeaderText = nombreColumnas[i];
             editAdmin1.GridAdmin.Columns[7].HeaderText = "Permiso de Super Usuario";
         }
 
-        public void OcultarControlUsers()
+        private void OcultarControlUsers()
         {
             UserControl[] ctlUser = new UserControl[] { editAdmin1, addAdmin1 };
             for (int i = 0; i < ctlUser.Length; i++)
                 ctlUser[i].Visible = false;
         }
 
-        public void MostrarCtrl(UserControl ctlUser, DockStyle Estilo)
+        private void MostrarCtrl(UserControl ctlUser, DockStyle Estilo)
         {
             if (ctlUser.Visible)
                 ctlUser.BringToFront();
@@ -60,6 +62,23 @@ namespace CapaPre
             }
             ctlUser.Parent = panelContenido;
             ctlUser.Dock = Estilo;
+        }
+
+        private void MostrarPanelBorder(byte panel)
+        {
+            switch (panel)
+            {
+                case 0:
+                    panelAddAdmin.Location = new Point(btnAdd.Location.X, btnAdd.Location.Y + 89);
+                    panelAddAdmin.Visible = true;
+                    panelEditAdmin.Visible = false;
+                    break;
+                case 1:
+                    panelEditAdmin.Location = new Point(btnEdit.Location.X, btnEdit.Location.Y + 89);
+                    panelAddAdmin.Visible = false;
+                    panelEditAdmin.Visible = true;
+                    break;
+            }
         }
 
         private void EventoClick(object sender, EventArgs e)
@@ -73,11 +92,13 @@ namespace CapaPre
             switch (menu)
             {
                 case 0:
+                    MostrarPanelBorder(0);
                     MostrarCtrl(addAdmin1, DockStyle.Fill);
                     addAdmin1.GridAdmin.DataSource = negocio.SelectAll("CargarUsuarios");
                     ColumnasGridAdd();
                     break;
                 case 1:
+                    MostrarPanelBorder(1);
                     MostrarCtrl(editAdmin1, DockStyle.Fill);
                     editAdmin1.GridAdmin.DataSource = negocio.SelectAll("CargarAdministradores");
                     ColumnasGridEdit();

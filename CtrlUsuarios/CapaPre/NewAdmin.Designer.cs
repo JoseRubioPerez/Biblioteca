@@ -31,11 +31,13 @@
             this.lbTitulo = new System.Windows.Forms.Label();
             this.tableNewAdmin = new System.Windows.Forms.TableLayoutPanel();
             this.panelContenido = new System.Windows.Forms.Panel();
+            this.addAdmin1 = new CapaPre.AddAdmin();
             this.editAdmin1 = new CapaPre.EditAdmin();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.addAdmin1 = new CapaPre.AddAdmin();
+            this.panelAddAdmin = new System.Windows.Forms.Panel();
+            this.panelEditAdmin = new System.Windows.Forms.Panel();
             this.tableNewAdmin.SuspendLayout();
             this.panelContenido.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,6 +86,17 @@
             this.panelContenido.Size = new System.Drawing.Size(1020, 314);
             this.panelContenido.TabIndex = 18;
             // 
+            // addAdmin1
+            // 
+            this.addAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.addAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.addAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.addAdmin1.Location = new System.Drawing.Point(112, 4);
+            this.addAdmin1.Margin = new System.Windows.Forms.Padding(4);
+            this.addAdmin1.Name = "addAdmin1";
+            this.addAdmin1.Size = new System.Drawing.Size(100, 100);
+            this.addAdmin1.TabIndex = 1;
+            // 
             // editAdmin1
             // 
             this.editAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
@@ -97,6 +110,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panelEditAdmin);
+            this.panel1.Controls.Add(this.panelAddAdmin);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -116,11 +131,11 @@
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.btnEdit.Image = global::CapaPre.Properties.Resources.edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEdit.Location = new System.Drawing.Point(533, 9);
-            this.btnEdit.MaximumSize = new System.Drawing.Size(204, 83);
-            this.btnEdit.MinimumSize = new System.Drawing.Size(204, 83);
+            this.btnEdit.Location = new System.Drawing.Point(533, 0);
+            this.btnEdit.MaximumSize = new System.Drawing.Size(200, 83);
+            this.btnEdit.MinimumSize = new System.Drawing.Size(200, 83);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(204, 83);
+            this.btnEdit.Size = new System.Drawing.Size(200, 83);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Editar administrador";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -138,27 +153,32 @@
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.btnAdd.Image = global::CapaPre.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdd.Location = new System.Drawing.Point(284, 9);
-            this.btnAdd.MaximumSize = new System.Drawing.Size(204, 83);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(204, 83);
+            this.btnAdd.Location = new System.Drawing.Point(284, 0);
+            this.btnAdd.MaximumSize = new System.Drawing.Size(200, 83);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(200, 83);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(204, 83);
+            this.btnAdd.Size = new System.Drawing.Size(200, 83);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Nuevo administrador";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.EventoClick);
             // 
-            // addAdmin1
+            // panelAddAdmin
             // 
-            this.addAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.addAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.addAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.addAdmin1.Location = new System.Drawing.Point(112, 4);
-            this.addAdmin1.Margin = new System.Windows.Forms.Padding(4);
-            this.addAdmin1.Name = "addAdmin1";
-            this.addAdmin1.Size = new System.Drawing.Size(100, 100);
-            this.addAdmin1.TabIndex = 1;
+            this.panelAddAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panelAddAdmin.Location = new System.Drawing.Point(284, 89);
+            this.panelAddAdmin.Name = "panelAddAdmin";
+            this.panelAddAdmin.Size = new System.Drawing.Size(200, 4);
+            this.panelAddAdmin.TabIndex = 2;
+            // 
+            // panelEditAdmin
+            // 
+            this.panelEditAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panelEditAdmin.Location = new System.Drawing.Point(533, 89);
+            this.panelEditAdmin.Name = "panelEditAdmin";
+            this.panelEditAdmin.Size = new System.Drawing.Size(200, 4);
+            this.panelEditAdmin.TabIndex = 3;
             // 
             // NewAdmin
             // 
@@ -188,5 +208,7 @@
         private System.Windows.Forms.Button btnEdit;
         private EditAdmin editAdmin1;
         private AddAdmin addAdmin1;
+        private System.Windows.Forms.Panel panelAddAdmin;
+        private System.Windows.Forms.Panel panelEditAdmin;
     }
 }

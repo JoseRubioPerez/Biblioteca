@@ -41,7 +41,7 @@
             this.radioS = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.pictureShoPass2 = new System.Windows.Forms.PictureBox();
+            this.pictureShowPass2 = new System.Windows.Forms.PictureBox();
             this.panelMyPassword = new System.Windows.Forms.Panel();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.pictureShowPass1 = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,7 @@
             this.panelEditSuperUs.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureShoPass2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +114,7 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtConfirmPassword);
-            this.panel1.Controls.Add(this.pictureShoPass2);
+            this.panel1.Controls.Add(this.pictureShowPass2);
             this.panel1.Controls.Add(this.panelMyPassword);
             this.panel1.Controls.Add(this.txtNewPassword);
             this.panel1.Controls.Add(this.pictureShowPass1);
@@ -153,25 +153,29 @@
             // 
             this.radioN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioN.AutoSize = true;
+            this.radioN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioN.Location = new System.Drawing.Point(88, 11);
             this.radioN.Name = "radioN";
             this.radioN.Size = new System.Drawing.Size(51, 27);
-            this.radioN.TabIndex = 2;
+            this.radioN.TabIndex = 4;
             this.radioN.TabStop = true;
             this.radioN.Text = "No";
             this.radioN.UseVisualStyleBackColor = true;
+            this.radioN.CheckedChanged += new System.EventHandler(this.ConfirmPassword);
             // 
             // radioS
             // 
             this.radioS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioS.AutoSize = true;
+            this.radioS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioS.Location = new System.Drawing.Point(29, 11);
             this.radioS.Name = "radioS";
             this.radioS.Size = new System.Drawing.Size(43, 27);
-            this.radioS.TabIndex = 1;
+            this.radioS.TabIndex = 3;
             this.radioS.TabStop = true;
             this.radioS.Text = "Si";
             this.radioS.UseVisualStyleBackColor = true;
+            this.radioS.CheckedChanged += new System.EventHandler(this.ConfirmPassword);
             // 
             // panel2
             // 
@@ -195,20 +199,22 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(282, 26);
-            this.txtConfirmPassword.TabIndex = 13;
+            this.txtConfirmPassword.TabIndex = 2;
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.ConfirmPassword);
             // 
-            // pictureShoPass2
+            // pictureShowPass2
             // 
-            this.pictureShoPass2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureShoPass2.Image = global::CapaPre.Properties.Resources.Showpass;
-            this.pictureShoPass2.Location = new System.Drawing.Point(728, 62);
-            this.pictureShoPass2.MaximumSize = new System.Drawing.Size(30, 30);
-            this.pictureShoPass2.MinimumSize = new System.Drawing.Size(30, 30);
-            this.pictureShoPass2.Name = "pictureShoPass2";
-            this.pictureShoPass2.Size = new System.Drawing.Size(30, 30);
-            this.pictureShoPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureShoPass2.TabIndex = 15;
-            this.pictureShoPass2.TabStop = false;
+            this.pictureShowPass2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureShowPass2.Image = global::CapaPre.Properties.Resources.Showpass;
+            this.pictureShowPass2.Location = new System.Drawing.Point(728, 62);
+            this.pictureShowPass2.MaximumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.MinimumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.Name = "pictureShowPass2";
+            this.pictureShowPass2.Size = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureShowPass2.TabIndex = 15;
+            this.pictureShowPass2.TabStop = false;
+            this.pictureShowPass2.Click += new System.EventHandler(this.EventoClick);
             // 
             // panelMyPassword
             // 
@@ -232,7 +238,8 @@
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(282, 26);
-            this.txtNewPassword.TabIndex = 10;
+            this.txtNewPassword.TabIndex = 1;
+            this.txtNewPassword.TextChanged += new System.EventHandler(this.ConfirmPassword);
             // 
             // pictureShowPass1
             // 
@@ -246,6 +253,7 @@
             this.pictureShowPass1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureShowPass1.TabIndex = 12;
             this.pictureShowPass1.TabStop = false;
+            this.pictureShowPass1.Click += new System.EventHandler(this.EventoClick);
             // 
             // label2
             // 
@@ -282,10 +290,11 @@
             this.btnCancelar.MinimumSize = new System.Drawing.Size(203, 39);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 39);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar la edición";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
             // 
             // imageList1
             // 
@@ -309,10 +318,11 @@
             this.btnAceptar.MinimumSize = new System.Drawing.Size(203, 39);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(203, 39);
-            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar y terminar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
             // 
             // AddAdmin
             // 
@@ -332,7 +342,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureShoPass2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).EndInit();
             this.ResumeLayout(false);
 
@@ -351,7 +361,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtConfirmPassword;
-        private System.Windows.Forms.PictureBox pictureShoPass2;
+        private System.Windows.Forms.PictureBox pictureShowPass2;
         private System.Windows.Forms.Panel panelMyPassword;
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.PictureBox pictureShowPass1;

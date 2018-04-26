@@ -131,6 +131,7 @@
             this.radioN.TabStop = true;
             this.radioN.Text = "No";
             this.radioN.UseVisualStyleBackColor = true;
+            this.radioN.CheckedChanged += new System.EventHandler(this.ConfirmarSuperUsuario);
             // 
             // radioS
             // 
