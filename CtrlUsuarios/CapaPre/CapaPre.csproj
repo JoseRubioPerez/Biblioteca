@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CapaPre</RootNamespace>
     <AssemblyName>CapaPre</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +51,12 @@
     </Compile>
     <Compile Include="AddAdmin.Designer.cs">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteAdmin.Designer.cs">
+      <DependentUpon>DeleteAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="EditAdmin.cs">
       <SubType>UserControl</SubType>
@@ -101,8 +108,12 @@
     <Compile Include="Question.designer.cs">
       <DependentUpon>Question.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAdmin.resx">
+      <DependentUpon>DeleteAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditAdmin.resx">
       <DependentUpon>EditAdmin.cs</DependentUpon>

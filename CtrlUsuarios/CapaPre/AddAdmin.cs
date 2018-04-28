@@ -27,6 +27,7 @@ namespace CapaPre
         {
             InitializeComponent();
             btnAceptar.Enabled = false;
+            //GridAdmin.SelectedRows[0].Selected = false;
         }
 
         private bool Validar()
@@ -51,6 +52,7 @@ namespace CapaPre
             txtConfirmPassword.PasswordChar = '*';
             radioN.Checked = false;
             radioS.Checked = false;
+            GridAdmin.SelectedRows[0].Selected = false;
         }
 
         private void EventoClick(object sender, EventArgs e)
@@ -64,6 +66,7 @@ namespace CapaPre
             switch (menu)
             {
                 case 0:
+                    //btnAceptar
                     Question pregunta;
                     try
                     {
@@ -83,26 +86,21 @@ namespace CapaPre
                                 GridAdmin.SelectedRows[0].Cells[3].Value.ToString(),
                                 Convert.ToChar(GridAdmin.SelectedRows[0].Cells[4].Value.ToString()),
                                 txtNewPassword.Text.Trim(), supersu);
-                            pregunta = new Question((byte)TipoIcono.Info, "Tarea realizada", "Nuevo administrador agregado", "Se ha agregado " +
-                                "a " + GridAdmin.SelectedRows[0].Cells[1].Value.ToString() + " " + GridAdmin.SelectedRows[0].Cells[2].Value.ToString() + " " +
-                                GridAdmin.SelectedRows[0].Cells[3].Value.ToString() + "\ncomo administrador de sistema.", false);
+                            pregunta = new Question((byte)TipoIcono.Info, "Tarea realizada", "Nuevo administrador agregado", "Se ha agregado a " + GridAdmin.SelectedRows[0].Cells[1].Value.ToString() + " " + GridAdmin.SelectedRows[0].Cells[2].Value.ToString() + " " +GridAdmin.SelectedRows[0].Cells[3].Value.ToString() + "\ncomo administrador de sistema.", false);
                             pregunta.Show();
                         }
                     }
-                    catch(Exception ex) { Console.WriteLine("Error a la hora e registrar un nuevo administrador.\n " + ex.Message); }
+                    catch(Exception) { Console.WriteLine("Error a la hora e registrar un nuevo administrador.\n"); }
                     LimpiarCampos();
                     break;
                 case 1:
+                    //btnCancelar
                     if (!(string.IsNullOrEmpty(txtNewPassword.Text.Trim())) && !(string.IsNullOrEmpty(txtConfirmPassword.Text.Trim())) && (radioN.Checked || radioS.Checked))
                     {
-                        pregunta = new Question((byte)TipoIcono.Warning, "Deshacer cambios", "¿Deseas deshacer los cambios que " +
-                            "llevas hasta el momento?", "Sí aceptas, se perderán todos los cambios a nuevos usuarios que hayas realizado y " +
-                            "no hayas guardado con el botón de \"Aceptar\".", true);
+                        pregunta = new Question((byte)TipoIcono.Warning, "Deshacer cambios", "¿Deseas deshacer los cambios que llevas hasta el momento?", "Sí aceptas, se perderán todos los cambios a nuevos usuarios que hayas realizado y no hayas guardado con el botón de \"Aceptar\".", true);
                         DialogResult dr = pregunta.ShowDialog();
                         if (dr == DialogResult.Yes)
-                        {
                             LimpiarCampos();
-                        }
                     }
                     else
                     {

@@ -45,6 +45,8 @@ namespace CapaPre
             othersPasswords1.Admin[0] = user;
             othersPasswords1.Admin[1] = password;
             othersPasswords1.supersu = supersu;
+            //Main -> newAdmin1
+            newAdmin1.Admin[0] = user;
 
             lbTitulo.Text = "Sistema de Control de Usuarios. Bienvenido: " + entidad.getAdminNC();
             OcultarControlUsers();

@@ -60,3 +60,9 @@ CREATE PROCEDURE ExistAdmin
 @nc AS VARCHAR(9)
 AS
 SELECT * FROM dbo.Administradores WHERE nc = @nc
+
+--SP PARA BORRAR UN ADMINISTRADOR EN EL SISTEMA
+CREATE PROCEDURE BorrarAdmin
+@nc VARCHAR(9)
+AS
+DELETE FROM Administradores WHERE nc = @nc
