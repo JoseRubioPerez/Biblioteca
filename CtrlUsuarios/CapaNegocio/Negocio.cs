@@ -1,10 +1,8 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDatos;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CapaNegocio
 {
@@ -45,5 +43,71 @@ namespace CapaNegocio
             TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar);
             data = datos.Procedimiento("ChangePassword", Valor, Parametros, TipoDato);
         }
+
+        public void ChangeOthersPassword(string nc, string newpassword)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Valor.Add(newpassword);
+            Parametros.Add("@nc"); Parametros.Add("@newpass");
+            TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar);
+            data = datos.Procedimiento("ChangeOtherPassword", Valor, Parametros, TipoDato);
+        }
+
+        public void ComboAdministradores(ComboBox combo, string NombreProcedure)
+        {
+            try
+            {
+                combo.Items.Clear();
+                data = datos.Procedimiento(NombreProcedure);
+                for (int i = 0; i < data.Rows.Count; i++)
+                    combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+            }
+            catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
+        }
+
+        public DataTable SelectAll(string nameProcedure)
+        {
+            data = datos.Procedimiento(nameProcedure);
+            return data;
+        }
+
+        public DataTable AddNewAdmin(string nc, string nombres, string apellidopat, string apellidomat, char sexo, string password, char supersu)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Valor.Add(nombres); Valor.Add(apellidopat); Valor.Add(apellidomat); Valor.Add(sexo); Valor.Add(password); Valor.Add(supersu);
+            Parametros.Add("@nc"); Parametros.Add("@nombres"); Parametros.Add("@apellidopat"); Parametros.Add("@apellidomat"); Parametros.Add("@sexo"); Parametros.Add("@password"); Parametros.Add("@supersu");
+            TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.Char); TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.Char);
+            data = datos.Procedimiento("AddNewAdmin", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable ExistUserOrAdmin(string nc, string NameProcedure)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            data = datos.Procedimiento(NameProcedure, Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable UpdatePermissionAdmin(string nc, char permiso)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(permiso); Parametros.Add("@supersu"); TipoDato.Add((byte)DatoSQL.Char);
+            data = datos.Procedimiento("UpdateAdmin", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
+        {
+            try
+            {
+                combo.Items.Clear();
+                data = datos.CompletarComboBox(NombreProcedure);
+                for (int i = 0; i < data.Rows.Count; i++)
+                    combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+            }
+            catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
+        }*/
     }
 }

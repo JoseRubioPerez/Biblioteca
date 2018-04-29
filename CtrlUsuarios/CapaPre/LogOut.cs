@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
     public partial class LogOut : Form
     {
         #region Instancias
+
         private Negocio negocio = new Negocio();
 
         #endregion Instancias
 
         //private DataTable dt;
         private Control[] arreglo;
+
         private byte menu;
         private string User;
         private string Password;
@@ -34,7 +29,10 @@ namespace CapaPre
             Password = password;
         }
 
-        public bool ConfirmacionCerrar() { return bandera; }
+        public bool ConfirmacionCerrar()
+        {
+            return bandera;
+        }
 
         private void EventoClick(object sender, EventArgs e)
         {
@@ -54,7 +52,6 @@ namespace CapaPre
                         bandera = false;
                     this.Close();
                     break;
-
                 case 1: case 2: this.Close(); break;
             }
             menu = 0;

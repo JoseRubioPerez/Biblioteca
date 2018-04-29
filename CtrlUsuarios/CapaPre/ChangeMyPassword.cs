@@ -1,10 +1,17 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPre
 {
-    public partial class MyPassword : UserControl
+    public partial class ChangeMyPassword : FatherConfig
     {
         #region Instancias
 
@@ -14,14 +21,17 @@ namespace CapaPre
 
         private Control[] arreglo;
         private byte menu;
+        private DialogResult dr;
         public string[] Admin = new string[2];
         public char supersu;
 
-        public MyPassword()
+        public ChangeMyPassword()
         {
             InitializeComponent();
             txtNewPassword.Enabled = false;
             txtConfirmPassword.Enabled = false;
+            lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+            lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
         }
 
         public void Limpiar()
@@ -37,15 +47,17 @@ namespace CapaPre
 
         public void ChangePassword(string NewPassword)
         {
-            Question pregunta = new Question((byte)TipoIcono.Warning, "Confirmación", "¿Estas seguro de que deaseas cambiar tu contraseña?", "Sí aceptas, tu contraseña será cambiada por la que acabas de ingresar.", true);
-            DialogResult dr = pregunta.ShowDialog();
+            Question pregunta;
+            pregunta = new Question((byte)TypeIcon.Warning, "Confirmación", "¿Estas seguro de que deaseas cambiar tu contraseña?", "Sí aceptas, tu contraseña será cambiada por la que acabas de ingresar.", true);
+            dr = pregunta.ShowDialog();
             if (dr == DialogResult.Yes)
             {
                 negocio.ChangePassword(Admin[0], Admin[1], txtNewPassword.Text.Trim());
-                Question ok = new Question((byte)TipoIcono.Info, "Tarea realizada", "Cambio de contraseña", "La contraseña se ha cambiado exitosamente.\nPara asegurar los cambios, por favor de cerrar sesión\ncon su anterior contraseña e iniciar con la nueva contraseña.", false);
-                ok.Show();
                 Limpiar();
+                pregunta = new Question((byte)TypeIcon.Info, "Tarea realizada", "Cambio de contraseña", "La contraseña se ha cambiado exitosamente.\nPara asegurar los cambios, por favor de cerrar sesión\ncon su anterior contraseña e iniciar con la nueva contraseña.", false);
+                pregunta.Show();
             }
+            dr = DialogResult.No;
         }
 
         private void EventoClick(object sender, EventArgs e)
@@ -63,39 +75,15 @@ namespace CapaPre
                         ChangePassword(txtNewPassword.Text.Trim());
                     else
                     {
-                        Question alerta = new Question((byte)TipoIcono.Warning, "Contraseñas diferentes", "Verifique su información", "La contreaseña no coincide con su confirmación, verifique que ambas sean iguales", false);
-                        alerta.Show();
+                        Question pregunta = new Question((byte)TypeIcon.Warning, "Contraseñas diferentes", "Verifique su información", "La contreaseña no coincide con su confirmación, verifique que ambas sean iguales", false);
+                        pregunta.Show();
                     }
                     break;
 
-                case 1:
-                    Limpiar();
-                    txtMyPassword.PasswordChar = '*';
-                    txtNewPassword.PasswordChar = '*';
-                    txtConfirmPassword.PasswordChar = '*';
-                    txtMyPassword.Focus();
-                    break;
-                case 2:
-                    switch (txtMyPassword.PasswordChar)
-                    {
-                        case '\0': txtMyPassword.PasswordChar = '*'; break;
-                        case '*': txtMyPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
-                case 3:
-                    switch (txtNewPassword.PasswordChar)
-                    {
-                        case '\0': txtNewPassword.PasswordChar = '*'; break;
-                        case '*': txtNewPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
-                case 4:
-                    switch (txtConfirmPassword.PasswordChar)
-                    {
-                        case '\0': txtConfirmPassword.PasswordChar = '*'; break;
-                        case '*': txtConfirmPassword.PasswordChar = '\0'; break;
-                    }
-                    break;
+                case 1: Limpiar(); break;
+                case 2: txtMyPassword.PasswordChar = (txtMyPassword.PasswordChar == '*') ? '\0' : '*'; break;
+                case 3: txtNewPassword.PasswordChar = (txtNewPassword.PasswordChar == '*') ? '\0' : '*'; break;
+                case 4: txtConfirmPassword.PasswordChar = (txtConfirmPassword.PasswordChar == '*') ? '\0' : '*'; break;
             }
             menu = 0;
         }
@@ -106,11 +94,15 @@ namespace CapaPre
             {
                 txtNewPassword.Enabled = false;
                 txtConfirmPassword.Enabled = false;
+                lbError1.Text = "Primero llena el campo \"Contraseña actual\"";
+                lbError2.Text = "Primero llena el campo \"Contraseña actual\"";
             }
             else
             {
                 txtNewPassword.Enabled = true;
                 txtConfirmPassword.Enabled = true;
+                lbError1.Text = "";
+                lbError2.Text = "";
             }
         }
     }
