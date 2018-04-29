@@ -1,16 +1,16 @@
 ﻿namespace CapaPre
 {
-    partial class OthersPasswords
+    partial class ChangeOthersPasswords : FatherConfig
     {
-        /// <summary> 
-        /// Variable del diseñador necesaria.
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Limpiar los recursos que se estén usando.
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de componentes
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -32,8 +32,6 @@
             this.lbTitulo = new System.Windows.Forms.Label();
             this.TableChangePassword = new System.Windows.Forms.TableLayoutPanel();
             this.panelChangePassword = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.panelConfirmPassword = new System.Windows.Forms.Panel();
             this.panelNewPassword = new System.Windows.Forms.Panel();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -42,14 +40,20 @@
             this.lbNewPassword = new System.Windows.Forms.Label();
             this.TableEditAdmin = new System.Windows.Forms.TableLayoutPanel();
             this.panelEditAdmin = new System.Windows.Forms.Panel();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.comboAdministrador = new System.Windows.Forms.ComboBox();
             this.lbAdministrador = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.pictureShowPass1 = new System.Windows.Forms.PictureBox();
+            this.pictureShowPass2 = new System.Windows.Forms.PictureBox();
             this.tableOthersPasswords.SuspendLayout();
             this.TableChangePassword.SuspendLayout();
             this.panelChangePassword.SuspendLayout();
             this.TableEditAdmin.SuspendLayout();
             this.panelEditAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableOthersPasswords
@@ -67,7 +71,7 @@
             this.tableOthersPasswords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.15976F));
             this.tableOthersPasswords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.31361F));
             this.tableOthersPasswords.Size = new System.Drawing.Size(1140, 507);
-            this.tableOthersPasswords.TabIndex = 0;
+            this.tableOthersPasswords.TabIndex = 1;
             // 
             // lbTitulo
             // 
@@ -85,9 +89,9 @@
             // TableChangePassword
             // 
             this.TableChangePassword.ColumnCount = 3;
-            this.TableChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.TableChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.TableChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.TableChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.TableChangePassword.Controls.Add(this.panelChangePassword, 1, 0);
             this.TableChangePassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableChangePassword.Location = new System.Drawing.Point(3, 188);
@@ -99,6 +103,8 @@
             // 
             // panelChangePassword
             // 
+            this.panelChangePassword.Controls.Add(this.pictureShowPass2);
+            this.panelChangePassword.Controls.Add(this.pictureShowPass1);
             this.panelChangePassword.Controls.Add(this.btnCancelar);
             this.panelChangePassword.Controls.Add(this.btnAceptar);
             this.panelChangePassword.Controls.Add(this.panelConfirmPassword);
@@ -108,48 +114,10 @@
             this.panelChangePassword.Controls.Add(this.lbConfirmPassword);
             this.panelChangePassword.Controls.Add(this.lbNewPassword);
             this.panelChangePassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChangePassword.Location = new System.Drawing.Point(286, 3);
+            this.panelChangePassword.Location = new System.Drawing.Point(173, 3);
             this.panelChangePassword.Name = "panelChangePassword";
-            this.panelChangePassword.Size = new System.Drawing.Size(561, 310);
+            this.panelChangePassword.Size = new System.Drawing.Size(787, 310);
             this.panelChangePassword.TabIndex = 3;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackgroundImage = global::CapaPre.Properties.Resources.delete;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(498, 209);
-            this.btnCancelar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.btnCancelar.MinimumSize = new System.Drawing.Size(40, 40);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackgroundImage = global::CapaPre.Properties.Resources.aceptar;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(427, 209);
-            this.btnAceptar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.btnAceptar.MinimumSize = new System.Drawing.Size(40, 40);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
-            this.btnAceptar.TabIndex = 8;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
             // 
             // panelConfirmPassword
             // 
@@ -157,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelConfirmPassword.Location = new System.Drawing.Point(248, 175);
+            this.panelConfirmPassword.Location = new System.Drawing.Point(349, 170);
             this.panelConfirmPassword.Margin = new System.Windows.Forms.Padding(1);
             this.panelConfirmPassword.MaximumSize = new System.Drawing.Size(290, 3);
             this.panelConfirmPassword.MinimumSize = new System.Drawing.Size(290, 3);
@@ -171,7 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelNewPassword.Location = new System.Drawing.Point(248, 86);
+            this.panelNewPassword.Location = new System.Drawing.Point(347, 80);
             this.panelNewPassword.Margin = new System.Windows.Forms.Padding(1);
             this.panelNewPassword.MaximumSize = new System.Drawing.Size(290, 3);
             this.panelNewPassword.MinimumSize = new System.Drawing.Size(290, 3);
@@ -187,11 +155,12 @@
             this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(248, 153);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(349, 144);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(1);
             this.txtConfirmPassword.MaximumSize = new System.Drawing.Size(290, 20);
             this.txtConfirmPassword.MinimumSize = new System.Drawing.Size(290, 20);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(290, 20);
             this.txtConfirmPassword.TabIndex = 5;
             // 
@@ -203,11 +172,12 @@
             this.txtNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewPassword.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.txtNewPassword.Location = new System.Drawing.Point(248, 62);
+            this.txtNewPassword.Location = new System.Drawing.Point(347, 53);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(1);
             this.txtNewPassword.MaximumSize = new System.Drawing.Size(290, 20);
             this.txtNewPassword.MinimumSize = new System.Drawing.Size(290, 20);
             this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(290, 20);
             this.txtNewPassword.TabIndex = 4;
             // 
@@ -218,7 +188,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbConfirmPassword.AutoSize = true;
             this.lbConfirmPassword.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirmPassword.Location = new System.Drawing.Point(23, 153);
+            this.lbConfirmPassword.Location = new System.Drawing.Point(124, 144);
             this.lbConfirmPassword.Name = "lbConfirmPassword";
             this.lbConfirmPassword.Size = new System.Drawing.Size(221, 25);
             this.lbConfirmPassword.TabIndex = 3;
@@ -232,7 +202,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbNewPassword.AutoSize = true;
             this.lbNewPassword.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNewPassword.Location = new System.Drawing.Point(56, 62);
+            this.lbNewPassword.Location = new System.Drawing.Point(157, 53);
             this.lbNewPassword.Name = "lbNewPassword";
             this.lbNewPassword.Size = new System.Drawing.Size(186, 25);
             this.lbNewPassword.TabIndex = 2;
@@ -267,6 +237,71 @@
             this.panelEditAdmin.Size = new System.Drawing.Size(787, 74);
             this.panelEditAdmin.TabIndex = 2;
             // 
+            // comboAdministrador
+            // 
+            this.comboAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboAdministrador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboAdministrador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAdministrador.Font = new System.Drawing.Font("Tahoma", 15.75F);
+            this.comboAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.comboAdministrador.FormattingEnabled = true;
+            this.comboAdministrador.Location = new System.Drawing.Point(167, 21);
+            this.comboAdministrador.Name = "comboAdministrador";
+            this.comboAdministrador.Size = new System.Drawing.Size(545, 33);
+            this.comboAdministrador.TabIndex = 2;
+            this.comboAdministrador.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // lbAdministrador
+            // 
+            this.lbAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbAdministrador.AutoSize = true;
+            this.lbAdministrador.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdministrador.Location = new System.Drawing.Point(17, 25);
+            this.lbAdministrador.Name = "lbAdministrador";
+            this.lbAdministrador.Size = new System.Drawing.Size(150, 25);
+            this.lbAdministrador.TabIndex = 1;
+            this.lbAdministrador.Text = "Administrador:";
+            this.lbAdministrador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackgroundImage = global::CapaPre.Properties.Resources.delete;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(640, 217);
+            this.btnCancelar.MaximumSize = new System.Drawing.Size(40, 40);
+            this.btnCancelar.MinimumSize = new System.Drawing.Size(40, 40);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.BackgroundImage = global::CapaPre.Properties.Resources.aceptar;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(569, 217);
+            this.btnAceptar.MaximumSize = new System.Drawing.Size(40, 40);
+            this.btnAceptar.MinimumSize = new System.Drawing.Size(40, 40);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
+            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -285,44 +320,48 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.EventoClick);
             // 
-            // comboAdministrador
+            // pictureShowPass1
             // 
-            this.comboAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboAdministrador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboAdministrador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAdministrador.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.comboAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.comboAdministrador.FormattingEnabled = true;
-            this.comboAdministrador.Location = new System.Drawing.Point(167, 21);
-            this.comboAdministrador.Name = "comboAdministrador";
-            this.comboAdministrador.Size = new System.Drawing.Size(545, 33);
-            this.comboAdministrador.TabIndex = 2;
-            this.comboAdministrador.Click += new System.EventHandler(this.ElegirAdministrador);
+            this.pictureShowPass1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureShowPass1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureShowPass1.Image = global::CapaPre.Properties.Resources.Showpass;
+            this.pictureShowPass1.Location = new System.Drawing.Point(650, 53);
+            this.pictureShowPass1.MaximumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass1.MinimumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass1.Name = "pictureShowPass1";
+            this.pictureShowPass1.Size = new System.Drawing.Size(30, 30);
+            this.pictureShowPass1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureShowPass1.TabIndex = 10;
+            this.pictureShowPass1.TabStop = false;
+            this.pictureShowPass1.Click += new System.EventHandler(this.EventoClick);
             // 
-            // lbAdministrador
+            // pictureShowPass2
             // 
-            this.lbAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbAdministrador.AutoSize = true;
-            this.lbAdministrador.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAdministrador.Location = new System.Drawing.Point(17, 25);
-            this.lbAdministrador.Name = "lbAdministrador";
-            this.lbAdministrador.Size = new System.Drawing.Size(150, 25);
-            this.lbAdministrador.TabIndex = 1;
-            this.lbAdministrador.Text = "Administrador:";
-            this.lbAdministrador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureShowPass2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureShowPass2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureShowPass2.Image = global::CapaPre.Properties.Resources.Showpass;
+            this.pictureShowPass2.Location = new System.Drawing.Point(650, 143);
+            this.pictureShowPass2.MaximumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.MinimumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.Name = "pictureShowPass2";
+            this.pictureShowPass2.Size = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureShowPass2.TabIndex = 11;
+            this.pictureShowPass2.TabStop = false;
+            this.pictureShowPass2.Click += new System.EventHandler(this.EventoClick);
             // 
-            // OthersPasswords
+            // ChangeOthersPasswords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.ClientSize = new System.Drawing.Size(1140, 507);
             this.Controls.Add(this.tableOthersPasswords);
-            this.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "OthersPasswords";
-            this.Size = new System.Drawing.Size(1140, 507);
+            this.Name = "ChangeOthersPasswords";
+            this.Text = "ChangeOthersPasswords";
             this.tableOthersPasswords.ResumeLayout(false);
             this.tableOthersPasswords.PerformLayout();
             this.TableChangePassword.ResumeLayout(false);
@@ -331,11 +370,14 @@
             this.TableEditAdmin.ResumeLayout(false);
             this.panelEditAdmin.ResumeLayout(false);
             this.panelEditAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.TableLayoutPanel tableOthersPasswords;
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.TableLayoutPanel TableChangePassword;
@@ -348,10 +390,12 @@
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label lbConfirmPassword;
         private System.Windows.Forms.Label lbNewPassword;
+        private System.Windows.Forms.TableLayoutPanel TableEditAdmin;
         private System.Windows.Forms.Panel panelEditAdmin;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox comboAdministrador;
         private System.Windows.Forms.Label lbAdministrador;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TableLayoutPanel TableEditAdmin;
+        private System.Windows.Forms.PictureBox pictureShowPass2;
+        private System.Windows.Forms.PictureBox pictureShowPass1;
     }
 }

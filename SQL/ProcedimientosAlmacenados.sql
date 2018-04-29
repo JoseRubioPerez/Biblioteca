@@ -66,3 +66,11 @@ CREATE PROCEDURE BorrarAdmin
 @nc VARCHAR(9)
 AS
 DELETE FROM Administradores WHERE nc = @nc
+
+--SP PARA ACTUALIZAR EL PERMISO DE SUPER USUARIO DE UN ADMINISTRADOR
+CREATE PROCEDURE UpdateAdmin
+@nc AS VARCHAR (9),
+@supersu AS CHAR(1)
+AS
+UPDATE dbo.Administradores SET superus = @supersu WHERE nc = @nc
+GO
