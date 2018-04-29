@@ -1,4 +1,7 @@
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaEntidad\bin\Debug\CapaEntidad.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaEntidad\bin\Debug\CapaEntidad.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaEntidad\obj\Debug\CapaEntidad.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\bin\Debug\CapaEntidad.dll.CodeAnalysisLog.xml
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaEntidad\bin\Debug\CapaEntidad.dll.lastcodeanalysissucceeded

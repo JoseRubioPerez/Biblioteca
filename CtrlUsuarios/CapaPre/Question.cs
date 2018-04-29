@@ -16,12 +16,12 @@ namespace CapaPre
             btnCancelar.DialogResult = DialogResult.No;
         }
 
-        public Question(byte tipoIcono, string textIcon, string titulo, string texto, bool opciones)
+        public Question(byte TypeIcon, string textIcon, string titulo, string texto, bool opciones)
         {
             InitializeComponent();
             btnAceptar.DialogResult = DialogResult.Yes;
             btnCancelar.DialogResult = DialogResult.No;
-            switch (tipoIcono)
+            switch (TypeIcon)
             {
                 case 1: //danger
                     pictureIcon.Image = Resources.danger;

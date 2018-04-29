@@ -1,4 +1,5 @@
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\bin\Debug\CapaDatos.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaDatos\obj\Debug\CapaDatos.pdb

@@ -1,16 +1,16 @@
 ﻿namespace CapaPre
 {
-    partial class EditAdmin
+    partial class EditAdmin : FatherConfig
     {
-        /// <summary> 
-        /// Variable del diseñador necesaria.
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Limpiar los recursos que se estén usando.
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,21 +20,22 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de componentes
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAdmin));
             this.tableEditAdmin = new System.Windows.Forms.TableLayoutPanel();
-            this.GridAdmin = new System.Windows.Forms.DataGridView();
-            this.panelEditSuperUs = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gridEditAdmin = new System.Windows.Forms.DataGridView();
+            this.panelOpciones = new System.Windows.Forms.Panel();
+            this.lbSuperUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioN = new System.Windows.Forms.RadioButton();
             this.radioS = new System.Windows.Forms.RadioButton();
@@ -42,113 +43,126 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tableEditAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridAdmin)).BeginInit();
-            this.panelEditSuperUs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEditAdmin)).BeginInit();
+            this.panelOpciones.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableEditAdmin
             // 
             this.tableEditAdmin.ColumnCount = 1;
-            this.tableEditAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableEditAdmin.Controls.Add(this.GridAdmin, 0, 0);
-            this.tableEditAdmin.Controls.Add(this.panelEditSuperUs, 0, 1);
+            this.tableEditAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableEditAdmin.Controls.Add(this.gridEditAdmin, 0, 0);
+            this.tableEditAdmin.Controls.Add(this.panelOpciones, 0, 1);
             this.tableEditAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableEditAdmin.Location = new System.Drawing.Point(0, 0);
             this.tableEditAdmin.Name = "tableEditAdmin";
             this.tableEditAdmin.RowCount = 2;
-            this.tableEditAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.05732F));
-            this.tableEditAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.94268F));
-            this.tableEditAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableEditAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableEditAdmin.Size = new System.Drawing.Size(1020, 314);
-            this.tableEditAdmin.TabIndex = 25;
+            this.tableEditAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.50708F));
+            this.tableEditAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.49292F));
+            this.tableEditAdmin.Size = new System.Drawing.Size(1140, 353);
+            this.tableEditAdmin.TabIndex = 1;
             // 
-            // GridAdmin
+            // gridEditAdmin
             // 
-            this.GridAdmin.AllowUserToAddRows = false;
-            this.GridAdmin.AllowUserToDeleteRows = false;
-            this.GridAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridAdmin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.GridAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.GridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GridAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridAdmin.Location = new System.Drawing.Point(3, 3);
-            this.GridAdmin.MultiSelect = false;
-            this.GridAdmin.Name = "GridAdmin";
-            this.GridAdmin.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.GridAdmin.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridAdmin.Size = new System.Drawing.Size(1014, 191);
-            this.GridAdmin.TabIndex = 0;
-            this.GridAdmin.TabStop = false;
+            this.gridEditAdmin.AllowUserToAddRows = false;
+            this.gridEditAdmin.AllowUserToDeleteRows = false;
+            this.gridEditAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridEditAdmin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.gridEditAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridEditAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridEditAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEditAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gridEditAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEditAdmin.Location = new System.Drawing.Point(3, 3);
+            this.gridEditAdmin.MultiSelect = false;
+            this.gridEditAdmin.Name = "gridEditAdmin";
+            this.gridEditAdmin.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridEditAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridEditAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridEditAdmin.Size = new System.Drawing.Size(1134, 196);
+            this.gridEditAdmin.TabIndex = 0;
+            this.gridEditAdmin.TabStop = false;
             // 
-            // panelEditSuperUs
+            // panelOpciones
             // 
-            this.panelEditSuperUs.Controls.Add(this.label1);
-            this.panelEditSuperUs.Controls.Add(this.groupBox1);
-            this.panelEditSuperUs.Controls.Add(this.btnCancelar);
-            this.panelEditSuperUs.Controls.Add(this.btnAceptar);
-            this.panelEditSuperUs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEditSuperUs.Location = new System.Drawing.Point(3, 200);
-            this.panelEditSuperUs.Name = "panelEditSuperUs";
-            this.panelEditSuperUs.Size = new System.Drawing.Size(1014, 111);
-            this.panelEditSuperUs.TabIndex = 1;
+            this.panelOpciones.Controls.Add(this.lbSuperUsuario);
+            this.panelOpciones.Controls.Add(this.groupBox1);
+            this.panelOpciones.Controls.Add(this.btnCancelar);
+            this.panelOpciones.Controls.Add(this.btnAceptar);
+            this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOpciones.Location = new System.Drawing.Point(3, 205);
+            this.panelOpciones.Name = "panelOpciones";
+            this.panelOpciones.Size = new System.Drawing.Size(1134, 145);
+            this.panelOpciones.TabIndex = 1;
             // 
-            // label1
+            // lbSuperUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(16, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(533, 19);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Permitir al administrador seleccionado el modo \"Super Usuario\":";
+            this.lbSuperUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSuperUsuario.AutoSize = true;
+            this.lbSuperUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lbSuperUsuario.Location = new System.Drawing.Point(19, 16);
+            this.lbSuperUsuario.Name = "lbSuperUsuario";
+            this.lbSuperUsuario.Size = new System.Drawing.Size(418, 19);
+            this.lbSuperUsuario.TabIndex = 39;
+            this.lbSuperUsuario.Text = "Permitir al administrador el modo \"Super Usuario\"";
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.radioN);
             this.groupBox1.Controls.Add(this.radioS);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.groupBox1.Location = new System.Drawing.Point(555, 3);
+            this.groupBox1.Location = new System.Drawing.Point(166, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(136, 50);
-            this.groupBox1.TabIndex = 27;
+            this.groupBox1.Size = new System.Drawing.Size(125, 48);
+            this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
             // radioN
             // 
             this.radioN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioN.AutoSize = true;
-            this.radioN.Location = new System.Drawing.Point(65, 16);
+            this.radioN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioN.Location = new System.Drawing.Point(61, 11);
             this.radioN.Name = "radioN";
             this.radioN.Size = new System.Drawing.Size(51, 27);
-            this.radioN.TabIndex = 2;
+            this.radioN.TabIndex = 4;
             this.radioN.TabStop = true;
             this.radioN.Text = "No";
             this.radioN.UseVisualStyleBackColor = true;
-            this.radioN.CheckedChanged += new System.EventHandler(this.ConfirmarSuperUsuario);
             // 
             // radioS
             // 
             this.radioS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioS.AutoSize = true;
-            this.radioS.Location = new System.Drawing.Point(6, 16);
+            this.radioS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioS.Location = new System.Drawing.Point(12, 11);
             this.radioS.Name = "radioS";
             this.radioS.Size = new System.Drawing.Size(43, 27);
-            this.radioS.TabIndex = 1;
+            this.radioS.TabIndex = 3;
             this.radioS.TabStop = true;
             this.radioS.Text = "Si";
             this.radioS.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
@@ -156,16 +170,17 @@
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.ImageKey = "delete.png";
             this.btnCancelar.ImageList = this.imageList1;
-            this.btnCancelar.Location = new System.Drawing.Point(808, 69);
+            this.btnCancelar.Location = new System.Drawing.Point(922, 97);
             this.btnCancelar.MaximumSize = new System.Drawing.Size(203, 39);
             this.btnCancelar.MinimumSize = new System.Drawing.Size(203, 39);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 39);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar la edición";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
             // 
             // imageList1
             // 
@@ -176,7 +191,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
@@ -184,32 +199,31 @@
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.ImageKey = "aceptar.png";
             this.btnAceptar.ImageList = this.imageList1;
-            this.btnAceptar.Location = new System.Drawing.Point(808, 14);
+            this.btnAceptar.Location = new System.Drawing.Point(684, 97);
             this.btnAceptar.MaximumSize = new System.Drawing.Size(203, 39);
             this.btnAceptar.MinimumSize = new System.Drawing.Size(203, 39);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(203, 39);
-            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.TabIndex = 5;
             this.btnAceptar.TabStop = false;
             this.btnAceptar.Text = "Aceptar y terminar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
             // 
             // EditAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.ClientSize = new System.Drawing.Size(1140, 353);
             this.Controls.Add(this.tableEditAdmin);
-            this.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditAdmin";
-            this.Size = new System.Drawing.Size(1020, 314);
+            this.Text = "EditAdmin";
+            this.ParentChanged += new System.EventHandler(this.CargarVentana);
             this.tableEditAdmin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridAdmin)).EndInit();
-            this.panelEditSuperUs.ResumeLayout(false);
-            this.panelEditSuperUs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEditAdmin)).EndInit();
+            this.panelOpciones.ResumeLayout(false);
+            this.panelOpciones.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -218,15 +232,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TableLayoutPanel tableEditAdmin;
-        private System.Windows.Forms.Panel panelEditSuperUs;
+        private System.Windows.Forms.Panel panelOpciones;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lbSuperUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioN;
         private System.Windows.Forms.RadioButton radioS;
-        public System.Windows.Forms.DataGridView GridAdmin;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.DataGridView gridEditAdmin;
     }
 }

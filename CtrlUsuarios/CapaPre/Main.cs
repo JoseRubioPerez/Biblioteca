@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CapaPre
 {
-    internal enum TipoIcono { Danger = 1, Warning = 2, Info = 3 }
+    internal enum TypeIcon { Danger = 1, Warning = 2, Info = 3 }
 
     public partial class Main : Form
     {
@@ -14,6 +14,9 @@ namespace CapaPre
 
         private Entidad entidad = new Entidad();
         private Negocio negocio = new Negocio();
+        private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
+        private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
+        private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
 
         #endregion Instancias
 
@@ -25,7 +28,6 @@ namespace CapaPre
             InitializeComponent();
             this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-            OcultarControlUsers();
         }
 
         public Main(string user, string password, char supersu)
@@ -33,41 +35,22 @@ namespace CapaPre
             InitializeComponent();
             this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-            //Entidad
-            entidad.setAdminNC(user);
-            entidad.setAdminPassword(password);
-            entidad.setAdminSuperSu(supersu);
-            //Main -> myPassword1
-            myPassword1.Admin[0] = user;
-            myPassword1.Admin[1] = password;
-            myPassword1.supersu = supersu;
-            //Main -> othersPasswords1
-            othersPasswords1.Admin[0] = user;
-            othersPasswords1.Admin[1] = password;
-            othersPasswords1.supersu = supersu;
-
+            entidad.setAdminNC(user); entidad.setAdminPassword(password); entidad.setAdminSuperSu(supersu);
+            //ChangeMyPassword
+            changeMyPassword.Admin[0] = entidad.getAdminNC();
+            changeMyPassword.Admin[1] = entidad.getAdminPassword();
+            changeMyPassword.supersu = supersu;
             lbTitulo.Text = "Sistema de Control de Usuarios. Bienvenido: " + entidad.getAdminNC();
-            OcultarControlUsers();
         }
 
-        public void OcultarControlUsers()
+        public void MostrarForm(Form Formulario)
         {
-            UserControl[] ctlUser = new UserControl[] { myPassword1, othersPasswords1, newAdmin1 };
-            for (int i = 0; i < ctlUser.Length; i++)
-                ctlUser[i].Visible = false;
-        }
-
-        public void MostrarCtrl(UserControl ctlUser, DockStyle Estilo)
-        {
-            if (ctlUser.Visible)
-                ctlUser.BringToFront();
-            else
-            {
-                ctlUser.Show();
-                ctlUser.BringToFront();
-            }
-            ctlUser.Parent = panelContenido;
-            ctlUser.Dock = Estilo;
+            Formulario.TopLevel = false;
+            Formulario.Parent = panelContenido;
+            Formulario.Dock = DockStyle.Fill;
+            if (Formulario.Visible == false)
+                Formulario.Show();
+            Formulario.BringToFront();
         }
 
         private void EventoClick(object sender, EventArgs e)
@@ -81,7 +64,7 @@ namespace CapaPre
             switch (menu)
             {
                 case 0:
-                    Question pregunta = new Question((byte)TipoIcono.Warning, "Salir", "¿Deseas cerrar el programa?", "Sí aceptas, se cerrará tu sesión actual.", true);
+                    Question pregunta = new Question((byte)TypeIcon.Warning, "Salir", "¿Deseas cerrar el programa?", "Sí aceptas, se cerrará tu sesión actual.", true);
                     DialogResult dr = pregunta.ShowDialog();
                     if (dr == DialogResult.Yes)
                     {
@@ -112,15 +95,15 @@ namespace CapaPre
                     break;
 
                 case 2:
-                    MostrarCtrl(newAdmin1, DockStyle.Fill);
+                    MostrarForm(addEditDeleteAdmin);
                     break;
 
                 case 3:
-                    MostrarCtrl(myPassword1, DockStyle.Fill);
+                    MostrarForm(changeMyPassword);
                     break;
 
                 case 4:
-                    MostrarCtrl(othersPasswords1, DockStyle.Fill);
+                    MostrarForm(changeOthersPasswords);
                     break;
             }
             item = 0;

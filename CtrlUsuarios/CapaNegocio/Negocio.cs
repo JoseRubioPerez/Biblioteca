@@ -89,6 +89,15 @@ namespace CapaNegocio
             return data;
         }
 
+        public DataTable UpdatePermissionAdmin(string nc, char permiso)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(permiso); Parametros.Add("@supersu"); TipoDato.Add((byte)DatoSQL.Char);
+            data = datos.Procedimiento("UpdateAdmin", Valor, Parametros, TipoDato);
+            return data;
+        }
+
         /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
         {
             try

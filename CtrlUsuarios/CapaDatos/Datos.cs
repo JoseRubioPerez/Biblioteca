@@ -24,8 +24,7 @@ namespace CapaDatos
         {
             try
             {
-                cmd = new SqlCommand(NameProcedure, conex);
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd = new SqlCommand(NameProcedure,conex) { CommandType = CommandType.StoredProcedure };
                 SqlParameter[] metodo = new SqlParameter[ValorTexto.Count];
                 for (int i = 0; i < metodo.Length; i++)
                 {
@@ -49,7 +48,7 @@ namespace CapaDatos
                 da.Fill(dt);
                 Console.WriteLine("Compilación: \"P01\" realizada con éxito.");
             }
-            catch (Exception e) { Console.WriteLine("Error: " + e.Message); }
+            catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }
             finally { conex.Close(); }
             return dt;
         }
@@ -58,8 +57,7 @@ namespace CapaDatos
         {
             try
             {
-                cmd = new SqlCommand(NameProcedure, conex);
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd = new SqlCommand(NameProcedure, conex) { CommandType = CommandType.StoredProcedure };
                 conex.Open();
                 cmd.ExecuteNonQuery();
                 conex.Close();
@@ -68,7 +66,7 @@ namespace CapaDatos
                 da.Fill(dt);
                 Console.WriteLine("Compilación: \"P02\" realizada con éxito.");
             }
-            catch (Exception e) { Console.WriteLine("Error: " + e.Message); }
+            catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }
             finally { conex.Close(); }
             return dt;
         }

@@ -32,10 +32,9 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelVentana = new System.Windows.Forms.Panel();
             this.panelContenido = new System.Windows.Forms.Panel();
-            this.othersPasswords1 = new CapaPre.OthersPasswords();
-            this.myPassword1 = new CapaPre.MyPassword();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +42,11 @@
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
-            this.newAdmin1 = new CapaPre.NewAdmin();
             this.panelVentana.SuspendLayout();
-            this.panelContenido.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -60,8 +56,8 @@
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
             this.panelMain.Controls.Add(this.panelVentana);
@@ -77,8 +73,8 @@
             // 
             // panelVentana
             // 
-            this.panelVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.panelVentana.Controls.Add(this.panelContenido);
@@ -91,37 +87,12 @@
             // 
             // panelContenido
             // 
-            this.panelContenido.Controls.Add(this.newAdmin1);
-            this.panelContenido.Controls.Add(this.othersPasswords1);
-            this.panelContenido.Controls.Add(this.myPassword1);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(5)))));
             this.panelContenido.Location = new System.Drawing.Point(0, 59);
             this.panelContenido.Name = "panelContenido";
             this.panelContenido.Size = new System.Drawing.Size(1140, 507);
             this.panelContenido.TabIndex = 1;
-            // 
-            // othersPasswords1
-            // 
-            this.othersPasswords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.othersPasswords1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.othersPasswords1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.othersPasswords1.Location = new System.Drawing.Point(108, 0);
-            this.othersPasswords1.Margin = new System.Windows.Forms.Padding(4);
-            this.othersPasswords1.Name = "othersPasswords1";
-            this.othersPasswords1.Size = new System.Drawing.Size(100, 100);
-            this.othersPasswords1.TabIndex = 1;
-            // 
-            // myPassword1
-            // 
-            this.myPassword1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.myPassword1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.myPassword1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.myPassword1.Location = new System.Drawing.Point(0, 0);
-            this.myPassword1.Margin = new System.Windows.Forms.Padding(4);
-            this.myPassword1.Name = "myPassword1";
-            this.myPassword1.Size = new System.Drawing.Size(100, 100);
-            this.myPassword1.TabIndex = 0;
             // 
             // panelMenuStrip
             // 
@@ -147,6 +118,17 @@
             this.menuStrip1.Size = new System.Drawing.Size(1140, 59);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
+            this.lbTitulo.TabIndex = 3;
+            this.lbTitulo.Text = "Sistema de Control de Usuarios";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usuariosMenu
             // 
@@ -213,7 +195,7 @@
             this.AgregarAdminMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
             this.AgregarAdminMenuItem.Name = "AgregarAdminMenuItem";
             this.AgregarAdminMenuItem.Size = new System.Drawing.Size(336, 22);
-            this.AgregarAdminMenuItem.Text = "Agregar nuevo administrador";
+            this.AgregarAdminMenuItem.Text = "Agregar, editar o eliminar administrador";
             this.AgregarAdminMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
             // 
             // CambiarMiContraMenuItem
@@ -235,17 +217,6 @@
             this.CambiarOtraContraMenuItem.Size = new System.Drawing.Size(336, 22);
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
-            this.lbTitulo.TabIndex = 3;
-            this.lbTitulo.Text = "Sistema de Control de Usuarios";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureIcon
             // 
@@ -283,17 +254,6 @@
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
             // 
-            // newAdmin1
-            // 
-            this.newAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.newAdmin1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.newAdmin1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.newAdmin1.Location = new System.Drawing.Point(216, 0);
-            this.newAdmin1.Margin = new System.Windows.Forms.Padding(4);
-            this.newAdmin1.Name = "newAdmin1";
-            this.newAdmin1.Size = new System.Drawing.Size(100, 100);
-            this.newAdmin1.TabIndex = 2;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -315,7 +275,6 @@
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panelVentana.ResumeLayout(false);
-            this.panelContenido.ResumeLayout(false);
             this.panelMenuStrip.ResumeLayout(false);
             this.panelMenuStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -345,8 +304,5 @@
         private System.Windows.Forms.ToolStripMenuItem CambiarMiContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CambiarOtraContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
-        private MyPassword myPassword1;
-        private OthersPasswords othersPasswords1;
-        private NewAdmin newAdmin1;
     }
 }

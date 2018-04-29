@@ -44,23 +44,24 @@ namespace CapaPre
                     dt = negocio.Sesion(txtUser.Text.Trim(), txtPassword.Text.Trim());
                     try
                     {
-                        if (dt.Rows.Count > 0)
+                        if (dt.Rows.Count > 0 && dt.Columns.Count == 3)
                         {
-                            Main main = new Main(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), Convert.ToChar(dt.Rows[0][2].ToString()));
+                            Main main = new Main(dt.Rows[0]["nc"].ToString(), dt.Rows[0]["password"].ToString(), Convert.ToChar(dt.Rows[0]["superus"].ToString()));
                             main.Show();
                             this.Hide();
                         }
                         else
                         {
-                            Question pregunta = new Question((byte)TipoIcono.Danger, "Inicio de Sesión", "Usuario o contraseña incorrecta", "Verifica que el usuario y\ncontraseña sean correctos.", false);
+                            Question pregunta = new Question((byte)TypeIcon.Danger, "Inicio de Sesión", "Usuario o contraseña incorrecta", "Verifica que el usuario y\ncontraseña sean correctos.", false);
                             pregunta.Show();
                             pregunta.Focus();
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        Question pregunta = new Question((byte)TipoIcono.Danger, "Error de conexión", "Error al conectar a la base de datos", "1. Verifique que su archivo App.config tenga escrito correctamente el nombre " +
+                        Question pregunta = new Question((byte)TypeIcon.Danger, "Error de conexión", "Error al conectar a la base de datos", "1. Verifique que su archivo App.config tenga escrito correctamente el nombre " +
                             "de su instancia SQL y el nombre de pase de datos.\n2. Asegurse de que en su manejador de base de datos tenga la base de datos \"pBiblioteca\".", false);
+                        MessageBox.Show(ex.ToString());
                         pregunta.Show();
                         pregunta.Focus();
                     }
