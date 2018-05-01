@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class Negocio
     {
-        internal enum DatoSQL { VarChar = 1, Char = 2, Int = 3, Date = 6, Time = 7, Image = 8 }
+        internal enum DatoSQL { VarChar = 1, Char = 2, Int = 3, Date = 4, Time = 5, Image = 6 }
 
         #region Instancias
 
@@ -28,6 +28,16 @@ namespace CapaNegocio
             Parametros.Add("@user"); Parametros.Add("@pass");
             TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar);
             data = datos.Procedimiento("Logeo", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable Registry(string nc, byte servicio)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(nc); Valor.Add(servicio);
+            Parametros.Add("@nc"); Parametros.Add("@servicio");
+            TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.Int);
+            data = datos.Procedimiento("NewMove", Valor, Parametros, TipoDato);
             return data;
         }
     }

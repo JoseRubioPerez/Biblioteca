@@ -26,7 +26,7 @@ namespace CapaPre
 
         private void LogIn_Load(object sender, EventArgs e)
         {
-            txtUser.Text = "Usuario";
+            txtUser.Text = "Número de Control";
             txtPassword.Text = "Contraseña";
         }
 
@@ -80,17 +80,17 @@ namespace CapaPre
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Usuario" || txtUser.Text == "")
+            if (txtUser.Text == "Número de Control" || txtUser.Text == "")
                 txtUser.Text = "";
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
         {
             placeholderUser = txtUser.Text.Trim();
-            if (placeholderUser.Equals("Usuario"))
-                txtUser.Text = "Usuario";
+            if (placeholderUser.Equals("Número de Control"))
+                txtUser.Text = "Número de Control";
             else
-                txtUser.Text = (placeholderUser.Equals("")) ? "Usuario" : placeholderUser;
+                txtUser.Text = (placeholderUser.Equals("")) ? "Número de Control" : placeholderUser;
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)

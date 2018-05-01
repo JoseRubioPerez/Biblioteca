@@ -173,6 +173,16 @@ namespace CapaPre.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Moves {
+            get {
+                object obj = ResourceManager.GetObject("Moves", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seach {
             get {
                 object obj = ResourceManager.GetObject("seach", resourceCulture);

@@ -14,6 +14,7 @@ namespace CapaPre
 
         private Entidad entidad = new Entidad();
         private Negocio negocio = new Negocio();
+        Users usuarios = new Users();
         private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
         private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
         private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
@@ -40,7 +41,6 @@ namespace CapaPre
             changeMyPassword.Admin[0] = entidad.getAdminNC();
             changeMyPassword.Admin[1] = entidad.getAdminPassword();
             changeMyPassword.supersu = supersu;
-            lbTitulo.Text = "Sistema de Control de Usuarios. Bienvenido: " + entidad.getAdminNC();
         }
 
         public void MostrarForm(Form Formulario)
@@ -91,20 +91,12 @@ namespace CapaPre
             }
             switch (item)
             {
-                case 0:
+                case 0: MostrarForm(usuarios); break;
+                case 1:
                     break;
-
-                case 2:
-                    MostrarForm(addEditDeleteAdmin);
-                    break;
-
-                case 3:
-                    MostrarForm(changeMyPassword);
-                    break;
-
-                case 4:
-                    MostrarForm(changeOthersPasswords);
-                    break;
+                case 2: MostrarForm(addEditDeleteAdmin); break;
+                case 3: MostrarForm(changeMyPassword); break;
+                case 4: MostrarForm(changeOthersPasswords); break;
             }
             item = 0;
         }
@@ -156,6 +148,11 @@ namespace CapaPre
 
         private void Main_Load(object sender, EventArgs e)
         {
+            lbTitulo.Text = "Sistema de Control de Usuarios. Bienvenido: " +
+                negocio.ExistUserOrAdmin(entidad.getAdminNC(), "ExistAdmin").Rows[0]["nombres"].ToString() + " " +
+                negocio.ExistUserOrAdmin(entidad.getAdminNC(), "ExistAdmin").Rows[0]["apellidopat"].ToString() + " " +
+                negocio.ExistUserOrAdmin(entidad.getAdminNC(), "ExistAdmin").Rows[0]["apellidomat"].ToString();
+
             if (entidad.getAdminSuperSu() == 'S')
             {
                 AgregarAdminMenuItem.Visible = true;
