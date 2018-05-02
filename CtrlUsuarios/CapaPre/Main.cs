@@ -71,7 +71,10 @@ namespace CapaPre
                         LogOut logout = new LogOut(entidad.getAdminNC(), entidad.getAdminPassword());
                         logout.ShowDialog();
                         if (logout.ConfirmacionCerrar())
+                        {
+                            negocio.Bitacora(entidad.getAdminNC(), "Control de Usuarios", "Salida");
                             Application.Exit();
+                        }
                     }
                     break;
 

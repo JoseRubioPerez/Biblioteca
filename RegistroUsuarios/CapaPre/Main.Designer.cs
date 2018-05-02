@@ -47,6 +47,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNumControl = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTitulo = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.lbIcon = new System.Windows.Forms.Label();
             this.Temporizador = new System.Windows.Forms.Timer(this.components);
-            this.lbInfo = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelListaServicios.SuspendLayout();
@@ -249,7 +249,7 @@
             // 
             this.comboServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboServicio.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.comboServicio.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboServicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
             this.comboServicio.FormattingEnabled = true;
             this.comboServicio.Items.AddRange(new object[] {
@@ -264,7 +264,7 @@
             this.comboServicio.Name = "comboServicio";
             this.comboServicio.Size = new System.Drawing.Size(335, 37);
             this.comboServicio.TabIndex = 2;
-            this.comboServicio.SelectedIndexChanged += new System.EventHandler(this.TipoServicio);
+            this.comboServicio.TabIndexChanged += new System.EventHandler(this.comboServicio_TabIndexChanged);
             // 
             // panel3
             // 
@@ -278,9 +278,10 @@
             // 
             this.txtNumControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.txtNumControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumControl.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.txtNumControl.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
             this.txtNumControl.Location = new System.Drawing.Point(310, 29);
+            this.txtNumControl.MaxLength = 9;
             this.txtNumControl.Name = "txtNumControl";
             this.txtNumControl.Size = new System.Drawing.Size(335, 29);
             this.txtNumControl.TabIndex = 1;
@@ -294,6 +295,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1230, 223);
             this.panel5.TabIndex = 21;
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.lbInfo.Location = new System.Drawing.Point(506, 98);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(219, 27);
+            this.lbInfo.TabIndex = 5;
+            this.lbInfo.Text = "Servicios disponibles:";
             // 
             // tableLayoutPanel1
             // 
@@ -407,17 +419,6 @@
             // 
             this.Temporizador.Enabled = true;
             this.Temporizador.Tick += new System.EventHandler(this.HoraActual);
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.lbInfo.Location = new System.Drawing.Point(506, 98);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(219, 27);
-            this.lbInfo.TabIndex = 5;
-            this.lbInfo.Text = "Servicios disponibles:";
             // 
             // Main
             // 

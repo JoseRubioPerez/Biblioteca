@@ -6,12 +6,6 @@ namespace CapaPre
 {
     public partial class LogOut : Form
     {
-        #region Instancias
-
-        private Negocio negocio = new Negocio();
-
-        #endregion Instancias
-
         //private DataTable dt;
         private Control[] arreglo;
 

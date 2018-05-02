@@ -86,8 +86,7 @@ CREATE PROCEDURE NewMove
 @nc VARCHAR(9),
 @servicio TINYINT
 AS
-INSERT INTO dbo.Movimientos (nc,servicio, hora,fecha)
-VALUES (@nc,@servicio,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
+INSERT INTO dbo.Movimientos (nc,servicio, hora,fecha) VALUES (@nc,@servicio,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
 GO
 
 --SP PARA REGISTRAR EL INICIO DE SESIÓN DE UN ADMINISTRADOR
@@ -96,4 +95,15 @@ CREATE PROCEDURE AddRegistry
 @sistema VARCHAR(10)
 AS
 INSERT INTO dbo.RegLogeo (nc,sistema,hora,fecha) VALUES (@nc,@sistema,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
+GO
+
+--SP PARA REGISTRAR EN LA BITACORA EL INICIO DE SESIÓN DE UN ADMINISTRADOR
+CREATE PROCEDURE Bitacora
+@nc VARCHAR(9),
+@sistema VARCHAR(20),
+@accion VARCHAR(7)
+AS
+BEGIN
+INSERT INTO dbo.RegLogeo (nc,sistema, hora,fecha,accion) VALUES (@nc,@sistema,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),@accion)
+END
 GO

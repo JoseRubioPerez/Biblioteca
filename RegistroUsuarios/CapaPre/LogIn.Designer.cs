@@ -1,6 +1,6 @@
 ﻿namespace CapaPre
 {
-    partial class LogOut
+    partial class LogIn
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogOut));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.panelLogOut = new System.Windows.Forms.Panel();
             this.panelContenido = new System.Windows.Forms.Panel();
             this.panelButtons = new System.Windows.Forms.Panel();
             this.lbError = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.panelTabla = new System.Windows.Forms.Panel();
             this.TablaLogOut = new System.Windows.Forms.TableLayoutPanel();
             this.lbTitulo = new System.Windows.Forms.Label();
@@ -46,9 +44,11 @@
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbNumControl = new System.Windows.Forms.Label();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.lbIcon = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
-            this.lbIcon = new System.Windows.Forms.Label();
             this.panelLogOut.SuspendLayout();
             this.panelContenido.SuspendLayout();
             this.panelButtons.SuspendLayout();
@@ -67,11 +67,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogOut.Controls.Add(this.panelContenido);
             this.panelLogOut.Controls.Add(this.panelTitulo);
+            this.panelLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.panelLogOut.Location = new System.Drawing.Point(10, 10);
             this.panelLogOut.Margin = new System.Windows.Forms.Padding(1);
             this.panelLogOut.Name = "panelLogOut";
             this.panelLogOut.Size = new System.Drawing.Size(556, 293);
-            this.panelLogOut.TabIndex = 0;
+            this.panelLogOut.TabIndex = 1;
             // 
             // panelContenido
             // 
@@ -105,34 +106,6 @@
             this.lbError.Size = new System.Drawing.Size(0, 23);
             this.lbError.TabIndex = 6;
             this.lbError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackgroundImage = global::CapaPre.Properties.Resources.delete;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(488, 3);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackgroundImage = global::CapaPre.Properties.Resources.aceptar;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(427, 3);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
             // 
             // panelTabla
             // 
@@ -260,6 +233,44 @@
             this.panelTitulo.Size = new System.Drawing.Size(556, 73);
             this.panelTitulo.TabIndex = 0;
             // 
+            // lbIcon
+            // 
+            this.lbIcon.AutoSize = true;
+            this.lbIcon.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIcon.Location = new System.Drawing.Point(55, 27);
+            this.lbIcon.Name = "lbIcon";
+            this.lbIcon.Size = new System.Drawing.Size(141, 23);
+            this.lbIcon.TabIndex = 3;
+            this.lbIcon.Text = "Iniciar Sesión";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackgroundImage = global::CapaPre.Properties.Resources.delete;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(488, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackgroundImage = global::CapaPre.Properties.Resources.aceptar;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(427, 3);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
+            // 
             // pictureClose
             // 
             this.pictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -275,7 +286,7 @@
             // 
             // pictureIcon
             // 
-            this.pictureIcon.Image = global::CapaPre.Properties.Resources.danger;
+            this.pictureIcon.Image = global::CapaPre.Properties.Resources.login;
             this.pictureIcon.Location = new System.Drawing.Point(19, 21);
             this.pictureIcon.Name = "pictureIcon";
             this.pictureIcon.Size = new System.Drawing.Size(30, 30);
@@ -283,17 +294,7 @@
             this.pictureIcon.TabIndex = 2;
             this.pictureIcon.TabStop = false;
             // 
-            // lbIcon
-            // 
-            this.lbIcon.AutoSize = true;
-            this.lbIcon.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIcon.Location = new System.Drawing.Point(55, 27);
-            this.lbIcon.Name = "lbIcon";
-            this.lbIcon.Size = new System.Drawing.Size(186, 23);
-            this.lbIcon.TabIndex = 3;
-            this.lbIcon.Text = "Salir del programa";
-            // 
-            // LogOut
+            // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -301,13 +302,12 @@
             this.ClientSize = new System.Drawing.Size(576, 313);
             this.Controls.Add(this.panelLogOut);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "LogOut";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cerrar programa";
+            this.Text = "LogIn";
             this.panelLogOut.ResumeLayout(false);
             this.panelContenido.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
@@ -328,24 +328,24 @@
         #endregion
 
         private System.Windows.Forms.Panel panelLogOut;
-        private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Panel panelContenido;
-        private System.Windows.Forms.PictureBox pictureIcon;
-        private System.Windows.Forms.Label lbIcon;
-        private System.Windows.Forms.PictureBox pictureClose;
         private System.Windows.Forms.Panel panelButtons;
+        private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panelTabla;
         private System.Windows.Forms.TableLayoutPanel TablaLogOut;
         private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panelUsuario;
-        private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.Label lbNumControl;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Panel panelPassword;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Label lbPassword;
+        private System.Windows.Forms.Label lbNumControl;
+        private System.Windows.Forms.Panel panelTitulo;
+        private System.Windows.Forms.PictureBox pictureClose;
+        private System.Windows.Forms.PictureBox pictureIcon;
+        private System.Windows.Forms.Label lbIcon;
     }
 }

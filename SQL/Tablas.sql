@@ -46,6 +46,7 @@ fecha DATE NOT NULL)
 CREATE TABLE RegLogeo(
 registro INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 nc VARCHAR(9) NOT NULL,
-sistema VARCHAR(10),
+sistema VARCHAR(20) NOT NULL,
 hora TIME(7),
-fecha DATE)
+fecha DATE,
+accion VARCHAR(7) NOT NULL)

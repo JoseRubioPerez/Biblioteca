@@ -1,16 +1,21 @@
-﻿using CapaNegocio;
-using System;
-using System.Data;
+﻿using System;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPre
 {
-    public partial class LogOut : Form
+    public partial class LogIn : Form
     {
         private Control[] arreglo;
         private byte menu;
 
-        public LogOut()
+        #region Instancias
+
+        Negocio negocio = new Negocio();
+
+        #endregion
+
+        public LogIn()
         {
             InitializeComponent();
             lbError.Text = "";
@@ -27,12 +32,12 @@ namespace CapaPre
             switch (menu)
             {
                 case 0:
-                    Negocio negocio = new Negocio();
-                    DataTable dt = negocio.Sesion(txtUser.Text.Trim(), txtPassword.Text.Trim());
-                    if (dt.Rows.Count > 0)
+                    if (negocio.Sesion(txtUser.Text.Trim(), txtPassword.Text.Trim()).Rows.Count > 0)
                     {
-                        negocio.Bitacora(txtUser.Text.Trim(), "Registro de Usuarios", "Salida");
-                        Application.Exit();
+                        negocio.Bitacora(txtUser.Text.Trim(), "Registro de Usuarios","Entrada");
+                        Main main = new Main();
+                        main.Show();
+                        this.Hide();
                     }
                     else
                     {
