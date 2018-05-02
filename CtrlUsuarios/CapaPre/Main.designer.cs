@@ -42,6 +42,7 @@
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MovimientosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
@@ -111,6 +112,7 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosMenu,
+            this.MovimientosMenu,
             this.reportesMenu,
             this.configuracionMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -141,6 +143,7 @@
             this.usuariosMenu.Size = new System.Drawing.Size(139, 55);
             this.usuariosMenu.Text = "Usuarios";
             this.usuariosMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.usuariosMenu.Click += new System.EventHandler(this.EventoClickMenuItem);
             this.usuariosMenu.MouseEnter += new System.EventHandler(this.CambiarColorMenuItem);
             this.usuariosMenu.MouseLeave += new System.EventHandler(this.ResetColorMenuItem);
             // 
@@ -217,6 +220,16 @@
             this.CambiarOtraContraMenuItem.Size = new System.Drawing.Size(336, 22);
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // MovimientosMenu
+            // 
+            this.MovimientosMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.MovimientosMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.MovimientosMenu.Image = global::CapaPre.Properties.Resources.Moves;
+            this.MovimientosMenu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MovimientosMenu.Name = "MovimientosMenu";
+            this.MovimientosMenu.Size = new System.Drawing.Size(262, 55);
+            this.MovimientosMenu.Text = "Movimiento de usuarios";
             // 
             // pictureIcon
             // 
@@ -304,5 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem CambiarMiContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CambiarOtraContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MovimientosMenu;
     }
 }

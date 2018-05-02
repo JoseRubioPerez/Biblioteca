@@ -70,5 +70,21 @@ namespace CapaDatos
             finally { conex.Close(); }
             return dt;
         }
+
+        public void Insersion(string NameProcedure, List<object> ValorTexto, List<string> NombreParametro)
+        {
+            try
+            {
+                cmd = new SqlCommand(NameProcedure, conex) { CommandType = CommandType.StoredProcedure };
+                for (int i = 0; i < ValorTexto.Count; i++)
+                    cmd.Parameters.AddWithValue(NombreParametro[i], ValorTexto[i]);
+                conex.Open();
+                cmd.ExecuteNonQuery();
+                conex.Close();
+                Console.WriteLine("Compilación: \"P01\" realizada con éxito.");
+            }
+            catch (Exception e) { Console.WriteLine("Error: " + e.Message); }
+            finally { conex.Close(); }
+        }
     }
 }

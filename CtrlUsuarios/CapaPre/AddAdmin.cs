@@ -19,7 +19,7 @@ namespace CapaPre
 
         #endregion Instancias
 
-        private string[] ColumnasAddAdmmin = new string[] { "Número de Control", "Nombres", "Apellido Paterno", "Apellido Materno", "Sexo", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
+        private string[] ColumnasAddAdmmin = new string[] { "Número de Control", "Nombres", "Apellido Paterno", "Apellido Materno", "Sexo", "Carrera / Departamento", "Activo / Inactivo", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
         DialogResult dr;
         private Control[] arreglo;
         private byte menu;
@@ -49,6 +49,8 @@ namespace CapaPre
             gridAddAdmin.DataSource = negocio.SelectAll("CargarUsuarios");
             for (byte i = 0; i < gridAddAdmin.Columns.Count; i++)
                 gridAddAdmin.Columns[i].HeaderText = ColumnasAddAdmmin[i];
+            for (int i = 0; i < gridAddAdmin.Rows.Count; i++)
+                gridAddAdmin.Rows[i].Cells["hora"].Value = gridAddAdmin.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
         }
 
         private void EventoClick(object sender, EventArgs e)
