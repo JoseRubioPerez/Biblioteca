@@ -26,7 +26,7 @@ namespace CapaPre
 
         private void LogIn_Load(object sender, EventArgs e)
         {
-            txtUser.Text = "Usuario";
+            txtUser.Text = "Número de Control";
             txtPassword.Text = "Contraseña";
         }
 
@@ -46,6 +46,8 @@ namespace CapaPre
                     {
                         if (dt.Rows.Count > 0 && dt.Columns.Count == 3)
                         {
+
+                            negocio.Bitacora(txtUser.Text.Trim(), "Control de Usuarios", "Entrada");
                             Main main = new Main(dt.Rows[0]["nc"].ToString(), dt.Rows[0]["password"].ToString(), Convert.ToChar(dt.Rows[0]["superus"].ToString()));
                             main.Show();
                             this.Hide();
@@ -80,17 +82,17 @@ namespace CapaPre
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Usuario" || txtUser.Text == "")
+            if (txtUser.Text == "Número de Control" || txtUser.Text == "")
                 txtUser.Text = "";
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
         {
             placeholderUser = txtUser.Text.Trim();
-            if (placeholderUser.Equals("Usuario"))
-                txtUser.Text = "Usuario";
+            if (placeholderUser.Equals("Número de Control"))
+                txtUser.Text = "Número de Control";
             else
-                txtUser.Text = (placeholderUser.Equals("")) ? "Usuario" : placeholderUser;
+                txtUser.Text = (placeholderUser.Equals("")) ? "Número de Control" : placeholderUser;
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)

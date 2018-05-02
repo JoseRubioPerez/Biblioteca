@@ -40,10 +40,8 @@ namespace CapaPre
         private int NumeroDeSuperUsuarios()
         {
             for (int i = 0; i < gridEditAdmin.Rows.Count; i++)
-            {
                 if (Convert.ToChar(gridEditAdmin.Rows[i].Cells[7].Value.ToString()) == 'S')
                     suma++;
-            }
             return suma;
         }
 

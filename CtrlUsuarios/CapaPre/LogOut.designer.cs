@@ -211,8 +211,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(296, 19);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            this.txtPassword.Enter += new System.EventHandler(this.PasswordEnter);
+            this.txtPassword.Leave += new System.EventHandler(this.PasswordLeave);
             // 
             // txtUser
             // 
@@ -225,8 +225,8 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(296, 19);
             this.txtUser.TabIndex = 1;
-            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
-            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
+            this.txtUser.Enter += new System.EventHandler(this.UserEnter);
+            this.txtUser.Leave += new System.EventHandler(this.UserLeave);
             // 
             // panelTitulo
             // 

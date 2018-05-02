@@ -6,7 +6,6 @@ using System.Windows.Forms;
 
 namespace CapaPre
 {
-    internal enum Servicio { ConsultaReferncia = 1, BasesDeDatos = 2, Cubiculos = 3, SalaTrabajoEquipo = 4, SalaLecutra = 5, Banios = 6, Otros = 7 }
 
     public partial class Main : Form
     {
@@ -16,17 +15,45 @@ namespace CapaPre
 
         #endregion Instancias
 
+        byte i = 0;
+        string numControl = "";
+
         public Main()
         {
             InitializeComponent();
             lbFecha.Text = DateTime.Now.ToLongDateString();
             this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+            lbInfo.Text = "";
         }
 
-        private void HoraActual(object sender, EventArgs e)
+        private void RegistrarMovimiento(object sender, EventArgs e)
         {
-            lbHora.Text = DateTime.Now.ToLongTimeString();
+            try
+            {
+                if (comboServicio.SelectedIndex != -1 && txtNumControl.Text != "" && (txtNumControl.Text.Length >= 8 || txtNumControl.Text.Length <= 9))
+                {
+                    negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte((comboServicio.SelectedIndex + 1)));
+                    lbInfo.Text = "Por favor, ingresa en menos de: ";
+                    //Activar temporizador en el lbInfo
+                }
+                else
+                    lbInfo.Text = "Selecciona un servicio, por favor.";
+            }catch(Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
+
+        private void ValidarNumControl(object sender, EventArgs e)
+        {
+            txtNumControl.Text.ToLower();
+            switch (txtNumControl.Text[0]) { case 'c': case 'b': txtNumControl.MaxLength = 9; i = 1; break; default: txtNumControl.MaxLength = 8; i = 0; break; }
+            for (; i < txtNumControl.Text.Length; i++)
+                txtNumControl.Text = (char.IsNumber(txtNumControl.Text[i])) ? txtNumControl.Text : txtNumControl.Text.Replace(txtNumControl.Text[i], '\0');
+            Regex.Replace(txtNumControl.Text, "[d-z|\\s|\\W|añ]+", "");
+            txtNumControl.Select(txtNumControl.Text.Length, 0);
+            //14 54 00 74
+            //01 23 45 67
+            /*txtNumControl.Text = (txtNumControl.Text[2] != '5') ? txtNumControl.Text.Substring(2, 1) : txtNumControl.Text;
+            txtNumControl.Text = (txtNumControl.Text[3] != '4') ? txtNumControl.Text.Substring(3, 1) : txtNumControl.Text;*/
         }
 
         private void CancelarF4(object sender, FormClosingEventArgs e)
@@ -44,15 +71,11 @@ namespace CapaPre
             logout.Show();
         }
 
-        private void ValidarNumControl(object sender, EventArgs e)
+        private void HoraActual(object sender, EventArgs e) { lbHora.Text = DateTime.Now.ToLongTimeString(); }
+
+        private void comboServicio_TabIndexChanged(object sender, EventArgs e)
         {
-            //[b-c]{2,}
-            //(bc){2,}
-            if (Regex.IsMatch(txtNumControl.Text, "(cb)?[A-Z|d-z|\\s|\\D|añÑ]+") || txtNumControl.Text.Length > 8)
-            {
-                txtNumControl.Text = txtNumControl.Text.Substring(0, (txtNumControl.Text.Length - 1));
-            }
-            txtNumControl.Select(txtNumControl.Text.Length, 0);
+
         }
     }
 }

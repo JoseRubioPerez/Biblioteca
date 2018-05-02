@@ -98,6 +98,14 @@ namespace CapaNegocio
             return data;
         }
 
+        public void Bitacora(string nc, string sistema, string accion)
+        {
+            Valor.Clear(); Parametros.Clear();
+            Valor.Add(nc); Valor.Add(sistema); Valor.Add(accion);
+            Parametros.Add("@nc"); Parametros.Add("@sistema"); Parametros.Add("@accion");
+            datos.Insersion("Bitacora", Valor, Parametros);
+        }
+
         /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
         {
             try

@@ -32,6 +32,10 @@
             this.lbTitulo = new System.Windows.Forms.Label();
             this.TableChangePassword = new System.Windows.Forms.TableLayoutPanel();
             this.panelChangePassword = new System.Windows.Forms.Panel();
+            this.pictureShowPass2 = new System.Windows.Forms.PictureBox();
+            this.pictureShowPass1 = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.panelConfirmPassword = new System.Windows.Forms.Panel();
             this.panelNewPassword = new System.Windows.Forms.Panel();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -40,20 +44,16 @@
             this.lbNewPassword = new System.Windows.Forms.Label();
             this.TableEditAdmin = new System.Windows.Forms.TableLayoutPanel();
             this.panelEditAdmin = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.comboAdministrador = new System.Windows.Forms.ComboBox();
             this.lbAdministrador = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.pictureShowPass1 = new System.Windows.Forms.PictureBox();
-            this.pictureShowPass2 = new System.Windows.Forms.PictureBox();
             this.tableOthersPasswords.SuspendLayout();
             this.TableChangePassword.SuspendLayout();
             this.panelChangePassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).BeginInit();
             this.TableEditAdmin.SuspendLayout();
             this.panelEditAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableOthersPasswords
@@ -77,13 +77,12 @@
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 21.75F);
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.Location = new System.Drawing.Point(3, 0);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(1134, 99);
             this.lbTitulo.TabIndex = 0;
-            this.lbTitulo.Text = "Aquí podrás cambiar las contraseñas de otros administradores\r\nRecuerda ser cuidad" +
-    "oso y no abusar de los cambios de contraseña";
+            this.lbTitulo.Text = "Puedes cambiar la contraseña de otro administrador NO super usuario del sistema";
             this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TableChangePassword
@@ -118,6 +117,78 @@
             this.panelChangePassword.Name = "panelChangePassword";
             this.panelChangePassword.Size = new System.Drawing.Size(787, 310);
             this.panelChangePassword.TabIndex = 3;
+            // 
+            // pictureShowPass2
+            // 
+            this.pictureShowPass2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureShowPass2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureShowPass2.Image = global::CapaPre.Properties.Resources.Showpass;
+            this.pictureShowPass2.Location = new System.Drawing.Point(650, 143);
+            this.pictureShowPass2.MaximumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.MinimumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.Name = "pictureShowPass2";
+            this.pictureShowPass2.Size = new System.Drawing.Size(30, 30);
+            this.pictureShowPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureShowPass2.TabIndex = 11;
+            this.pictureShowPass2.TabStop = false;
+            this.pictureShowPass2.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // pictureShowPass1
+            // 
+            this.pictureShowPass1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureShowPass1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureShowPass1.Image = global::CapaPre.Properties.Resources.Showpass;
+            this.pictureShowPass1.Location = new System.Drawing.Point(650, 53);
+            this.pictureShowPass1.MaximumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass1.MinimumSize = new System.Drawing.Size(30, 30);
+            this.pictureShowPass1.Name = "pictureShowPass1";
+            this.pictureShowPass1.Size = new System.Drawing.Size(30, 30);
+            this.pictureShowPass1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureShowPass1.TabIndex = 10;
+            this.pictureShowPass1.TabStop = false;
+            this.pictureShowPass1.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackgroundImage = global::CapaPre.Properties.Resources.delete;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(640, 217);
+            this.btnCancelar.MaximumSize = new System.Drawing.Size(40, 40);
+            this.btnCancelar.MinimumSize = new System.Drawing.Size(40, 40);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.BackgroundImage = global::CapaPre.Properties.Resources.aceptar;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(569, 217);
+            this.btnAceptar.MaximumSize = new System.Drawing.Size(40, 40);
+            this.btnAceptar.MinimumSize = new System.Drawing.Size(40, 40);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
+            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
             // 
             // panelConfirmPassword
             // 
@@ -161,7 +232,7 @@
             this.txtConfirmPassword.MinimumSize = new System.Drawing.Size(290, 20);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(290, 20);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(290, 26);
             this.txtConfirmPassword.TabIndex = 5;
             // 
             // txtNewPassword
@@ -178,7 +249,7 @@
             this.txtNewPassword.MinimumSize = new System.Drawing.Size(290, 20);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(290, 20);
+            this.txtNewPassword.Size = new System.Drawing.Size(290, 26);
             this.txtNewPassword.TabIndex = 4;
             // 
             // lbConfirmPassword
@@ -237,6 +308,24 @@
             this.panelEditAdmin.Size = new System.Drawing.Size(787, 74);
             this.panelEditAdmin.TabIndex = 2;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.BackgroundImage = global::CapaPre.Properties.Resources.seach;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(730, 17);
+            this.btnBuscar.MaximumSize = new System.Drawing.Size(40, 40);
+            this.btnBuscar.MinimumSize = new System.Drawing.Size(40, 40);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 40);
+            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.EventoClick);
+            // 
             // comboAdministrador
             // 
             this.comboAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -264,96 +353,6 @@
             this.lbAdministrador.Text = "Administrador:";
             this.lbAdministrador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackgroundImage = global::CapaPre.Properties.Resources.delete;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(640, 217);
-            this.btnCancelar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.btnCancelar.MinimumSize = new System.Drawing.Size(40, 40);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackgroundImage = global::CapaPre.Properties.Resources.aceptar;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(569, 217);
-            this.btnAceptar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.btnAceptar.MinimumSize = new System.Drawing.Size(40, 40);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
-            this.btnAceptar.TabIndex = 8;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.BackgroundImage = global::CapaPre.Properties.Resources.seach;
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(730, 17);
-            this.btnBuscar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.btnBuscar.MinimumSize = new System.Drawing.Size(40, 40);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 40);
-            this.btnBuscar.TabIndex = 10;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // pictureShowPass1
-            // 
-            this.pictureShowPass1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureShowPass1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureShowPass1.Image = global::CapaPre.Properties.Resources.Showpass;
-            this.pictureShowPass1.Location = new System.Drawing.Point(650, 53);
-            this.pictureShowPass1.MaximumSize = new System.Drawing.Size(30, 30);
-            this.pictureShowPass1.MinimumSize = new System.Drawing.Size(30, 30);
-            this.pictureShowPass1.Name = "pictureShowPass1";
-            this.pictureShowPass1.Size = new System.Drawing.Size(30, 30);
-            this.pictureShowPass1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureShowPass1.TabIndex = 10;
-            this.pictureShowPass1.TabStop = false;
-            this.pictureShowPass1.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // pictureShowPass2
-            // 
-            this.pictureShowPass2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureShowPass2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureShowPass2.Image = global::CapaPre.Properties.Resources.Showpass;
-            this.pictureShowPass2.Location = new System.Drawing.Point(650, 143);
-            this.pictureShowPass2.MaximumSize = new System.Drawing.Size(30, 30);
-            this.pictureShowPass2.MinimumSize = new System.Drawing.Size(30, 30);
-            this.pictureShowPass2.Name = "pictureShowPass2";
-            this.pictureShowPass2.Size = new System.Drawing.Size(30, 30);
-            this.pictureShowPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureShowPass2.TabIndex = 11;
-            this.pictureShowPass2.TabStop = false;
-            this.pictureShowPass2.Click += new System.EventHandler(this.EventoClick);
-            // 
             // ChangeOthersPasswords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -367,11 +366,11 @@
             this.TableChangePassword.ResumeLayout(false);
             this.panelChangePassword.ResumeLayout(false);
             this.panelChangePassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).EndInit();
             this.TableEditAdmin.ResumeLayout(false);
             this.panelEditAdmin.ResumeLayout(false);
             this.panelEditAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPass2)).EndInit();
             this.ResumeLayout(false);
 
         }

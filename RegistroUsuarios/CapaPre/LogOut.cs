@@ -30,7 +30,10 @@ namespace CapaPre
                     Negocio negocio = new Negocio();
                     DataTable dt = negocio.Sesion(txtUser.Text.Trim(), txtPassword.Text.Trim());
                     if (dt.Rows.Count > 0)
+                    {
+                        negocio.Bitacora(txtUser.Text.Trim(), "Registro de Usuarios", "Salida");
                         Application.Exit();
+                    }
                     else
                     {
                         txtUser.Text = "";
