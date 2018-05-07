@@ -57,10 +57,8 @@ namespace CapaPre
         {
             arreglo = new Control[] { pictureClose, pictureMinimize };
             for (; menu < arreglo.Length; menu++)
-            {
                 if (arreglo[menu] == sender)
                     break;
-            }
             switch (menu)
             {
                 case 0:
@@ -88,10 +86,8 @@ namespace CapaPre
             byte item = 0;
             ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, ImportarUsuariosMenuItem, AgregarAdminMenuItem, CambiarMiContraMenuItem, CambiarOtraContraMenuItem };
             for (; item < menuitem.Length; item++)
-            {
                 if (menuitem[item] == sender)
                     break;
-            }
             switch (item)
             {
                 case 0: MostrarForm(usuarios); break;

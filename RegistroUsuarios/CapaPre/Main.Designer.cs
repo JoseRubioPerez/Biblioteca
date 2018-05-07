@@ -34,16 +34,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelListaServicios = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbCarreraDepa = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtServicio = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboServicio = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNumControl = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -58,11 +59,12 @@
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.lbIcon = new System.Windows.Forms.Label();
             this.Temporizador = new System.Windows.Forms.Timer(this.components);
+            this.TiempoParaPasar = new System.Windows.Forms.Timer(this.components);
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelListaServicios.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -114,9 +116,9 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Controls.Add(this.label6, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbCarreraDepa, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbNombre, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.pictureFoto, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.MaximumSize = new System.Drawing.Size(558, 345);
             this.tableLayoutPanel2.MinimumSize = new System.Drawing.Size(558, 345);
@@ -128,51 +130,52 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(558, 345);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // label6
+            // lbCarreraDepa
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.label6.Location = new System.Drawing.Point(30, 310);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(496, 35);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Carrera / Departamento";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCarreraDepa.AutoSize = true;
+            this.lbCarreraDepa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCarreraDepa.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lbCarreraDepa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.lbCarreraDepa.Location = new System.Drawing.Point(30, 310);
+            this.lbCarreraDepa.Name = "lbCarreraDepa";
+            this.lbCarreraDepa.Size = new System.Drawing.Size(496, 35);
+            this.lbCarreraDepa.TabIndex = 6;
+            this.lbCarreraDepa.Text = "Carrera / Departamento";
+            this.lbCarreraDepa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lbNombre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.label5.Location = new System.Drawing.Point(30, 276);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(496, 34);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Nombre del Usuario";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbNombre.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lbNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.lbNombre.Location = new System.Drawing.Point(30, 276);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(496, 34);
+            this.lbNombre.TabIndex = 5;
+            this.lbNombre.Text = "Nombre del Usuario";
+            this.lbNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // pictureFoto
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::CapaPre.Properties.Resources.Logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(30, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(496, 270);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.pictureFoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureFoto.Image = global::CapaPre.Properties.Resources.Logo2;
+            this.pictureFoto.Location = new System.Drawing.Point(30, 3);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(496, 270);
+            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFoto.TabIndex = 7;
+            this.pictureFoto.TabStop = false;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.txtServicio);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.comboServicio);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.txtNumControl);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -180,6 +183,27 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(660, 381);
             this.panel4.TabIndex = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.panel6.Location = new System.Drawing.Point(325, 116);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(52, 3);
+            this.panel6.TabIndex = 8;
+            // 
+            // txtServicio
+            // 
+            this.txtServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.txtServicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtServicio.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.txtServicio.Location = new System.Drawing.Point(325, 81);
+            this.txtServicio.MaxLength = 1;
+            this.txtServicio.Name = "txtServicio";
+            this.txtServicio.Size = new System.Drawing.Size(52, 29);
+            this.txtServicio.TabIndex = 2;
+            this.txtServicio.TextChanged += new System.EventHandler(this.ValidarServicio);
             // 
             // button1
             // 
@@ -194,7 +218,7 @@
             this.button1.Location = new System.Drawing.Point(482, 136);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 58);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Ingresar";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
@@ -239,32 +263,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.label2.Location = new System.Drawing.Point(45, 84);
+            this.label2.Location = new System.Drawing.Point(45, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 33);
             this.label2.TabIndex = 3;
             this.label2.Text = "Servicio a utilizar:";
-            // 
-            // comboServicio
-            // 
-            this.comboServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboServicio.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboServicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.comboServicio.FormattingEnabled = true;
-            this.comboServicio.Items.AddRange(new object[] {
-            "Consulta o referencia",
-            "Bases de datos",
-            "Cubículos",
-            "Sala de trabajo en equipo",
-            "Sala de lectura",
-            "Baños",
-            "Otros"});
-            this.comboServicio.Location = new System.Drawing.Point(310, 81);
-            this.comboServicio.Name = "comboServicio";
-            this.comboServicio.Size = new System.Drawing.Size(335, 37);
-            this.comboServicio.TabIndex = 2;
-            this.comboServicio.TabIndexChanged += new System.EventHandler(this.comboServicio_TabIndexChanged);
             // 
             // panel3
             // 
@@ -286,6 +289,7 @@
             this.txtNumControl.Size = new System.Drawing.Size(335, 29);
             this.txtNumControl.TabIndex = 1;
             this.txtNumControl.TextChanged += new System.EventHandler(this.ValidarNumControl);
+            this.txtNumControl.Leave += new System.EventHandler(this.LlenarNombreCarreraDepa);
             // 
             // panel5
             // 
@@ -420,6 +424,10 @@
             this.Temporizador.Enabled = true;
             this.Temporizador.Tick += new System.EventHandler(this.HoraActual);
             // 
+            // TiempoParaPasar
+            // 
+            this.TiempoParaPasar.Interval = 1000;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -441,7 +449,7 @@
             this.panelListaServicios.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -474,19 +482,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboServicio;
         private System.Windows.Forms.TextBox txtNumControl;
         private System.Windows.Forms.Panel panelListaServicios;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbCarreraDepa;
+        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.PictureBox pictureFoto;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbInfo;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txtServicio;
+        private System.Windows.Forms.Timer TiempoParaPasar;
     }
 }
 

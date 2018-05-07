@@ -113,6 +113,42 @@
     <Compile Include="Question.designer.cs">
       <DependentUpon>Question.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search\AmbosApellidos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\AmbosApellidos.Designer.cs">
+      <DependentUpon>AmbosApellidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\Area.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\Area.Designer.cs">
+      <DependentUpon>Area.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\Nombres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\Nombres.Designer.cs">
+      <DependentUpon>Nombres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\NumControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\NumControl.Designer.cs">
+      <DependentUpon>NumControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\Sexo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\Sexo.Designer.cs">
+      <DependentUpon>Sexo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\Status.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +197,24 @@
     </Compile>
     <EmbeddedResource Include="Question.resx">
       <DependentUpon>Question.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\AmbosApellidos.resx">
+      <DependentUpon>AmbosApellidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Area.resx">
+      <DependentUpon>Area.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Nombres.resx">
+      <DependentUpon>Nombres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\NumControl.resx">
+      <DependentUpon>NumControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Sexo.resx">
+      <DependentUpon>Sexo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>

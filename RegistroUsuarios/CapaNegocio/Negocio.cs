@@ -46,5 +46,13 @@ namespace CapaNegocio
             Parametros.Add("@nc"); Parametros.Add("@sistema"); Parametros.Add("@accion");
             datos.Insersion("Bitacora", Valor, Parametros);
         }
+
+        public DataTable ExistUsuario(string nc)
+        {
+            Valor.Clear(); Parametros.Clear();
+            Valor.Add(nc); Parametros.Add("@nc");
+            data = datos.Procedimiento("ExistUsuario", Valor, Parametros);
+            return data;
+        }
     }
 }

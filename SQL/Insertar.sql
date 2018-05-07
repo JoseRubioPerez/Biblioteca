@@ -28,6 +28,8 @@ INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,fo
 VALUES ('14540077','Karla','Gómez','Baray','M',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
 INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
 VALUES ('14540078','Daniela','Ramirez','Hernandez','M',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
+INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
+VALUES ('14540079','Oscar Raúl','López','Melendez','H',4,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
 
 --INSERTAR UN ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,area,password,hora,fecha,superus) VALUES

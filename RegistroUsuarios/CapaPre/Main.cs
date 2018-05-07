@@ -16,7 +16,6 @@ namespace CapaPre
         #endregion Instancias
 
         byte i = 0;
-        string numControl = "";
 
         public Main()
         {
@@ -31,15 +30,24 @@ namespace CapaPre
         {
             try
             {
-                if (comboServicio.SelectedIndex != -1 && txtNumControl.Text != "" && (txtNumControl.Text.Length >= 8 || txtNumControl.Text.Length <= 9))
-                {
-                    negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte((comboServicio.SelectedIndex + 1)));
-                    lbInfo.Text = "Por favor, ingresa en menos de: ";
-                    //Activar temporizador en el lbInfo
-                }
-                else
-                    lbInfo.Text = "Selecciona un servicio, por favor.";
-            }catch(Exception ex) { Console.WriteLine(ex.ToString()); }
+                negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
+                lbInfo.Text = "Por favor, ingresa en menos de: ";
+                txtNumControl.Focus();
+                //Activar temporizador en el lbInfo
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
+
+        private void LlenarNombreCarreraDepa(object sender, EventArgs e)
+        {
+            lbNombre.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["nombres"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidopat"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidomat"].ToString();
+            lbCarreraDepa.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["area"].ToString();
+        }
+
+        private void ValidarServicio(object sender, EventArgs e)
+        {
+            switch (txtServicio.Text[0]) { case '8': case '9': case '0': txtServicio.Text = txtServicio.Text.Replace(txtServicio.Text[0], '\0'); break; }
+            txtServicio.Text = (char.IsNumber(txtServicio.Text[0])) ? txtServicio.Text : txtServicio.Text.Replace(txtServicio.Text[0], '\0');
         }
 
         private void ValidarNumControl(object sender, EventArgs e)
@@ -54,6 +62,9 @@ namespace CapaPre
             //01 23 45 67
             /*txtNumControl.Text = (txtNumControl.Text[2] != '5') ? txtNumControl.Text.Substring(2, 1) : txtNumControl.Text;
             txtNumControl.Text = (txtNumControl.Text[3] != '4') ? txtNumControl.Text.Substring(3, 1) : txtNumControl.Text;*/
+
+            //lbNombre.Text = negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["nombres"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidopat"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidomat"].ToString();
+            //lbCarreraDepa.Text = negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["area"].ToString();
         }
 
         private void CancelarF4(object sender, FormClosingEventArgs e)
@@ -72,10 +83,5 @@ namespace CapaPre
         }
 
         private void HoraActual(object sender, EventArgs e) { lbHora.Text = DateTime.Now.ToLongTimeString(); }
-
-        private void comboServicio_TabIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
