@@ -17,14 +17,6 @@ namespace CapaPre
         private Control[] arreglo;
         private byte menu;
 
-        private string numControl = "";
-        private string nombres = "";
-        private string apellidoPaterno = "";
-        private string apellidoMaterno = "";
-        private char sexo = 'H';
-        private string area = "";
-        private char status = 'A';
-
         public Users()
         {
             InitializeComponent();
@@ -51,12 +43,12 @@ namespace CapaPre
             status1.Visible = false;
             switch (index)
             {
-                case 0: numControl1.Visible = bandera; numControl1.txtNumControl.Focus(); break;
-                case 1: nombres1.Visible = bandera; nombres1.txtNombres.Focus(); break;
-                case 2: ambosApellidos1.Visible = bandera; ambosApellidos1.txtApellidoPaterno.Focus(); break;
-                case 3: sexo1.Visible = bandera; sexo1.radioHombre.Focus(); break;
-                case 4: area1.Visible = bandera; area1.comboAreas.Focus(); break;
-                case 5: status1.Visible = bandera; status1.radioActivo.Focus(); break;
+                case 0: numControl1.Visible = bandera; numControl1.txtNumControl.Focus(); numControl1.TabIndex = (numControl1.Visible) ? 2 : 4; break;
+                case 1: nombres1.Visible = bandera; nombres1.txtNombres.Focus(); nombres1.TabIndex = (nombres1.Visible) ? 2 : 4; break;
+                case 2: ambosApellidos1.Visible = bandera; ambosApellidos1.txtApellidoPaterno.Focus(); ambosApellidos1.TabIndex = (ambosApellidos1.Visible) ? 2 : 4; break;
+                case 3: sexo1.Visible = bandera; sexo1.radioHombre.Focus(); sexo1.TabIndex = (sexo1.Visible) ? 2 : 4; break;
+                case 4: area1.Visible = bandera; area1.comboAreas.Focus(); area1.TabIndex = (area1.Visible) ? 2 : 4; break;
+                case 5: status1.Visible = bandera; status1.radioActivo.Focus(); status1.TabIndex = (status1.Visible) ? 2 : 4; break;
                 default: break;
             }
             btnSearch.Visible = (bandera) ? true : false;
@@ -89,29 +81,16 @@ namespace CapaPre
                         bool alert = false;
                         switch (comboTypeSearch.SelectedIndex)
                         {
-                            case 0:
-                                numControl = (numControl1.Visible) ? numControl1.txtNumControl.Text.Trim() : "";
-                                alert = (numControl1.Visible && numControl1.txtNumControl.Text.Trim() != "") ? true : false;
-                                break;
-                            case 1:
-                                nombres = (nombres1.Visible) ? nombres1.txtNombres.Text.Trim() : "";
-                                alert = (nombres1.Visible && nombres1.txtNombres.Text.Trim() != "") ? true : false;
-                                break;
-                            case 2:
-                                apellidoPaterno = (ambosApellidos1.Visible) ? ambosApellidos1.txtApellidoPaterno.Text.Trim() : "";
-                                apellidoMaterno = (ambosApellidos1.Visible) ? ambosApellidos1.txtApellidoMaterno.Text.Trim() : "";
-                                alert = (ambosApellidos1.Visible && (ambosApellidos1.txtApellidoPaterno.Text.Trim() != "" || ambosApellidos1.txtApellidoMaterno.Text.Trim() != "")) ? true : false;
-                                break;
-                            case 3: sexo = (sexo1.Visible) ? sexo1.sexo : 'H'; break;
-                            case 4:
-                                area = (area1.Visible) ? area1.comboAreas.SelectedItem.ToString() : "";
-                                alert = (area1.Visible && area1.comboAreas.SelectedIndex != -1) ? true : false;
-                                break;
-                            case 5: status = (status1.Visible) ? status1.status : 'A'; break;
+                            case 0: alert = (numControl1.Visible && numControl1.txtNumControl.Text.Trim() != "") ? true : false; break;
+                            case 1: alert = (nombres1.Visible && nombres1.txtNombres.Text.Trim() != "") ? true : false; break;
+                            case 2: alert = (ambosApellidos1.Visible && (ambosApellidos1.txtApellidoPaterno.Text.Trim() != "" || ambosApellidos1.txtApellidoMaterno.Text.Trim() != "")) ? true : false; break;
+                            case 3: alert = (sexo1.Visible && (sexo1.sexo == 'M' || sexo1.sexo == 'H')) ? true : false; break;
+                            case 4: alert = (area1.Visible && area1.comboAreas.SelectedIndex != -1) ? true : false; break;
+                            case 5: alert = (status1.Visible && (status1.status == 'A' || status1.status == 'I')) ? true : false; break;
                         }
                         if (alert)
                         {
-                            Valor = new string[] { numControl, nombres, apellidoPaterno, apellidoMaterno, Convert.ToString(sexo), area, Convert.ToString(status) };
+                            Valor = new string[] { numControl1.txtNumControl.Text.Trim(), nombres1.txtNombres.Text.Trim(), ambosApellidos1.txtApellidoPaterno.Text.Trim(), ambosApellidos1.txtApellidoMaterno.Text.Trim(), Convert.ToString(sexo1.sexo), area1.comboAreas.SelectedItem.ToString(), Convert.ToString(status1.status) };
                             GridSearch.DataSource = negocio.Search(Convert.ToByte(comboTypeSearch.SelectedIndex), Valor);
                             for (int i = 0; i < GridSearch.Rows.Count; i++)
                                 GridSearch.Rows[i].Cells["hora"].Value = GridSearch.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
@@ -124,7 +103,7 @@ namespace CapaPre
                                 pregunta.Close();
                         }
                     }
-                    catch(Exception ex) { MessageBox.Show("Ocurrió un error:\n" + ex.ToString()); }
+                    catch(Exception ex) { Console.WriteLine("Ocurrió un error:\n" + ex.ToString()); }
                     break;
                 case 1: RecargarDatos(); break;
             }

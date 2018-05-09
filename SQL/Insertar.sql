@@ -41,6 +41,14 @@ INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hor
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
 ('14540078','Daniela','Ramirez','Hernandez','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
 
+--BUSCAR ENTRE FECHAS
+SELECT * FROM dbo.Movimientos WHERE fecha BETWEEN '2018-04-01' AND CONVERT(DATE,GETDATE(),108)
+SELECT * FROM dbo.Movimientos WHERE fecha BETWEEN CONVERT(DATE,GETDATE(),108) AND CONVERT(DATE,GETDATE(),108)
+
+--REINCIAR LA TABLA DE "RegLogeo"
+DELETE FROM dbo.RegLogeo
+DBCC CHECKIDENT (RegLogeo, RESEED, 0)
+
 --PRUEBAS QUE ESTUVE REALIZANDO
 
 UPDATE Administradores SET hora = CONVERT(varchar,GETDATE(),108) WHERE nc = '14540074' --ACTUALIZAR EL CAMPO "hora" DEL USUARIO "14540074"

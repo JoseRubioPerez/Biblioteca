@@ -59,3 +59,6 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPr
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Sexo.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Area.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Status.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Moves.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Servicio.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Fecha.resources

@@ -38,6 +38,7 @@
             this.tableUsers = new System.Windows.Forms.TableLayoutPanel();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.panelContenido = new System.Windows.Forms.Panel();
+            this.status1 = new CapaPre.Search.Status();
             this.area1 = new CapaPre.Search.Area();
             this.sexo1 = new CapaPre.Search.Sexo();
             this.ambosApellidos1 = new CapaPre.Search.AmbosApellidos();
@@ -46,7 +47,6 @@
             this.lbSearch02 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAllUsers = new System.Windows.Forms.Button();
-            this.status1 = new CapaPre.Search.Status();
             ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).BeginInit();
             this.tableUsers.SuspendLayout();
             this.panelContenido.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.GridSearch.AllowUserToAddRows = false;
             this.GridSearch.AllowUserToDeleteRows = false;
-            this.GridSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.GridSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -168,6 +168,17 @@
             this.panelContenido.Name = "panelContenido";
             this.panelContenido.Size = new System.Drawing.Size(834, 131);
             this.panelContenido.TabIndex = 16;
+            // 
+            // status1
+            // 
+            this.status1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.status1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.status1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.status1.Location = new System.Drawing.Point(13, 61);
+            this.status1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.status1.Name = "status1";
+            this.status1.Size = new System.Drawing.Size(746, 36);
+            this.status1.TabIndex = 6;
             // 
             // area1
             // 
@@ -274,17 +285,6 @@
             this.btnAllUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAllUsers.UseVisualStyleBackColor = true;
             this.btnAllUsers.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // status1
-            // 
-            this.status1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.status1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.status1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.status1.Location = new System.Drawing.Point(13, 61);
-            this.status1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.status1.Name = "status1";
-            this.status1.Size = new System.Drawing.Size(746, 36);
-            this.status1.TabIndex = 6;
             // 
             // Users
             // 

@@ -21,9 +21,7 @@ namespace CapaNegocio
         private List<string> Parametros = new List<string>();
         private List<byte> TipoDato = new List<byte>();
 
-        public Negocio()
-        {
-        }
+        public Negocio() { }
 
         public DataTable Sesion(string nc, string password)
         {
@@ -48,6 +46,26 @@ namespace CapaNegocio
             Valor.Add(index); Parametros.Add("@index"); TipoDato.Add((byte)DatoSQL.TinyInt);
             data = datos.Procedimiento("Search", Valor, Parametros, TipoDato);
             return data;
+        }
+
+        public DataTable Moves(byte index, string[] valor)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(valor[0]); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(valor[1]); Parametros.Add("@servicio"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(ConvertirFecha(valor[2])); Parametros.Add("@fechaI"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(ConvertirFecha(valor[3])); Parametros.Add("@fechaF"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(index); Parametros.Add("@index"); TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("Moves", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        static private object ConvertirFecha(string fecha)
+        {
+            string tempYear = fecha[6].ToString() + fecha[7].ToString() + fecha[8].ToString() + fecha[9].ToString();
+            string tempMonth = fecha[3].ToString() + fecha[4].ToString();
+            string tempDay = fecha[0].ToString() + fecha[1].ToString();
+            return fecha = tempYear + "-" + tempMonth + "-" + tempDay;
         }
 
         public void ChangePassword(string user, string password, string newpassword)
