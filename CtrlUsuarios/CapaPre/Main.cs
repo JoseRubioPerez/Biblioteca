@@ -14,8 +14,8 @@ namespace CapaPre
 
         private Entidad entidad = new Entidad();
         private Negocio negocio = new Negocio();
-        Users usuarios = new Users();
-        Moves moves = new Moves();
+        private Users usuarios = new Users();
+        private Moves moves = new Moves();
         private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
         private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
         private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
@@ -42,6 +42,8 @@ namespace CapaPre
             changeMyPassword.Admin[0] = entidad.getAdminNC();
             changeMyPassword.Admin[1] = entidad.getAdminPassword();
             changeMyPassword.supersu = supersu;
+            //Moves
+            moves.Usuario = entidad.getAdminNC();
         }
 
         public void MostrarForm(Form Formulario)

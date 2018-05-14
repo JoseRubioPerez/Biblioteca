@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
@@ -8,12 +8,11 @@ namespace CapaPre
     {
         #region Instancias
 
-        Negocio negocio = new Negocio();
+        private Negocio negocio = new Negocio();
 
-        #endregion
+        #endregion Instancias
 
         private string[] ColumnasDeleteAdmin = new string[] { "Número de Control", "Nombres", "Apellido Paterno", "Apellido Materno", "Sexo", "Carrera / Departamento", "Activo / Inactivo", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
-        private string[] Valor;
         private Control[] arreglo;
         private byte menu;
 
@@ -90,29 +89,36 @@ namespace CapaPre
                         }
                         if (alert)
                         {
-                            Valor = new string[] { numControl1.txtNumControl.Text.Trim(), nombres1.txtNombres.Text.Trim(), ambosApellidos1.txtApellidoPaterno.Text.Trim(), ambosApellidos1.txtApellidoMaterno.Text.Trim(), Convert.ToString(sexo1.sexo), area1.comboAreas.SelectedItem.ToString(), Convert.ToString(status1.status) };
+                            string[] Valor = new string[] { numControl1.txtNumControl.Text.Trim(), nombres1.txtNombres.Text.Trim(), ambosApellidos1.txtApellidoPaterno.Text.Trim(), ambosApellidos1.txtApellidoMaterno.Text.Trim(), Convert.ToString(sexo1.sexo), area1.comboAreas.SelectedItem.ToString(), Convert.ToString(status1.status) };
                             GridSearch.DataSource = negocio.Search(Convert.ToByte(comboTypeSearch.SelectedIndex), Valor);
                             for (int i = 0; i < GridSearch.Rows.Count; i++)
                                 GridSearch.Rows[i].Cells["hora"].Value = GridSearch.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
                         }
                         else
                         {
-                            Question pregunta = new Question((byte)TypeIcon.Warning, "Búsqueda vacia", "No se permiten búsquedas vacias", "Por favor, ingrese un rato poder continuar la búsqueda.",false);
+                            Question pregunta = new Question((byte)TypeIcon.Warning, "Búsqueda vacia", "No se permiten búsquedas vacias", "Por favor, ingrese un rato poder continuar la búsqueda.", false);
                             DialogResult dr = pregunta.ShowDialog();
                             if (dr == DialogResult.No)
                                 pregunta.Close();
                         }
                     }
-                    catch(Exception ex) { Console.WriteLine("Ocurrió un error:\n" + ex.ToString()); }
+                    catch (Exception ex) { Console.WriteLine("Ocurrió un error:\n" + ex.ToString()); }
                     break;
+
                 case 1: RecargarDatos(); break;
             }
             LimpiarCampos();
             menu = 0;
         }
 
-        private void ValidarCombo(object sender, EventArgs e) { Controles(Convert.ToByte(comboTypeSearch.SelectedIndex), true); }
+        private void ValidarCombo(object sender, EventArgs e)
+        {
+            Controles(Convert.ToByte(comboTypeSearch.SelectedIndex), true);
+        }
 
-        private void CargarVentana(object sender, EventArgs e) { RecargarDatos(); }
+        private void CargarVentana(object sender, EventArgs e)
+        {
+            RecargarDatos();
+        }
     }
 }

@@ -1,6 +1,7 @@
-﻿using System;
+﻿using CapaNegocio;
+using CapaReporte;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
@@ -8,13 +9,14 @@ namespace CapaPre
     {
         #region Instancias
 
-        Negocio negocio = new Negocio();
+        private Negocio negocio = new Negocio();
+        private Reportes reporte = new Reportes();
 
-        #endregion
+        #endregion Instancias
 
         private string[] Columnas = new string[] { "Número de Registro", "Número de Control", "Servicio Utilizado", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
         private Control[] arreglo;
-        private string[] Valor;
+        public string Usuario;
         private byte menu;
 
         public Moves()
@@ -65,42 +67,70 @@ namespace CapaPre
             switch (menu)
             {
                 case 0:
+                    Question pregunta;
+                    DialogResult dr;
                     try
                     {
                         bool alert = false;
+                        string servicio = "";
                         switch (comboTypeMoves.SelectedIndex)
                         {
                             case 0: alert = (numControl1.Visible && numControl1.txtNumControl.Text.Trim() != "") ? true : false; break;
-                            case 1: alert = (servicio1.Visible && servicio1.comboAreas.SelectedIndex != -1) ? true : false; break;
+                            case 1:
+                                alert = (servicio1.Visible && servicio1.comboAreas.SelectedIndex != -1) ? true : false;
+                                servicio = (comboTypeMoves.SelectedIndex < 0) ? "" : comboTypeMoves.SelectedItem.ToString();
+                                break;
+
                             case 2: alert = (fecha1.Visible) ? true : false; break;
                         }
                         if (alert)
                         {
-                            Valor = new string[] { numControl1.txtNumControl.Text.Trim(), servicio1.comboAreas.SelectedItem.ToString().Trim(), fecha1.dateInicio.Value.ToShortDateString(), fecha1.dateFin.Value.ToShortDateString() };
+                            string[] Valor = new string[] { numControl1.txtNumControl.Text.Trim(), servicio, fecha1.dateInicio.Value.ToShortDateString(), fecha1.dateFin.Value.ToShortDateString() };
                             GridSearch.DataSource = negocio.Moves(Convert.ToByte(comboTypeMoves.SelectedIndex), Valor);
                             for (int i = 0; i < GridSearch.Rows.Count; i++)
                                 GridSearch.Rows[i].Cells["hora"].Value = GridSearch.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
                         }
                         else
                         {
-                            Question pregunta = new Question((byte)TypeIcon.Warning, "Búsqueda vacia", "No se permiten búsquedas vacias", "Por favor, ingrese un rato poder continuar la búsqueda.", false);
-                            DialogResult dr = pregunta.ShowDialog();
+                            pregunta = new Question((byte)TypeIcon.Warning, "Búsqueda vacia", "No se permiten búsquedas vacias", "Por favor, ingrese un rato poder continuar la búsqueda.", false);
+                            dr = pregunta.ShowDialog();
                             if (dr == DialogResult.No)
                                 pregunta.Close();
                         }
                     }
                     catch (Exception ex) { Console.WriteLine("Ocurrió un error:\n" + ex.ToString()); }
                     break;
+
                 case 1: RecargarDatos(); break;
                 case 2:
+                    pregunta = new Question((byte)TypeIcon.Warning, "Nuevo reporte", "¿De verdad quieres crear un nuevo reporte?", "Sí aceptas, el reporte será llenado con los datos del usuario que inició sesión y con los datos de la tabla.", true);
+                    dr = pregunta.ShowDialog();
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (GridSearch.RowCount > 0)
+                            reporte.GenerarDocumento(GridSearch, Usuario);
+                        else
+                        {
+                            pregunta = new Question((byte)TypeIcon.Warning, "Tabla vacía", "No se permiten reportes vacios", "Por favor, una búsqueda para llenar la tabla y, de esa forma, poder solicitar un reporte.", false);
+                            dr = pregunta.ShowDialog();
+                            if (dr == DialogResult.No)
+                                pregunta.Close();
+                        }
+                    }
                     break;
             }
             LimpiarCampos();
             menu = 0;
         }
 
-        private void ValidarCombo(object sender, EventArgs e) { Controles(Convert.ToByte(comboTypeMoves.SelectedIndex), true); }
+        private void ValidarCombo(object sender, EventArgs e)
+        {
+            Controles(Convert.ToByte(comboTypeMoves.SelectedIndex), true);
+        }
 
-        private void CargarVentana(object sender, EventArgs e) { RecargarDatos(); }
+        private void CargarVentana(object sender, EventArgs e)
+        {
+            RecargarDatos();
+        }
     }
 }

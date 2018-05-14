@@ -319,6 +319,10 @@
       <Project>{678e156e-055d-4750-a424-1a0a9441d565}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CapaReporte\CapaReporte.csproj">
+      <Project>{df18974b-066f-4ddc-9afa-9df5215f16c2}</Project>
+      <Name>CapaReporte</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Moves.png" />

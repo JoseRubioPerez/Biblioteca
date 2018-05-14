@@ -21,7 +21,9 @@ namespace CapaNegocio
         private List<string> Parametros = new List<string>();
         private List<byte> TipoDato = new List<byte>();
 
-        public Negocio() { }
+        public Negocio()
+        {
+        }
 
         public DataTable Sesion(string nc, string password)
         {
@@ -62,10 +64,15 @@ namespace CapaNegocio
 
         static private object ConvertirFecha(string fecha)
         {
-            string tempYear = fecha[6].ToString() + fecha[7].ToString() + fecha[8].ToString() + fecha[9].ToString();
-            string tempMonth = fecha[3].ToString() + fecha[4].ToString();
-            string tempDay = fecha[0].ToString() + fecha[1].ToString();
-            return fecha = tempYear + "-" + tempMonth + "-" + tempDay;
+            if (!string.IsNullOrEmpty(fecha))
+            {
+                string tempYear = fecha[6].ToString() + fecha[7].ToString() + fecha[8].ToString() + fecha[9].ToString();
+                string tempMonth = fecha[3].ToString() + fecha[4].ToString();
+                string tempDay = fecha[0].ToString() + fecha[1].ToString();
+                return fecha = tempYear + "-" + tempMonth + "-" + tempDay;
+            }
+            else
+                return fecha;
         }
 
         public void ChangePassword(string user, string password, string newpassword)
