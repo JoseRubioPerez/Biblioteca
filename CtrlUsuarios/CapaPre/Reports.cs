@@ -45,9 +45,14 @@ namespace CapaPre
             switch (menu)
             {
                 case 0:
-                    GridHombres.DataSource = negocio.Reportes(2);
-                    GridMujeres.DataSource = negocio.Reportes(1);
-                    reportes.ReporteDesglosadoPorSexo(GridHombres, GridMujeres, Usuario);
+                    pregunta = new Question((byte)TypeIcon.Warning, "Nuevo reporte", "¿De verdad quieres crear un nuevo reporte?", "Sí aceptas, el reporte será llenado con los datos del usuario que inició sesión y con los datos de la tabla.", true);
+                    dr = pregunta.ShowDialog();
+                    if (dr == DialogResult.Yes)
+                    {
+                        GridHombres.DataSource = negocio.Reportes(2);
+                        GridMujeres.DataSource = negocio.Reportes(1);
+                        reportes.ReporteDesglosadoPorSexo(GridHombres, GridMujeres, Usuario);
+                    }
                     break;
                 case 1:
                     break;
