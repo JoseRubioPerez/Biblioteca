@@ -28,8 +28,6 @@ INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,fo
 VALUES ('14540077','Karla','Gómez','Baray','M',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
 INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
 VALUES ('14540078','Daniela','Ramirez','Hernandez','M',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540079','Oscar Raúl','López','Melendez','H',4,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
 
 --INSERTAR UN ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,area,password,hora,fecha,superus) VALUES
@@ -40,14 +38,6 @@ INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hor
 ('14540077','Karla','Gómez','Baray','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
 ('14540078','Daniela','Ramirez','Hernandez','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
-
---BUSCAR ENTRE FECHAS
-SELECT * FROM dbo.Movimientos WHERE fecha BETWEEN '2018-04-01' AND CONVERT(DATE,GETDATE(),108)
-SELECT * FROM dbo.Movimientos WHERE fecha BETWEEN CONVERT(DATE,GETDATE(),108) AND CONVERT(DATE,GETDATE(),108)
-
---REINCIAR LA TABLA DE "RegLogeo"
-DELETE FROM dbo.RegLogeo
-DBCC CHECKIDENT (RegLogeo, RESEED, 0)
 
 --PRUEBAS QUE ESTUVE REALIZANDO
 
