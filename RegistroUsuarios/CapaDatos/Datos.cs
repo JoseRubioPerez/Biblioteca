@@ -15,6 +15,13 @@ namespace CapaDatos
             try { conex = new SqlConnection(ConfigurationManager.ConnectionStrings["biblioteca"].ConnectionString); } catch (Exception e) { Console.WriteLine("Error de conexión a base de datos: " + e.Message); }
         }
 
+        /// <summary>
+        /// Método encargado de las consultas en la base de datos por medio de muchos parametros
+        /// </summary>
+        /// <param name="NameProcedure">string Nombre del procedimiento almacenado</param>
+        /// <param name="ValorTexto">List<object> Valores que se ingresan por el usuario</param>
+        /// <param name="NombreParametro">List<sttring> Nombres de las variables en el procedimiento almacenado</param>
+        /// <returns></returns>
         public DataTable Procedimiento(string NameProcedure, List<object> ValorTexto, List<string> NombreParametro)
         {
             try
@@ -35,6 +42,12 @@ namespace CapaDatos
             return dt;
         }
 
+        /// <summary>
+        /// Método encargado de las consultas en la base de datos por medio de muchos parametros
+        /// </summary>
+        /// <param name="NameProcedure">string Nombre del procedimiento almacenado</param>
+        /// <param name="ValorTexto">List<object> Valores que se ingresan por el usuario</param>
+        /// <param name="NombreParametro">List<sttring> Nombres de las variables en el procedimiento almacenado</param>
         public void Insersion(string NameProcedure, List<object> ValorTexto, List<string> NombreParametro)
         {
             try

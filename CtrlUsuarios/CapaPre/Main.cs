@@ -16,6 +16,7 @@ namespace CapaPre
         private Negocio negocio = new Negocio();
         private Users usuarios = new Users();
         private Moves moves = new Moves();
+        private Reports reportes = new Reports();
         private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
         private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
         private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
@@ -44,6 +45,8 @@ namespace CapaPre
             changeMyPassword.supersu = supersu;
             //Moves
             moves.Usuario = entidad.getAdminNC();
+            //Reports
+            reportes.Usuario = entidad.getAdminNC();
         }
 
         public void MostrarForm(Form Formulario)
@@ -79,7 +82,11 @@ namespace CapaPre
                     }
                     break;
 
-                case 1: WindowState = (WindowState == FormWindowState.Normal) ? WindowState = FormWindowState.Minimized : WindowState = FormWindowState.Normal; break;
+                case 1:
+                    WindowState = (WindowState == FormWindowState.Normal) ? WindowState = FormWindowState.Minimized : WindowState = FormWindowState.Normal;
+                    this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+                    MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+                    break;
             }
             menu = 0;
         }
@@ -95,7 +102,7 @@ namespace CapaPre
             {
                 case 0: MostrarForm(usuarios); break; //usuariosMenu
                 case 1: MostrarForm(moves); break; //MovimientosMenu
-                case 2: break; //reportesMenu
+                case 2: MostrarForm(reportes); break; //reportesMenu
                 case 3: break; //ImportarUsuariosMenuItem
                 case 4: MostrarForm(addEditDeleteAdmin); break; //AgregarAdminMenuItem
                 case 5: MostrarForm(changeMyPassword); break; //CambiarMiContraMenuItem

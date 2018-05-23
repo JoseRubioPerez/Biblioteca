@@ -47,9 +47,12 @@
             this.lbSearch02 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAllUsers = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).BeginInit();
             this.tableUsers.SuspendLayout();
             this.panelContenido.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboTypeSearch
@@ -125,10 +128,10 @@
             this.tableUsers.ColumnCount = 2;
             this.tableUsers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableUsers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableUsers.Controls.Add(this.panel1, 1, 1);
             this.tableUsers.Controls.Add(this.lbTitulo, 0, 0);
             this.tableUsers.Controls.Add(this.panelContenido, 1, 0);
             this.tableUsers.Controls.Add(this.GridSearch, 0, 2);
-            this.tableUsers.Controls.Add(this.btnAllUsers, 1, 1);
             this.tableUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableUsers.Location = new System.Drawing.Point(0, 0);
             this.tableUsers.Name = "tableUsers";
@@ -274,7 +277,7 @@
             this.btnAllUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAllUsers.ImageKey = "searchClean.png";
             this.btnAllUsers.ImageList = this.imageList1;
-            this.btnAllUsers.Location = new System.Drawing.Point(853, 88);
+            this.btnAllUsers.Location = new System.Drawing.Point(7, 3);
             this.btnAllUsers.MaximumSize = new System.Drawing.Size(284, 54);
             this.btnAllUsers.MinimumSize = new System.Drawing.Size(284, 54);
             this.btnAllUsers.Name = "btnAllUsers";
@@ -285,6 +288,27 @@
             this.btnAllUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAllUsers.UseVisualStyleBackColor = true;
             this.btnAllUsers.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbTotal);
+            this.panel1.Controls.Add(this.btnAllUsers);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(843, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(294, 131);
+            this.panel1.TabIndex = 7;
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTotal.Location = new System.Drawing.Point(3, 103);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(160, 19);
+            this.lbTotal.TabIndex = 24;
+            this.lbTotal.Text = "Total de registros:";
             // 
             // Users
             // 
@@ -300,6 +324,8 @@
             this.tableUsers.PerformLayout();
             this.panelContenido.ResumeLayout(false);
             this.panelContenido.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +346,7 @@
         private Search.Sexo sexo1;
         private Search.Area area1;
         private Search.Status status1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbTotal;
     }
 }

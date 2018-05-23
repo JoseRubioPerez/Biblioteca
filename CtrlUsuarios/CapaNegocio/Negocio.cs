@@ -62,19 +62,6 @@ namespace CapaNegocio
             return data;
         }
 
-        static private object ConvertirFecha(string fecha)
-        {
-            if (!string.IsNullOrEmpty(fecha))
-            {
-                string tempYear = fecha[6].ToString() + fecha[7].ToString() + fecha[8].ToString() + fecha[9].ToString();
-                string tempMonth = fecha[3].ToString() + fecha[4].ToString();
-                string tempDay = fecha[0].ToString() + fecha[1].ToString();
-                return fecha = tempYear + "-" + tempMonth + "-" + tempDay;
-            }
-            else
-                return fecha;
-        }
-
         public void ChangePassword(string user, string password, string newpassword)
         {
             Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
@@ -144,6 +131,29 @@ namespace CapaNegocio
             Valor.Add(nc); Valor.Add(sistema); Valor.Add(accion);
             Parametros.Add("@nc"); Parametros.Add("@sistema"); Parametros.Add("@accion");
             datos.Insersion("Bitacora", Valor, Parametros);
+        }
+
+        public DataTable Reportes(byte index)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(index);
+            Parametros.Add("@index");
+            TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("ReporteUsuariosSalasPorSexo", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        static private object ConvertirFecha(string fecha)
+        {
+            if (!string.IsNullOrEmpty(fecha))
+            {
+                string tempYear = fecha[6].ToString() + fecha[7].ToString() + fecha[8].ToString() + fecha[9].ToString();
+                string tempMonth = fecha[3].ToString() + fecha[4].ToString();
+                string tempDay = fecha[0].ToString() + fecha[1].ToString();
+                return fecha = tempYear + "-" + tempMonth + "-" + tempDay;
+            }
+            else
+                return fecha;
         }
     }
 }

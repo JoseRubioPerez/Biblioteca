@@ -65,3 +65,4 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPr
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaReporte.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\itextsharp.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaReporte.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Reports.resources

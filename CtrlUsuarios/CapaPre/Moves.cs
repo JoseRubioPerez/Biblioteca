@@ -78,7 +78,7 @@ namespace CapaPre
                             case 0: alert = (numControl1.Visible && numControl1.txtNumControl.Text.Trim() != "") ? true : false; break;
                             case 1:
                                 alert = (servicio1.Visible && servicio1.comboAreas.SelectedIndex != -1) ? true : false;
-                                servicio = (comboTypeMoves.SelectedIndex < 0) ? "" : comboTypeMoves.SelectedItem.ToString();
+                                servicio = (servicio1.comboAreas.SelectedIndex < 0) ? "" : servicio1.comboAreas.SelectedItem.ToString();
                                 break;
 
                             case 2: alert = (fecha1.Visible) ? true : false; break;
@@ -120,6 +120,7 @@ namespace CapaPre
                     break;
             }
             LimpiarCampos();
+            lbTotal.Text = "Total de registros: " + GridSearch.Rows.Count.ToString().Trim();
             menu = 0;
         }
 
@@ -131,6 +132,7 @@ namespace CapaPre
         private void CargarVentana(object sender, EventArgs e)
         {
             RecargarDatos();
+            lbTotal.Text = "Total de registros: " + GridSearch.Rows.Count.ToString().Trim();
         }
     }
 }

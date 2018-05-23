@@ -48,6 +48,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNumControl = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -67,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -293,23 +295,38 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.lbInfo);
+            this.panel5.Controls.Add(this.tableLayoutPanel3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 381);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1230, 223);
             this.panel5.TabIndex = 21;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.lbInfo, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1230, 223);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
             // lbInfo
             // 
             this.lbInfo.AutoSize = true;
-            this.lbInfo.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lbInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbInfo.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.lbInfo.Location = new System.Drawing.Point(506, 98);
+            this.lbInfo.Location = new System.Drawing.Point(3, 0);
             this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(219, 27);
+            this.lbInfo.Size = new System.Drawing.Size(1224, 223);
             this.lbInfo.TabIndex = 5;
             this.lbInfo.Text = "Servicios disponibles:";
+            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -427,6 +444,7 @@
             // TiempoParaPasar
             // 
             this.TiempoParaPasar.Interval = 1000;
+            this.TiempoParaPasar.Tick += new System.EventHandler(this.TiempoParaPasar_Tick);
             // 
             // Main
             // 
@@ -453,7 +471,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -497,6 +516,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtServicio;
         private System.Windows.Forms.Timer TiempoParaPasar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
 
