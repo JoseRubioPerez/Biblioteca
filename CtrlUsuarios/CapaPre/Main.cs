@@ -14,7 +14,9 @@ namespace CapaPre
 
         private Entidad entidad = new Entidad();
         private Negocio negocio = new Negocio();
-        Users usuarios = new Users();
+        private Users usuarios = new Users();
+        private Moves moves = new Moves();
+        private Reports reportes = new Reports();
         private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
         private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
         private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
@@ -41,6 +43,10 @@ namespace CapaPre
             changeMyPassword.Admin[0] = entidad.getAdminNC();
             changeMyPassword.Admin[1] = entidad.getAdminPassword();
             changeMyPassword.supersu = supersu;
+            //Moves
+            moves.Usuario = entidad.getAdminNC();
+            //Reports
+            reportes.Usuario = entidad.getAdminNC();
         }
 
         public void MostrarForm(Form Formulario)
@@ -57,10 +63,8 @@ namespace CapaPre
         {
             arreglo = new Control[] { pictureClose, pictureMinimize };
             for (; menu < arreglo.Length; menu++)
-            {
                 if (arreglo[menu] == sender)
                     break;
-            }
             switch (menu)
             {
                 case 0:
@@ -78,7 +82,11 @@ namespace CapaPre
                     }
                     break;
 
-                case 1: WindowState = (WindowState == FormWindowState.Normal) ? WindowState = FormWindowState.Minimized : WindowState = FormWindowState.Normal; break;
+                case 1:
+                    WindowState = (WindowState == FormWindowState.Normal) ? WindowState = FormWindowState.Minimized : WindowState = FormWindowState.Normal;
+                    this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+                    MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+                    break;
             }
             menu = 0;
         }
@@ -86,20 +94,19 @@ namespace CapaPre
         private void EventoClickMenuItem(object sender, EventArgs e)
         {
             byte item = 0;
-            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, ImportarUsuariosMenuItem, AgregarAdminMenuItem, CambiarMiContraMenuItem, CambiarOtraContraMenuItem };
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, MovimientosMenu, reportesMenu, ImportarUsuariosMenuItem, AgregarAdminMenuItem, CambiarMiContraMenuItem, CambiarOtraContraMenuItem };
             for (; item < menuitem.Length; item++)
-            {
                 if (menuitem[item] == sender)
                     break;
-            }
             switch (item)
             {
-                case 0: MostrarForm(usuarios); break;
-                case 1:
-                    break;
-                case 2: MostrarForm(addEditDeleteAdmin); break;
-                case 3: MostrarForm(changeMyPassword); break;
-                case 4: MostrarForm(changeOthersPasswords); break;
+                case 0: MostrarForm(usuarios); break; //usuariosMenu
+                case 1: MostrarForm(moves); break; //MovimientosMenu
+                case 2: MostrarForm(reportes); break; //reportesMenu
+                case 3: break; //ImportarUsuariosMenuItem
+                case 4: MostrarForm(addEditDeleteAdmin); break; //AgregarAdminMenuItem
+                case 5: MostrarForm(changeMyPassword); break; //CambiarMiContraMenuItem
+                case 6: MostrarForm(changeOthersPasswords); break; //CambiarOtraContraMenuItem
             }
             item = 0;
         }
@@ -107,7 +114,7 @@ namespace CapaPre
         private void CambiarColorMenuItem(object sender, EventArgs e)
         {
             byte item = 0;
-            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, reportesMenu, configuracionMenu };
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, MovimientosMenu, reportesMenu, configuracionMenu };
             for (; item < menuitem.Length; item++)
             {
                 if (menuitem[item] == sender)
@@ -116,8 +123,9 @@ namespace CapaPre
             switch (item)
             {
                 case 0: usuariosMenu.ForeColor = Color.FromArgb(19, 27, 35); break;
-                case 1: reportesMenu.ForeColor = Color.FromArgb(19, 27, 35); break;
-                case 2: configuracionMenu.ForeColor = Color.FromArgb(19, 27, 35); break;
+                case 1: MovimientosMenu.ForeColor = Color.FromArgb(19, 27, 35); break;
+                case 2: reportesMenu.ForeColor = Color.FromArgb(19, 27, 35); break;
+                case 3: configuracionMenu.ForeColor = Color.FromArgb(19, 27, 35); break;
             }
             item = 0;
         }
@@ -125,7 +133,7 @@ namespace CapaPre
         private void ResetColorMenuItem(object sender, EventArgs e)
         {
             byte item = 0;
-            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, reportesMenu, configuracionMenu };
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, MovimientosMenu, reportesMenu, configuracionMenu };
             for (; item < menuitem.Length; item++)
             {
                 if (menuitem[item] == sender)
@@ -134,8 +142,9 @@ namespace CapaPre
             switch (item)
             {
                 case 0: usuariosMenu.ForeColor = Color.FromArgb(231, 223, 198); break;
-                case 1: reportesMenu.ForeColor = Color.FromArgb(231, 223, 198); break;
-                case 2: configuracionMenu.ForeColor = Color.FromArgb(231, 223, 198); break;
+                case 1: MovimientosMenu.ForeColor = Color.FromArgb(231, 223, 198); break;
+                case 2: reportesMenu.ForeColor = Color.FromArgb(231, 223, 198); break;
+                case 3: configuracionMenu.ForeColor = Color.FromArgb(231, 223, 198); break;
             }
             item = 0;
         }

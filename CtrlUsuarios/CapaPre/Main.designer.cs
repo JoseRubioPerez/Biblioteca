@@ -34,15 +34,15 @@
             this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.MovimientosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ImportarUsuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MovimientosMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
@@ -121,17 +121,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
-            this.lbTitulo.TabIndex = 3;
-            this.lbTitulo.Text = "Sistema de Control de Usuarios";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // usuariosMenu
             // 
             this.usuariosMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,6 +136,19 @@
             this.usuariosMenu.MouseEnter += new System.EventHandler(this.CambiarColorMenuItem);
             this.usuariosMenu.MouseLeave += new System.EventHandler(this.ResetColorMenuItem);
             // 
+            // MovimientosMenu
+            // 
+            this.MovimientosMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.MovimientosMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.MovimientosMenu.Image = global::CapaPre.Properties.Resources.Moves;
+            this.MovimientosMenu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MovimientosMenu.Name = "MovimientosMenu";
+            this.MovimientosMenu.Size = new System.Drawing.Size(262, 55);
+            this.MovimientosMenu.Text = "Movimiento de usuarios";
+            this.MovimientosMenu.Click += new System.EventHandler(this.EventoClickMenuItem);
+            this.MovimientosMenu.MouseEnter += new System.EventHandler(this.CambiarColorMenuItem);
+            this.MovimientosMenu.MouseLeave += new System.EventHandler(this.ResetColorMenuItem);
+            // 
             // reportesMenu
             // 
             this.reportesMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,6 +160,7 @@
             this.reportesMenu.Size = new System.Drawing.Size(143, 55);
             this.reportesMenu.Text = "Reportes";
             this.reportesMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.reportesMenu.Click += new System.EventHandler(this.EventoClickMenuItem);
             this.reportesMenu.MouseEnter += new System.EventHandler(this.CambiarColorMenuItem);
             this.reportesMenu.MouseLeave += new System.EventHandler(this.ResetColorMenuItem);
             // 
@@ -221,15 +224,16 @@
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
             // 
-            // MovimientosMenu
+            // lbTitulo
             // 
-            this.MovimientosMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.MovimientosMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.MovimientosMenu.Image = global::CapaPre.Properties.Resources.Moves;
-            this.MovimientosMenu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MovimientosMenu.Name = "MovimientosMenu";
-            this.MovimientosMenu.Size = new System.Drawing.Size(262, 55);
-            this.MovimientosMenu.Text = "Movimiento de usuarios";
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
+            this.lbTitulo.TabIndex = 3;
+            this.lbTitulo.Text = "Sistema de Control de Usuarios";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureIcon
             // 
