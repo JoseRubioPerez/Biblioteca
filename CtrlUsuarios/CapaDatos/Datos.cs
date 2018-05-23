@@ -33,7 +33,8 @@ namespace CapaDatos
                     {
                         case 1: metodo[i].SqlDbType = SqlDbType.VarChar; break;
                         case 2: metodo[i].SqlDbType = SqlDbType.Char; break;
-                        case 3: case 4: case 5: metodo[i].SqlDbType = SqlDbType.Int; break;
+                        case 4: metodo[i].SqlDbType = SqlDbType.TinyInt; break;
+                        case 3: case 5: metodo[i].SqlDbType = SqlDbType.Int; break;
                         case 6: metodo[i].SqlDbType = SqlDbType.Date; break;
                         case 7: metodo[i].SqlDbType = SqlDbType.Time; break;
                         case 8: metodo[i].SqlDbType = SqlDbType.Image; break;

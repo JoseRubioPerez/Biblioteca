@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CapaNegocio
 {
-    internal enum DatoSQL { VarChar = 1, Char = 2, Int = 3, Date = 6, Time = 7, Image = 8 }
+    internal enum DatoSQL { VarChar = 1, Char = 2, Int = 3, TinyInt = 4, Date = 6, Time = 7, Image = 8 }
 
     public class Negocio
     {
@@ -32,6 +32,33 @@ namespace CapaNegocio
             Parametros.Add("@user"); Parametros.Add("@pass");
             TipoDato.Add((byte)DatoSQL.VarChar); TipoDato.Add((byte)DatoSQL.VarChar);
             data = datos.Procedimiento("Logeo", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable Search(byte index, string[] valor)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(valor[0]); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(valor[1]); Parametros.Add("@nombres"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(valor[2]); Parametros.Add("@apellidopat"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(valor[3]); Parametros.Add("@apellidomat"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(Convert.ToChar(valor[4])); Parametros.Add("@sexo"); TipoDato.Add((byte)DatoSQL.Char);
+            Valor.Add(valor[5]); Parametros.Add("@area"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(Convert.ToChar(valor[6])); Parametros.Add("@status"); TipoDato.Add((byte)DatoSQL.Char);
+            Valor.Add(index); Parametros.Add("@index"); TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("Search", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable Moves(byte index, string[] valor)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(valor[0]); Parametros.Add("@nc"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(valor[1]); Parametros.Add("@servicio"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(ConvertirFecha(valor[2])); Parametros.Add("@fechaI"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(ConvertirFecha(valor[3])); Parametros.Add("@fechaF"); TipoDato.Add((byte)DatoSQL.VarChar);
+            Valor.Add(index); Parametros.Add("@index"); TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("Moves", Valor, Parametros, TipoDato);
             return data;
         }
 
@@ -106,16 +133,27 @@ namespace CapaNegocio
             datos.Insersion("Bitacora", Valor, Parametros);
         }
 
-        /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
+        public DataTable Reportes(byte index)
         {
-            try
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(index);
+            Parametros.Add("@index");
+            TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("ReporteUsuariosSalasPorSexo", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        static private object ConvertirFecha(string fecha)
+        {
+            if (!string.IsNullOrEmpty(fecha))
             {
-                combo.Items.Clear();
-                data = datos.CompletarComboBox(NombreProcedure);
-                for (int i = 0; i < data.Rows.Count; i++)
-                    combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+                string tempYear = fecha[6].ToString() + fecha[7].ToString() + fecha[8].ToString() + fecha[9].ToString();
+                string tempMonth = fecha[3].ToString() + fecha[4].ToString();
+                string tempDay = fecha[0].ToString() + fecha[1].ToString();
+                return fecha = tempYear + "-" + tempMonth + "-" + tempDay;
             }
-            catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
-        }*/
+            else
+                return fecha;
+        }
     }
 }
