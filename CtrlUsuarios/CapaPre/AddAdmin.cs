@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
@@ -20,7 +13,7 @@ namespace CapaPre
         #endregion Instancias
 
         private string[] ColumnasAddAdmmin = new string[] { "Número de Control", "Nombres", "Apellido Paterno", "Apellido Materno", "Sexo", "Carrera / Departamento", "Activo / Inactivo", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
-        DialogResult dr;
+        private DialogResult dr;
         private Control[] arreglo;
         private byte menu;
         private char supersu = 'N';
@@ -85,11 +78,11 @@ namespace CapaPre
                             {
                                 try
                                 {
-                                    negocio.AddNewAdmin(gridAddAdmin.SelectedRows[0].Cells[0].Value.ToString(), 
-                                        gridAddAdmin.SelectedRows[0].Cells[1].Value.ToString(), 
-                                        gridAddAdmin.SelectedRows[0].Cells[2].Value.ToString(), 
-                                        gridAddAdmin.SelectedRows[0].Cells[3].Value.ToString(), 
-                                        Convert.ToChar(gridAddAdmin.SelectedRows[0].Cells[4].Value.ToString()), 
+                                    negocio.AddNewAdmin(gridAddAdmin.SelectedRows[0].Cells[0].Value.ToString(),
+                                        gridAddAdmin.SelectedRows[0].Cells[1].Value.ToString(),
+                                        gridAddAdmin.SelectedRows[0].Cells[2].Value.ToString(),
+                                        gridAddAdmin.SelectedRows[0].Cells[3].Value.ToString(),
+                                        Convert.ToChar(gridAddAdmin.SelectedRows[0].Cells[4].Value.ToString()),
                                         txtNewPassword.Text.Trim(), supersu);
                                 }
                                 catch (Exception) { Console.WriteLine("Error al agregar un administrador. Contactar al administrador."); }
@@ -101,6 +94,7 @@ namespace CapaPre
                     catch (Exception) { Console.WriteLine("Error a la hora e registrar un nuevo administrador."); }
                     LimpiarCampos();
                     break;
+
                 case 1:
                     //btnCancelar
                     pregunta = new Question((byte)TypeIcon.Warning, "Deshacer cambios", "¿Deseas deshacer los cambios que llevas hasta el momento?", "Sí aceptas, se perderán todos los cambios a nuevos usuarios que hayas realizado y no hayas guardado con el botón de \"Aceptar\".", true);
@@ -122,6 +116,7 @@ namespace CapaPre
                     }*/
                     dr = DialogResult.No;
                     break;
+
                 case 2: txtNewPassword.PasswordChar = (txtNewPassword.PasswordChar == '*') ? '\0' : '*'; break;
 
                 case 3: txtConfirmPassword.PasswordChar = (txtConfirmPassword.PasswordChar == '*') ? '\0' : '*'; break;

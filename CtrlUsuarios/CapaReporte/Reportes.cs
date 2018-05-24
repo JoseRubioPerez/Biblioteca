@@ -9,7 +9,6 @@ namespace CapaReporte
 {
     public class Reportes
     {
-
         private Document doc;
         private Chunk chunk;
         private SaveFileDialog saveDialog;
@@ -123,16 +122,16 @@ namespace CapaReporte
         {
             int i, j;
             string[,] array = new string[Grid.RowCount, Grid.ColumnCount];
-            for(i = 0; i < Grid.RowCount; i++)
+            for (i = 0; i < Grid.RowCount; i++)
             {
-                for(j = 0; j < Grid.ColumnCount; j++)
+                for (j = 0; j < Grid.ColumnCount; j++)
                 {
                     array[i, j] = Grid[j, i].Value.ToString();
                     array[i, j] = (j == (columna - 1)) ? array[i, j].Substring(0, 10) : array[i, j];
                     array[i, j] = (j == (columna - 2)) ? array[i, j].Substring(0, 5) : array[i, j];
                 }
             }
-            if(columna == 5)
+            if (columna == 5)
             {
                 tabla.AddCell("#");
                 tabla.AddCell("Número de control");
@@ -140,7 +139,7 @@ namespace CapaReporte
                 tabla.AddCell("Hora");
                 tabla.AddCell("Fecha");
             }
-            else if(columna == 8)
+            else if (columna == 8)
             {
                 tabla.AddCell("#");
                 tabla.AddCell("Número de control");

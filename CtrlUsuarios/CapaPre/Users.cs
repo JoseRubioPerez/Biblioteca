@@ -89,6 +89,7 @@ namespace CapaPre
                                 alert = (area1.Visible && area1.comboAreas.SelectedIndex != -1) ? true : false;
                                 area = (area1.comboAreas.SelectedIndex < 0) ? "" : area1.comboAreas.SelectedItem.ToString();
                                 break;
+
                             case 5: alert = (status1.Visible && (status1.status == 'A' || status1.status == 'I')) ? true : false; break;
                         }
                         if (alert)

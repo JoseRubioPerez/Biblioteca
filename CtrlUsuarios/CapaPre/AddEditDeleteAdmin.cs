@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
@@ -15,12 +8,12 @@ namespace CapaPre
     {
         #region Instancias
 
-        Negocio negocio = new Negocio();
-        AddAdmin addAdmin = new AddAdmin();
-        EditAdmin editAdmin = new EditAdmin();
-        DeleteAdmin deleteAdmin = new DeleteAdmin();
+        private Negocio negocio = new Negocio();
+        private AddAdmin addAdmin = new AddAdmin();
+        private EditAdmin editAdmin = new EditAdmin();
+        private DeleteAdmin deleteAdmin = new DeleteAdmin();
 
-        #endregion
+        #endregion Instancias
 
         private Control[] arreglo;
         private byte menu;

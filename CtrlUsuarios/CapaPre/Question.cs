@@ -23,17 +23,9 @@ namespace CapaPre
             btnCancelar.DialogResult = DialogResult.No;
             switch (TypeIcon)
             {
-                case 1: //danger
-                    pictureIcon.Image = Resources.danger;
-                    break;
-
-                case 2: //warning
-                    pictureIcon.Image = Resources.warning;
-                    break;
-
-                case 3: //info
-                    pictureIcon.Image = Resources.help;
-                    break;
+                case 1:pictureIcon.Image = Resources.danger; break;
+                case 2: pictureIcon.Image = Resources.warning; break;
+                case 3: pictureIcon.Image = Resources.help; break;
             }
             lbIcon.Text = textIcon;
             lbTitulo.Text = titulo;
@@ -58,13 +50,7 @@ namespace CapaPre
                 if (arreglo[menu] == sender)
                     break;
             }
-            switch (menu)
-            {
-                case 1:
-                case 2:
-                    this.Hide();
-                    break;
-            }
+            switch (menu) { case 1: case 2: this.Hide(); break; }
             menu = 0;
         }
     }

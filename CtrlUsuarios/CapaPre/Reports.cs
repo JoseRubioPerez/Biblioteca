@@ -38,31 +38,25 @@ namespace CapaPre
 
         private void EventoClick(object sender, EventArgs e)
         {
-            arreglo = new Control[] { btnUsuarioSalaPorSexo, btnServicioBanios, btnServicioBD, btnServicioConsulta, btnServicioCubiculos, btnServicioLectura, btnServicioOtros, btnServicioSalaTrabajo };
+            arreglo = new Control[] { btnUsuarioSalaPorSexo, btnServicioBanios, btnServicioBD, btnServicioConsulta, btnServicioCubiculos, btnServicioOtros, btnServicioLectura, btnServicioSalaTrabajo };
             for (; menu < arreglo.Length; menu++)
                 if (arreglo[menu] == sender)
                     break;
-            switch (menu)
+            pregunta = new Question((byte)TypeIcon.Warning, "Nuevo reporte", "¿De verdad quieres crear un nuevo reporte?", "Sí aceptas, el reporte será llenado con los datos del usuario que inició sesión y con los datos de la tabla.", true);
+            dr = pregunta.ShowDialog();
+            if (dr == DialogResult.Yes)
             {
-                case 0:
-                    GridHombres.DataSource = negocio.Reportes(2);
-                    GridMujeres.DataSource = negocio.Reportes(1);
+                if(menu == 0)
+                {
+                    GridHombres.DataSource = negocio.ReporteModuloUsuarios(2);
+                    GridMujeres.DataSource = negocio.ReporteModuloUsuarios(1);
                     reportes.ReporteDesglosadoPorSexo(GridHombres, GridMujeres, Usuario);
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
+                }
+                else
+                {
+                    GridHombres.DataSource = negocio.ReporteModuloServicios((byte)(menu - 1));
+                    reportes.GenerarDocumento(GridHombres, Usuario);
+                }
             }
             menu = 0;
         }

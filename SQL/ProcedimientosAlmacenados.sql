@@ -266,3 +266,101 @@ INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
 WHERE dbo.Movimientos.servicio = 4 AND dbo.Usuarios.sexo = 'H' OR dbo.Movimientos.servicio = 5 AND dbo.Usuarios.sexo = 'H'
 END
 GO
+
+--SP PARA GENERAR LOS REPORTES DE CUALQUIER SERVICIOS
+CREATE PROCEDURE ReporteServiciosPorSexo
+@index TINYINT
+AS
+BEGIN
+IF @index = 0 --Baños
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE '%Baños%'
+
+ELSE IF @index = 1 --Bases de datos
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE '%Bases de datos%'
+
+ELSE IF @index = 2 --Consulta o Referencia
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE '%Consulta o Referencia%'
+
+ELSE IF @index = 3 --Cubículos
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE 'Cubículos%'
+
+ELSE IF @index = 4 --Otros
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE '%Otros%'
+
+ELSE IF @index = 5 --Sala de Lectura
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE '%Sala de Lectura%'
+
+ELSE IF @index = 6 --Sala de Trabajo en Equipo
+SELECT dbo.Movimientos.id,
+dbo.Usuarios.nc,
+dbo.Usuarios.nombres,
+dbo.Usuarios.apellidopat,
+dbo.Usuarios.apellidomat,
+dbo.Servicios.servicio,
+dbo.Movimientos.hora,
+dbo.Movimientos.fecha
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
+WHERE dbo.Servicios.servicio LIKE '%Sala de Trabajo en Equipo%'
+END
+GO

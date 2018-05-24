@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
@@ -15,9 +8,9 @@ namespace CapaPre
     {
         #region Instancias
 
-        Negocio negocio = new Negocio();
+        private Negocio negocio = new Negocio();
 
-        #endregion
+        #endregion Instancias
 
         private string[] ColumnasDeleteAdmin = new string[] { "Número de Control", "Nombres", "Apellido Paterno", "Apellido Materno", "Sexo", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)", "Permiso de Super Usuario" };
         private int suma = 0;
