@@ -46,6 +46,7 @@ namespace CapaPre
                         bandera = false;
                     this.Close();
                     break;
+
                 case 1: case 2: this.Close(); break;
             }
             menu = 0;

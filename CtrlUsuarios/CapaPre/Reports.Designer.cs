@@ -157,6 +157,7 @@
             // 
             // btnServicioOtros
             // 
+            this.btnServicioOtros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioOtros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioOtros.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioOtros.Location = new System.Drawing.Point(29, 224);
@@ -169,6 +170,7 @@
             // 
             // btnServicioBanios
             // 
+            this.btnServicioBanios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioBanios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioBanios.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioBanios.Location = new System.Drawing.Point(438, 168);
@@ -181,6 +183,7 @@
             // 
             // btnServicioLectura
             // 
+            this.btnServicioLectura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioLectura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioLectura.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioLectura.Location = new System.Drawing.Point(278, 168);
@@ -193,6 +196,7 @@
             // 
             // btnServicioSalaTrabajo
             // 
+            this.btnServicioSalaTrabajo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioSalaTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioSalaTrabajo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioSalaTrabajo.Location = new System.Drawing.Point(29, 168);
@@ -205,6 +209,7 @@
             // 
             // btnServicioCubiculos
             // 
+            this.btnServicioCubiculos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioCubiculos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioCubiculos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioCubiculos.Location = new System.Drawing.Point(438, 110);
@@ -217,6 +222,7 @@
             // 
             // btnServicioBD
             // 
+            this.btnServicioBD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioBD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioBD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioBD.Location = new System.Drawing.Point(278, 110);
@@ -229,6 +235,7 @@
             // 
             // btnServicioConsulta
             // 
+            this.btnServicioConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicioConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnServicioConsulta.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnServicioConsulta.Location = new System.Drawing.Point(29, 110);
@@ -373,6 +380,7 @@
             // 
             // btnUsuarioSalaPorSexo
             // 
+            this.btnUsuarioSalaPorSexo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarioSalaPorSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsuarioSalaPorSexo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnUsuarioSalaPorSexo.Location = new System.Drawing.Point(23, 86);
