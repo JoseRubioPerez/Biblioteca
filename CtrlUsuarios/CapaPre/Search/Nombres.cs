@@ -1,10 +1,10 @@
 ﻿using System.Windows.Forms;
 
-namespace CapaPre
+namespace CapaPre.Search
 {
-    public partial class FatherConfig : Form
+    public partial class Nombres : UserControl
     {
-        public FatherConfig()
+        public Nombres()
         {
             InitializeComponent();
         }

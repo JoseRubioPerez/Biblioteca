@@ -46,7 +46,6 @@ namespace CapaPre
                     {
                         if (dt.Rows.Count > 0 && dt.Columns.Count == 3)
                         {
-
                             negocio.Bitacora(txtUser.Text.Trim(), "Control de Usuarios", "Entrada");
                             Main main = new Main(dt.Rows[0]["nc"].ToString(), dt.Rows[0]["password"].ToString(), Convert.ToChar(dt.Rows[0]["superus"].ToString()));
                             main.Show();

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace CapaPre
 {
@@ -23,7 +16,7 @@ namespace CapaPre
         private byte menu;
         public string[] Admin = new string[2];
         public char supersu;
-        DialogResult dr;
+        private DialogResult dr;
 
         public ChangeOthersPasswords()
         {
@@ -86,9 +79,11 @@ namespace CapaPre
                 case 2:
                     LimpiarCampos();
                     break;
+
                 case 3:
                     negocio.ComboAdministradores(comboAdministrador, "ComboAdministradores");
                     break;
+
                 case 4: txtNewPassword.PasswordChar = (txtNewPassword.PasswordChar == '*') ? '\0' : '*'; break;
                 case 5: txtConfirmPassword.PasswordChar = (txtConfirmPassword.PasswordChar == '*') ? '\0' : '*'; break;
             }

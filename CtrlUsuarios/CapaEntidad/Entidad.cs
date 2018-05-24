@@ -10,6 +10,7 @@
         private string AdminApellidoMaterno;
         private char AdminSexo;
         private string AdminPassword;
+
         //private Image AdminImagen;
         private char AdminSuperSu;
 

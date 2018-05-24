@@ -106,9 +106,35 @@ namespace CapaNegocio
             datos.Insersion("Bitacora", Valor, Parametros);
         }
 
+<<<<<<< HEAD
+        public DataTable ReporteModuloUsuarios(byte index)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(index);
+            Parametros.Add("@index");
+            TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("ReporteUsuariosSalasPorSexo", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        public DataTable ReporteModuloServicios(byte index)
+        {
+            Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
+            Valor.Add(index);
+            Parametros.Add("@index");
+            TipoDato.Add((byte)DatoSQL.TinyInt);
+            data = datos.Procedimiento("ReporteServiciosPorSexo", Valor, Parametros, TipoDato);
+            return data;
+        }
+
+        static private object ConvertirFecha(string fecha)
+        {
+            if (!string.IsNullOrEmpty(fecha))
+=======
         /*public void ComboUsuarios(ComboBox combo, string NombreProcedure)
         {
             try
+>>>>>>> master
             {
                 combo.Items.Clear();
                 data = datos.CompletarComboBox(NombreProcedure);

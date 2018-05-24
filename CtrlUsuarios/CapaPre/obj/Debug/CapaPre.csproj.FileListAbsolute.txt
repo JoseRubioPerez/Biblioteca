@@ -25,6 +25,8 @@ C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Deb
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.ChangeMyPassword.resources
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.ChangeOthersPasswords.resources
+<<<<<<< HEAD
+=======
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.exe.config
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.exe
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.pdb
@@ -53,3 +55,4 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPr
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csproj.CopyComplete
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.exe
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
+>>>>>>> master
