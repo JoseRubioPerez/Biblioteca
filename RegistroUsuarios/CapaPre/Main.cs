@@ -36,7 +36,7 @@ namespace CapaPre
                 if(negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows.Count > 0)
                 {
                     negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
-                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\Sonidos\Ingresa.wav");
+                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\Ingresa.wav");
                     audio.Play();
                     TiempoParaPasar.Enabled = true;
                     txtNumControl.Focus();
@@ -44,7 +44,7 @@ namespace CapaPre
                 else
                 {
                     lbInfo.Text = "El usuario no existe\nNo será registrado.";
-                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\Sonidos\ElUsuarioNoExiste.wav");
+                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\ElUsuarioNoExiste.wav");
                     audio.Play();
                 }
                 txtNumControl.Text = "";
