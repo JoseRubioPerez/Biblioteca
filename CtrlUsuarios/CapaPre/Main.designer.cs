@@ -46,6 +46,7 @@
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
+            this.pictureHelp = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
             this.panelVentana.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -61,6 +63,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panelMain.Controls.Add(this.pictureHelp);
             this.panelMain.Controls.Add(this.panelVentana);
             this.panelMain.Controls.Add(this.lbTitulo);
             this.panelMain.Controls.Add(this.pictureIcon);
@@ -271,6 +274,19 @@
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
             // 
+            // pictureHelp
+            // 
+            this.pictureHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureHelp.Image = global::CapaPre.Properties.Resources.help;
+            this.pictureHelp.Location = new System.Drawing.Point(1041, 2);
+            this.pictureHelp.Name = "pictureHelp";
+            this.pictureHelp.Size = new System.Drawing.Size(28, 28);
+            this.pictureHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureHelp.TabIndex = 5;
+            this.pictureHelp.TabStop = false;
+            this.pictureHelp.Click += new System.EventHandler(this.EventoClick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -299,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,5 +339,6 @@
         private System.Windows.Forms.ToolStripMenuItem CambiarOtraContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MovimientosMenu;
+        private System.Windows.Forms.PictureBox pictureHelp;
     }
 }

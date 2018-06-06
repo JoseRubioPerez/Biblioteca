@@ -80,14 +80,23 @@ namespace CapaNegocio
             data = datos.Procedimiento("ChangeOtherPassword", Valor, Parametros, TipoDato);
         }
 
-        public void ComboAdministradores(ComboBox combo, string NombreProcedure)
+        public void LlenarCombo(ComboBox combo, string NombreProcedure, byte Opcion)
         {
             try
             {
                 combo.Items.Clear();
                 data = datos.Procedimiento(NombreProcedure);
-                for (int i = 0; i < data.Rows.Count; i++)
-                    combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+                switch (Opcion)
+                {
+                    case 0:
+                        for (int i = 0; i < data.Rows.Count; i++)
+                            combo.Items.Add(data.Rows[i][0].ToString() + " " + data.Rows[i][1].ToString() + " " + data.Rows[i][2].ToString() + " " + data.Rows[i][3].ToString());
+                        break;
+                    case 1:
+                        for (int i = 0; i < data.Rows.Count; i++)
+                            combo.Items.Add(data.Rows[i][0].ToString());
+                        break;
+                }
             }
             catch (Exception e) { Console.WriteLine("Error:\nMétodo: LC01 en N falló\n" + e.Message); }
         }
@@ -143,12 +152,12 @@ namespace CapaNegocio
             return data;
         }
 
-        public DataTable ReporteModuloServicios(byte index)
+        public DataTable ReporteModuloServicios(byte index, byte sexo)
         {
             Valor.Clear(); Parametros.Clear(); TipoDato.Clear();
-            Valor.Add(index);
-            Parametros.Add("@index");
-            TipoDato.Add((byte)DatoSQL.TinyInt);
+            Valor.Add(index); Valor.Add(sexo);
+            Parametros.Add("@index"); Parametros.Add("@sexo");
+            TipoDato.Add((byte)DatoSQL.TinyInt); TipoDato.Add((byte)DatoSQL.TinyInt);
             data = datos.Procedimiento("ReporteServiciosPorSexo", Valor, Parametros, TipoDato);
             return data;
         }

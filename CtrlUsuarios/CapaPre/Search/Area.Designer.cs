@@ -50,6 +50,7 @@
             this.comboAreas.Name = "comboAreas";
             this.comboAreas.Size = new System.Drawing.Size(522, 27);
             this.comboAreas.TabIndex = 0;
+            this.comboAreas.Click += new System.EventHandler(this.LlenarAreas);
             // 
             // Area
             // 

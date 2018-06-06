@@ -61,7 +61,7 @@ namespace CapaPre
 
         private void EventoClick(object sender, EventArgs e)
         {
-            arreglo = new Control[] { pictureClose, pictureMinimize };
+            arreglo = new Control[] { pictureClose, pictureMinimize, pictureHelp };
             for (; menu < arreglo.Length; menu++)
                 if (arreglo[menu] == sender)
                     break;
@@ -86,6 +86,9 @@ namespace CapaPre
                     WindowState = (WindowState == FormWindowState.Normal) ? WindowState = FormWindowState.Minimized : WindowState = FormWindowState.Normal;
                     this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
                     MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+                    break;
+                case 2:
+                    //Botón del manual del usuario
                     break;
             }
             menu = 0;
