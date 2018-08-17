@@ -25,17 +25,28 @@ C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Deb
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.ChangeMyPassword.resources
 C:\Users\Jose\Documents\Visual Studio 2017\Projects\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.ChangeOthersPasswords.resources
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> configuraciones
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.exe.config
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.exe
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaPre.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaEntidad.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaNegocio.dll
+<<<<<<< HEAD
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaReporte.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaDatos.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\itextsharp.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaEntidad.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaNegocio.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaReporte.pdb
+=======
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaDatos.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaEntidad.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaNegocio.pdb
+>>>>>>> configuraciones
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\bin\Debug\CapaDatos.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csprojResolveAssemblyReference.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.AddAdmin.resources
@@ -48,6 +59,7 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPr
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.LogIn.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.LogOut.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Main.resources
+<<<<<<< HEAD
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Moves.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Properties.Resources.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Question.resources
@@ -60,10 +72,18 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPr
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Servicio.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Sexo.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Search.Status.resources
+=======
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Properties.Resources.resources
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Question.resources
+>>>>>>> configuraciones
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.Users.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csproj.GenerateResource.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csproj.CoreCompileInputs.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csproj.CopyComplete
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.exe
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
+<<<<<<< HEAD
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.ImportUsers.resources
+=======
+>>>>>>> master
+>>>>>>> configuraciones
