@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CapaNegocio
@@ -173,6 +175,17 @@ namespace CapaNegocio
             }
             else
                 return fecha;
+        }
+
+        public DataTable ReadCSV(string str)
+        {
+            DataTable Table = new DataTable("DataCSV");
+            OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" + Path.GetDirectoryName(str) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';");
+            OleDbCommand cmd = new OleDbCommand(string.Format("SELECT * FROM [{0}]", new FileInfo(str).Name), cn);
+            cn.Open();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(Table);
+            return Table;
         }
     }
 }

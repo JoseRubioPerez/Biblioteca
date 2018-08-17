@@ -8,3 +8,4 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\bin\Debug\
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache

@@ -66,3 +66,4 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPr
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.csproj.CopyComplete
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.exe
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaPre\obj\Debug\CapaPre.ImportUsers.resources

@@ -34,6 +34,7 @@
             this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.MovimientosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +43,9 @@
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
-            this.pictureHelp = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
             this.panelVentana.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
@@ -54,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -63,7 +61,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.panelMain.Controls.Add(this.pictureHelp);
             this.panelMain.Controls.Add(this.panelVentana);
             this.panelMain.Controls.Add(this.lbTitulo);
             this.panelMain.Controls.Add(this.pictureIcon);
@@ -123,6 +120,17 @@
             this.menuStrip1.Size = new System.Drawing.Size(1140, 59);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
+            this.lbTitulo.TabIndex = 3;
+            this.lbTitulo.Text = "Sistema de Control de Usuarios";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usuariosMenu
             // 
@@ -227,17 +235,6 @@
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
             // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
-            this.lbTitulo.TabIndex = 3;
-            this.lbTitulo.Text = "Sistema de Control de Usuarios";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureIcon
             // 
             this.pictureIcon.Image = global::CapaPre.Properties.Resources.usuarios;
@@ -274,19 +271,6 @@
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
             // 
-            // pictureHelp
-            // 
-            this.pictureHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureHelp.Image = global::CapaPre.Properties.Resources.help;
-            this.pictureHelp.Location = new System.Drawing.Point(1041, 2);
-            this.pictureHelp.Name = "pictureHelp";
-            this.pictureHelp.Size = new System.Drawing.Size(28, 28);
-            this.pictureHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureHelp.TabIndex = 5;
-            this.pictureHelp.TabStop = false;
-            this.pictureHelp.Click += new System.EventHandler(this.EventoClick);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -315,7 +299,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,6 +322,5 @@
         private System.Windows.Forms.ToolStripMenuItem CambiarOtraContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MovimientosMenu;
-        private System.Windows.Forms.PictureBox pictureHelp;
     }
 }

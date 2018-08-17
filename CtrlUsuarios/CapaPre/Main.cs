@@ -20,6 +20,7 @@ namespace CapaPre
         private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
         private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
         private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
+        private ImportUsers importUsers = new ImportUsers();
 
         #endregion Instancias
 
@@ -61,7 +62,7 @@ namespace CapaPre
 
         private void EventoClick(object sender, EventArgs e)
         {
-            arreglo = new Control[] { pictureClose, pictureMinimize, pictureHelp };
+            arreglo = new Control[] { pictureClose, pictureMinimize };
             for (; menu < arreglo.Length; menu++)
                 if (arreglo[menu] == sender)
                     break;
@@ -87,9 +88,6 @@ namespace CapaPre
                     this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
                     MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
                     break;
-                case 2:
-                    //Botón del manual del usuario
-                    break;
             }
             menu = 0;
         }
@@ -106,7 +104,7 @@ namespace CapaPre
                 case 0: MostrarForm(usuarios); break; //usuariosMenu
                 case 1: MostrarForm(moves); break; //MovimientosMenu
                 case 2: MostrarForm(reportes); break; //reportesMenu
-                case 3: break; //ImportarUsuariosMenuItem
+                case 3: MostrarForm(importUsers); break; //ImportarUsuariosMenuItem
                 case 4: MostrarForm(addEditDeleteAdmin); break; //AgregarAdminMenuItem
                 case 5: MostrarForm(changeMyPassword); break; //CambiarMiContraMenuItem
                 case 6: MostrarForm(changeOthersPasswords); break; //CambiarOtraContraMenuItem
