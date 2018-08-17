@@ -33,6 +33,47 @@ namespace CapaPre
             {
                 if (comboServicio.SelectedIndex != -1 && txtNumControl.Text != "" && (txtNumControl.Text.Length >= 8 || txtNumControl.Text.Length <= 9))
                 {
+<<<<<<< HEAD
+                    negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
+                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\Ingresa.wav");
+                    audio.Play();
+                    TiempoParaPasar.Enabled = true;
+                    txtNumControl.Focus();
+                }
+                else
+                {
+                    lbInfo.Text = "El usuario no existe\nNo será registrado.";
+                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\ElUsuarioNoExiste.wav");
+                    audio.Play();
+                }
+                txtNumControl.Text = "";
+                txtServicio.Text = "";
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
+
+        private void LlenarNombreCarreraDepa(object sender, EventArgs e)
+        {
+            try
+            {
+                lbNombre.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["nombres"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidopat"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidomat"].ToString();
+                lbCarreraDepa.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["area"].ToString();
+            }
+            catch
+            {
+                lbNombre.Text = "¡ESTE USUARIO NO EXISTE!";
+                lbCarreraDepa.Text = "Contacte con el administrador";
+            }
+        }
+
+        private void ValidarServicio(object sender, EventArgs e)
+        {
+            if (txtServicio.Text != string.Empty)
+            {
+                switch (txtServicio.Text[0]) { case '8': case '9': case '0': txtServicio.Text = txtServicio.Text.Replace(txtServicio.Text[0], '\0'); break; }
+                txtServicio.Text = (char.IsNumber(txtServicio.Text[0])) ? txtServicio.Text : txtServicio.Text.Replace(txtServicio.Text[0], '\0');
+            }
+=======
                     negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte((comboServicio.SelectedIndex + 1)));
                     lbInfo.Text = "Por favor, ingresa en menos de: ";
                     //Activar temporizador en el lbInfo
@@ -40,6 +81,7 @@ namespace CapaPre
                 else
                     lbInfo.Text = "Selecciona un servicio, por favor.";
             }catch(Exception ex) { Console.WriteLine(ex.ToString()); }
+>>>>>>> configuraciones
         }
 
         private void ValidarNumControl(object sender, EventArgs e)

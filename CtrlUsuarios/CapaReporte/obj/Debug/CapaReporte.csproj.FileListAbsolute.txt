@@ -1,0 +1,10 @@
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\bin\Debug\CapaReporte.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\bin\Debug\CapaReporte.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\bin\Debug\itextsharp.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\bin\Debug\itextsharp.xtra.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\obj\Debug\CapaReporte.csprojResolveAssemblyReference.cache
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\obj\Debug\CapaReporte.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\obj\Debug\CapaReporte.csproj.CopyComplete
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\obj\Debug\CapaReporte.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\CtrlUsuarios\CapaReporte\obj\Debug\CapaReporte.pdb

@@ -19,7 +19,7 @@ apellidopat VARCHAR(20) NOT NULL,
 apellidomat VARCHAR(20) NOT NULL,
 sexo CHAR(1) NOT NULL,
 area TINYINT NOT NULL,
-status 
+status CHAR(1) NOT NULL,
 foto IMAGE NULL,
 hora TIME(7) NOT NULL,
 fecha DATE NOT NULL)

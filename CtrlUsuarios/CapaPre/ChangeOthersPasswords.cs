@@ -81,7 +81,7 @@ namespace CapaPre
                     break;
 
                 case 3:
-                    negocio.ComboAdministradores(comboAdministrador, "ComboAdministradores");
+                    negocio.LlenarCombo(comboAdministrador, "ComboAdministradores", 0);
                     break;
 
                 case 4: txtNewPassword.PasswordChar = (txtNewPassword.PasswordChar == '*') ? '\0' : '*'; break;

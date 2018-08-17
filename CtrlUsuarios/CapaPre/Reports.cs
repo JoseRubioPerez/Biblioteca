@@ -54,8 +54,9 @@ namespace CapaPre
                 }
                 else
                 {
-                    GridHombres.DataSource = negocio.ReporteModuloServicios((byte)(menu - 1));
-                    reportes.GenerarDocumento(GridHombres, Usuario);
+                    GridHombres.DataSource = negocio.ReporteModuloServicios((byte)(menu - 1), 0);
+                    GridMujeres.DataSource = negocio.ReporteModuloServicios((byte)(menu - 1), 1);
+                    reportes.ReporteDesglosadoPorSexo(GridHombres, GridMujeres, Usuario);
                 }
             }
             menu = 0;
