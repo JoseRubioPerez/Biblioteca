@@ -42,7 +42,10 @@
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+=======
             this.MovimientosMenu = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> configuraciones
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
@@ -221,6 +224,8 @@
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
             // 
+<<<<<<< HEAD
+=======
             // MovimientosMenu
             // 
             this.MovimientosMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -231,6 +236,7 @@
             this.MovimientosMenu.Size = new System.Drawing.Size(262, 55);
             this.MovimientosMenu.Text = "Movimiento de usuarios";
             // 
+>>>>>>> configuraciones
             // pictureIcon
             // 
             this.pictureIcon.Image = global::CapaPre.Properties.Resources.usuarios;

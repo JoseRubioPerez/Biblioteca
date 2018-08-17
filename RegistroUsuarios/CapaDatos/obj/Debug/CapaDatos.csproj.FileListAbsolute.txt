@@ -5,7 +5,7 @@ c:\users\jose\documents\visual studio 2017\Projects\RegistroUsuarios\CapaDatos\o
 c:\users\jose\documents\visual studio 2017\Projects\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\bin\Debug\CapaDatos.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache

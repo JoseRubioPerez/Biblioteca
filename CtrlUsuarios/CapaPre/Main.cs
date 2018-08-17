@@ -18,6 +18,7 @@ namespace CapaPre
         private AddEditDeleteAdmin addEditDeleteAdmin = new AddEditDeleteAdmin();
         private ChangeMyPassword changeMyPassword = new ChangeMyPassword();
         private ChangeOthersPasswords changeOthersPasswords = new ChangeOthersPasswords();
+        private ImportUsers importUsers = new ImportUsers();
 
         #endregion Instancias
 
@@ -94,12 +95,22 @@ namespace CapaPre
             }
             switch (item)
             {
+<<<<<<< HEAD
+                case 0: MostrarForm(usuarios); break; //usuariosMenu
+                case 1: MostrarForm(moves); break; //MovimientosMenu
+                case 2: MostrarForm(reportes); break; //reportesMenu
+                case 3: MostrarForm(importUsers); break; //ImportarUsuariosMenuItem
+                case 4: MostrarForm(addEditDeleteAdmin); break; //AgregarAdminMenuItem
+                case 5: MostrarForm(changeMyPassword); break; //CambiarMiContraMenuItem
+                case 6: MostrarForm(changeOthersPasswords); break; //CambiarOtraContraMenuItem
+=======
                 case 0: MostrarForm(usuarios); break;
                 case 1:
                     break;
                 case 2: MostrarForm(addEditDeleteAdmin); break;
                 case 3: MostrarForm(changeMyPassword); break;
                 case 4: MostrarForm(changeOthersPasswords); break;
+>>>>>>> configuraciones
             }
             item = 0;
         }
