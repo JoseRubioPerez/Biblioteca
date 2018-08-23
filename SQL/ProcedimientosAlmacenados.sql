@@ -114,7 +114,6 @@ BEGIN
 INSERT INTO dbo.RegLogeo (nc,sistema, hora,fecha,accion) VALUES (@nc,@sistema,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),@accion)
 END
 GO
-<<<<<<< HEAD
 
 
 --SP PARA SABER LA EXISTENCIA DE UN USUARIO
@@ -363,9 +362,3 @@ ELSE IF @index = 6 --Sala de Trabajo en Equipo
 		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
 		WHERE dbo.Servicios.servicio LIKE '%Sala de Trabajo en Equipo%' AND dbo.Usuarios.sexo = 'H'
 END
-<<<<<<< HEAD
-=======
-GO
-=======
->>>>>>> master
->>>>>>> configuraciones
