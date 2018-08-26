@@ -34,18 +34,20 @@
             this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMenuStrip = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.usuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.MovimientosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImportarUsuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AgregarAdminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarMiContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CambiarOtraContraMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
+            this.ImportarAlumnosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportarEmpleadosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportarUsuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain.SuspendLayout();
             this.panelVentana.SuspendLayout();
             this.panelMenuStrip.SuspendLayout();
@@ -121,17 +123,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
-            this.lbTitulo.TabIndex = 3;
-            this.lbTitulo.Text = "Sistema de Control de Usuarios";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // usuariosMenu
             // 
             this.usuariosMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,16 +186,6 @@
             this.configuracionMenu.MouseEnter += new System.EventHandler(this.CambiarColorMenuItem);
             this.configuracionMenu.MouseLeave += new System.EventHandler(this.ResetColorMenuItem);
             // 
-            // ImportarUsuariosMenuItem
-            // 
-            this.ImportarUsuariosMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ImportarUsuariosMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.ImportarUsuariosMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.ImportarUsuariosMenuItem.Name = "ImportarUsuariosMenuItem";
-            this.ImportarUsuariosMenuItem.Size = new System.Drawing.Size(336, 22);
-            this.ImportarUsuariosMenuItem.Text = "Importar Usuarios";
-            this.ImportarUsuariosMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
-            // 
             // AgregarAdminMenuItem
             // 
             this.AgregarAdminMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -234,6 +215,17 @@
             this.CambiarOtraContraMenuItem.Size = new System.Drawing.Size(336, 22);
             this.CambiarOtraContraMenuItem.Text = "Cambiar contraseña de otro administrador";
             this.CambiarOtraContraMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(45, 12);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(241, 18);
+            this.lbTitulo.TabIndex = 3;
+            this.lbTitulo.Text = "Sistema de Control de Usuarios";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureIcon
             // 
@@ -270,6 +262,32 @@
             this.pictureClose.TabIndex = 0;
             this.pictureClose.TabStop = false;
             this.pictureClose.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // ImportarAlumnosMenuItem
+            // 
+            this.ImportarAlumnosMenuItem.Name = "ImportarAlumnosMenuItem";
+            this.ImportarAlumnosMenuItem.Size = new System.Drawing.Size(285, 22);
+            this.ImportarAlumnosMenuItem.Text = "Importar Alumnos";
+            this.ImportarAlumnosMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // ImportarEmpleadosMenuItem
+            // 
+            this.ImportarEmpleadosMenuItem.Name = "ImportarEmpleadosMenuItem";
+            this.ImportarEmpleadosMenuItem.Size = new System.Drawing.Size(285, 22);
+            this.ImportarEmpleadosMenuItem.Text = "Importar Empleados y/o Docentes";
+            this.ImportarEmpleadosMenuItem.Click += new System.EventHandler(this.EventoClickMenuItem);
+            // 
+            // ImportarUsuariosMenuItem
+            // 
+            this.ImportarUsuariosMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ImportarUsuariosMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ImportarAlumnosMenuItem,
+            this.ImportarEmpleadosMenuItem});
+            this.ImportarUsuariosMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.ImportarUsuariosMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.ImportarUsuariosMenuItem.Name = "ImportarUsuariosMenuItem";
+            this.ImportarUsuariosMenuItem.Size = new System.Drawing.Size(336, 22);
+            this.ImportarUsuariosMenuItem.Text = "Importar Usuarios";
             // 
             // Main
             // 
@@ -317,10 +335,12 @@
         private System.Windows.Forms.ToolStripMenuItem reportesMenu;
         private System.Windows.Forms.ToolStripMenuItem configuracionMenu;
         private System.Windows.Forms.Panel panelContenido;
-        private System.Windows.Forms.ToolStripMenuItem ImportarUsuariosMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CambiarMiContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CambiarOtraContraMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AgregarAdminMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MovimientosMenu;
+        private System.Windows.Forms.ToolStripMenuItem ImportarUsuariosMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImportarAlumnosMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImportarEmpleadosMenuItem;
     }
 }

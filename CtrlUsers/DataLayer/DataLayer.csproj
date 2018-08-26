@@ -43,7 +43,6 @@
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="QueriesDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueriesOLEDataBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

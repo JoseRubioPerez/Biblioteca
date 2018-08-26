@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using DataLayer;
 using System.Data;
-using System.Data.OleDb;
 using System.IO;
 using System.Windows.Forms;
 using Entity;
@@ -168,10 +166,63 @@ namespace BusinessLayer
                 return fecha;
         }
 
-        public DataTable ReadCSV(string str)
+        public DataTable ReadCSV(string str, ConfigEntity ObjConfig)
         {
-            QueriesOLEDataBase ObjQueryOLEBDataBase = new QueriesOLEDataBase(str);
-            return ObjQueryOLEBDataBase.ProcedimientoOLEDB();
+            FileStream fs = new FileStream(str, FileMode.Open, FileAccess.Read, FileShare.Read);
+            StreamReader csv = new StreamReader(fs, Encoding.GetEncoding("iso-8859-15"));
+            List<string> Lines = new List<string>();
+            while (!csv.EndOfStream)
+                Lines.Add(csv.ReadLine());
+            object[] rowObject = new object[7];
+            Table = new DataTable();
+            Table.Columns.Add("Numero de Control", typeof(string));
+            Table.Columns.Add("Nombres", typeof(string));
+            Table.Columns.Add("Apellido Paterno", typeof(string));
+            Table.Columns.Add("Apellido Materno", typeof(string));
+            if (ObjConfig.TypeImport)
+            {
+                Table.Columns.Add("ID Carrera", typeof(byte));
+                Table.Columns.Add("Sexo", typeof(char));
+            }
+            else
+            {
+                Table.Columns.Add("Sexo", typeof(char));
+                Table.Columns.Add("Departamento", typeof(byte));
+            }
+            Table.Columns.Add("Status", typeof(char));
+
+            for (int i = 0; i < Lines.Count; i++)
+            {
+                //Console.WriteLine(i);
+                rowObject[0] = Lines[i].Split(',')[0]; //Número de Control
+                rowObject[1] = Lines[i].Split(',')[1]; //Nombres
+                if (ObjConfig.TypeImport)
+                {
+                    rowObject[2] = Lines[i].Split(',')[2]; //Apellido Paterno
+                    rowObject[3] = Lines[i].Split(',')[3]; //Apellido Materno
+                    rowObject[4] = byte.Parse(Lines[i].Split(',')[4]); //Carrera
+                    rowObject[5] = Convert.ToChar(Lines[i].Split(',')[5]); //Sexo
+                    rowObject[6] = (Lines[i].Split(',')[6].Equals("A") || Lines[i].Split(',').Equals("ACT")) ? 'A' : 'I';
+                }
+                else
+                {
+                    if (Regex.IsMatch(Lines[i].Split(',')[2], "\\s"))
+                    {
+                        rowObject[2] = Lines[i].Split(',')[2].Split(' ')[0]; //Apellidos Paterno
+                        rowObject[3] = Lines[i].Split(',')[2].Split(' ')[1]; //Apellidos Materno
+                    }
+                    else
+                    {
+                        rowObject[2] = Lines[i].Split(',')[2];
+                        rowObject[3] = string.Empty;
+                    }
+                    rowObject[4] = Convert.ToChar(Lines[i].Split(',')[3]); //Sexo
+                    rowObject[5] = 0; //Departamento
+                    rowObject[6] = 'A'; //Status
+                }
+                Table.Rows.Add(rowObject);
+            }
+            return Table;
         }
     }
 }

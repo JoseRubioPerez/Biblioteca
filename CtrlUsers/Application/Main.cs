@@ -13,6 +13,7 @@ namespace Application
         #region Instancias
 
         public SessionsEntity ObjSession = new SessionsEntity();
+        public ConfigEntity ObjConfig = new ConfigEntity();
         private Business ObjBusiness = new Business();
         private Users usuarios = new Users();
         private Moves moves = new Moves();
@@ -97,7 +98,15 @@ namespace Application
         private void EventoClickMenuItem(object sender, EventArgs e)
         {
             byte item = 0;
-            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] { usuariosMenu, MovimientosMenu, reportesMenu, ImportarUsuariosMenuItem, AgregarAdminMenuItem, CambiarMiContraMenuItem, CambiarOtraContraMenuItem };
+            ToolStripMenuItem[] menuitem = new ToolStripMenuItem[] {
+                usuariosMenu, //0
+                MovimientosMenu, //1
+                reportesMenu, //2
+                ImportarAlumnosMenuItem, //3
+                ImportarEmpleadosMenuItem, //4
+                AgregarAdminMenuItem, //5
+                CambiarMiContraMenuItem, //6
+                CambiarOtraContraMenuItem }; //7
             for (; item < menuitem.Length; item++)
                 if (menuitem[item] == sender)
                     break;
@@ -106,10 +115,19 @@ namespace Application
                 case 0: MostrarForm(usuarios); break; //usuariosMenu
                 case 1: MostrarForm(moves); break; //MovimientosMenu
                 case 2: MostrarForm(reportes); break; //reportesMenu
-                case 3: MostrarForm(importUsers); break; //ImportarUsuariosMenuItem
-                case 4: MostrarForm(addEditDeleteAdmin); break; //AgregarAdminMenuItem
-                case 5: MostrarForm(changeMyPassword); break; //CambiarMiContraMenuItem
-                case 6: MostrarForm(changeOthersPasswords); break; //CambiarOtraContraMenuItem
+                case 3:
+                    ObjConfig.TypeImport = true;
+                    importUsers.UserConfigs(ObjConfig);
+                    MostrarForm(importUsers);
+                    break; //ImportarAlumnoMenuItem
+                case 4:
+                    ObjConfig.TypeImport = false;
+                    importUsers.UserConfigs(ObjConfig);
+                    MostrarForm(importUsers); //ImportarEmpleadosMenuItem
+                    break;
+                case 5: MostrarForm(addEditDeleteAdmin); break; //AgregarAdminMenuItem
+                case 6: MostrarForm(changeMyPassword); break; //CambiarMiContraMenuItem
+                case 7: MostrarForm(changeOthersPasswords); break; //CambiarOtraContraMenuItem
             }
             item = 0;
         }

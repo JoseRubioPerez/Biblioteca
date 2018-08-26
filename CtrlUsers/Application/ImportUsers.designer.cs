@@ -31,18 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablePanelImportUsers = new System.Windows.Forms.TableLayoutPanel();
+            this.GridCSV = new System.Windows.Forms.DataGridView();
             this.LabelTitle = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
-            this.LabelFile = new System.Windows.Forms.Label();
-            this.ButtonFile = new System.Windows.Forms.Button();
             this.LabelFile2 = new System.Windows.Forms.Label();
-            this.GridCSV = new System.Windows.Forms.DataGridView();
+            this.ButtonFile = new System.Windows.Forms.Button();
+            this.LabelFile = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ButtonImportUsers = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ButtonImportUsers = new System.Windows.Forms.Button();
             this.TablePanelImportUsers.SuspendLayout();
-            this.PanelContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridCSV)).BeginInit();
+            this.PanelContenido.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,66 +64,6 @@
             this.TablePanelImportUsers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TablePanelImportUsers.Size = new System.Drawing.Size(1140, 507);
             this.TablePanelImportUsers.TabIndex = 0;
-            // 
-            // LabelTitle
-            // 
-            this.LabelTitle.AutoSize = true;
-            this.TablePanelImportUsers.SetColumnSpan(this.LabelTitle, 2);
-            this.LabelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelTitle.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitle.Location = new System.Drawing.Point(3, 0);
-            this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(1134, 60);
-            this.LabelTitle.TabIndex = 20;
-            this.LabelTitle.Text = "Importación de usuarios a la base de datos por medio de archivo de Excel (xlsx)";
-            this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PanelContenido
-            // 
-            this.TablePanelImportUsers.SetColumnSpan(this.PanelContenido, 2);
-            this.PanelContenido.Controls.Add(this.LabelFile2);
-            this.PanelContenido.Controls.Add(this.ButtonFile);
-            this.PanelContenido.Controls.Add(this.LabelFile);
-            this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenido.Location = new System.Drawing.Point(3, 63);
-            this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(1134, 74);
-            this.PanelContenido.TabIndex = 21;
-            // 
-            // LabelFile
-            // 
-            this.LabelFile.AutoSize = true;
-            this.LabelFile.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFile.Location = new System.Drawing.Point(9, 28);
-            this.LabelFile.Name = "LabelFile";
-            this.LabelFile.Size = new System.Drawing.Size(416, 25);
-            this.LabelFile.TabIndex = 21;
-            this.LabelFile.Text = "Archivo de Excel con los datos de usuarios:";
-            this.LabelFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ButtonFile
-            // 
-            this.ButtonFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ButtonFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.ButtonFile.Location = new System.Drawing.Point(431, 27);
-            this.ButtonFile.Name = "ButtonFile";
-            this.ButtonFile.Size = new System.Drawing.Size(188, 31);
-            this.ButtonFile.TabIndex = 29;
-            this.ButtonFile.Text = "Buscar";
-            this.ButtonFile.UseVisualStyleBackColor = true;
-            this.ButtonFile.Click += new System.EventHandler(this.EventoClick);
-            // 
-            // LabelFile2
-            // 
-            this.LabelFile2.AutoSize = true;
-            this.LabelFile2.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.LabelFile2.Location = new System.Drawing.Point(625, 30);
-            this.LabelFile2.Name = "LabelFile2";
-            this.LabelFile2.Size = new System.Drawing.Size(371, 23);
-            this.LabelFile2.TabIndex = 30;
-            this.LabelFile2.Text = "Archivo de Excel con los datos de usuarios:";
-            this.LabelFile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GridCSV
             // 
@@ -159,6 +99,66 @@
             this.GridCSV.TabIndex = 22;
             this.GridCSV.TabStop = false;
             // 
+            // LabelTitle
+            // 
+            this.LabelTitle.AutoSize = true;
+            this.TablePanelImportUsers.SetColumnSpan(this.LabelTitle, 2);
+            this.LabelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelTitle.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitle.Location = new System.Drawing.Point(3, 0);
+            this.LabelTitle.Name = "LabelTitle";
+            this.LabelTitle.Size = new System.Drawing.Size(1134, 60);
+            this.LabelTitle.TabIndex = 20;
+            this.LabelTitle.Text = "Importación de usuarios a la base de datos por medio de archivo de Excel (xlsx)";
+            this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelContenido
+            // 
+            this.TablePanelImportUsers.SetColumnSpan(this.PanelContenido, 2);
+            this.PanelContenido.Controls.Add(this.LabelFile2);
+            this.PanelContenido.Controls.Add(this.ButtonFile);
+            this.PanelContenido.Controls.Add(this.LabelFile);
+            this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenido.Location = new System.Drawing.Point(3, 63);
+            this.PanelContenido.Name = "PanelContenido";
+            this.PanelContenido.Size = new System.Drawing.Size(1134, 74);
+            this.PanelContenido.TabIndex = 21;
+            // 
+            // LabelFile2
+            // 
+            this.LabelFile2.AutoSize = true;
+            this.LabelFile2.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.LabelFile2.Location = new System.Drawing.Point(625, 30);
+            this.LabelFile2.Name = "LabelFile2";
+            this.LabelFile2.Size = new System.Drawing.Size(371, 23);
+            this.LabelFile2.TabIndex = 30;
+            this.LabelFile2.Text = "Archivo de Excel con los datos de usuarios:";
+            this.LabelFile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ButtonFile
+            // 
+            this.ButtonFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.ButtonFile.Location = new System.Drawing.Point(431, 27);
+            this.ButtonFile.Name = "ButtonFile";
+            this.ButtonFile.Size = new System.Drawing.Size(188, 31);
+            this.ButtonFile.TabIndex = 29;
+            this.ButtonFile.Text = "Buscar";
+            this.ButtonFile.UseVisualStyleBackColor = true;
+            this.ButtonFile.Click += new System.EventHandler(this.EventoClick);
+            // 
+            // LabelFile
+            // 
+            this.LabelFile.AutoSize = true;
+            this.LabelFile.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFile.Location = new System.Drawing.Point(9, 28);
+            this.LabelFile.Name = "LabelFile";
+            this.LabelFile.Size = new System.Drawing.Size(416, 25);
+            this.LabelFile.TabIndex = 21;
+            this.LabelFile.Text = "Archivo de Excel con los datos de usuarios:";
+            this.LabelFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -168,6 +168,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 361);
             this.panel1.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label1.Location = new System.Drawing.Point(45, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 69);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Asegurate de que\r\nlos datos estan\r\ncorrectos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ButtonImportUsers
             // 
@@ -184,19 +197,6 @@
             this.ButtonImportUsers.UseVisualStyleBackColor = true;
             this.ButtonImportUsers.Click += new System.EventHandler(this.EventoClick);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label1.Location = new System.Drawing.Point(45, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 69);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Asegurate de que\r\nlos datos estan\r\ncorrectos";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ImportUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -207,9 +207,9 @@
             this.Text = "ImportUsers";
             this.TablePanelImportUsers.ResumeLayout(false);
             this.TablePanelImportUsers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCSV)).EndInit();
             this.PanelContenido.ResumeLayout(false);
             this.PanelContenido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridCSV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -219,7 +219,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel TablePanelImportUsers;
-        private System.Windows.Forms.Label LabelTitle;
         private System.Windows.Forms.Panel PanelContenido;
         private System.Windows.Forms.Label LabelFile;
         private System.Windows.Forms.Button ButtonFile;
@@ -228,5 +227,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ButtonImportUsers;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label LabelTitle;
     }
 }
