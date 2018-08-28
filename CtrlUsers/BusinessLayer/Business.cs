@@ -193,36 +193,78 @@ namespace BusinessLayer
 
             for (int i = 0; i < Lines.Count; i++)
             {
-                //Console.WriteLine(i);
-                rowObject[0] = Lines[i].Split(',')[0]; //Número de Control
-                rowObject[1] = Lines[i].Split(',')[1]; //Nombres
+                rowObject[0] = Lines[i].Split(',')[0];
+                rowObject[1] = Lines[i].Split(',')[1];
                 if (ObjConfig.TypeImport)
                 {
-                    rowObject[2] = Lines[i].Split(',')[2]; //Apellido Paterno
-                    rowObject[3] = Lines[i].Split(',')[3]; //Apellido Materno
-                    rowObject[4] = byte.Parse(Lines[i].Split(',')[4]); //Carrera
-                    rowObject[5] = Convert.ToChar(Lines[i].Split(',')[5]); //Sexo
-                    rowObject[6] = (Lines[i].Split(',')[6].Equals("A") || Lines[i].Split(',').Equals("ACT")) ? 'A' : 'I';
+                    rowObject[2] = Lines[i].Split(',')[2];
+                    rowObject[3] = Lines[i].Split(',')[3];
+                    rowObject[4] = byte.Parse(Lines[i].Split(',')[4]);
+                    rowObject[5] = Convert.ToChar(Lines[i].Split(',')[5]);
+                    rowObject[6] = (Lines[i].Split(',')[6].Equals("A") || Lines[i].Split(',')[6].Equals("ACT")) ? 'A' : 'I';
                 }
                 else
                 {
                     if (Regex.IsMatch(Lines[i].Split(',')[2], "\\s"))
                     {
-                        rowObject[2] = Lines[i].Split(',')[2].Split(' ')[0]; //Apellidos Paterno
-                        rowObject[3] = Lines[i].Split(',')[2].Split(' ')[1]; //Apellidos Materno
+                        rowObject[2] = Lines[i].Split(',')[2].Split(' ')[0];
+                        rowObject[3] = Lines[i].Split(',')[2].Split(' ')[1];
                     }
                     else
                     {
                         rowObject[2] = Lines[i].Split(',')[2];
                         rowObject[3] = string.Empty;
                     }
-                    rowObject[4] = Convert.ToChar(Lines[i].Split(',')[3]); //Sexo
-                    rowObject[5] = 0; //Departamento
-                    rowObject[6] = 'A'; //Status
+                    rowObject[4] = Convert.ToChar(Lines[i].Split(',')[3]);
+                    rowObject[5] = 0;
+                    rowObject[6] = 'A';
                 }
                 Table.Rows.Add(rowObject);
             }
             return Table;
+        }
+
+        public int ImportUsers(DataGridView Grid, ConfigEntity ObjConfig)
+        {
+            int total = 0;
+            if(Grid.Rows.Count > 0)
+            {
+                for (int i = 0; i < Grid.Rows.Count; i++)
+                {
+                    if (ExistUserOrAdmin(Grid.Rows[i].Cells[0].Value.ToString(), "ExistUsuario").Rows.Count <= 0)
+                    {
+                        Valor.Clear();
+                        Parametros.Clear();
+                        Valor.Add(Grid.Rows[i].Cells[0].Value.ToString());
+                        Valor.Add(Grid.Rows[i].Cells[1].Value.ToString());
+                        Valor.Add(Grid.Rows[i].Cells[2].Value.ToString());
+                        Valor.Add(Grid.Rows[i].Cells[3].Value.ToString());
+                        Parametros.Add("@p1");
+                        Parametros.Add("@p2");
+                        Parametros.Add("@p3");
+                        Parametros.Add("@p4");
+                        if (ObjConfig.TypeImport)
+                        {
+                            Valor.Add(byte.Parse(Grid.Rows[i].Cells[4].Value.ToString()));
+                            Valor.Add(Convert.ToChar(Grid.Rows[i].Cells[5].Value.ToString()));
+                            Parametros.Add("@p6");
+                            Parametros.Add("@p5");
+                        }
+                        else
+                        {
+                            Valor.Add(Convert.ToChar(Grid.Rows[i].Cells[4].Value.ToString()));
+                            Valor.Add(byte.Parse(Grid.Rows[i].Cells[5].Value.ToString()));
+                            Parametros.Add("@p5");
+                            Parametros.Add("@p6");
+                        }
+                        Valor.Add(Convert.ToChar(Grid.Rows[i].Cells[6].Value.ToString()));
+                        Parametros.Add("@p7");
+                        ObjQueryDataBase.Procedimiento("NewUser", Valor, Parametros);
+                        total++;
+                    }
+                }
+            }
+            return total;
         }
     }
 }

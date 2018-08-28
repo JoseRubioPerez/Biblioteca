@@ -19,7 +19,6 @@ C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\bin\Debug\Ca
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\bin\Debug\CapaDatos.dll
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\bin\Debug\CapaNegocio.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\bin\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.csprojResolveAssemblyReference.cache
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.LogIn.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.LogOut.resources
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.Main.resources
@@ -46,3 +45,4 @@ C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaPre\obj\Debug\Cap
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.csproj.CopyComplete
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.exe
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaPre\obj\Debug\CapaPre.csprojAssemblyReference.cache

@@ -60,6 +60,33 @@ namespace Application
                             pregunta.Close();
                     }
                     break;
+                case 1:
+                    if(GridCSV.Rows.Count <= 0)
+                    {
+                        Alerts pregunta = new Alerts((byte)TypeIcon.Danger, "Importación Fallida", "No se pudo realizar la importación de los usuarios.", "La tabla de importación esta vacía.", false);
+                        DialogResult dr = pregunta.ShowDialog();
+                        if (dr == DialogResult.Yes)
+                            pregunta.Close();
+                    }
+                    else if(GridCSV.Rows.Count > 0)
+                    {
+                        if (ObjNegocio.ImportUsers(GridCSV, ObjConfig) > 0)
+                        {
+                            Alerts pregunta = new Alerts((byte)TypeIcon.Info, "¡Importación exitosa!", "Se han importado los usuarios a la base de datos.", "Los datos de la tabla han sido importados.", false);
+                            DialogResult dr = pregunta.ShowDialog();
+                            if (dr == DialogResult.Yes)
+                                pregunta.Close();
+                            GridCSV.Rows.Clear();
+                        }
+                        else if (ObjNegocio.ImportUsers(GridCSV, ObjConfig) <= 0)
+                        {
+                            Alerts pregunta = new Alerts((byte)TypeIcon.Warning, "Importación Fallida", "No se pudo realizar la importación de los usuarios.", "La tabla de importación no cumple con la validación necesaria de importación.", false);
+                            DialogResult dr = pregunta.ShowDialog();
+                            if (dr == DialogResult.Yes)
+                                pregunta.Close();
+                        }
+                    }
+                    break;
             }
             menu = 0;
         }

@@ -18,7 +18,7 @@ nombres VARCHAR(20) NOT NULL,
 apellidopat VARCHAR(20) NOT NULL,
 apellidomat VARCHAR(20) NOT NULL,
 sexo CHAR(1) NOT NULL,
-area TINYINT NOT NULL,
+area TINYINT REFERENCES Areas(id),
 status CHAR(1) NOT NULL,
 foto IMAGE NULL,
 hora TIME(7) NOT NULL,
@@ -37,15 +37,15 @@ area VARCHAR(70) NOT NULL)
 --TABLA "Movimientos"
 CREATE TABLE Movimientos(
 id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-nc VARCHAR(9) NOT NULL,
-servicio TINYINT NOT NULL,
+nc VARCHAR(9) REFERENCES Usuarios(nc),
+servicio TINYINT REFERENCES Servicios (id),
 hora TIME(7) NOT NULL,
 fecha DATE NOT NULL)
 
 --TABLA "RegLogeo"
 CREATE TABLE RegLogeo(
 registro INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-nc VARCHAR(9) NOT NULL,
+nc VARCHAR(9) REFERENCES Administradores(nc),
 sistema VARCHAR(20) NOT NULL,
 hora TIME(7),
 fecha DATE,

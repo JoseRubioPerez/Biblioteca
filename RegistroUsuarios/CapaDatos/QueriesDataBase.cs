@@ -31,7 +31,7 @@ namespace CapaDatos
                 da = new SqlDataAdapter(cmd);
                 table = new DataTable();
                 da.Fill(table);
-                cmd.Parameters.Clear(); //Limpiar los parametros para nuevas consultas
+                cmd.Parameters.Clear();
                 cmd.Connection = conexDB.CloseConnection();
             }
             catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }

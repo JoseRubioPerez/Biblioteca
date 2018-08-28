@@ -36,7 +36,7 @@ namespace CapaPre
                 if(negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows.Count > 0)
                 {
                     negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
-                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\Ingresa.wav");
+                    audio = new SoundPlayer(Environment.CurrentDirectory + @"\Sonidos\Ingresa.wav");
                     audio.Play();
                     TiempoParaPasar.Enabled = true;
                     txtNumControl.Focus();

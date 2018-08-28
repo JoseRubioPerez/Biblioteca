@@ -13,7 +13,6 @@ namespace Application
 
         #endregion Instancias
 
-        private string[] ColumnasDeleteAdmin = new string[] { "Número de Control", "Nombres", "Apellido Paterno", "Apellido Materno", "Sexo", "Carrera / Departamento", "Activo / Inactivo", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
         private Control[] arreglo;
         private byte menu;
 
@@ -27,10 +26,6 @@ namespace Application
         private void RecargarDatos()
         {
             GridSearch.DataSource = ObjBusiness.SelectAll("CargarUsuarios");
-            for (byte i = 0; i < GridSearch.Columns.Count; i++)
-                GridSearch.Columns[i].HeaderText = ColumnasDeleteAdmin[i];
-            for (int i = 0; i < GridSearch.Rows.Count; i++)
-                GridSearch.Rows[i].Cells["hora"].Value = GridSearch.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
         }
 
         private void Controles(byte index, bool bandera)

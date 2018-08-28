@@ -44,8 +44,16 @@ GO
 --SP PARA CARGAR TODOS LOS USUARIOS DEL SISTEMA
 CREATE PROCEDURE CargarUsuarios
 AS
-SELECT dbo.Usuarios.nc, dbo.Usuarios.nombres, dbo.Usuarios.apellidopat, dbo.Usuarios.apellidomat, dbo.Usuarios.sexo, dbo.Areas.area, dbo.Usuarios.status, dbo.Usuarios.hora, dbo.Usuarios.fecha 
-FROM dbo.Usuarios 
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
 INNER JOIN dbo.Areas ON Areas.id = Usuarios.area
 GO
 --SP PARA AGREGAR UN NUEVO ADMINISTRADOR SIN FOTO
@@ -84,8 +92,14 @@ GO
 --SP PARA MOSTRAR TODOS LOS MOVIMIENTOS REALIZADOS
 CREATE PROCEDURE CargarMovimientos
 AS
-SELECT dbo.Movimientos.id,dbo.Movimientos.nc,dbo.Servicios.servicio,dbo.Movimientos.hora,dbo.Movimientos.fecha FROM dbo.Movimientos
+SELECT dbo.Movimientos.id
+,dbo.Movimientos.nc
+,dbo.Servicios.servicio
+,(SELECT FORMAT(dbo.Movimientos.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Movimientos.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Movimientos
 INNER JOIN dbo.Servicios ON Servicios.id = Movimientos.servicio
+
 GO
 
 --SP PARA AGREGAR NUEVO MOVIMIENTO AL SISTEMA
@@ -361,4 +375,110 @@ ELSE IF @index = 6 --Sala de Trabajo en Equipo
 		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
 		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
 		WHERE dbo.Servicios.servicio LIKE '%Sala de Trabajo en Equipo%' AND dbo.Usuarios.sexo = 'H'
+END
+
+--SP PARA INSERTAR UN NUEVO USUARIO
+CREATE PROCEDURE NewUser
+@p1 VARCHAR(9),
+@P2 VARCHAR(20),
+@p3 VARCHAR(20),
+@p4 VARCHAR(20),
+@p5 CHAR(1),
+@p6 TINYINT,
+@p7 CHAR(1)
+AS
+BEGIN
+INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
+VALUES (@p1,@p2,@p3,@p4,@p5,@p6,@p7,NULL,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
+END
+
+--SP PARA BUSQUEDAS
+CREATE PROCEDURE Search
+@nc VARCHAR(9),
+@nombres VARCHAR(20),
+@apellidopat VARCHAR(20),
+@apellidomat VARCHAR(20),
+@sexo CHAR(1),
+@area VARCHAR(70),
+@status CHAR(1),
+@index TINYINT
+AS
+BEGIN
+IF @index = 0 --Número de Control
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
+INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Usuarios.nc LIKE '%' + @nc + '%'
+
+ELSE IF @index = 1 --Nombres
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
+INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Usuarios.nombres LIKE '%' + @nombres + '%'
+
+ELSE IF @index = 2 --Ambos apellidos
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
+INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Usuarios.apellidopat LIKE '%' + @apellidopat + '%' AND dbo.Usuarios.apellidomat LIKE '%' + @apellidomat + '%'
+
+ELSE IF @index = 3 --Sexo
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
+INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Usuarios.sexo LIKE '%' + @sexo + '%'
+
+ELSE IF @index = 4 --Carrera o departamento
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
+INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Areas.area LIKE '%' + @area + '%'
+
+ELSE IF @index = 5 --Status del usuario
+SELECT dbo.Usuarios.nc
+,dbo.Usuarios.nombres
+,dbo.Usuarios.apellidopat
+,dbo.Usuarios.apellidomat
+,dbo.Usuarios.sexo
+,dbo.Areas.area
+,dbo.Usuarios.status
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
+FROM dbo.Usuarios
+INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Usuarios.status LIKE '%' + @status + '%'
 END
