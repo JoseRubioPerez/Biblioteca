@@ -12,7 +12,7 @@ namespace CapaPre
     {
         #region Instancias
 
-        private Negocio negocio = new Negocio();
+        private Negocio ObjBusiness = new Negocio();
 
         #endregion Instancias
 
@@ -33,9 +33,9 @@ namespace CapaPre
         {
             try
             {
-                if(negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows.Count > 0)
+                if(ObjBusiness.ExistUsuario(txtNumControl.Text.Trim()).Rows.Count > 0)
                 {
-                    negocio.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
+                    ObjBusiness.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
                     audio = new SoundPlayer(Environment.CurrentDirectory + @"\Sonidos\Ingresa.wav");
                     audio.Play();
                     TiempoParaPasar.Enabled = true;
@@ -57,8 +57,9 @@ namespace CapaPre
         {
             try
             {
-                lbNombre.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["nombres"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidopat"].ToString() + " " + negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["apellidomat"].ToString();
-                lbCarreraDepa.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : negocio.ExistUsuario(txtNumControl.Text.Trim()).Rows[0]["area"].ToString();
+                System.Data.DataRow row = ObjBusiness.ExistUsuario(txtNumControl.Text.Trim()).Rows[0];
+                lbNombre.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : row.ItemArray[0].ToString() + " " + row.ItemArray[1].ToString() + " " + row.ItemArray[2].ToString();
+                lbCarreraDepa.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : row.ItemArray[2].ToString();
             }
             catch
             {

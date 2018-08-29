@@ -38,12 +38,9 @@ namespace CapaNegocio
         /// </summary>
         /// <param name="nc">string Número de control</param>
         /// <param name="servicio">byte Clave del servicio que se va a utilizar</param>
-        public void Registry(string nc, byte servicio)
+        public void Registry(string nc, byte servicie)
         {
-            Valor.Clear(); Parametros.Clear();
-            Valor.Add(nc); Valor.Add(servicio);
-            Parametros.Add("@nc"); Parametros.Add("@servicio");
-            ObjData.Procedimiento("NewMove", Valor, Parametros);
+            ObjData.Procedimiento(nc, servicie);
         }
 
         /// <summary>

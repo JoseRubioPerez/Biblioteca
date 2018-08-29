@@ -9,15 +9,15 @@ INSERT INTO Servicios (id,servicio) VALUES ('7','Otros')
 
 --INSERTAR LAS CARRERAS Y DEPARTAMENTOS DISPONIBLES
 INSERT INTO Areas (id,area) VALUES (0,'NINGUNA')
-INSERT INTO Areas (id,area) VALUES (1,'Ingeniería en Sistemas Computacionales')
-INSERT INTO Areas (id,area) VALUES (2,'Ingeniería Electromecánica')
-INSERT INTO Areas (id,area) VALUES (3,'Ingeniería Industrial')
-INSERT INTO Areas (id,area) VALUES (4,'Ingeniería en Gestión Empresarial')
-INSERT INTO Areas (id,area) VALUES (5,'Ingeniería en Energías Renovables')
-INSERT INTO Areas (id,area) VALUES (6,'Ingeniería en Tecnologías de la Información y la Comunicación')
-INSERT INTO Areas (id,area) VALUES (7,'Docente')
-INSERT INTO Areas (id,area) VALUES (8,'Dirección')
-INSERT INTO Areas (id,area) VALUES (9,'Subdirección Acedémica')
+INSERT INTO Areas (id,area) VALUES (1,'Ingeniería Industrial') --CORREGIDA
+INSERT INTO Areas (id,area) VALUES (2,'Ingeniería Electromecánica') --CORREGIDA
+INSERT INTO Areas (id,area) VALUES (3,'Docente')
+INSERT INTO Areas (id,area) VALUES (4,'Ingeniería en Sistemas Computacionales') --CORREGIDA
+INSERT INTO Areas (id,area) VALUES (5,'Subdirección Acedémica')
+INSERT INTO Areas (id,area) VALUES (6,'Dirección')
+INSERT INTO Areas (id,area) VALUES (7,'Ingeniería en Gestión Empresarial') --CORREGIDA
+INSERT INTO Areas (id,area) VALUES (8,'Ingeniería en Tecnologías de la Información y la Comunicación') --CORREGIDA
+INSERT INTO Areas (id,area) VALUES (9,'Ingeniería en Energías Renovables') --CORREGIDA
 INSERT INTO Areas (id,area) VALUES (10,'Subdirección de Planeación')
 INSERT INTO Areas (id,area) VALUES (11,'Subdirección Administrativa')
 INSERT INTO Areas (id,area) VALUES (12,'Departamento de Ingeniería Industrial')
@@ -41,64 +41,12 @@ INSERT INTO Areas (id,area) VALUES (29,'Centro de Computo')
 
 --INSERTAR USUARIOS (SIN FOTO)
 INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540072','José Antonio','López','Beltrán','H',3,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540073','Kevin Andrés','García','Marquez','H',2,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540075','César Raúl','González','López','H',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540074','José Luis','Rubio','Pérez','H',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540077','Karla','Gómez','Baray','M',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540078','Daniela','Ramirez','Hernandez','M',1,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('14540079','Oscar Raúl','López','Melendez','H',4,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios(nc ,nombres ,apellidopat ,apellidomat ,sexo ,area ,status ,foto ,hora ,fecha)
-VALUES('14540071','Rodolfo Manuel','Hernandez','Solis','H',6,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios(nc ,nombres ,apellidopat ,apellidomat ,sexo ,area ,status ,foto ,hora ,fecha)
-VALUES('101','Raquel','Portillo','Marquez','M',12,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios(nc ,nombres ,apellidopat ,apellidomat ,sexo ,area ,status ,foto ,hora ,fecha)
-VALUES('104','Mónica','Fernandez','Garcia','M',14,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('209','Rosalinda','Garcia','Cantón','M',22,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('105','María Fernanda','Bustillos','Chaves','M',8,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('103','Gabriela','Rubalcaba','Araujo','M',10,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('102','Juana','Lujan','Ortiz','M',11,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('106','Marco Antonio','Melendez','Urrutia','H',19,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('107','Juan Carlos','Ledezma','Rodríguez','H',23,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('108','Armando Bronca','Guzman','Nuñez','H',26,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('109','Felipe','Calderon','Hinojosa','H',15,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
-INSERT INTO dbo.Usuarios (nc,nombres,apellidopat,apellidomat,sexo,area,status,foto,hora,fecha)
-VALUES ('110','Vicente','Fox','Quesada','H',28,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
+VALUES ('14540074','José Luis','Rubio','Pérez','H',4,'A',NULL,CONVERT(TIME,GETDATE(),103),CONVERT(DATE,GETDATE(),108))
 
 --INSERTAR UN ADMINISTRADOR (SIN FOTO)
 INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,area,password,hora,fecha,superus) VALUES
 ('14540074','José Luis','Rubio','Pérez','H','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'S')
-INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
-('14540076','Oscar Uriel','Nuñez','Portillo','H','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'S')
-INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
-('14540077','Karla','Gómez','Baray','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
-INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,password,hora,fecha,superus) VALUES
-('14540078','Daniela','Ramirez','Hernandez','M','1234',CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103),'N')
 
---AGREGAR MOVIMIENTOS
-INSERT INTO dbo.Movimientos (nc,servicio,hora,fecha)
-VALUES ('14540074',1,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
-INSERT INTO dbo.Movimientos (nc,servicio,hora,fecha)
-VALUES ('209',4,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
-
---BUSCAR ENTRE FECHAS
-SELECT * FROM dbo.Movimientos WHERE fecha BETWEEN '2018-04-01' AND CONVERT(DATE,GETDATE(),108)
-SELECT * FROM dbo.Movimientos WHERE fecha BETWEEN CONVERT(DATE,GETDATE(),108) AND CONVERT(DATE,GETDATE(),108)
-
---REINCIAR LA TABLA DE "RegLogeo"
+--REINCIAR TABLAS (TENER EXTREMO CUIDADO AL REINICIAR ALGUNA)
 DELETE FROM dbo.RegLogeo
 DBCC CHECKIDENT (RegLogeo, RESEED, 0)

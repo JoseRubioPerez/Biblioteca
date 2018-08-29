@@ -38,5 +38,20 @@ namespace CapaDatos
             finally { cmd.Connection = conexDB.CloseConnection(); }
             return table;
         }
+
+        public void Procedimiento(string nc, byte service)
+        {
+            try
+            {
+                cmd = new SqlCommand("NewMove") { CommandType = CommandType.StoredProcedure };
+                cmd.Parameters.AddWithValue("@nc", nc);
+                cmd.Parameters.AddWithValue("@servicio", service);
+                cmd.Connection = conexDB.OpenConnection();
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+            }
+            catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }
+            finally { cmd.Connection = conexDB.CloseConnection(); }
+        }
     }
 }
