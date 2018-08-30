@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablePanelImportUsers = new System.Windows.Forms.TableLayoutPanel();
             this.GridCSV = new System.Windows.Forms.DataGridView();
             this.LabelTitle = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.ButtonFile = new System.Windows.Forms.Button();
             this.LabelFile = new System.Windows.Forms.Label();
             this.PanelButtonImport = new System.Windows.Forms.Panel();
+            this.LabelRegistros = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ButtonImportUsers = new System.Windows.Forms.Button();
             this.TablePanelImportUsers.SuspendLayout();
@@ -72,28 +73,28 @@
             this.GridCSV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridCSV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.GridCSV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridCSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridCSV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GridCSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridCSV.Location = new System.Drawing.Point(3, 143);
             this.GridCSV.Name = "GridCSV";
             this.GridCSV.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCSV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCSV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridCSV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridCSV.Size = new System.Drawing.Size(830, 361);
             this.GridCSV.TabIndex = 22;
@@ -130,9 +131,9 @@
             this.LabelFile2.Font = new System.Drawing.Font("Tahoma", 14F);
             this.LabelFile2.Location = new System.Drawing.Point(625, 30);
             this.LabelFile2.Name = "LabelFile2";
-            this.LabelFile2.Size = new System.Drawing.Size(371, 23);
+            this.LabelFile2.Size = new System.Drawing.Size(361, 23);
             this.LabelFile2.TabIndex = 30;
-            this.LabelFile2.Text = "Archivo de Excel con los datos de usuarios:";
+            this.LabelFile2.Text = "Archivo de CSV con los datos de usuarios:";
             this.LabelFile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ButtonFile
@@ -161,6 +162,7 @@
             // 
             // PanelButtonImport
             // 
+            this.PanelButtonImport.Controls.Add(this.LabelRegistros);
             this.PanelButtonImport.Controls.Add(this.label1);
             this.PanelButtonImport.Controls.Add(this.ButtonImportUsers);
             this.PanelButtonImport.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,6 +170,17 @@
             this.PanelButtonImport.Name = "PanelButtonImport";
             this.PanelButtonImport.Size = new System.Drawing.Size(298, 361);
             this.PanelButtonImport.TabIndex = 23;
+            // 
+            // LabelRegistros
+            // 
+            this.LabelRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelRegistros.AutoSize = true;
+            this.LabelRegistros.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.LabelRegistros.Location = new System.Drawing.Point(5, 332);
+            this.LabelRegistros.Name = "LabelRegistros";
+            this.LabelRegistros.Size = new System.Drawing.Size(0, 23);
+            this.LabelRegistros.TabIndex = 32;
+            this.LabelRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -228,5 +241,6 @@
         private System.Windows.Forms.Button ButtonImportUsers;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label LabelTitle;
+        private System.Windows.Forms.Label LabelRegistros;
     }
 }

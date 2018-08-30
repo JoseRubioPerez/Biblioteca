@@ -75,8 +75,7 @@ namespace Application
                     }
                     catch (Exception ex)
                     {
-                        Alerts pregunta = new Alerts((byte)TypeIcon.Danger, "Error de conexión", "Error al conectar a la base de datos", "1. Verifique que su archivo App.config tenga escrito correctamente el nombre " +
-                            "de su instancia SQL y el nombre de pase de datos.\n2. Asegurse de que en su manejador de base de datos tenga la base de datos \"pBiblioteca\".", false);
+                        Alerts pregunta = new Alerts((byte)TypeIcon.Danger, "Error de conexión", "Error al conectar a la base de datos", "1. Asegurse de que en su manejador de base de datos tenga la base de datos \"biblioteca\".", false);
                         MessageBox.Show(ex.ToString());
                         pregunta.Show();
                         pregunta.Focus();

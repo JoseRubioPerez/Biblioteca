@@ -44,16 +44,16 @@ GO
 --SP PARA CARGAR TODOS LOS USUARIOS DEL SISTEMA
 CREATE PROCEDURE CargarUsuarios
 AS
-SELECT dbo.Usuarios.nc
-,dbo.Usuarios.nombres
-,dbo.Usuarios.apellidopat
-,dbo.Usuarios.apellidomat
-,dbo.Usuarios.sexo
-,dbo.Areas.area
-,dbo.Usuarios.status
-,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS hora
-,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS fecha
-FROM dbo.Usuarios
+SELECT dbo.Usuarios.nc AS 'Número de Control'
+,dbo.Usuarios.nombres AS 'Nombres'
+,dbo.Usuarios.apellidopat AS 'Apellido Paterno'
+,dbo.Usuarios.apellidomat AS 'Apellido Materno'
+,dbo.Usuarios.sexo AS 'Sexo'
+,dbo.Areas.area AS 'Departamento/Carrera'
+,dbo.Usuarios.status AS 'Status'
+,(SELECT FORMAT(dbo.Usuarios.hora,'hh\:mm')) AS 'Hora Registro'
+,(SELECT FORMAT(dbo.Usuarios.fecha,'dd/MM/yyyy','es-US')) AS 'Fecha Registro'
+FROM dbo.Usuarios 
 INNER JOIN dbo.Areas ON Areas.id = Usuarios.area
 GO
 --SP PARA AGREGAR UN NUEVO ADMINISTRADOR SIN FOTO
