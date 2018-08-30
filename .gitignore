@@ -2,3 +2,5 @@
 **/bin/Debug/*.*
 **/obj/Debug/*.*
 **/v15/Server/sqlite3/*.*
+*.csproj.user
+*.pfx

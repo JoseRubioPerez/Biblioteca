@@ -28,10 +28,6 @@ namespace Application
         private void RecargarDatos()
         {
             GridSearch.DataSource = ObjBusiness.SelectAll("CargarMovimientos");
-            for (byte i = 0; i < GridSearch.Columns.Count; i++)
-                GridSearch.Columns[i].HeaderText = Columnas[i];
-            for (int i = 0; i < GridSearch.Rows.Count; i++)
-                GridSearch.Rows[i].Cells["hora"].Value = GridSearch.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
         }
 
         private void Controles(byte index, bool bandera)
