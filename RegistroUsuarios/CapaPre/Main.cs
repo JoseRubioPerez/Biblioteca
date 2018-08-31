@@ -59,7 +59,7 @@ namespace CapaPre
             {
                 System.Data.DataRow row = ObjBusiness.ExistUsuario(txtNumControl.Text.Trim()).Rows[0];
                 lbNombre.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : row.ItemArray[0].ToString() + " " + row.ItemArray[1].ToString() + " " + row.ItemArray[2].ToString();
-                lbCarreraDepa.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : row.ItemArray[2].ToString();
+                lbCarreraDepa.Text = (string.IsNullOrEmpty(txtNumControl.Text)) ? "Ingresa un número de control" : row.ItemArray[3].ToString();
             }
             catch
             {
@@ -113,14 +113,14 @@ namespace CapaPre
 
         private void TiempoParaPasar_Tick(object sender, EventArgs e)
         {
-            if(contador < 10)
+            if(contador < 3)
             {
                 lbInfo.Visible = true;
                 button1.Enabled = false;
                 contador++;
-                lbInfo.Text = "Por favor, ingresa en menos de: " + contador.ToString();
+                lbInfo.Text = "¡Bienvenido! Trabaja en silencio, por favor";
             }
-            else if(contador >= 10)
+            else if(contador >= 3)
             {
                 contador = 0;
                 lbInfo.Visible = false;
