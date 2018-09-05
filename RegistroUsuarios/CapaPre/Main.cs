@@ -70,11 +70,23 @@ namespace CapaPre
 
         private void ValidarServicio(object sender, EventArgs e)
         {
-            if (txtServicio.Text != string.Empty)
+            try
             {
-                switch (txtServicio.Text[0]) { case '8': case '9': case '0': txtServicio.Text = txtServicio.Text.Replace(txtServicio.Text[0], '\0'); break; }
-                txtServicio.Text = (char.IsNumber(txtServicio.Text[0])) ? txtServicio.Text : txtServicio.Text.Replace(txtServicio.Text[0], '\0');
+                if (txtServicio.Text != string.Empty)
+                {
+                    switch (int.Parse(txtServicio.Text[0].ToString()))
+                    {
+                        case 8:
+                        case 9:
+                        case 0:
+                            txtServicio.Text = txtServicio.Text.Replace(txtServicio.Text[0], '7');
+                            txtServicio.Select(txtServicio.Text.Length, 0);
+                            break;
+                    }
+                    txtServicio.Text = (char.IsNumber(txtServicio.Text[0])) ? txtServicio.Text : txtServicio.Text.Replace(txtServicio.Text[0], '\0');
+                }
             }
+            catch(Exception ex) { Console.WriteLine(ex.ToString()); }
         }
 
         private void ValidarNumControl(object sender, EventArgs e)
