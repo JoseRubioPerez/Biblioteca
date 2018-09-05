@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueriesDataBase.cs" />
   </ItemGroup>

@@ -5,14 +5,6 @@ c:\users\jose\documents\visual studio 2017\Projects\RegistroUsuarios\CapaNegocio
 c:\users\jose\documents\visual studio 2017\Projects\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
 c:\users\jose\documents\visual studio 2017\Projects\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.dll
 c:\users\jose\documents\visual studio 2017\Projects\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaNegocio.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaDatos.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaDatos.pdb
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.dll
-C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.pdb
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\bin\Debug\CapaNegocio.dll
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\bin\Debug\CapaNegocio.pdb
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\bin\Debug\CapaDatos.dll
@@ -22,4 +14,12 @@ C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\obj\Debug
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Jose\Desktop\Proyectos\BiblioTec\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\bin\Debug\CapaDatos.pdb
 C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Jose\Desktop\Proyectos\Biblioteca\RegistroUsuarios\CapaNegocio\obj\Debug\CapaNegocio.pdb

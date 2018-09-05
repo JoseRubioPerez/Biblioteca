@@ -196,185 +196,22 @@ GO
 
 --SP PARA GENERAR LOS REPORTES DE CUALQUIER SERVICIOS
 CREATE PROCEDURE ReporteServiciosPorSexo
-@index TINYINT,
-@sexo TINYINT
+@servicio TINYINT,
+@sexo CHAR(1)
 AS
 BEGIN
-IF @index = 0 --Baños
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Baños%' AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Baños%' AND dbo.Usuarios.sexo = 'H'
-ELSE IF @index = 1 --Bases de datos
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Bases de datos%' AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Bases de datos%' AND dbo.Usuarios.sexo = 'H'
-ELSE IF @index = 2 --Consulta o Referencia
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Consulta o Referencia%'  AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Consulta o Referencia%'  AND dbo.Usuarios.sexo = 'H'
-ELSE IF @index = 3 --Cubículos
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE 'Cubículos%' AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE 'Cubículos%' AND dbo.Usuarios.sexo = 'H'
-ELSE IF @index = 4 --Otros
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Otros%' AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Otros%' AND dbo.Usuarios.sexo = 'H'
-ELSE IF @index = 5 --Sala de Lectura
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Sala de Lectura%' AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Sala de Lectura%' AND dbo.Usuarios.sexo = 'H'
-ELSE IF @index = 6 --Sala de Trabajo en Equipo
-	IF @sexo = 1
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Sala de Trabajo en Equipo%' AND dbo.Usuarios.sexo = 'M'
-	ELSE
-		SELECT dbo.Movimientos.id,
-		dbo.Usuarios.nc,
-		dbo.Usuarios.nombres,
-		dbo.Usuarios.apellidopat,
-		dbo.Usuarios.apellidomat,
-		dbo.Servicios.servicio,
-		dbo.Movimientos.hora,
-		dbo.Movimientos.fecha
-		FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
-		INNER JOIN dbo.Servicios ON dbo.Servicios.id = dbo.Movimientos.servicio
-		WHERE dbo.Servicios.servicio LIKE '%Sala de Trabajo en Equipo%' AND dbo.Usuarios.sexo = 'H'
+SELECT dbo.Movimientos.id AS 'REGISTRO'
+,dbo.Usuarios.nc AS 'NUMERO DE CONTROL'
+,dbo.Usuarios.nombres AS 'NOMBRES'
+,dbo.Usuarios.apellidopat AS 'APELLIDO PATERNO'
+,dbo.Usuarios.apellidomat AS 'APELLIDO MATERNO'
+,dbo.Servicios.servicio AS 'SERVICIO'
+,(SELECT FORMAT(dbo.Movimientos.hora,'hh\:mm')) AS 'HORA'
+,(SELECT FORMAT(dbo.Movimientos.fecha,'dd/MM/yyyy','es-US')) AS 'FECHA'
+FROM dbo.Movimientos INNER JOIN dbo.Usuarios ON Usuarios.nc = Movimientos.nc
+INNER JOIN dbo.Servicios ON Servicios.id = Movimientos.servicio
+WHERE dbo.Movimientos.servicio = @servicio
+AND dbo.Usuarios.sexo = @sexo
 END
 
 --SP PARA INSERTAR UN NUEVO USUARIO
