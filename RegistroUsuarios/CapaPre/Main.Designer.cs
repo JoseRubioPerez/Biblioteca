@@ -206,6 +206,7 @@
             this.txtServicio.Size = new System.Drawing.Size(52, 29);
             this.txtServicio.TabIndex = 2;
             this.txtServicio.TextChanged += new System.EventHandler(this.ValidarServicio);
+            this.txtServicio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ServicioEnter);
             // 
             // button1
             // 

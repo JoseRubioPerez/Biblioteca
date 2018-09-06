@@ -96,7 +96,7 @@ namespace CapaPre
                 txtNumControl.Text.ToLower();
                 switch (txtNumControl.Text[0])
                 {
-                    case 'c': case 'b': txtNumControl.MaxLength = 9; i = 1; break;
+                    case 'c': case 'C': case 'B': case 'b': txtNumControl.MaxLength = 9; i = 1; break;
                     default: txtNumControl.MaxLength = 8; i = 0; break;
                 }
                 for (; i < txtNumControl.Text.Length; i++)
@@ -139,6 +139,33 @@ namespace CapaPre
                 button1.Enabled = true;
                 TiempoParaPasar.Enabled = false;
             }
+        }
+
+        private void ServicioEnter(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    if (ObjBusiness.ExistUsuario(txtNumControl.Text.Trim()).Rows.Count > 0)
+                    {
+                        ObjBusiness.Registry(txtNumControl.Text.Trim(), Convert.ToByte(txtServicio.Text.Trim()));
+                        audio = new SoundPlayer(Environment.CurrentDirectory + @"\Sonidos\Ingresa.wav");
+                        audio.Play();
+                        txtNumControl.Text = "";
+                        txtServicio.Text = "";
+                        TiempoParaPasar.Enabled = true;
+                        txtNumControl.Focus();
+                    }
+                    else
+                    {
+                        lbInfo.Text = "El usuario no existe\nNo será registrado.";
+                        audio = new SoundPlayer(Environment.CurrentDirectory + @"\ElUsuarioNoExiste.wav");
+                        audio.Play();
+                    }
+                }
+            }
+            catch(Exception ex) { Console.WriteLine(ex.ToString()); }
         }
     }
 }

@@ -39,6 +39,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_883B6F587226473686013AFD9DD4C5C2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_94EDF5E4B0104462BC1656BBDEC29316"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FA49433DEFC1FB7299AD6CD193CBB6FE"
         "OwnerKey" = "8:_78B7A265D5D94593AFF2761D77D402A8"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,12 +59,6 @@
         {
         "MsmKey" = "8:_FA49433DEFC1FB7299AD6CD193CBB6FE"
         "OwnerKey" = "8:_5DD04772A5457C69061A218DDDA43B43"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F791BBDA7DCB50FD7F2BCA3F6FBC654"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -73,6 +79,12 @@
         "OwnerKey" = "8:_FA49433DEFC1FB7299AD6CD193CBB6FE"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5F791BBDA7DCB50FD7F2BCA3F6FBC654"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -91,6 +103,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -107,6 +127,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -218,6 +254,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_883B6F587226473686013AFD9DD4C5C2"
+            {
+            "SourcePath" = "8:..\\CapaPre\\bin\\Debug\\Sonidos\\Ingresa.wav"
+            "TargetName" = "8:Ingresa.wav"
+            "Tag" = "8:"
+            "Folder" = "8:_200C1DF46AEB44298AAC461CA9DBBECD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94EDF5E4B0104462BC1656BBDEC29316"
+            {
+            "SourcePath" = "8:..\\CapaPre\\bin\\Debug\\Sonidos\\ElUsuarioNoExiste.wav"
+            "TargetName" = "8:ElUsuarioNoExiste.wav"
+            "Tag" = "8:"
+            "Folder" = "8:_200C1DF46AEB44298AAC461CA9DBBECD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FA49433DEFC1FB7299AD6CD193CBB6FE"
             {
             "AssemblyRegister" = "3:1"
@@ -287,6 +363,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_200C1DF46AEB44298AAC461CA9DBBECD"
+                    {
+                    "Name" = "8:Sonidos"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_45A59D65C216465F9C6E4563194E9DCF"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -304,9 +391,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Instalador"
+        "ProductName" = "8:Registro de Usuarios"
         "ProductCode" = "8:{FDA401B8-8E5F-44BF-A0F5-5C2508194416}"
-        "PackageCode" = "8:{FFBE47B2-01B2-4E79-9731-E2DD862ACC96}"
+        "PackageCode" = "8:{C0F0C43B-A2BE-4FA3-91D1-64D7E52B7E34}"
         "UpgradeCode" = "8:{5B71FE1D-C9E1-4266-9C7F-A8CB05967673}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -317,9 +404,9 @@
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Instalador"
+        "Title" = "8:Registro de Usuarios"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Jose Luis Rubio Perez"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
