@@ -305,7 +305,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Control de Usuarios";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CancelarF4);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(Main.CancelarF4);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();

@@ -46,14 +46,14 @@ namespace ReportLayer
                 doc.Add(new Paragraph("Resultados encontrados: " + Grid.Rows.Count.ToString().Trim()));
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
-                LlenarTabla(doc, Grid, Grid.Columns.Count);
+                LlenarTabla(doc, Grid, Grid.Rows.Count, Grid.Columns.Count);
                 doc.AddCreationDate();
                 doc.Close();
                 Process.Start(fileName); //Esta parte se puede omitir, si solo se desea guardar el archivo, y que este no se ejecute al instante
             }
         }
 
-        public void ReporteDesglosadoPorSexo(DataGridView GridHombres, DataGridView GridMujeres, string usuario)
+        public void GenerarReportePDF(DataGridView GridHombres, DataGridView GridMujeres, string usuario)
         {
             doc = new Document(PageSize.A4, 10, 10, 10, 10);
             saveDialog = new SaveFileDialog
@@ -82,7 +82,7 @@ namespace ReportLayer
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
-                LlenarTabla(doc, GridHombres, GridHombres.Columns.Count);
+                LlenarTabla(doc, GridHombres, GridHombres.Rows.Count, GridHombres.Columns.Count);
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
@@ -90,14 +90,14 @@ namespace ReportLayer
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
-                LlenarTabla(doc, GridMujeres, GridMujeres.Columns.Count);
+                LlenarTabla(doc, GridMujeres, GridMujeres.Rows.Count, GridMujeres.Columns.Count);
                 doc.AddCreationDate();
                 doc.Close();
                 Process.Start(fileName);
             }
         }
 
-        private void LlenarTabla(Document documento, DataGridView Grid, int columna)
+        private void LlenarTabla(Document documento, DataGridView Grid, int filas, int columna)
         {
             PdfPTable datatable = new PdfPTable(Grid.ColumnCount);
             datatable.DefaultCell.Padding = 3;
@@ -106,7 +106,7 @@ namespace ReportLayer
             datatable.WidthPercentage = 100;
             datatable.DefaultCell.BorderWidth = 2;
             datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            FormatGrid(doc, datatable, Grid, columna);
+            FormatGrid(doc, datatable, Grid, filas, columna);
             doc.Add(datatable);
         }
 
@@ -118,10 +118,10 @@ namespace ReportLayer
             return values;
         }
 
-        private void FormatGrid(Document document, PdfPTable tabla, DataGridView Grid, int columna)
+        private void FormatGrid(Document document, PdfPTable tabla, DataGridView Grid, int filas, int columna)
         {
             int i, j;
-            string[,] array = new string[Grid.RowCount, Grid.ColumnCount];
+            string[,] array = new string[filas, columna];
             for (i = 0; i < Grid.RowCount; i++)
             {
                 for (j = 0; j < Grid.ColumnCount; j++)

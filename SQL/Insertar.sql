@@ -50,3 +50,145 @@ INSERT INTO Administradores(nc,nombres,apellidopat,apellidomat,sexo,area,passwor
 --REINCIAR TABLAS (TENER EXTREMO CUIDADO AL REINICIAR ALGUNA)
 DELETE FROM dbo.RegLogeo
 DBCC CHECKIDENT (RegLogeo, RESEED, 0)
+
+--INSERTAR FILTROS DE BUSQUEDA
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Número de Control'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Nombres'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Apellido Paterno'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Apellido Materno'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Sexo'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Departamento/Carrera'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+DECLARE @p1 INT = 1
+INSERT INTO TipoBusqueda VALUES(@p1, 'Status'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+----------------------------------------------------------------------
+
+DECLARE @p1 INT = 2
+INSERT INTO TipoBusqueda VALUES(@p1, 'Número de Control'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Nombres'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Apellido Paterno'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Apellido Materno'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Sexo'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Fecha'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Permisos'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+----------------------------------------------------------------------
+
+DECLARE @p1 INT = 3
+INSERT INTO TipoBusqueda VALUES(@p1, 'Número de Registro'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Número de Control'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Nombres'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Apellido Paterno'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Apellido Materno'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Departamento/Carrera'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Sexo'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Servicio'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));
+
+INSERT INTO TipoBusqueda VALUES(@p1, 'Fecha'
+,IIF(@p1 = 1, 'USUARIOS'
+,IIF(@p1 = 2, 'ADMINISTRADORES'
+,IIF(@p1 = 3, 'MOVIMIENTOS','NINGUNO'))));

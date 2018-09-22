@@ -13,7 +13,7 @@ namespace CapaPre
         #region Instancias
 
         private Negocio ObjBusiness = new Negocio();
-
+        LogOut ObjLogOut = new LogOut();
         #endregion Instancias
 
         byte i = 0;
@@ -117,8 +117,10 @@ namespace CapaPre
 
         private void CerrarPrograma(object sender, EventArgs e)
         {
-            LogOut logout = new LogOut();
-            logout.Show();
+            if (ObjLogOut.Visible)
+                ObjLogOut.BringToFront();
+            else
+                ObjLogOut.Show();
         }
 
         private void HoraActual(object sender, EventArgs e) { lbHora.Text = DateTime.Now.ToLongTimeString(); }

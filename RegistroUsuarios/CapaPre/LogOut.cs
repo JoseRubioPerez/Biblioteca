@@ -43,7 +43,7 @@ namespace CapaPre
                     }
                     break;
 
-                case 1: case 2: this.Close(); break;
+                case 1: case 2: this.Hide(); break;
                 case 3:
                     switch (txtPassword.PasswordChar)
                     {

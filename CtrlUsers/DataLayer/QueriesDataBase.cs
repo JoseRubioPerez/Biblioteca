@@ -23,7 +23,7 @@ namespace DataLayer
         {
             try
             {
-                cmd = new SqlCommand(StoredProcedure) { CommandType = CommandType.StoredProcedure };
+                cmd = new SqlCommand(StoredProcedure, conexDB.Conexion()) { CommandType = CommandType.StoredProcedure };
                 for (int i = 0; i < ValuesForms.Count; i++)
                     cmd.Parameters.AddWithValue(Params[i], ValuesForms[i]);
                 cmd.Connection = conexDB.OpenConnection();
@@ -32,7 +32,6 @@ namespace DataLayer
                 table = new DataTable();
                 da.Fill(table);
                 cmd.Parameters.Clear();
-                cmd.Connection = conexDB.CloseConnection();
             }
             catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }
             finally { cmd.Connection = conexDB.CloseConnection(); }

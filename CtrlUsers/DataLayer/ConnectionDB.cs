@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Net;
 
 namespace DataLayer
@@ -8,13 +9,15 @@ namespace DataLayer
     {
         //Cadena de conexión para biblioteca. Cambiar el nombre de la PC
         //"Data Source=(local);Initial Catalog=biblioteca;User ID=sa;Password=cinformacion;"
-
+        private static string StringConnection { get; } = ConfigurationManager.ConnectionStrings["ConexDB"].ConnectionString;
         private SqlConnection conn;
 
         public ConnectionDB()
         {
-            conn = new SqlConnection("Data Source=(local);Initial Catalog=biblioteca;Integrated Security=True;");
-    }
+            conn = new SqlConnection(StringConnection);
+        }
+
+        public SqlConnection Conexion() => conn;
 
         public SqlConnection OpenConnection()
         {

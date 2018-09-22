@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using BusinessLayer;
+using Entity;
 
 namespace Application
 {
@@ -11,6 +13,7 @@ namespace Application
         private Alerts pregunta;
         private ReportLayer.Reports ObjReports = new ReportLayer.Reports();
         private Business ObjBusiness = new Business();
+        AdminEntity ObjSession = new AdminEntity();
 
         #endregion
         private string[] Columnas = new string[] { "Número de Registro", "Número de Control", "Servicio Utilizado", "Hora de registro (24h)", "Fecha de registro (dd/mm/yyyy)" };
@@ -22,41 +25,65 @@ namespace Application
         public Reports()
         {
             InitializeComponent();
-            GridHombres.Hide();
-            GridMujeres.Hide();
+        }
+
+        public void UserSession(AdminEntity ObjSession)
+        {
+            this.ObjSession = ObjSession;
         }
 
         private void RecargarDatos(DataGridView Grid)
         {
             Grid.DataSource = ObjBusiness.SelectAll("CargarMovimientos");
-            for (byte i = 0; i < Grid.Columns.Count; i++)
-                Grid.Columns[i].HeaderText = Columnas[i];
-            for (int i = 0; i < Grid.Rows.Count; i++)
-                Grid.Rows[i].Cells["hora"].Value = Grid.Rows[i].Cells["hora"].Value.ToString().Substring(0, 7);
         }
 
         private void EventoClick(object sender, EventArgs e)
         {
-            arreglo = new Control[] { btnUsuarioSalaPorSexo, btnServicioBanios, btnServicioBD, btnServicioConsulta, btnServicioCubiculos, btnServicioOtros, btnServicioLectura, btnServicioSalaTrabajo };
+            arreglo = new Control[] { ButtonReport, ButtonClean };
             for (; menu < arreglo.Length; menu++)
                 if (arreglo[menu] == sender)
                     break;
-            pregunta = new Alerts((byte)TypeIcon.Warning, "Nuevo reporte", "¿De verdad quieres crear un nuevo reporte?", "Sí aceptas, el reporte será llenado con los datos del usuario que inició sesión y con los datos de la tabla.", true);
-            dr = pregunta.ShowDialog();
-            if (dr == DialogResult.Yes)
+            switch (menu)
             {
-                if (menu == 0)
-                {
-                    GridHombres.DataSource = ObjBusiness.ReporteModuloUsuarios(2);
-                    GridMujeres.DataSource = ObjBusiness.ReporteModuloUsuarios(1);
-                    ObjReports.ReporteDesglosadoPorSexo(GridHombres, GridMujeres, Usuario);
-                }
-                else
-                {
-                    GridHombres.DataSource = ObjBusiness.ReporteModuloServicios((byte)(menu - 1), 0);
-                    GridMujeres.DataSource = ObjBusiness.ReporteModuloServicios((byte)(menu - 1), 1);
-                    ObjReports.ReporteDesglosadoPorSexo(GridHombres, GridMujeres, Usuario);
-                }
+                case 0:
+                    if(ComboServicios.SelectedIndex >= 0)
+                    {
+                        DataGridView GridHombres = new DataGridView();
+                        GridHombres.Columns.Add("Registro", "REGISTRO");
+                        GridHombres.Columns.Add("NumControl", "NUMERO DE CONTROL");
+                        GridHombres.Columns.Add("Nombres", "NOMBRES");
+                        GridHombres.Columns.Add("ApellidoPaterno", "APELLIDO PATERNO");
+                        GridHombres.Columns.Add("ApellidoMaterno", "APELLIDO MATERNO");
+                        GridHombres.Columns.Add("Servicio", "SERVICIO");
+                        GridHombres.Columns.Add("Hora", "HORA");
+                        GridHombres.Columns.Add("Fecha", "FECHA");
+                        DataGridView GridMujeres = new DataGridView();
+                        GridMujeres.Columns.Add("Registro", "REGISTRO");
+                        GridMujeres.Columns.Add("NumControl", "NUMERO DE CONTROL");
+                        GridMujeres.Columns.Add("Nombres", "NOMBRES");
+                        GridMujeres.Columns.Add("ApellidoPaterno", "APELLIDO PATERNO");
+                        GridMujeres.Columns.Add("ApellidoMaterno", "APELLIDO MATERNO");
+                        GridMujeres.Columns.Add("Servicio", "SERVICIO");
+                        GridMujeres.Columns.Add("Hora", "HORA");
+                        GridMujeres.Columns.Add("Fecha", "FECHA");
+                        GridHombres.DataSource = ObjBusiness.ReporteDeServicios(Convert.ToByte(ComboServicios.SelectedIndex),'H');
+                        GridMujeres.DataSource = ObjBusiness.ReporteDeServicios(Convert.ToByte(ComboServicios.SelectedIndex), 'F');
+                        DataRow row = ObjBusiness.ExistUserOrAdmin(this.ObjSession.NumControl, "ExistAdmin").Rows[0];
+                        string UserFull = row.ItemArray[1].ToString() + " " + row.ItemArray[2].ToString() + " " + row.ItemArray[3].ToString();
+                        ObjReports.GenerarReportePDF(GridHombres, GridMujeres, UserFull);
+                    }
+                    else
+                    {
+                        pregunta = new Alerts((byte)TypeIcon.Warning, "Servicio no elegido", "Es necesario que eligas un servicio", "Para generar el reporte, es obligatorio que eligas el servicio del reporte que necesitas.", false);
+                        dr = pregunta.ShowDialog();
+                        if (dr == DialogResult.Yes)
+                            pregunta.Close();
+                    }
+                    break;
+                case 1:
+                    ComboServicios.SelectedIndex = -1;
+                    ComboServicios.Focus();
+                    break;
             }
             menu = 0;
         }

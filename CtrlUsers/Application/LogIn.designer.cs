@@ -29,196 +29,198 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
-            this.panelLogIn = new System.Windows.Forms.Panel();
-            this.panelContenido = new System.Windows.Forms.Panel();
-            this.panelPassword = new System.Windows.Forms.Panel();
-            this.panelUser = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.picturePassword = new System.Windows.Forms.PictureBox();
-            this.pictureUser = new System.Windows.Forms.PictureBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.panelTitulo = new System.Windows.Forms.Panel();
-            this.lbTitulo = new System.Windows.Forms.Label();
-            this.pictureClose = new System.Windows.Forms.PictureBox();
-            this.pictureIcon = new System.Windows.Forms.PictureBox();
-            this.panelLogIn.SuspendLayout();
-            this.panelContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
-            this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
+            this.PanelLogIn = new System.Windows.Forms.Panel();
+            this.PanelContent = new System.Windows.Forms.Panel();
+            this.PanelBorderPassword = new System.Windows.Forms.Panel();
+            this.PanelBorderUser = new System.Windows.Forms.Panel();
+            this.ButtonCancelar = new System.Windows.Forms.Button();
+            this.PicturePassword = new System.Windows.Forms.PictureBox();
+            this.PictureUser = new System.Windows.Forms.PictureBox();
+            this.ButtonAccept = new System.Windows.Forms.Button();
+            this.TextBoxPassword = new System.Windows.Forms.TextBox();
+            this.TextBoxUser = new System.Windows.Forms.TextBox();
+            this.PanelHeader = new System.Windows.Forms.Panel();
+            this.LabelTitle = new System.Windows.Forms.Label();
+            this.PictureClose = new System.Windows.Forms.PictureBox();
+            this.PictureIcon = new System.Windows.Forms.PictureBox();
+            this.PanelLogIn.SuspendLayout();
+            this.PanelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicturePassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureUser)).BeginInit();
+            this.PanelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelLogIn
+            // PanelLogIn
             // 
-            this.panelLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PanelLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelLogIn.Controls.Add(this.panelContenido);
-            this.panelLogIn.Controls.Add(this.panelTitulo);
-            this.panelLogIn.Location = new System.Drawing.Point(10, 10);
-            this.panelLogIn.Margin = new System.Windows.Forms.Padding(1);
-            this.panelLogIn.Name = "panelLogIn";
-            this.panelLogIn.Size = new System.Drawing.Size(432, 236);
-            this.panelLogIn.TabIndex = 2;
+            this.PanelLogIn.Controls.Add(this.PanelContent);
+            this.PanelLogIn.Controls.Add(this.PanelHeader);
+            this.PanelLogIn.Location = new System.Drawing.Point(10, 10);
+            this.PanelLogIn.Margin = new System.Windows.Forms.Padding(1);
+            this.PanelLogIn.Name = "PanelLogIn";
+            this.PanelLogIn.Size = new System.Drawing.Size(432, 236);
+            this.PanelLogIn.TabIndex = 2;
             // 
-            // panelContenido
+            // PanelContent
             // 
-            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.panelContenido.Controls.Add(this.panelPassword);
-            this.panelContenido.Controls.Add(this.panelUser);
-            this.panelContenido.Controls.Add(this.btnCancelar);
-            this.panelContenido.Controls.Add(this.picturePassword);
-            this.panelContenido.Controls.Add(this.pictureUser);
-            this.panelContenido.Controls.Add(this.btnAceptar);
-            this.panelContenido.Controls.Add(this.txtPassword);
-            this.panelContenido.Controls.Add(this.txtUser);
-            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelContenido.Location = new System.Drawing.Point(0, 49);
-            this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(432, 187);
-            this.panelContenido.TabIndex = 3;
+            this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.PanelContent.Controls.Add(this.PanelBorderPassword);
+            this.PanelContent.Controls.Add(this.PanelBorderUser);
+            this.PanelContent.Controls.Add(this.ButtonCancelar);
+            this.PanelContent.Controls.Add(this.PicturePassword);
+            this.PanelContent.Controls.Add(this.PictureUser);
+            this.PanelContent.Controls.Add(this.ButtonAccept);
+            this.PanelContent.Controls.Add(this.TextBoxPassword);
+            this.PanelContent.Controls.Add(this.TextBoxUser);
+            this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.PanelContent.Location = new System.Drawing.Point(0, 49);
+            this.PanelContent.Name = "PanelContent";
+            this.PanelContent.Size = new System.Drawing.Size(432, 187);
+            this.PanelContent.TabIndex = 3;
             // 
-            // panelPassword
+            // PanelBorderPassword
             // 
-            this.panelPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelPassword.Location = new System.Drawing.Point(85, 94);
-            this.panelPassword.Name = "panelPassword";
-            this.panelPassword.Size = new System.Drawing.Size(296, 3);
-            this.panelPassword.TabIndex = 10;
+            this.PanelBorderPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.PanelBorderPassword.Location = new System.Drawing.Point(85, 94);
+            this.PanelBorderPassword.Name = "PanelBorderPassword";
+            this.PanelBorderPassword.Size = new System.Drawing.Size(296, 3);
+            this.PanelBorderPassword.TabIndex = 10;
             // 
-            // panelUser
+            // PanelBorderUser
             // 
-            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.panelUser.Location = new System.Drawing.Point(85, 48);
-            this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(296, 3);
-            this.panelUser.TabIndex = 9;
+            this.PanelBorderUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.PanelBorderUser.Location = new System.Drawing.Point(85, 48);
+            this.PanelBorderUser.Name = "PanelBorderUser";
+            this.PanelBorderUser.Size = new System.Drawing.Size(296, 3);
+            this.PanelBorderUser.TabIndex = 9;
             // 
-            // btnCancelar
+            // ButtonCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackgroundImage = global::Application.Properties.Resources.delete;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(353, 135);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(28, 28);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.EventoClick);
+            this.ButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonCancelar.BackgroundImage = global::Application.Properties.Resources.delete;
+            this.ButtonCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonCancelar.FlatAppearance.BorderSize = 0;
+            this.ButtonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCancelar.Location = new System.Drawing.Point(353, 135);
+            this.ButtonCancelar.Name = "ButtonCancelar";
+            this.ButtonCancelar.Size = new System.Drawing.Size(28, 28);
+            this.ButtonCancelar.TabIndex = 4;
+            this.ButtonCancelar.UseVisualStyleBackColor = true;
+            this.ButtonCancelar.Click += new System.EventHandler(this.EventoClick);
             // 
-            // picturePassword
+            // PicturePassword
             // 
-            this.picturePassword.Image = global::Application.Properties.Resources.login;
-            this.picturePassword.Location = new System.Drawing.Point(51, 68);
-            this.picturePassword.Name = "picturePassword";
-            this.picturePassword.Size = new System.Drawing.Size(28, 28);
-            this.picturePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturePassword.TabIndex = 7;
-            this.picturePassword.TabStop = false;
+            this.PicturePassword.Image = global::Application.Properties.Resources.login;
+            this.PicturePassword.Location = new System.Drawing.Point(51, 68);
+            this.PicturePassword.Name = "PicturePassword";
+            this.PicturePassword.Size = new System.Drawing.Size(28, 28);
+            this.PicturePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicturePassword.TabIndex = 7;
+            this.PicturePassword.TabStop = false;
             // 
-            // pictureUser
+            // PictureUser
             // 
-            this.pictureUser.Image = global::Application.Properties.Resources.user;
-            this.pictureUser.Location = new System.Drawing.Point(51, 23);
-            this.pictureUser.Name = "pictureUser";
-            this.pictureUser.Size = new System.Drawing.Size(28, 28);
-            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUser.TabIndex = 6;
-            this.pictureUser.TabStop = false;
+            this.PictureUser.Image = global::Application.Properties.Resources.user;
+            this.PictureUser.Location = new System.Drawing.Point(51, 23);
+            this.PictureUser.Name = "PictureUser";
+            this.PictureUser.Size = new System.Drawing.Size(28, 28);
+            this.PictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureUser.TabIndex = 6;
+            this.PictureUser.TabStop = false;
             // 
-            // btnAceptar
+            // ButtonAccept
             // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackgroundImage = global::Application.Properties.Resources.accept;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(302, 135);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(28, 28);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.EventoClick);
+            this.ButtonAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAccept.BackgroundImage = global::Application.Properties.Resources.accept;
+            this.ButtonAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonAccept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonAccept.FlatAppearance.BorderSize = 0;
+            this.ButtonAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAccept.Location = new System.Drawing.Point(302, 135);
+            this.ButtonAccept.Name = "ButtonAccept";
+            this.ButtonAccept.Size = new System.Drawing.Size(28, 28);
+            this.ButtonAccept.TabIndex = 3;
+            this.ButtonAccept.UseVisualStyleBackColor = true;
+            this.ButtonAccept.Click += new System.EventHandler(this.EventoClick);
             // 
-            // txtPassword
+            // TextBoxPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.txtPassword.Location = new System.Drawing.Point(85, 74);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(296, 19);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Enter += new System.EventHandler(this.TextPasswordEnter);
-            this.txtPassword.Leave += new System.EventHandler(this.TextPasswordLeave);
+            this.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.TextBoxPassword.Location = new System.Drawing.Point(85, 74);
+            this.TextBoxPassword.Name = "TextBoxPassword";
+            this.TextBoxPassword.PasswordChar = '*';
+            this.TextBoxPassword.Size = new System.Drawing.Size(296, 19);
+            this.TextBoxPassword.TabIndex = 2;
+            this.TextBoxPassword.Enter += new System.EventHandler(this.TextPasswordEnter);
+            this.TextBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxPasswordKeyDown);
+            this.TextBoxPassword.Leave += new System.EventHandler(this.TextPasswordLeave);
             // 
-            // txtUser
+            // TextBoxUser
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
-            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
-            this.txtUser.Location = new System.Drawing.Point(85, 29);
-            this.txtUser.MaxLength = 9;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(296, 19);
-            this.txtUser.TabIndex = 1;
-            this.txtUser.Enter += new System.EventHandler(this.TextUserEnter);
-            this.txtUser.Leave += new System.EventHandler(this.TextUserLeave);
+            this.TextBoxUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
+            this.TextBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
+            this.TextBoxUser.Location = new System.Drawing.Point(85, 29);
+            this.TextBoxUser.MaxLength = 9;
+            this.TextBoxUser.Name = "TextBoxUser";
+            this.TextBoxUser.Size = new System.Drawing.Size(296, 19);
+            this.TextBoxUser.TabIndex = 1;
+            this.TextBoxUser.Enter += new System.EventHandler(this.TextUserEnter);
+            this.TextBoxUser.Leave += new System.EventHandler(this.TextUserLeave);
             // 
-            // panelTitulo
+            // PanelHeader
             // 
-            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.panelTitulo.Controls.Add(this.lbTitulo);
-            this.panelTitulo.Controls.Add(this.pictureClose);
-            this.panelTitulo.Controls.Add(this.pictureIcon);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(432, 49);
-            this.panelTitulo.TabIndex = 2;
+            this.PanelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.PanelHeader.Controls.Add(this.LabelTitle);
+            this.PanelHeader.Controls.Add(this.PictureClose);
+            this.PanelHeader.Controls.Add(this.PictureIcon);
+            this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelHeader.Location = new System.Drawing.Point(0, 0);
+            this.PanelHeader.Name = "PanelHeader";
+            this.PanelHeader.Size = new System.Drawing.Size(432, 49);
+            this.PanelHeader.TabIndex = 2;
             // 
-            // lbTitulo
+            // LabelTitle
             // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(56, 15);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(127, 18);
-            this.lbTitulo.TabIndex = 5;
-            this.lbTitulo.Text = "Inicio de Sesión";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelTitle.AutoSize = true;
+            this.LabelTitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitle.Location = new System.Drawing.Point(56, 15);
+            this.LabelTitle.Name = "LabelTitle";
+            this.LabelTitle.Size = new System.Drawing.Size(127, 18);
+            this.LabelTitle.TabIndex = 5;
+            this.LabelTitle.Text = "Inicio de Sesión";
+            this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureClose
+            // PictureClose
             // 
-            this.pictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureClose.Image = global::Application.Properties.Resources.close;
-            this.pictureClose.Location = new System.Drawing.Point(401, 3);
-            this.pictureClose.Name = "pictureClose";
-            this.pictureClose.Size = new System.Drawing.Size(28, 28);
-            this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureClose.TabIndex = 1;
-            this.pictureClose.TabStop = false;
-            this.pictureClose.Click += new System.EventHandler(this.EventoClick);
+            this.PictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureClose.Image = global::Application.Properties.Resources.close;
+            this.PictureClose.Location = new System.Drawing.Point(401, 3);
+            this.PictureClose.Name = "PictureClose";
+            this.PictureClose.Size = new System.Drawing.Size(28, 28);
+            this.PictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureClose.TabIndex = 1;
+            this.PictureClose.TabStop = false;
+            this.PictureClose.Click += new System.EventHandler(this.EventoClick);
             // 
-            // pictureIcon
+            // PictureIcon
             // 
-            this.pictureIcon.Image = global::Application.Properties.Resources.login;
-            this.pictureIcon.Location = new System.Drawing.Point(14, 6);
-            this.pictureIcon.Name = "pictureIcon";
-            this.pictureIcon.Size = new System.Drawing.Size(36, 36);
-            this.pictureIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureIcon.TabIndex = 4;
-            this.pictureIcon.TabStop = false;
+            this.PictureIcon.Image = global::Application.Properties.Resources.login;
+            this.PictureIcon.Location = new System.Drawing.Point(14, 6);
+            this.PictureIcon.Name = "PictureIcon";
+            this.PictureIcon.Size = new System.Drawing.Size(36, 36);
+            this.PictureIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureIcon.TabIndex = 4;
+            this.PictureIcon.TabStop = false;
             // 
             // LogIn
             // 
@@ -226,7 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(452, 256);
-            this.Controls.Add(this.panelLogIn);
+            this.Controls.Add(this.PanelLogIn);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(223)))), ((int)(((byte)(198)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -236,34 +238,34 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
             this.Load += new System.EventHandler(this.LogIn_Load);
-            this.panelLogIn.ResumeLayout(false);
-            this.panelContenido.ResumeLayout(false);
-            this.panelContenido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
-            this.panelTitulo.ResumeLayout(false);
-            this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
+            this.PanelLogIn.ResumeLayout(false);
+            this.PanelContent.ResumeLayout(false);
+            this.PanelContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicturePassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureUser)).EndInit();
+            this.PanelHeader.ResumeLayout(false);
+            this.PanelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureClose;
-        private System.Windows.Forms.Panel panelLogIn;
-        private System.Windows.Forms.Panel panelTitulo;
-        private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.PictureBox pictureIcon;
-        private System.Windows.Forms.Panel panelContenido;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.PictureBox picturePassword;
-        private System.Windows.Forms.PictureBox pictureUser;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Panel panelUser;
-        private System.Windows.Forms.Panel panelPassword;
+        private System.Windows.Forms.PictureBox PictureClose;
+        private System.Windows.Forms.Panel PanelLogIn;
+        private System.Windows.Forms.Panel PanelHeader;
+        private System.Windows.Forms.Label LabelTitle;
+        private System.Windows.Forms.PictureBox PictureIcon;
+        private System.Windows.Forms.Panel PanelContent;
+        private System.Windows.Forms.TextBox TextBoxPassword;
+        private System.Windows.Forms.TextBox TextBoxUser;
+        private System.Windows.Forms.PictureBox PicturePassword;
+        private System.Windows.Forms.PictureBox PictureUser;
+        private System.Windows.Forms.Button ButtonAccept;
+        private System.Windows.Forms.Button ButtonCancelar;
+        private System.Windows.Forms.Panel PanelBorderUser;
+        private System.Windows.Forms.Panel PanelBorderPassword;
     }
 }

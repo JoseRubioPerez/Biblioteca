@@ -8,63 +8,55 @@ namespace Application
 {
     public partial class LogIn : Form
     {
-        #region Instancias
-
-        private SessionsEntity ObjSession = new SessionsEntity();
+        private AdminEntity ObjSession = new AdminEntity();
         private Business ObjBusiness = new Business();
 
-        #endregion Instancias
-
-        private DataTable dt;
-        private Control[] arreglo;
-        private byte menu;
-        private string placeholderUser = "";
-        private string placeholderPassword = "";
+        private DataTable Table1;
+        private Control[] ArrayControl;
+        private byte Index;
 
         public LogIn()
         {
             InitializeComponent();
         }
 
-        public LogIn(SessionsEntity ObjSession)
+        public LogIn(AdminEntity ObjSession)
         {
             InitializeComponent();
-            this.ObjSession.Username = ObjSession.Username;
-            this.ObjSession.Password = ObjSession.Password;
-            this.ObjSession.SuperSu = ObjSession.SuperSu;
+            this.ObjSession = ObjSession;
         }
 
         private void LogIn_Load(object sender, EventArgs e)
         {
-            txtUser.Text = "Número de Control";
-            txtPassword.Text = "Contraseña";
+            TextBoxUser.Text = "Número de Control";
+            TextBoxPassword.Text = "Contraseña";
         }
 
         private void EventoClick(object sender, EventArgs e)
         {
-            arreglo = new Control[] { btnAceptar, btnCancelar, pictureClose };
-            for (; menu < arreglo.Length; menu++)
+            ArrayControl = new Control[] { ButtonAccept, ButtonCancelar, PictureClose };
+            for (; Index < ArrayControl.Length; Index++)
             {
-                if (arreglo[menu] == sender)
+                if (ArrayControl[Index] == sender)
                     break;
             }
-            switch (menu)
+            switch (Index)
             {
                 case 0:
-                    this.ObjSession.Username = txtUser.Text.Trim();
-                    this.ObjSession.Password = txtPassword.Text.Trim();
-                    dt = ObjBusiness.Sesion(this.ObjSession);
+                    ObjSession.NumControl = TextBoxUser.Text.Trim();
+                    ObjSession.Password = TextBoxPassword.Text.Trim();
+                    Table1 = ObjBusiness.Sesion(ObjSession);
                     try
                     {
-                        if (dt.Rows.Count > 0 && dt.Columns.Count == 3)
+                        if (Table1.Rows.Count > 0 && Table1.Columns.Count == 3)
                         {
-                            this.ObjSession.Username = dt.Rows[0]["nc"].ToString();
-                            this.ObjSession.Password = dt.Rows[0]["password"].ToString();
-                            this.ObjSession.SuperSu = Convert.ToChar(dt.Rows[0]["superus"].ToString());
-                            ObjBusiness.Bitacora(txtUser.Text.Trim(), "Control de Usuarios", "Entrada");
-                            Main main = new Main(this.ObjSession);
+                            ObjSession.NumControl = Table1.Rows[0]["nc"].ToString();
+                            ObjSession.Password = Table1.Rows[0]["password"].ToString();
+                            ObjSession.SuperSu = Convert.ToChar(Table1.Rows[0]["superus"].ToString());
+                            ObjBusiness.Bitacora(TextBoxUser.Text.Trim(), "Control de Usuarios", "Entrada");
+                            Main main = new Main(ObjSession);
                             main.Show();
-                            this.Hide();
+                            Hide();
                         }
                         else
                         {
@@ -80,59 +72,43 @@ namespace Application
                         pregunta.Show();
                         pregunta.Focus();
                     }
-                    txtUser.Text = "";
-                    txtPassword.Text = "";
+                    TextBoxUser.Text = "";
+                    TextBoxPassword.Text = "";
                     break;
 
                 case 1:
                 case 2:
-                    this.Close();
-                    btnCancelar.DialogResult = DialogResult.No;
+                    Close();
+                    ButtonCancelar.DialogResult = DialogResult.No;
                     break;
             }
-            menu = 0;
+            Index = 0;
         }
 
         private void TextUserEnter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Número de Control" || txtUser.Text == "")
-                txtUser.Text = "";
+            TextBoxUser.Text = (TextBoxUser.Text == "Número de Control" || TextBoxUser.Text == string.Empty) ? "" : TextBoxUser.Text;
         }
 
         private void TextUserLeave(object sender, EventArgs e)
         {
-            placeholderUser = txtUser.Text.Trim();
-            if (placeholderUser.Equals("Número de Control"))
-                txtUser.Text = "Número de Control";
-            else
-                txtUser.Text = (placeholderUser.Equals("")) ? "Número de Control" : placeholderUser;
+            TextBoxUser.Text = (TextBoxUser.Text == "Número de Control" || TextBoxUser.Text == string.Empty) ? "Número de Control" : TextBoxUser.Text;
         }
 
         private void TextPasswordEnter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Contraseña" || txtPassword.Text == "")
-                txtPassword.Text = "";
-            txtPassword.PasswordChar = '*';
+            TextBoxPassword.Text = (TextBoxPassword.Text == "Contraseña" || TextBoxPassword.Text == string.Empty) ? "" : TextBoxPassword.Text;
         }
 
         private void TextPasswordLeave(object sender, EventArgs e)
         {
-            placeholderPassword = txtPassword.Text.Trim();
-            if (placeholderPassword.Equals("Contraseña"))
-                txtPassword.Text = "Contraseña";
-            else
-            {
-                if (placeholderPassword.Equals(""))
-                {
-                    txtPassword.PasswordChar = '\0';
-                    txtPassword.Text = "Contraseña";
-                }
-                else
-                {
-                    txtPassword.PasswordChar = '*';
-                    txtPassword.Text = placeholderPassword;
-                }
-            }
+            TextBoxPassword.Text = (TextBoxPassword.Text == "Contraseña" || TextBoxPassword.Text == string.Empty) ? "Contraseña" : TextBoxPassword.Text;
+        }
+
+        private void TextBoxPasswordKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Enter))
+                ButtonAccept.PerformClick();
         }
     }
 }

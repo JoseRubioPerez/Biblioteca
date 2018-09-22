@@ -50,3 +50,8 @@ sistema VARCHAR(20) NOT NULL,
 hora TIME(7),
 fecha DATE,
 accion VARCHAR(7) NOT NULL)
+
+--TABLA "TipoBusqueda"
+CREATE TABLE TipoBusqueda (idBusqueda TINYINT NOT NULL
+,Modulo VARCHAR(30) NOT NULL
+,Descripcion VARCHAR(30) NULL);

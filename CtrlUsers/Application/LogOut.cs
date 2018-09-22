@@ -7,7 +7,7 @@ namespace Application
 {
     public partial class LogOut : Form
     {
-        private SessionsEntity ObjSession = new SessionsEntity();
+        private AdminEntity ObjSession = new AdminEntity();
         //private DataTable dt;
         private Control[] arreglo;
 
@@ -21,10 +21,10 @@ namespace Application
             InitializeComponent();
         }
 
-        public LogOut(SessionsEntity ObjSession)
+        public LogOut(AdminEntity ObjSession)
         {
             InitializeComponent();
-            this.ObjSession.Username = ObjSession.Username;
+            this.ObjSession.NumControl = ObjSession.NumControl;
             this.ObjSession.Password = ObjSession.Password;
             this.ObjSession.SuperSu = ObjSession.SuperSu;
         }
@@ -46,7 +46,7 @@ namespace Application
             {
                 case 0:
                     Business negocio = new Business();
-                    if (txtUser.Text.Trim() == this.ObjSession.Username && txtPassword.Text.Trim() == this.ObjSession.Password)
+                    if (txtUser.Text.Trim() == this.ObjSession.NumControl && txtPassword.Text.Trim() == this.ObjSession.Password)
                         bandera = true;
                     else
                         bandera = false;

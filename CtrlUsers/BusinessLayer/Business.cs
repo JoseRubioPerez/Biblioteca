@@ -21,10 +21,10 @@ namespace BusinessLayer
         {
         }
 
-        public DataTable Sesion(SessionsEntity ObjSession)
+        public DataTable Sesion(AdminEntity ObjSession)
         {
             Valor.Clear(); Parametros.Clear();
-            Valor.Add(ObjSession.Username); Valor.Add(ObjSession.Password);
+            Valor.Add(ObjSession.NumControl); Valor.Add(ObjSession.Password);
             Parametros.Add("@user"); Parametros.Add("@pass");
             Table = ObjQueryDataBase.Procedimiento("Logeo", Valor, Parametros);
             return Table;
@@ -135,20 +135,11 @@ namespace BusinessLayer
             ObjQueryDataBase.Procedimiento("Bitacora", Valor, Parametros);
         }
 
-        public DataTable ReporteModuloUsuarios(byte index)
+        public DataTable ReporteDeServicios(byte servicio, char sexo)
         {
             Valor.Clear(); Parametros.Clear();
-            Valor.Add(index);
-            Parametros.Add("@index");
-            Table = ObjQueryDataBase.Procedimiento("ReporteUsuariosSalasPorSexo", Valor, Parametros);
-            return Table;
-        }
-
-        public DataTable ReporteModuloServicios(byte index, byte sexo)
-        {
-            Valor.Clear(); Parametros.Clear();
-            Valor.Add(index); Valor.Add(sexo);
-            Parametros.Add("@index"); Parametros.Add("@sexo");
+            Valor.Add(servicio); Valor.Add(sexo);
+            Parametros.Add("@servicio"); Parametros.Add("@sexo");
             Table = ObjQueryDataBase.Procedimiento("ReporteServiciosPorSexo", Valor, Parametros);
             return Table;
         }
