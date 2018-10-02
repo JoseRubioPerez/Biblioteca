@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B477B6B6-1364-4B4B-B267-9BFE9EA6E7BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentation</RootNamespace>
+    <AssemblyName>Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alerts.Designer.cs">
+      <DependentUpon>Alerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Binnacle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Binnacle.Designer.cs">
+      <DependentUpon>Binnacle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogUser.Designer.cs">
+      <DependentUpon>LogUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Moves.Designer.cs">
+      <DependentUpon>Moves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\GridViewUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inputs\GridViewUI.Designer.cs">
+      <DependentUpon>GridViewUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\TextBoxUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inputs\TextBoxUI.designer.cs">
+      <DependentUpon>TextBoxUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormFather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFather.Designer.cs">
+      <DependentUpon>FormFather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Alerts.resx">
+      <DependentUpon>Alerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Binnacle.resx">
+      <DependentUpon>Binnacle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFather.resx">
+      <DependentUpon>FormFather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogUser.resx">
+      <DependentUpon>LogUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moves.resx">
+      <DependentUpon>Moves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\GridViewUI.resx">
+      <DependentUpon>GridViewUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\TextBoxUI.resx">
+      <DependentUpon>TextBoxUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{58526a20-aded-47cf-9db9-39bb8eb8f071}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{517cd88c-57cc-41a3-982b-c50f2cbd7d80}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Options\Options.csproj">
+      <Project>{9176c82e-e9f2-4ff0-81d0-28d602a91758}</Project>
+      <Name>Options</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconProgram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseWindowWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MinimizeWindowsWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOutWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatsWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MovesWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowPasswordGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowPasswordWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BinnacleGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BinnacleWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InformationBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlusBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BugWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InformationWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WarningWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConfigWhite.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
