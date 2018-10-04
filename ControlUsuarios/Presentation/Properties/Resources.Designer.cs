@@ -183,6 +183,16 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImportWhite {
+            get {
+                object obj = ResourceManager.GetObject("ImportWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap InformationBlue {
             get {
                 object obj = ResourceManager.GetObject("InformationBlue", resourceCulture);

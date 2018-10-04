@@ -19,4 +19,16 @@ namespace Entity
         public TimeSpan Time { get; set; }
         public char Permissions { get; set; }
     }
+
+    public class ModifyUsers
+    {
+        public string NumControl { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string FirstLastName { get; set; }
+        public string SecondLastName { get; set; }
+        public string Department { get; set; }
+        public char Sex { get; set; }
+        public char Status { get; set; }
+    }
 }

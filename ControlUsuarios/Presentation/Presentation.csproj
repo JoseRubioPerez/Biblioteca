@@ -58,6 +58,12 @@
     <Compile Include="Binnacle.Designer.cs">
       <DependentUpon>Binnacle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration.Designer.cs">
+      <DependentUpon>Configuration.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,18 @@
     </Compile>
     <Compile Include="Moves.Designer.cs">
       <DependentUpon>Moves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpFather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpFather.Designer.cs">
+      <DependentUpon>PopUpFather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpUsers.Designer.cs">
+      <DependentUpon>PopUpUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -96,11 +114,11 @@
     <Compile Include="FormFather.Designer.cs">
       <DependentUpon>FormFather.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports.cs">
+    <Compile Include="Stats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <Compile Include="Stats.Designer.cs">
+      <DependentUpon>Stats.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
       <SubType>Form</SubType>
@@ -114,6 +132,9 @@
     <EmbeddedResource Include="Binnacle.resx">
       <DependentUpon>Binnacle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuration.resx">
+      <DependentUpon>Configuration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFather.resx">
       <DependentUpon>FormFather.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Moves.resx">
       <DependentUpon>Moves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpForms\PopUpFather.resx">
+      <DependentUpon>PopUpFather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpForms\PopUpUsers.resx">
+      <DependentUpon>PopUpUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -142,8 +169,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <EmbeddedResource Include="Stats.resx">
+      <DependentUpon>Stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
@@ -264,5 +291,9 @@
   <ItemGroup>
     <None Include="Resources\ConfigWhite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImportWhite.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

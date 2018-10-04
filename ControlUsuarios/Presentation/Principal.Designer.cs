@@ -31,26 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.PanelHeader = new System.Windows.Forms.Panel();
+            this.PictureIcon = new System.Windows.Forms.PictureBox();
+            this.PictureMinimize = new System.Windows.Forms.PictureBox();
             this.LabelSubTitle = new System.Windows.Forms.Label();
+            this.PictureClose = new System.Windows.Forms.PictureBox();
             this.LabelTitle = new System.Windows.Forms.Label();
             this.TimerSlideEnter = new System.Windows.Forms.Timer(this.components);
             this.TimerSlideLeave = new System.Windows.Forms.Timer(this.components);
             this.PanelCanvas = new System.Windows.Forms.Panel();
-            this.PanelContent = new System.Windows.Forms.Panel();
             this.ButtonLogOut = new System.Windows.Forms.Button();
             this.ButtonConfiguration = new System.Windows.Forms.Button();
+            this.ButtonImportUsers = new System.Windows.Forms.Button();
             this.ButtonBinnacle = new System.Windows.Forms.Button();
             this.ButtonStats = new System.Windows.Forms.Button();
             this.ButtonMoves = new System.Windows.Forms.Button();
             this.ButtonUsers = new System.Windows.Forms.Button();
-            this.PictureIcon = new System.Windows.Forms.PictureBox();
-            this.PictureMinimize = new System.Windows.Forms.PictureBox();
-            this.PictureClose = new System.Windows.Forms.PictureBox();
+            this.PanelContent = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
-            this.PanelCanvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).BeginInit();
+            this.PanelCanvas.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -68,6 +69,30 @@
             this.PanelHeader.Size = new System.Drawing.Size(1152, 70);
             this.PanelHeader.TabIndex = 0;
             // 
+            // PictureIcon
+            // 
+            this.PictureIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureIcon.Image = global::Presentation.Properties.Resources.IconProgram;
+            this.PictureIcon.Location = new System.Drawing.Point(12, 12);
+            this.PictureIcon.Name = "PictureIcon";
+            this.PictureIcon.Size = new System.Drawing.Size(44, 44);
+            this.PictureIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureIcon.TabIndex = 2;
+            this.PictureIcon.TabStop = false;
+            // 
+            // PictureMinimize
+            // 
+            this.PictureMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureMinimize.Image = ((System.Drawing.Image)(resources.GetObject("PictureMinimize.Image")));
+            this.PictureMinimize.Location = new System.Drawing.Point(1070, 12);
+            this.PictureMinimize.Name = "PictureMinimize";
+            this.PictureMinimize.Size = new System.Drawing.Size(32, 32);
+            this.PictureMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureMinimize.TabIndex = 1;
+            this.PictureMinimize.TabStop = false;
+            this.PictureMinimize.Click += new System.EventHandler(this.PictureClickMethod);
+            // 
             // LabelSubTitle
             // 
             this.LabelSubTitle.AutoSize = true;
@@ -78,6 +103,19 @@
             this.LabelSubTitle.Size = new System.Drawing.Size(480, 26);
             this.LabelSubTitle.TabIndex = 1;
             this.LabelSubTitle.Text = "Centro de información del Instituto Tecnológico de Delicias";
+            // 
+            // PictureClose
+            // 
+            this.PictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureClose.Image = global::Presentation.Properties.Resources.CloseWindowWhite;
+            this.PictureClose.Location = new System.Drawing.Point(1108, 12);
+            this.PictureClose.Name = "PictureClose";
+            this.PictureClose.Size = new System.Drawing.Size(32, 32);
+            this.PictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureClose.TabIndex = 0;
+            this.PictureClose.TabStop = false;
+            this.PictureClose.Click += new System.EventHandler(this.PictureClickMethod);
             // 
             // LabelTitle
             // 
@@ -104,6 +142,7 @@
             // 
             this.PanelCanvas.Controls.Add(this.ButtonLogOut);
             this.PanelCanvas.Controls.Add(this.ButtonConfiguration);
+            this.PanelCanvas.Controls.Add(this.ButtonImportUsers);
             this.PanelCanvas.Controls.Add(this.ButtonBinnacle);
             this.PanelCanvas.Controls.Add(this.ButtonStats);
             this.PanelCanvas.Controls.Add(this.ButtonMoves);
@@ -116,16 +155,6 @@
             this.PanelCanvas.MouseEnter += new System.EventHandler(this.MouseEnterTimerSlide);
             this.PanelCanvas.MouseLeave += new System.EventHandler(this.MouseLeaveTimerSlide);
             // 
-            // PanelContent
-            // 
-            this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContent.Location = new System.Drawing.Point(90, 70);
-            this.PanelContent.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelContent.Name = "PanelContent";
-            this.PanelContent.Size = new System.Drawing.Size(1062, 698);
-            this.PanelContent.TabIndex = 10;
-            // 
             // ButtonLogOut
             // 
             this.ButtonLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -135,13 +164,14 @@
             this.ButtonLogOut.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.ButtonLogOut.ForeColor = System.Drawing.Color.White;
             this.ButtonLogOut.Image = global::Presentation.Properties.Resources.LogOutWhite;
-            this.ButtonLogOut.Location = new System.Drawing.Point(0, 270);
+            this.ButtonLogOut.Location = new System.Drawing.Point(0, 324);
             this.ButtonLogOut.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonLogOut.Name = "ButtonLogOut";
             this.ButtonLogOut.Size = new System.Drawing.Size(90, 54);
-            this.ButtonLogOut.TabIndex = 9;
+            this.ButtonLogOut.TabIndex = 10;
             this.ButtonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonLogOut.UseVisualStyleBackColor = true;
+            this.ButtonLogOut.Click += new System.EventHandler(this.ClickMethod);
             // 
             // ButtonConfiguration
             // 
@@ -152,16 +182,34 @@
             this.ButtonConfiguration.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.ButtonConfiguration.ForeColor = System.Drawing.Color.White;
             this.ButtonConfiguration.Image = global::Presentation.Properties.Resources.ConfigWhite;
-            this.ButtonConfiguration.Location = new System.Drawing.Point(0, 216);
+            this.ButtonConfiguration.Location = new System.Drawing.Point(0, 270);
             this.ButtonConfiguration.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonConfiguration.Name = "ButtonConfiguration";
             this.ButtonConfiguration.Size = new System.Drawing.Size(90, 54);
-            this.ButtonConfiguration.TabIndex = 8;
+            this.ButtonConfiguration.TabIndex = 9;
             this.ButtonConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonConfiguration.UseVisualStyleBackColor = true;
             this.ButtonConfiguration.Click += new System.EventHandler(this.ClickMethod);
-            this.ButtonConfiguration.MouseEnter += new System.EventHandler(this.MouseEnterTimerSlide);
-            this.ButtonConfiguration.MouseLeave += new System.EventHandler(this.MouseLeaveTimerSlide);
+            // 
+            // ButtonImportUsers
+            // 
+            this.ButtonImportUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonImportUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonImportUsers.FlatAppearance.BorderSize = 0;
+            this.ButtonImportUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonImportUsers.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.ButtonImportUsers.ForeColor = System.Drawing.Color.White;
+            this.ButtonImportUsers.Image = global::Presentation.Properties.Resources.ImportWhite;
+            this.ButtonImportUsers.Location = new System.Drawing.Point(0, 216);
+            this.ButtonImportUsers.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonImportUsers.Name = "ButtonImportUsers";
+            this.ButtonImportUsers.Size = new System.Drawing.Size(90, 54);
+            this.ButtonImportUsers.TabIndex = 8;
+            this.ButtonImportUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonImportUsers.UseVisualStyleBackColor = true;
+            this.ButtonImportUsers.Click += new System.EventHandler(this.ClickMethod);
+            this.ButtonImportUsers.MouseEnter += new System.EventHandler(this.MouseEnterTimerSlide);
+            this.ButtonImportUsers.MouseLeave += new System.EventHandler(this.MouseLeaveTimerSlide);
             // 
             // ButtonBinnacle
             // 
@@ -243,42 +291,15 @@
             this.ButtonUsers.MouseEnter += new System.EventHandler(this.MouseEnterTimerSlide);
             this.ButtonUsers.MouseLeave += new System.EventHandler(this.MouseLeaveTimerSlide);
             // 
-            // PictureIcon
+            // PanelContent
             // 
-            this.PictureIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureIcon.Image = global::Presentation.Properties.Resources.IconProgram;
-            this.PictureIcon.Location = new System.Drawing.Point(12, 12);
-            this.PictureIcon.Name = "PictureIcon";
-            this.PictureIcon.Size = new System.Drawing.Size(44, 44);
-            this.PictureIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureIcon.TabIndex = 2;
-            this.PictureIcon.TabStop = false;
-            // 
-            // PictureMinimize
-            // 
-            this.PictureMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureMinimize.Image = ((System.Drawing.Image)(resources.GetObject("PictureMinimize.Image")));
-            this.PictureMinimize.Location = new System.Drawing.Point(1070, 12);
-            this.PictureMinimize.Name = "PictureMinimize";
-            this.PictureMinimize.Size = new System.Drawing.Size(32, 32);
-            this.PictureMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureMinimize.TabIndex = 1;
-            this.PictureMinimize.TabStop = false;
-            this.PictureMinimize.Click += new System.EventHandler(this.PictureClickMethod);
-            // 
-            // PictureClose
-            // 
-            this.PictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureClose.Image = global::Presentation.Properties.Resources.CloseWindowWhite;
-            this.PictureClose.Location = new System.Drawing.Point(1108, 12);
-            this.PictureClose.Name = "PictureClose";
-            this.PictureClose.Size = new System.Drawing.Size(32, 32);
-            this.PictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureClose.TabIndex = 0;
-            this.PictureClose.TabStop = false;
-            this.PictureClose.Click += new System.EventHandler(this.PictureClickMethod);
+            this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContent.Location = new System.Drawing.Point(90, 70);
+            this.PanelContent.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelContent.Name = "PanelContent";
+            this.PanelContent.Size = new System.Drawing.Size(1062, 698);
+            this.PanelContent.TabIndex = 10;
             // 
             // Principal
             // 
@@ -297,10 +318,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingMethod);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
-            this.PanelCanvas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).EndInit();
+            this.PanelCanvas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -317,11 +338,12 @@
         private System.Windows.Forms.PictureBox PictureIcon;
         private System.Windows.Forms.Label LabelSubTitle;
         private System.Windows.Forms.Label LabelTitle;
-        private System.Windows.Forms.Button ButtonConfiguration;
+        private System.Windows.Forms.Button ButtonImportUsers;
         private System.Windows.Forms.Timer TimerSlideEnter;
         private System.Windows.Forms.Timer TimerSlideLeave;
         private System.Windows.Forms.Panel PanelCanvas;
         private System.Windows.Forms.Panel PanelContent;
+        private System.Windows.Forms.Button ButtonConfiguration;
         private System.Windows.Forms.Button ButtonLogOut;
     }
 }

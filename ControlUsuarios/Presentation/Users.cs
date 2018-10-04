@@ -5,14 +5,17 @@ using System.Windows.Forms;
 using Entity;
 using Business;
 using Presentation.Inputs;
+using Presentation.PopUpForms;
 using Options;
 
 namespace Presentation
 {
     public partial class Users : FormFather
     {
+        private PopUpUsers ObjPopUpUsers;
         private Validations ObjValidations = new Validations();
         private readonly Session ObjSession = new Session();
+        private ModifyUsers ObjModifyUsers = new ModifyUsers();
         private DataTable TablaComboSearch = new DataTable();
         private List<string> ListaComboBox = new List<string>();
         private Alerts ObjAlerts;
@@ -39,8 +42,31 @@ namespace Presentation
         {
             if(e.ColumnIndex == GridSearch.Columns["EDITAR"].Index)
             {
-                //Hacer algo...
-                //GridSearch.Rows[e.RowIndex].Cells["NUMERO DE CONTROL"].Value
+                ObjModifyUsers.NumControl = GridSearch.Rows[e.RowIndex].Cells["NUMERO DE CONTROL"].Value.ToString().Trim();
+                if (GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Contains(" "))
+                {
+                    ObjModifyUsers.FirstName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Split(' ')[0].Trim();
+                    ObjModifyUsers.SecondName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Split(' ')[1].Trim();
+                }
+                else
+                {
+                    ObjModifyUsers.FirstName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Trim();
+                    ObjModifyUsers.SecondName = string.Empty;
+                }
+                ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value.ToString();
+                ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value.ToString();
+                ObjModifyUsers.Sex = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value.ToString());
+                ObjModifyUsers.Department = GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value.ToString();
+                ObjModifyUsers.Status = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value.ToString());
+                try
+                {
+                    ObjPopUpUsers.Show();
+                }
+                catch (NullReferenceException)
+                {
+                    ObjPopUpUsers = new PopUpUsers(ObjModifyUsers);
+                    ObjPopUpUsers.Show();
+                }
             }
         }
 
@@ -68,15 +94,23 @@ namespace Presentation
                     break;
             switch (Index)
             {
-                case 0:
+                case 0: //ButtonNewUser
+                    {
+                        try
+                        {
+                            ObjPopUpUsers.Show();
+                        }
+                        catch (NullReferenceException)
+                        {
+                            ObjPopUpUsers = new PopUpUsers();
+                        }
+                        break;
+                    }
+                case 1: //PictureBoxInfo
                     {
                         break;
                     }
-                case 1:
-                    {
-                        break;
-                    }
-                case 2:
+                case 2: //ButtonCleanSearch
                     {
                         GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Users);
                         LabelTotalResults.Text = "0";
@@ -84,7 +118,7 @@ namespace Presentation
                         ComboTypeSearch.SelectedIndex = -1;
                         break;
                     }
-                case 3:
+                case 3: //ButtonSearch
                     {
                         if (ComboTypeSearch.SelectedIndex > -1 && !string.IsNullOrEmpty(TextBoxSearch.TextTextBox) && !string.IsNullOrWhiteSpace(TextBoxSearch.TextTextBox))
                         {

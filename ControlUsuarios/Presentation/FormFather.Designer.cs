@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PanelInfo = new System.Windows.Forms.Panel();
-            this.PictureBoxInfo = new System.Windows.Forms.PictureBox();
-            this.ToolTipInfo = new System.Windows.Forms.ToolTip(this.components);
             this.LabelSubTitle = new System.Windows.Forms.Label();
             this.LabelTitle = new System.Windows.Forms.Label();
+            this.PictureBoxInfo = new System.Windows.Forms.PictureBox();
+            this.ToolTipInfo = new System.Windows.Forms.ToolTip(this.components);
             this.PanelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).BeginInit();
             this.SuspendLayout();
@@ -46,26 +46,8 @@
             this.PanelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelInfo.Location = new System.Drawing.Point(0, 0);
             this.PanelInfo.Name = "PanelInfo";
-            this.PanelInfo.Size = new System.Drawing.Size(922, 68);
+            this.PanelInfo.Size = new System.Drawing.Size(1062, 68);
             this.PanelInfo.TabIndex = 0;
-            // 
-            // PictureBoxInfo
-            // 
-            this.PictureBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureBoxInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxInfo.Image = global::Presentation.Properties.Resources.InformationBlue;
-            this.PictureBoxInfo.Location = new System.Drawing.Point(866, 12);
-            this.PictureBoxInfo.Name = "PictureBoxInfo";
-            this.PictureBoxInfo.Size = new System.Drawing.Size(44, 44);
-            this.PictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxInfo.TabIndex = 1;
-            this.PictureBoxInfo.TabStop = false;
-            this.ToolTipInfo.SetToolTip(this.PictureBoxInfo, "Información sobre esta ventana");
-            // 
-            // ToolTipInfo
-            // 
-            this.ToolTipInfo.BackColor = System.Drawing.Color.White;
-            this.ToolTipInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
             // 
             // LabelSubTitle
             // 
@@ -89,12 +71,30 @@
             this.LabelTitle.TabIndex = 3;
             this.LabelTitle.Text = "Modulo de Usuarios";
             // 
+            // PictureBoxInfo
+            // 
+            this.PictureBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureBoxInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxInfo.Image = global::Presentation.Properties.Resources.InformationBlue;
+            this.PictureBoxInfo.Location = new System.Drawing.Point(1006, 12);
+            this.PictureBoxInfo.Name = "PictureBoxInfo";
+            this.PictureBoxInfo.Size = new System.Drawing.Size(44, 44);
+            this.PictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxInfo.TabIndex = 1;
+            this.PictureBoxInfo.TabStop = false;
+            this.ToolTipInfo.SetToolTip(this.PictureBoxInfo, "Información sobre esta ventana");
+            // 
+            // ToolTipInfo
+            // 
+            this.ToolTipInfo.BackColor = System.Drawing.Color.White;
+            this.ToolTipInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            // 
             // FormFather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            this.ClientSize = new System.Drawing.Size(922, 698);
+            this.ClientSize = new System.Drawing.Size(1062, 698);
             this.Controls.Add(this.PanelInfo);
             this.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

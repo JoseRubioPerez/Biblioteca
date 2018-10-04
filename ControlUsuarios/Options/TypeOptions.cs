@@ -7,8 +7,9 @@
         Users = 3,
         Moves = 4,
         Stats = 5,
-        RegisterUsers = 6,
-        Binnacle = 7
+        Binnacle = 6,
+        Import = 7,
+        Configuration = 8
     }
 
     public enum TypeSession
