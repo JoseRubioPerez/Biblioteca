@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
 using Business;
@@ -18,39 +13,50 @@ namespace Presentation.PopUpForms
         private Alerts ObjAlerts;
         private Validations ObjValidations = new Validations();
         private readonly ModifyUsers ObjModifyUsers = new ModifyUsers();
+        private ModifyUsers ObjModifyUsers2 = new ModifyUsers();
         private DataTable TablaComboDepartment = new DataTable();
         private List<string> ListaComboBox = new List<string>();
         private readonly Control[] ArrayControl;
         private byte Index;
+        private char UserSex = '\0', UserStatus = '\0';
         private DialogResult ObjDialog;
 
         public PopUpUsers()
         {
             InitializeComponent();
             ArrayControl = new Control[] { ButtonAccept, ButtonCancel, RadioButtonMan, RadioButtonWoman, RadioButtonActive, RadioButtonDisable };
+            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
+            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
+            ComboDepartmentCareer.DataSource = ListaComboBox;
         }
 
         public PopUpUsers(ModifyUsers ObjModifyUsers)
         {
             InitializeComponent();
+            ArrayControl = new Control[] { ButtonAccept, ButtonCancel, RadioButtonMan, RadioButtonWoman, RadioButtonActive, RadioButtonDisable };
             this.ObjModifyUsers = ObjModifyUsers;
+            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
+            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
+            ComboDepartmentCareer.DataSource = ListaComboBox;
             TextBoxNumControl.Text = ObjModifyUsers.NumControl;
             TextBoxFirstName.Text = ObjModifyUsers.FirstName;
             TextBoxSecondName.Text = ObjModifyUsers.SecondName;
             TextBoxLastName.Text = ObjModifyUsers.FirstLastName;
             TextBoxLastName2.Text = ObjModifyUsers.SecondLastName;
-            ComboDepartmentCareer.SelectedValue = ObjModifyUsers.Department;
-            if (ObjModifyUsers.Sex.Equals('M'))
+            ComboDepartmentCareer.SelectedItem = ObjModifyUsers.Department;
+            UserSex = ObjModifyUsers.Sex;
+            UserStatus = ObjModifyUsers.Status;
+            if (ObjModifyUsers.Sex == 'M')
             {
-                RadioButtonWoman.Checked = false;
                 RadioButtonMan.Checked = true;
+                RadioButtonWoman.Checked = false;
             }
             else
             {
                 RadioButtonWoman.Checked = true;
                 RadioButtonMan.Checked = false;
             }
-            if (ObjModifyUsers.Status.Equals('A'))
+            if (ObjModifyUsers.Status == 'A')
             {
                 RadioButtonActive.Checked = true;
                 RadioButtonDisable.Checked = false;
@@ -64,16 +70,33 @@ namespace Presentation.PopUpForms
 
         private void ClearControlsMethod()
         {
-            TextBoxNumControl.Text = string.Empty;
-            TextBoxFirstName.Text = string.Empty;
-            TextBoxSecondName.Text = string.Empty;
-            TextBoxLastName.Text = string.Empty;
-            TextBoxLastName2.Text = string.Empty;
-            ComboDepartmentCareer.SelectedIndex = -1;
-            RadioButtonMan.Checked = false;
-            RadioButtonWoman.Checked = false;
-            RadioButtonActive.Checked = false;
-            RadioButtonDisable.Checked = false;
+            TextBoxFirstName.Text = ObjModifyUsers.FirstName;
+            TextBoxSecondName.Text = ObjModifyUsers.SecondName;
+            TextBoxLastName.Text = ObjModifyUsers.FirstLastName;
+            TextBoxLastName2.Text = ObjModifyUsers.SecondLastName;
+            ComboDepartmentCareer.SelectedItem = ObjModifyUsers.Department;
+            UserSex = ObjModifyUsers.Sex;
+            UserStatus = ObjModifyUsers.Status;
+            if (ObjModifyUsers.Sex == 'M')
+            {
+                RadioButtonMan.Checked = true;
+                RadioButtonWoman.Checked = false;
+            }
+            else
+            {
+                RadioButtonWoman.Checked = true;
+                RadioButtonMan.Checked = false;
+            }
+            if (ObjModifyUsers.Status == 'A')
+            {
+                RadioButtonActive.Checked = true;
+                RadioButtonDisable.Checked = false;
+            }
+            else
+            {
+                RadioButtonDisable.Checked = true;
+                RadioButtonActive.Checked = false;
+            }
         } //Clave de Método: PopUpUsers-CCM
 
         private void ControlClickMethod(object sender, EventArgs e)
@@ -85,6 +108,18 @@ namespace Presentation.PopUpForms
             {
                 case 0: //ButtonAccept
                     {
+                        ObjModifyUsers2.NumControl = TextBoxNumControl.Text;
+                        ObjModifyUsers2.FirstName = TextBoxFirstName.Text;
+                        ObjModifyUsers2.SecondName = TextBoxSecondName.Text;
+                        ObjModifyUsers2.FirstLastName = TextBoxLastName.Text;
+                        ObjModifyUsers2.SecondLastName = TextBoxLastName2.Text;
+                        ObjModifyUsers2.Department = ComboDepartmentCareer.SelectedItem.ToString();
+                        ObjModifyUsers2.Sex = UserSex;
+                        ObjModifyUsers2.Status = UserStatus;
+                        if(ObjValidations.PopUpUsersValidations(ObjModifyUsers, ObjModifyUsers2))
+                        {
+
+                        }
                         break;
                     }
                 case 1: //ButtonCancel
@@ -115,13 +150,7 @@ namespace Presentation.PopUpForms
                 default:
                     throw new Exception("Excepción en Método: PopUpUsers-CCM-02", new IndexOutOfRangeException());
             }
+            Index = 0;
         } //Clave de Método: PopUpUsers-CCM-02
-
-        private void ComboDepartmentCareerClickMethod(object sender, EventArgs e)
-        {
-            TablaComboDepartment = ObjValidations.ComboSearchMethod(TypeModules.Users, TypeSearch.Users);
-            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["DESCRIPCION"].ToString());
-            ComboDepartmentCareer.DataSource = ListaComboBox;
-        } //Clave de Método: PopUpUsers-CDCCM
     }
 }

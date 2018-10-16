@@ -8,49 +8,44 @@ namespace CapaDatos
 {
     public class QueriesDataBase
     {
-        private static string StringConnection { get; } = ConfigurationManager.ConnectionStrings["ConexDB"].ConnectionString;
-        private SqlCommand cmd = new SqlCommand();
-        private SqlDataAdapter da;
-        private DataTable table;
+        private SqlCommand Command;
+        private SqlDataAdapter DataAdapter1;
+        private DataTable Table1;
 
-        /// <summary>
-        /// Method for mass queries to the database
-        /// </summary>
-        /// <param name="StoredProcedure">string Name of the stored procedure</param>
-        /// <param name="ValuesForms">List<object> List of values by the user already validated</param>
-        /// <param name="Params">List<sttring> Nombres de las variables en el procedimiento almacenado</param>
-        /// <returns></returns>
-        public DataTable Procedimiento(string StoredProcedure, List<object> ValuesForms, List<string> Params)
+        public DataTable Procedimiento(string StoredProcedure, List<object> ValuesForms)
         {
-            SqlConnection conn = new SqlConnection(StringConnection);
+            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionDataBase"].ConnectionString);
             try
             {
-                cmd = new SqlCommand(StoredProcedure, conn) { CommandType = CommandType.StoredProcedure };
+                Command = new SqlCommand(StoredProcedure, conn) { CommandType = CommandType.StoredProcedure };
                 for (int i = 0; i < ValuesForms.Count; i++)
-                    cmd.Parameters.AddWithValue(Params[i], ValuesForms[i]);
+                    Command.Parameters.AddWithValue("@p" + (i + 1), ValuesForms[i]);
                 conn.Open();
-                cmd.ExecuteNonQuery();
-                da = new SqlDataAdapter(cmd);
-                table = new DataTable();
-                da.Fill(table);
-                cmd.Parameters.Clear();
+                Command.ExecuteNonQuery();
+                DataAdapter1 = new SqlDataAdapter(Command);
+                Table1 = new DataTable();
+                DataAdapter1.Fill(Table1);
+                Command.Parameters.Clear();
             }
-            catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }
+            catch (Exception Error)
+            {
+                Console.WriteLine("Error: " + Error);
+            }
             finally { conn.Close(); }
-            return table;
+            return Table1;
         }
 
         public void Procedimiento(string nc, byte service)
         {
-            SqlConnection conn = new SqlConnection(StringConnection);
+            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionDataBase"].ConnectionString);
             try
             {
-                cmd = new SqlCommand("NewMove", conn) { CommandType = CommandType.StoredProcedure };
-                cmd.Parameters.AddWithValue("@nc", nc);
-                cmd.Parameters.AddWithValue("@servicio", service);
+                Command = new SqlCommand("NewMove", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.AddWithValue("@p1", nc);
+                Command.Parameters.AddWithValue("@p2", service);
                 conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Parameters.Clear();
+                Command.ExecuteNonQuery();
+                Command.Parameters.Clear();
             }
             catch (Exception e) { Console.WriteLine("Error: " + e.ToString()); }
             finally { conn.Close(); }

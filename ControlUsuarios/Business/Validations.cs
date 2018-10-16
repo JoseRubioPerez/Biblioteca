@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using Connections;
 using Options;
+using Entity;
 
 namespace Business
 {
@@ -53,7 +54,7 @@ namespace Business
             ValueForms.Clear();
             try
             {
-                var StoredProcedure = "";
+                string StoredProcedure = "";
                 if (Option.Equals(0))
                     throw new Exception();
                 switch (Option)
@@ -71,6 +72,12 @@ namespace Business
                     case TypeSearch.Moves:
                         {
                             StoredProcedure = "LoadMoves";
+                            break;
+                        }
+                    case TypeSearch.Areas:
+
+                        {
+                            StoredProcedure = "LoadAreas";
                             break;
                         }
                     default:
@@ -117,5 +124,10 @@ namespace Business
                 return null;
             }
         } //Clave de Método: Validations-EU
+
+        public bool PopUpUsersValidations(ModifyUsers ObjModifyUsersSource, ModifyUsers ObjModifyUsers)
+        {
+            return (ObjModifyUsersSource.NumControl != ObjModifyUsers.NumControl && ObjModifyUsersSource.FirstName != ObjModifyUsers.FirstName && ObjModifyUsersSource.SecondName != ObjModifyUsers.SecondName && ObjModifyUsersSource.FirstLastName != ObjModifyUsers.FirstLastName && ObjModifyUsersSource.SecondLastName != ObjModifyUsers.SecondLastName && ObjModifyUsersSource.Department != ObjModifyUsers.Department && ObjModifyUsersSource.Sex != ObjModifyUsers.Sex && ObjModifyUsersSource.Status != ObjModifyUsers.Status) ? false : true;
+        }
     }
 }

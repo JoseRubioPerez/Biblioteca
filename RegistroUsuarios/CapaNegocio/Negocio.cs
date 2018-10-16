@@ -14,7 +14,6 @@ namespace CapaNegocio
 
         private DataTable data;
         private List<object> Valor = new List<object>();
-        private List<string> Parametros = new List<string>();
 
         public Negocio() { }
 
@@ -26,10 +25,9 @@ namespace CapaNegocio
         /// <returns></returns>
         public DataTable Sesion(string nc, string password)
         {
-            Valor.Clear(); Parametros.Clear();
+            Valor.Clear();
             Valor.Add(nc); Valor.Add(password);
-            Parametros.Add("@user"); Parametros.Add("@pass");
-            data = ObjData.Procedimiento("Logeo", Valor, Parametros);
+            data = ObjData.Procedimiento("LogSession", Valor);
             return data;
         }
 
@@ -51,10 +49,9 @@ namespace CapaNegocio
         /// <param name="accion">string Acción que se esta realizando</param>
         public void Bitacora(string nc, string sistema, string accion)
         {
-            Valor.Clear(); Parametros.Clear();
+            Valor.Clear();
             Valor.Add(nc); Valor.Add(sistema); Valor.Add(accion);
-            Parametros.Add("@nc"); Parametros.Add("@sistema"); Parametros.Add("@accion");
-            ObjData.Procedimiento("Bitacora", Valor, Parametros);
+            ObjData.Procedimiento("Bitacora", Valor);
         }
 
         /// <summary>
@@ -64,9 +61,9 @@ namespace CapaNegocio
         /// <returns></returns>
         public DataTable ExistUsuario(string nc)
         {
-            Valor.Clear(); Parametros.Clear();
-            Valor.Add(nc); Parametros.Add("@nc");
-            data = ObjData.Procedimiento("ExistUsuario", Valor, Parametros);
+            Valor.Clear();
+            Valor.Add(nc);
+            data = ObjData.Procedimiento("ExistUser", Valor);
             return data;
         }
     }

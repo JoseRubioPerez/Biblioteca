@@ -46,8 +46,12 @@
             this.TextBoxSecondName = new System.Windows.Forms.TextBox();
             this.TextBoxLastName2 = new System.Windows.Forms.TextBox();
             this.TextBoxLastName = new System.Windows.Forms.TextBox();
+            this.GroupBoxSex = new System.Windows.Forms.GroupBox();
+            this.GroupBoxStatus = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).BeginInit();
             this.PanelContent.SuspendLayout();
+            this.GroupBoxSex.SuspendLayout();
+            this.GroupBoxStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBorder1
@@ -72,15 +76,13 @@
             // 
             // PanelContent
             // 
+            this.PanelContent.Controls.Add(this.GroupBoxStatus);
+            this.PanelContent.Controls.Add(this.GroupBoxSex);
             this.PanelContent.Controls.Add(this.TextBoxLastName2);
             this.PanelContent.Controls.Add(this.TextBoxLastName);
             this.PanelContent.Controls.Add(this.TextBoxSecondName);
             this.PanelContent.Controls.Add(this.TextBoxFirstName);
             this.PanelContent.Controls.Add(this.TextBoxNumControl);
-            this.PanelContent.Controls.Add(this.RadioButtonDisable);
-            this.PanelContent.Controls.Add(this.RadioButtonActive);
-            this.PanelContent.Controls.Add(this.RadioButtonWoman);
-            this.PanelContent.Controls.Add(this.RadioButtonMan);
             this.PanelContent.Controls.Add(this.ComboDepartmentCareer);
             this.PanelContent.Controls.Add(this.label8);
             this.PanelContent.Controls.Add(this.label7);
@@ -104,15 +106,13 @@
             this.PanelContent.Controls.SetChildIndex(this.label7, 0);
             this.PanelContent.Controls.SetChildIndex(this.label8, 0);
             this.PanelContent.Controls.SetChildIndex(this.ComboDepartmentCareer, 0);
-            this.PanelContent.Controls.SetChildIndex(this.RadioButtonMan, 0);
-            this.PanelContent.Controls.SetChildIndex(this.RadioButtonWoman, 0);
-            this.PanelContent.Controls.SetChildIndex(this.RadioButtonActive, 0);
-            this.PanelContent.Controls.SetChildIndex(this.RadioButtonDisable, 0);
             this.PanelContent.Controls.SetChildIndex(this.TextBoxNumControl, 0);
             this.PanelContent.Controls.SetChildIndex(this.TextBoxFirstName, 0);
             this.PanelContent.Controls.SetChildIndex(this.TextBoxSecondName, 0);
             this.PanelContent.Controls.SetChildIndex(this.TextBoxLastName, 0);
             this.PanelContent.Controls.SetChildIndex(this.TextBoxLastName2, 0);
+            this.PanelContent.Controls.SetChildIndex(this.GroupBoxSex, 0);
+            this.PanelContent.Controls.SetChildIndex(this.GroupBoxStatus, 0);
             // 
             // label1
             // 
@@ -185,7 +185,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.label7.Location = new System.Drawing.Point(37, 278);
+            this.label7.Location = new System.Drawing.Point(37, 284);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 23);
             this.label7.TabIndex = 16;
@@ -196,7 +196,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.label8.Location = new System.Drawing.Point(37, 325);
+            this.label8.Location = new System.Drawing.Point(37, 341);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 23);
             this.label8.TabIndex = 17;
@@ -219,7 +219,7 @@
             // 
             this.RadioButtonMan.AutoSize = true;
             this.RadioButtonMan.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.RadioButtonMan.Location = new System.Drawing.Point(108, 274);
+            this.RadioButtonMan.Location = new System.Drawing.Point(6, 20);
             this.RadioButtonMan.Name = "RadioButtonMan";
             this.RadioButtonMan.Size = new System.Drawing.Size(84, 27);
             this.RadioButtonMan.TabIndex = 19;
@@ -232,7 +232,7 @@
             // 
             this.RadioButtonWoman.AutoSize = true;
             this.RadioButtonWoman.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.RadioButtonWoman.Location = new System.Drawing.Point(209, 274);
+            this.RadioButtonWoman.Location = new System.Drawing.Point(96, 20);
             this.RadioButtonWoman.Name = "RadioButtonWoman";
             this.RadioButtonWoman.Size = new System.Drawing.Size(67, 27);
             this.RadioButtonWoman.TabIndex = 20;
@@ -245,7 +245,7 @@
             // 
             this.RadioButtonActive.AutoSize = true;
             this.RadioButtonActive.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.RadioButtonActive.Location = new System.Drawing.Point(108, 321);
+            this.RadioButtonActive.Location = new System.Drawing.Point(6, 20);
             this.RadioButtonActive.Name = "RadioButtonActive";
             this.RadioButtonActive.Size = new System.Drawing.Size(68, 27);
             this.RadioButtonActive.TabIndex = 21;
@@ -258,7 +258,7 @@
             // 
             this.RadioButtonDisable.AutoSize = true;
             this.RadioButtonDisable.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.RadioButtonDisable.Location = new System.Drawing.Point(208, 321);
+            this.RadioButtonDisable.Location = new System.Drawing.Point(80, 20);
             this.RadioButtonDisable.Name = "RadioButtonDisable";
             this.RadioButtonDisable.Size = new System.Drawing.Size(79, 27);
             this.RadioButtonDisable.TabIndex = 22;
@@ -270,6 +270,7 @@
             // TextBoxNumControl
             // 
             this.TextBoxNumControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxNumControl.Enabled = false;
             this.TextBoxNumControl.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.TextBoxNumControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
             this.TextBoxNumControl.Location = new System.Drawing.Point(188, 84);
@@ -317,16 +318,45 @@
             this.TextBoxLastName.Size = new System.Drawing.Size(320, 29);
             this.TextBoxLastName.TabIndex = 4;
             // 
+            // GroupBoxSex
+            // 
+            this.GroupBoxSex.Controls.Add(this.RadioButtonMan);
+            this.GroupBoxSex.Controls.Add(this.RadioButtonWoman);
+            this.GroupBoxSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupBoxSex.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.GroupBoxSex.Location = new System.Drawing.Point(104, 262);
+            this.GroupBoxSex.Name = "GroupBoxSex";
+            this.GroupBoxSex.Size = new System.Drawing.Size(183, 53);
+            this.GroupBoxSex.TabIndex = 23;
+            this.GroupBoxSex.TabStop = false;
+            // 
+            // GroupBoxStatus
+            // 
+            this.GroupBoxStatus.Controls.Add(this.RadioButtonActive);
+            this.GroupBoxStatus.Controls.Add(this.RadioButtonDisable);
+            this.GroupBoxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupBoxStatus.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.GroupBoxStatus.Location = new System.Drawing.Point(104, 321);
+            this.GroupBoxStatus.Name = "GroupBoxStatus";
+            this.GroupBoxStatus.Size = new System.Drawing.Size(182, 53);
+            this.GroupBoxStatus.TabIndex = 24;
+            this.GroupBoxStatus.TabStop = false;
+            // 
             // PopUpUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 519);
             this.Name = "PopUpUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PopUpUsers";
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).EndInit();
             this.PanelContent.ResumeLayout(false);
             this.PanelContent.PerformLayout();
+            this.GroupBoxSex.ResumeLayout(false);
+            this.GroupBoxSex.PerformLayout();
+            this.GroupBoxStatus.ResumeLayout(false);
+            this.GroupBoxStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -351,5 +381,7 @@
         private System.Windows.Forms.TextBox TextBoxFirstName;
         private System.Windows.Forms.TextBox TextBoxLastName2;
         private System.Windows.Forms.TextBox TextBoxLastName;
+        private System.Windows.Forms.GroupBox GroupBoxStatus;
+        private System.Windows.Forms.GroupBox GroupBoxSex;
     }
 }

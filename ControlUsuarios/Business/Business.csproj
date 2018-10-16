@@ -50,6 +50,10 @@
       <Project>{58e5d396-c31d-428e-a8d1-4a03fa899da7}</Project>
       <Name>Connections</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{517cd88c-57cc-41a3-982b-c50f2cbd7d80}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Options\Options.csproj">
       <Project>{9176c82e-e9f2-4ff0-81d0-28d602a91758}</Project>
       <Name>Options</Name>

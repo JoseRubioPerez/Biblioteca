@@ -22,7 +22,8 @@
     {
         Users = 1,
         Admin = 2,
-        Moves = 3
+        Moves = 3,
+        Areas = 4
     }
 
     public enum TypeIcon

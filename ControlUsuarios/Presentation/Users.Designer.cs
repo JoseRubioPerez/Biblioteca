@@ -30,12 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutPanelContent = new System.Windows.Forms.TableLayoutPanel();
             this.TableLayoutPanelGrid = new System.Windows.Forms.TableLayoutPanel();
             this.PanelSearch = new System.Windows.Forms.Panel();
+            this.GroupBoxStatusAndSex = new System.Windows.Forms.GroupBox();
+            this.RadioButtonOption2 = new System.Windows.Forms.RadioButton();
+            this.RadioButtonOption1 = new System.Windows.Forms.RadioButton();
+            this.LabelDepartment = new System.Windows.Forms.Label();
+            this.ComboTypeDepartment = new System.Windows.Forms.ComboBox();
             this.TextBoxSearch = new Presentation.Inputs.TextBoxUI();
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.GridSearch = new System.Windows.Forms.DataGridView();
@@ -54,6 +59,7 @@
             this.TableLayoutPanelContent.SuspendLayout();
             this.TableLayoutPanelGrid.SuspendLayout();
             this.PanelSearch.SuspendLayout();
+            this.GroupBoxStatusAndSex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).BeginInit();
             this.PanelComboUI.SuspendLayout();
             this.PanelResults.SuspendLayout();
@@ -109,6 +115,9 @@
             // 
             // PanelSearch
             // 
+            this.PanelSearch.Controls.Add(this.GroupBoxStatusAndSex);
+            this.PanelSearch.Controls.Add(this.LabelDepartment);
+            this.PanelSearch.Controls.Add(this.ComboTypeDepartment);
             this.PanelSearch.Controls.Add(this.TextBoxSearch);
             this.PanelSearch.Controls.Add(this.ButtonSearch);
             this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -117,6 +126,77 @@
             this.PanelSearch.Name = "PanelSearch";
             this.PanelSearch.Size = new System.Drawing.Size(739, 106);
             this.PanelSearch.TabIndex = 12;
+            // 
+            // GroupBoxStatusAndSex
+            // 
+            this.GroupBoxStatusAndSex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBoxStatusAndSex.Controls.Add(this.RadioButtonOption2);
+            this.GroupBoxStatusAndSex.Controls.Add(this.RadioButtonOption1);
+            this.GroupBoxStatusAndSex.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.GroupBoxStatusAndSex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.GroupBoxStatusAndSex.Location = new System.Drawing.Point(420, 36);
+            this.GroupBoxStatusAndSex.Name = "GroupBoxStatusAndSex";
+            this.GroupBoxStatusAndSex.Size = new System.Drawing.Size(266, 66);
+            this.GroupBoxStatusAndSex.TabIndex = 8;
+            this.GroupBoxStatusAndSex.TabStop = false;
+            // 
+            // RadioButtonOption2
+            // 
+            this.RadioButtonOption2.AutoSize = true;
+            this.RadioButtonOption2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonOption2.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonOption2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonOption2.Location = new System.Drawing.Point(87, 25);
+            this.RadioButtonOption2.Name = "RadioButtonOption2";
+            this.RadioButtonOption2.Size = new System.Drawing.Size(84, 38);
+            this.RadioButtonOption2.TabIndex = 10;
+            this.RadioButtonOption2.TabStop = true;
+            this.RadioButtonOption2.Text = "Hombre";
+            this.RadioButtonOption2.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonOption1
+            // 
+            this.RadioButtonOption1.AutoSize = true;
+            this.RadioButtonOption1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonOption1.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonOption1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonOption1.Location = new System.Drawing.Point(3, 25);
+            this.RadioButtonOption1.Name = "RadioButtonOption1";
+            this.RadioButtonOption1.Size = new System.Drawing.Size(84, 38);
+            this.RadioButtonOption1.TabIndex = 9;
+            this.RadioButtonOption1.TabStop = true;
+            this.RadioButtonOption1.Text = "Hombre";
+            this.RadioButtonOption1.UseVisualStyleBackColor = true;
+            // 
+            // LabelDepartment
+            // 
+            this.LabelDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelDepartment.AutoSize = true;
+            this.LabelDepartment.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.LabelDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.LabelDepartment.Location = new System.Drawing.Point(148, 69);
+            this.LabelDepartment.Name = "LabelDepartment";
+            this.LabelDepartment.Size = new System.Drawing.Size(182, 23);
+            this.LabelDepartment.TabIndex = 7;
+            this.LabelDepartment.Text = "Carrera o Departamento:";
+            // 
+            // ComboTypeDepartment
+            // 
+            this.ComboTypeDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboTypeDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboTypeDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboTypeDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ComboTypeDepartment.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.ComboTypeDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ComboTypeDepartment.FormattingEnabled = true;
+            this.ComboTypeDepartment.IntegralHeight = false;
+            this.ComboTypeDepartment.Items.AddRange(new object[] {
+            "Ninguno"});
+            this.ComboTypeDepartment.Location = new System.Drawing.Point(336, 69);
+            this.ComboTypeDepartment.Name = "ComboTypeDepartment";
+            this.ComboTypeDepartment.Size = new System.Drawing.Size(344, 28);
+            this.ComboTypeDepartment.TabIndex = 6;
+            this.ComboTypeDepartment.Click += new System.EventHandler(this.ComboTypeDepartmentClickMethod);
             // 
             // TextBoxSearch
             // 
@@ -166,14 +246,14 @@
             this.GridSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.GridSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableLayoutPanelGrid.SetColumnSpan(this.GridSearch, 2);
             this.GridSearch.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -184,21 +264,21 @@
             this.GridSearch.Name = "GridSearch";
             this.GridSearch.ReadOnly = true;
             this.GridSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GridSearch.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.GridSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridSearch.Size = new System.Drawing.Size(1056, 318);
             this.GridSearch.TabIndex = 0;
@@ -236,12 +316,14 @@
             this.ComboTypeSearch.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.ComboTypeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
             this.ComboTypeSearch.FormattingEnabled = true;
+            this.ComboTypeSearch.IntegralHeight = false;
             this.ComboTypeSearch.Items.AddRange(new object[] {
             "Ninguno"});
             this.ComboTypeSearch.Location = new System.Drawing.Point(154, 65);
             this.ComboTypeSearch.Name = "ComboTypeSearch";
             this.ComboTypeSearch.Size = new System.Drawing.Size(344, 28);
             this.ComboTypeSearch.TabIndex = 1;
+            this.ComboTypeSearch.SelectedIndexChanged += new System.EventHandler(this.ComboTypeSearchSelectedChangedMethod);
             this.ComboTypeSearch.Click += new System.EventHandler(this.ComboTypeSearchClickMethod);
             // 
             // PanelResults
@@ -348,6 +430,9 @@
             this.TableLayoutPanelContent.ResumeLayout(false);
             this.TableLayoutPanelGrid.ResumeLayout(false);
             this.PanelSearch.ResumeLayout(false);
+            this.PanelSearch.PerformLayout();
+            this.GroupBoxStatusAndSex.ResumeLayout(false);
+            this.GroupBoxStatusAndSex.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).EndInit();
             this.PanelComboUI.ResumeLayout(false);
             this.PanelComboUI.PerformLayout();
@@ -375,5 +460,10 @@
         private System.Windows.Forms.Label LabelTotalResults;
         private System.Windows.Forms.Label LabelResults;
         public System.Windows.Forms.Button ButtonCleanSearch;
+        private System.Windows.Forms.Label LabelDepartment;
+        public System.Windows.Forms.ComboBox ComboTypeDepartment;
+        private System.Windows.Forms.GroupBox GroupBoxStatusAndSex;
+        private System.Windows.Forms.RadioButton RadioButtonOption1;
+        private System.Windows.Forms.RadioButton RadioButtonOption2;
     }
 }

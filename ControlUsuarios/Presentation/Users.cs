@@ -4,7 +4,6 @@ using System.Data;
 using System.Windows.Forms;
 using Entity;
 using Business;
-using Presentation.Inputs;
 using Presentation.PopUpForms;
 using Options;
 
@@ -12,12 +11,13 @@ namespace Presentation
 {
     public partial class Users : FormFather
     {
-        private PopUpUsers ObjPopUpUsers;
         private Validations ObjValidations = new Validations();
         private readonly Session ObjSession = new Session();
         private ModifyUsers ObjModifyUsers = new ModifyUsers();
         private DataTable TablaComboSearch = new DataTable();
+        private DataTable TablaComboDepartment = new DataTable();
         private List<string> ListaComboBox = new List<string>();
+        private List<string> ListaComboBox2 = new List<string>();
         private Alerts ObjAlerts;
         private readonly Control[] ArrayControl;
         private byte Index;
@@ -58,17 +58,20 @@ namespace Presentation
                 ObjModifyUsers.Sex = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value.ToString());
                 ObjModifyUsers.Department = GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value.ToString();
                 ObjModifyUsers.Status = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value.ToString());
-                try
-                {
-                    ObjPopUpUsers.Show();
-                }
-                catch (NullReferenceException)
-                {
-                    ObjPopUpUsers = new PopUpUsers(ObjModifyUsers);
-                    ObjPopUpUsers.Show();
-                }
+                PopUpUsers ObjPopUpUsers = new PopUpUsers(ObjModifyUsers);
+                ObjPopUpUsers.Show();
             }
-        }
+        } //Clave de Método: Users-GSCCM
+
+        private void SearchInputsVisibleMethod(bool Text = true, bool Combo = false, bool RadioButton = false)
+        {
+            LabelDepartment.Visible = Combo;
+            ComboTypeDepartment.Visible = Combo;
+            GroupBoxStatusAndSex.Visible = RadioButton;
+            TextBoxSearch.Visible = Text;
+            RadioButtonOption1.Checked = false;
+            RadioButtonOption2.Checked = false;
+        } //Clave de Método: Users-SIVM
 
         public Users()
         {
@@ -76,6 +79,7 @@ namespace Presentation
             ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
             GridSearchLoadDataMethod();
             ListaComboBox.Add("NINGUN FILTRO");
+            SearchInputsVisibleMethod();
         }
 
         public Users(Session ObjSession)
@@ -85,6 +89,7 @@ namespace Presentation
             ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
             GridSearchLoadDataMethod();
             ListaComboBox.Add("NINGUN FILTRO");
+            SearchInputsVisibleMethod();
         } //Clave de Constructor: Users-C
 
         private void ControlClickMethod(object sender, EventArgs e)
@@ -96,14 +101,8 @@ namespace Presentation
             {
                 case 0: //ButtonNewUser
                     {
-                        try
-                        {
-                            ObjPopUpUsers.Show();
-                        }
-                        catch (NullReferenceException)
-                        {
-                            ObjPopUpUsers = new PopUpUsers();
-                        }
+                        PopUpUsers ObjPopUpUsers = new PopUpUsers();
+                        ObjPopUpUsers.Show();
                         break;
                     }
                 case 1: //PictureBoxInfo
@@ -141,6 +140,7 @@ namespace Presentation
                 default:
                     throw new Exception("Excepción en Método: Users-CCM", new IndexOutOfRangeException());
             }
+            Index = 0;
         } //Clave de Método: Users-CCM
 
         private void DataSourceChangedMethod(object sender, EventArgs e)
@@ -154,5 +154,70 @@ namespace Presentation
             foreach (DataRow row in TablaComboSearch.Rows) ListaComboBox.Add(row["DESCRIPCION"].ToString());
             ComboTypeSearch.DataSource = ListaComboBox;
         } //Clave de Método: Users-CTSCM
+
+        private void ComboTypeSearchSelectedChangedMethod(object sender, EventArgs e)
+        {
+            switch (ComboTypeSearch.SelectedIndex)
+            {
+                case 0:
+                    {
+                        TextBoxSearch.TextLabel = "Buscar en Todo: ";
+                        break;
+                    }
+                case 1:
+                    {
+                        TextBoxSearch.TextLabel = "Número de Control: ";
+                        SearchInputsVisibleMethod();
+                        break;
+                    }
+                case 2:
+                    {
+                        TextBoxSearch.TextLabel = "Nombres: ";
+                        SearchInputsVisibleMethod();
+                        break;
+                    }
+                case 3:
+                    {
+                        TextBoxSearch.TextLabel = "Apellido Paterno: ";
+                        SearchInputsVisibleMethod();
+                        break;
+                    }
+                case 4:
+                    {
+                        TextBoxSearch.TextLabel = "Apellido Materno: ";
+                        SearchInputsVisibleMethod();
+                        break;
+                    }
+                case 5:
+                    {
+                        TextBoxSearch.TextLabel = "Sexo: ";
+                        SearchInputsVisibleMethod(false,false, true);
+                        RadioButtonOption1.Text = "Hombre";
+                        RadioButtonOption2.Text = "Mujer";
+                        break;
+                    }
+                case 6:
+                    {
+                        TextBoxSearch.TextLabel = "Departamento / Carrera: ";
+                        SearchInputsVisibleMethod(false, true, false);
+                        break;
+                    }
+                case 7:
+                    {
+                        TextBoxSearch.TextLabel = "Status: ";
+                        SearchInputsVisibleMethod(false, false, true);
+                        RadioButtonOption1.Text = "Activo";
+                        RadioButtonOption2.Text = "Inactivo";
+                        break;
+                    }
+            }
+        } // Clave de Método: Users-CTSSCM
+
+        private void ComboTypeDepartmentClickMethod(object sender, EventArgs e)
+        {
+            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
+            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox2.Add(row["AREA"].ToString());
+            ComboTypeDepartment.DataSource = ListaComboBox2;
+        } //Clave de Método: Users-CTDCM
     }
 }

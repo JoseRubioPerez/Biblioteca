@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
 using Options;
 using Business;
-using System.Collections;
 
 namespace Presentation
 {
@@ -134,6 +127,7 @@ namespace Presentation
                 default:
                     throw new Exception("Excepción en Método: Principal-CM", new IndexOutOfRangeException());
             }
+            Index = 0;
         } //Clave de Método: Principal-CM
 
         public void PictureClickMethod(object sender, EventArgs e)
