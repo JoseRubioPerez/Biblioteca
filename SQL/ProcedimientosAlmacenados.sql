@@ -241,7 +241,7 @@ CREATE PROCEDURE Search
 @index TINYINT
 AS
 BEGIN
-IF @index = 0 --Número de Control
+IF @index = 0 --Numero de Control
 SELECT dbo.Usuarios.nc
 ,dbo.Usuarios.nombres
 ,dbo.Usuarios.apellidopat
@@ -319,3 +319,175 @@ SELECT dbo.Usuarios.nc
 FROM dbo.Usuarios
 INNER JOIN dbo.Areas ON Areas.id = Usuarios.area WHERE dbo.Usuarios.status LIKE '%' + @status + '%'
 END
+
+--SP PARA ACTUALIZAR USUARIO
+CREATE PROCEDURE UpdateUser @p1 VARCHAR(9) --NÃºmero de Control
+	,@p2 VARCHAR(20) --Nombres
+	,@p3 VARCHAR(20) --Apellido Paterno
+	,@p4 VARCHAR(20) --Apellido Materno
+	,@p5 CHAR(1) --Sexo
+	,@p6 TINYINT --Area
+	,@p7 CHAR(1) --Status
+AS
+BEGIN
+	UPDATE dbo.Usuarios
+	SET nombres = @p2
+		,apellidopat = @p3
+		,apellidomat = @p4
+		,sexo = @p5
+		,area = @p6
+		,STATUS = @p7
+	WHERE nc = @p1
+END
+GO
+
+--SP PARA BUSQUEDAS DE USUARIO
+CREATE PROCEDURE SearchUsers @p1 INT --Index
+	,@p2 VARCHAR(9) --Numero de Control
+	,@p3 VARCHAR(20) --Nombres
+	,@p4 VARCHAR(20) --Apellido Paterno
+	,@p5 VARCHAR(20) --Apellido Materno
+	,@p6 CHAR(1) --Sexo
+	,@p7 TINYINT --Departamento o Carrera
+	,@p8 CHAR(1) --Status
+AS
+BEGIN
+	DECLARE @NumControl INT = 0
+		,@Names INT = 1
+		,@FirstLastName INT = 2
+		,@SecondLastName INT = 3
+		,@BothLastName INT = 4
+		,@Sex INT = 5
+		,@DepartmentOrCareer INT = 6
+		,@Status INT = 7
+
+	IF @p1 = @NumControl
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.nc = @p2
+	END
+
+	IF @p1 = @Names
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.nombres LIKE '%' + @p3 + '%'
+	END
+
+	IF @p1 = @FirstLastName
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.apellidopat LIKE '%' + @p4 + '%'
+	END
+
+	IF @p1 = @SecondLastName
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.apellidomat LIKE '%' + @p5 + '%'
+	END
+
+	IF @p1 = @BothLastName
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.apellidopat LIKE '%' + @p4 + '%'
+			OR b.apellidopat LIKE '%' + @p5 + '%'
+			OR b.apellidomat LIKE '%' + @p4 + '%'
+			OR b.apellidomat LIKE '%' + @p5 + '%'
+	END
+
+	IF @p1 = @Sex
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.sexo = @p6
+	END
+
+	IF @p1 = @DepartmentOrCareer
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE c.id = @p7
+	END
+
+	IF @p1 = @Status
+	BEGIN
+		SELECT b.nc AS 'NUMERO DE CONTROL'
+			,b.nombres AS 'NOMBRES'
+			,b.apellidopat AS 'APELLIDO PATERNO'
+			,b.apellidomat AS 'APELLIDO MATERNO'
+			,c.area AS 'DEPARTAMENTO O CARRERA'
+			,b.sexo AS 'SEXO'
+			,b.STATUS AS 'STATUS'
+		FROM dbo.Usuarios AS b
+		INNER JOIN dbo.Areas AS c ON c.id = b.area
+		WHERE b.STATUS = @p8
+	END
+END
+GO
+
+--SP PARA INSERTAR USUARIO NUEVO
+CREATE PROCEDURE AddUser @p1 VARCHAR(9) --Numero de Control
+,@p2 VARCHAR(20) --Nombres
+,@p3 VARCHAR(20) --Apellido Paterno
+,@p4 VARCHAR(20) --Apellido Materno
+,@p5 CHAR(1) --Sexo
+,@p6 TINYINT --Area
+,@p7 CHAR(1) --Status
+AS
+BEGIN
+INSERT INTO dbo.Usuarios VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, NULL, CONVERT(TIME,GETDATE(),108), CONVERT(DATE,GETDATE(),103))
+END
+GO

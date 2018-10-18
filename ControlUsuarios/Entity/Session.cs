@@ -27,6 +27,7 @@ namespace Entity
         public string SecondName { get; set; }
         public string FirstLastName { get; set; }
         public string SecondLastName { get; set; }
+        public byte IndexDeparment { get; set; }
         public string Department { get; set; }
         public char Sex { get; set; }
         public char Status { get; set; }

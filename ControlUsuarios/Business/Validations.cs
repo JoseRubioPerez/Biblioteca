@@ -4,6 +4,7 @@ using System.Data;
 using Connections;
 using Options;
 using Entity;
+using System.Text.RegularExpressions;
 
 namespace Business
 {
@@ -42,10 +43,14 @@ namespace Business
                 ValueForms.Add(NumControl); ValueForms.Add(Password);
                 return ObjQueries.Procedimiento(nameof(LogSession), ValueForms);
             }
-            catch (Exception Error) //Faltará crear una tabla para craer la bitácora de errores.
+            catch (Exception Error)
             {
                 CatchExceptions(Error, Identificador);
                 return null;
+            }
+            finally
+            {
+                ValueForms.Clear();
             }
         } //Clave de Método: Validations-LG
 
@@ -89,6 +94,10 @@ namespace Business
                 CatchExceptions(Error, Identificador);
                 return null;
             }
+            finally
+            {
+                ValueForms.Clear();
+            }
         } //Clave de Método: Validations-GSM
 
         public DataTable ComboSearchMethod(TypeModules Identificador, TypeSearch Option)
@@ -105,6 +114,10 @@ namespace Business
             {
                 CatchExceptions(Error, Identificador);
                 return null;
+            }
+            finally
+            {
+                ValueForms.Clear();
             }
         } //Clave de Método: Validations-CSM
 
@@ -123,11 +136,88 @@ namespace Business
                 CatchExceptions(Error, Identificador);
                 return null;
             }
+            finally
+            {
+                ValueForms.Clear();
+            }
         } //Clave de Método: Validations-EU
 
-        public bool PopUpUsersValidations(ModifyUsers ObjModifyUsersSource, ModifyUsers ObjModifyUsers)
+        public void UpdateUser(TypeModules Identificador, ModifyUsers ObjModifyUser)
         {
-            return (ObjModifyUsersSource.NumControl != ObjModifyUsers.NumControl && ObjModifyUsersSource.FirstName != ObjModifyUsers.FirstName && ObjModifyUsersSource.SecondName != ObjModifyUsers.SecondName && ObjModifyUsersSource.FirstLastName != ObjModifyUsers.FirstLastName && ObjModifyUsersSource.SecondLastName != ObjModifyUsers.SecondLastName && ObjModifyUsersSource.Department != ObjModifyUsers.Department && ObjModifyUsersSource.Sex != ObjModifyUsers.Sex && ObjModifyUsersSource.Status != ObjModifyUsers.Status) ? false : true;
-        }
+            ValueForms.Clear();
+            try
+            {
+                ValueForms.Add(ObjModifyUser.NumControl);
+                ValueForms.Add((ObjModifyUser.FirstName.Trim() + " " + ObjModifyUser.SecondName).Trim());
+                ValueForms.Add(ObjModifyUser.FirstLastName);
+                ValueForms.Add(ObjModifyUser.SecondLastName);
+                ValueForms.Add(ObjModifyUser.Sex);
+                ValueForms.Add(ObjModifyUser.IndexDeparment);
+                ValueForms.Add(ObjModifyUser.Status);
+                ObjQueries.Procedimiento("UpdateUser", ValueForms);
+            }
+            catch(Exception Error)
+            {
+                CatchExceptions(Error, Identificador);
+            }
+            finally
+            {
+                ValueForms.Clear();
+            }
+        } //Clave de Método: Validations-UU
+
+        public DataTable SearchUser(TypeModules Identificador, byte IndexSearch, string InputText, char Sex, byte IndexArea, char Status)
+        {
+            sbyte i = 0;
+            ValueForms.Clear();
+            try
+            {
+                ValueForms.Add(IndexSearch);
+                if(Regex.IsMatch(InputText, "[ÁÉÍÓÚ]+"))
+                {
+                    foreach (char item in InputText)
+                    {
+                        switch (item)
+                        {
+                            case 'Á': { InputText = InputText.Replace(item, 'A'); break; }
+                            case 'É': { InputText = InputText.Replace(item, 'E'); break; }
+                            case 'Í': { InputText = InputText.Replace(item, 'I'); break; }
+                            case 'Ó': { InputText = InputText.Replace(item, 'O'); break; }
+                        }
+                    }
+                }
+                if (InputText.Trim().Split(' ').Length > 1)
+                {
+                    ValueForms.Add(InputText);
+                    ValueForms.Add(InputText);
+                    ValueForms.Add(InputText.Split(' ')[0]);
+                    ValueForms.Add(InputText.Split(' ')[1]);
+                    ValueForms.Add(Sex);
+                    ValueForms.Add(IndexArea);
+                    ValueForms.Add(Status);
+                }
+                else
+                {
+                    while (i++ < 4) ValueForms.Add(InputText);
+                    ValueForms.Add(Sex);
+                    ValueForms.Add(IndexArea);
+                    ValueForms.Add(Status);
+                }
+                return ObjQueries.Procedimiento("SearchUsers", ValueForms);
+            }
+            catch (Exception Error)
+            {
+                CatchExceptions(Error, Identificador);
+                return null;
+            }
+            finally
+            {
+                ValueForms.Clear();
+                i = 0;
+            }
+        } //Clave de Método: Validations-SU
+
+        //Clave de Método: Validations-PUUV
+        public bool PopUpUsersValidations(ModifyUsers ObjModifyUsersSource, ModifyUsers ObjModifyUsers) => ObjModifyUsersSource.NumControl == ObjModifyUsers.NumControl && (ObjModifyUsersSource.FirstName != ObjModifyUsers.FirstName || ObjModifyUsersSource.SecondName != ObjModifyUsers.SecondName || ObjModifyUsersSource.FirstLastName != ObjModifyUsers.FirstLastName || ObjModifyUsersSource.SecondLastName != ObjModifyUsers.SecondLastName || ObjModifyUsersSource.Department != ObjModifyUsers.Department || ObjModifyUsersSource.Status != ObjModifyUsers.Status || ObjModifyUsersSource.Sex != ObjModifyUsers.Sex);
     }
 }

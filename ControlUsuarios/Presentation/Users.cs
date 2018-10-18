@@ -18,10 +18,39 @@ namespace Presentation
         private DataTable TablaComboDepartment = new DataTable();
         private List<string> ListaComboBox = new List<string>();
         private List<string> ListaComboBox2 = new List<string>();
-        private Alerts ObjAlerts;
         private readonly Control[] ArrayControl;
         private byte Index;
         private DialogResult ObjDialog;
+
+        public Users()
+        {
+            InitializeComponent();
+            ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
+        } //Clave de Método: Users-C1
+
+        public Users(Session ObjSession)
+        {
+            InitializeComponent();
+            this.ObjSession = ObjSession;
+            ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
+        } //Clave de Constructor: Users-C2
+
+        private void UsersLoadMethod(object sender, EventArgs e)
+        {
+            GridSearchLoadDataMethod();
+            SearchInputsVisibleMethod();
+            ComboTypeSearch.Items.Insert(0, "Número de Control");
+            ComboTypeSearch.Items.Insert(1, "Nombres");
+            ComboTypeSearch.Items.Insert(2, "Apellido Paterno");
+            ComboTypeSearch.Items.Insert(3, "Apellido Materno");
+            ComboTypeSearch.Items.Insert(4, "Ambos Apellidos");
+            ComboTypeSearch.Items.Insert(5, "Sexo");
+            ComboTypeSearch.Items.Insert(6, "Departamento o Carrera");
+            ComboTypeSearch.Items.Insert(7, "Status");
+            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
+            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox2.Add(row["AREA"].ToString());
+            ComboTypeDepartment.DataSource = ListaComboBox2;
+        } //Clave de Método: Users-USM
 
         public void GridSearchLoadDataMethod()
         {
@@ -73,25 +102,6 @@ namespace Presentation
             RadioButtonOption2.Checked = false;
         } //Clave de Método: Users-SIVM
 
-        public Users()
-        {
-            InitializeComponent();
-            ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
-            GridSearchLoadDataMethod();
-            ListaComboBox.Add("NINGUN FILTRO");
-            SearchInputsVisibleMethod();
-        }
-
-        public Users(Session ObjSession)
-        {
-            InitializeComponent();
-            this.ObjSession = ObjSession;
-            ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
-            GridSearchLoadDataMethod();
-            ListaComboBox.Add("NINGUN FILTRO");
-            SearchInputsVisibleMethod();
-        } //Clave de Constructor: Users-C
-
         private void ControlClickMethod(object sender, EventArgs e)
         {
             for (; Index < ArrayControl.Length; Index++)
@@ -103,6 +113,7 @@ namespace Presentation
                     {
                         PopUpUsers ObjPopUpUsers = new PopUpUsers();
                         ObjPopUpUsers.Show();
+                        GridSearchLoadDataMethod();
                         break;
                     }
                 case 1: //PictureBoxInfo
@@ -112,24 +123,58 @@ namespace Presentation
                 case 2: //ButtonCleanSearch
                     {
                         GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Users);
-                        LabelTotalResults.Text = "0";
+                        LabelTotalResults.Text = GridSearch.Rows.Count.ToString();
                         TextBoxSearch.TextTextBox = string.Empty;
-                        ComboTypeSearch.SelectedIndex = -1;
+                        GridSearch.Columns["EDITAR"].DisplayIndex = GridSearch.Columns.Count - 1;
                         break;
                     }
                 case 3: //ButtonSearch
                     {
-                        if (ComboTypeSearch.SelectedIndex > -1 && !string.IsNullOrEmpty(TextBoxSearch.TextTextBox) && !string.IsNullOrWhiteSpace(TextBoxSearch.TextTextBox))
+                        bool Flag = false;
+                        try
                         {
-
+                            switch (ComboTypeSearch.SelectedIndex)
+                            {
+                                case 0:
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                    {
+                                        Flag = !string.IsNullOrWhiteSpace(TextBoxSearch.TextTextBox) || !string.IsNullOrEmpty(TextBoxSearch.TextTextBox) ? true : false;
+                                        break;
+                                    }
+                                case 5:
+                                case 7:
+                                    {
+                                        Flag = RadioButtonOption1.Checked || RadioButtonOption2.Checked ? true : false;
+                                        break;
+                                    }
+                                case 6:
+                                    {
+                                        Flag = ComboTypeDepartment.SelectedIndex > -1 ? true : false;
+                                        break;
+                                    }
+                            }
+                            if (Flag)
+                            {
+                                GridSearch.DataSource = ObjValidations.SearchUser(TypeModules.Users, 
+                                    (byte)ComboTypeSearch.SelectedIndex,
+                                    TextBoxSearch.TextTextBox.Trim().ToUpper(),
+                                    RadioButtonOption1.Checked ? 'M' : 'F',
+                                    (byte)ComboTypeDepartment.SelectedIndex,
+                                    RadioButtonOption1.Checked ? 'A' : 'I');
+                                GridSearch.Columns["EDITAR"].DisplayIndex = GridSearch.Columns.Count - 1;
+                            }
+                            else
+                                throw new Exception();
                         }
-                        else
+                        catch (Exception)
                         {
-                            ObjAlerts = new Alerts("Búsqueda Fallida", "", "Parece que ser que la búsqueda no se pudo completar." +
-                                "\nPor favor, revise los siguientes puntos:\n1. Es necesario que eliga un filtro de búsqueda." +
-                                "\n2. Ingrese un texto a buscar.\n3. Haga clic en el botón de búsqueda (la lupa).", 1, "OK", "", "", TypeIcon.Warning);
+                            Alerts ObjAlerts = new Alerts("Búsqueda Fallida", "", "Parece que ser que la búsqueda no se pudo completar.\nPor favor, revise los siguientes puntos:\n1. Es necesario que eliga un filtro de búsqueda."
+                                                + "\n2. Ingrese un texto a buscar o seleccione una opción de búsqueda..\n3. Haga clic en el botón de búsqueda (lupa).", 1, "", "", "OK", TypeIcon.Warning);
                             ObjAlerts.ShowDialog();
-                            if(ObjDialog.Equals(DialogResult.OK))
+                            if (ObjDialog == DialogResult.OK)
                             {
                                 ObjAlerts.Close();
                                 ObjAlerts.Dispose();
@@ -148,50 +193,44 @@ namespace Presentation
             LabelTotalResults.Text = (GridSearch.Rows.Count.Equals(null)) ? "0" : GridSearch.Rows.Count.ToString();
         } //Clave de Método: Users-DSCM
 
-        private void ComboTypeSearchClickMethod(object sender, EventArgs e)
-        {
-            TablaComboSearch = ObjValidations.ComboSearchMethod(TypeModules.Users, TypeSearch.Users);
-            foreach (DataRow row in TablaComboSearch.Rows) ListaComboBox.Add(row["DESCRIPCION"].ToString());
-            ComboTypeSearch.DataSource = ListaComboBox;
-        } //Clave de Método: Users-CTSCM
-
         private void ComboTypeSearchSelectedChangedMethod(object sender, EventArgs e)
         {
             switch (ComboTypeSearch.SelectedIndex)
             {
                 case 0:
                     {
-                        TextBoxSearch.TextLabel = "Buscar en Todo: ";
-                        break;
-                    }
-                case 1:
-                    {
                         TextBoxSearch.TextLabel = "Número de Control: ";
                         SearchInputsVisibleMethod();
                         break;
                     }
-                case 2:
+                case 1:
                     {
                         TextBoxSearch.TextLabel = "Nombres: ";
                         SearchInputsVisibleMethod();
                         break;
                     }
-                case 3:
+                case 2:
                     {
                         TextBoxSearch.TextLabel = "Apellido Paterno: ";
                         SearchInputsVisibleMethod();
                         break;
                     }
-                case 4:
+                case 3:
                     {
                         TextBoxSearch.TextLabel = "Apellido Materno: ";
+                        SearchInputsVisibleMethod();
+                        break;
+                    }
+                case 4:
+                    {
+                        TextBoxSearch.TextLabel = "Ambos Apellidos: ";
                         SearchInputsVisibleMethod();
                         break;
                     }
                 case 5:
                     {
                         TextBoxSearch.TextLabel = "Sexo: ";
-                        SearchInputsVisibleMethod(false,false, true);
+                        SearchInputsVisibleMethod(false, false, true);
                         RadioButtonOption1.Text = "Hombre";
                         RadioButtonOption2.Text = "Mujer";
                         break;
@@ -212,12 +251,5 @@ namespace Presentation
                     }
             }
         } // Clave de Método: Users-CTSSCM
-
-        private void ComboTypeDepartmentClickMethod(object sender, EventArgs e)
-        {
-            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
-            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox2.Add(row["AREA"].ToString());
-            ComboTypeDepartment.DataSource = ListaComboBox2;
-        } //Clave de Método: Users-CTDCM
     }
 }

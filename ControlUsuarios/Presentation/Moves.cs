@@ -23,18 +23,27 @@ namespace Presentation
         {
             InitializeComponent();
             ArrayControl = new Control[] { ButtonSearch, ButtonCleanSearch, ButtonCreateReport, PictureBoxInfo };
-            GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Moves, TypeSearch.Moves);
-            ListaComboBox.Add("NINGUN FILTRO");
-        }
+        } //Clave de Constructor: Moves-C1
 
         public Moves(Session ObjSession)
         {
             InitializeComponent();
             this.ObjSession = ObjSession;
             ArrayControl = new Control[] { ButtonSearch, ButtonCleanSearch, ButtonCreateReport, PictureBoxInfo };
+        } //Clave de Constructor: Moves-C2
+
+        private void MovesLoadMethod(object sender, EventArgs e)
+        {
             GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Moves, TypeSearch.Moves);
-            ListaComboBox.Add("NINGUN FILTRO");
-        } //Clave de Constructor: Moves-C
+            ComboTypeSearch.Items.Insert(0, "Buscar en todos los registros");
+            ComboTypeSearch.Items.Insert(1, "ID de Registro");
+            ComboTypeSearch.Items.Insert(2, "Número de Control");
+            ComboTypeSearch.Items.Insert(3, "Departamento o Carrera");
+            ComboTypeSearch.Items.Insert(4, "Sexo");
+            ComboTypeSearch.Items.Insert(5, "Servicio");
+            ComboTypeSearch.Items.Insert(6, "Hora");
+            ComboTypeSearch.Items.Insert(7, "Fecha");
+        } //Clave de Método: Moves-MLM
 
         private void ControlClickMethod(object sender, EventArgs e)
         {

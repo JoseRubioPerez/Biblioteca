@@ -54,6 +54,11 @@
             this.GroupBoxStatus.SuspendLayout();
             this.SuspendLayout();
             // 
+            // LabelComboSearch
+            // 
+            this.LabelComboSearch.Size = new System.Drawing.Size(267, 26);
+            this.LabelComboSearch.Text = "Formulario para Editar Usuarios";
+            // 
             // PanelBorder1
             // 
             this.PanelBorder1.Size = new System.Drawing.Size(950, 3);

@@ -29,7 +29,7 @@ namespace Presentation
             ArrayButton = new Button[] { ButtonUsers, ButtonMoves, ButtonStats, ButtonBinnacle, ButtonImportUsers, ButtonConfiguration, ButtonLogOut };
             Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-        }
+        } //Clave de Constructor: Principal-C1
 
         public Principal(Session ObjSession)
         {
@@ -42,7 +42,7 @@ namespace Presentation
             ArrayButton = new Button[] { ButtonUsers, ButtonMoves, ButtonStats, ButtonBinnacle, ButtonImportUsers, ButtonConfiguration, ButtonLogOut };
             Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-        } //Clave de Constructor: Principal-C
+        } //Clave de Constructor: Principal-C2
 
         public void MostrarForm(Form Formulario)
         {

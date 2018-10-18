@@ -10,15 +10,13 @@ namespace Presentation.PopUpForms
 {
     public partial class PopUpUsers : PopUpFather
     {
-        private Alerts ObjAlerts;
         private Validations ObjValidations = new Validations();
-        private readonly ModifyUsers ObjModifyUsers = new ModifyUsers();
+        private ModifyUsers ObjModifyUsers = new ModifyUsers();
         private ModifyUsers ObjModifyUsers2 = new ModifyUsers();
         private DataTable TablaComboDepartment = new DataTable();
         private List<string> ListaComboBox = new List<string>();
         private readonly Control[] ArrayControl;
         private byte Index;
-        private char UserSex = '\0', UserStatus = '\0';
         private DialogResult ObjDialog;
 
         public PopUpUsers()
@@ -28,7 +26,7 @@ namespace Presentation.PopUpForms
             TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
             foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
             ComboDepartmentCareer.DataSource = ListaComboBox;
-        }
+        } //Clave de Constructor: PopUpUsers-C1
 
         public PopUpUsers(ModifyUsers ObjModifyUsers)
         {
@@ -44,8 +42,6 @@ namespace Presentation.PopUpForms
             TextBoxLastName.Text = ObjModifyUsers.FirstLastName;
             TextBoxLastName2.Text = ObjModifyUsers.SecondLastName;
             ComboDepartmentCareer.SelectedItem = ObjModifyUsers.Department;
-            UserSex = ObjModifyUsers.Sex;
-            UserStatus = ObjModifyUsers.Status;
             if (ObjModifyUsers.Sex == 'M')
             {
                 RadioButtonMan.Checked = true;
@@ -66,7 +62,7 @@ namespace Presentation.PopUpForms
                 RadioButtonDisable.Checked = true;
                 RadioButtonActive.Checked = false;
             }
-        }
+        } //Clave de Constructor: PopUpUsers-C2
 
         private void ClearControlsMethod()
         {
@@ -75,8 +71,6 @@ namespace Presentation.PopUpForms
             TextBoxLastName.Text = ObjModifyUsers.FirstLastName;
             TextBoxLastName2.Text = ObjModifyUsers.SecondLastName;
             ComboDepartmentCareer.SelectedItem = ObjModifyUsers.Department;
-            UserSex = ObjModifyUsers.Sex;
-            UserStatus = ObjModifyUsers.Status;
             if (ObjModifyUsers.Sex == 'M')
             {
                 RadioButtonMan.Checked = true;
@@ -114,11 +108,51 @@ namespace Presentation.PopUpForms
                         ObjModifyUsers2.FirstLastName = TextBoxLastName.Text;
                         ObjModifyUsers2.SecondLastName = TextBoxLastName2.Text;
                         ObjModifyUsers2.Department = ComboDepartmentCareer.SelectedItem.ToString();
-                        ObjModifyUsers2.Sex = UserSex;
-                        ObjModifyUsers2.Status = UserStatus;
-                        if(ObjValidations.PopUpUsersValidations(ObjModifyUsers, ObjModifyUsers2))
+                        ObjModifyUsers2.Sex = (RadioButtonMan.Checked) ? 'M' : 'F';
+                        ObjModifyUsers2.Status = (RadioButtonActive.Checked) ? 'A' : 'I';
+                        ObjModifyUsers2.IndexDeparment = (byte)ComboDepartmentCareer.SelectedIndex;
+
+                        if (TextBoxNumControl.Text.Trim() == string.Empty)
                         {
 
+                        }
+                        else
+                        {
+                            if (ObjValidations.PopUpUsersValidations(ObjModifyUsers, ObjModifyUsers2))
+                            {
+                                try
+                                {
+                                    ObjValidations.UpdateUser(TypeModules.Users, ObjModifyUsers2);
+                                    Alerts ObjAlerts = new Alerts("Actualización Exitosa", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" ha sido modificado correctamente.", 1, "", "", "OK", TypeIcon.Info);
+                                    ObjAlerts.ShowDialog();
+                                    if (ObjDialog == DialogResult.OK)
+                                    {
+                                        ObjAlerts.Close();
+                                        ObjAlerts.Dispose();
+                                    }
+                                }
+                                catch
+                                {
+                                    Alerts ObjAlerts = new Alerts("Actualización Fallida", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" NO se ha actualizado de manera correcta\nRevisa los datos que ingresaste y verifica que sean correctos o cumplan los requisitos de validación..", 1, "", "", "OK", TypeIcon.Info);
+                                    ObjAlerts.ShowDialog();
+                                    if (ObjDialog == DialogResult.OK)
+                                    {
+                                        ObjAlerts.Close();
+                                        ObjAlerts.Dispose();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Alerts ObjAlerts = new Alerts("Edición de Usuario Fallida", "", "No se pudo completar la edición de los cambios al usuario: " + ObjModifyUsers.FirstName + " " + ObjModifyUsers.SecondName + " " + ObjModifyUsers.FirstLastName + " " + ObjModifyUsers.SecondLastName
+                                                    + "\nPara poder editar un usuario, necesitas modificar los valores antiguos por unos nuevos. Es importante que no sean iguales, de lo contrario no se realizarán cambios porque no es necesario.", 1, "", "", "OK", TypeIcon.Warning);
+                                ObjAlerts.ShowDialog();
+                                if (ObjDialog == DialogResult.OK)
+                                {
+                                    ObjAlerts.Close();
+                                    ObjAlerts.Dispose();
+                                }
+                            }
                         }
                         break;
                     }
