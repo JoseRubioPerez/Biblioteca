@@ -22,18 +22,12 @@ namespace Presentation
         private byte Index;
         private DialogResult ObjDialog;
 
-        public Users()
-        {
-            InitializeComponent();
-            ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
-        } //Clave de Método: Users-C1
-
         public Users(Session ObjSession)
         {
             InitializeComponent();
             this.ObjSession = ObjSession;
             ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
-        } //Clave de Constructor: Users-C2
+        } //Clave de Constructor: Users-C1
 
         private void UsersLoadMethod(object sender, EventArgs e)
         {
@@ -64,10 +58,10 @@ namespace Presentation
                 ObjButtonColumnEdit.UseColumnTextForButtonValue = true;
                 GridSearch.Columns.Add(ObjButtonColumnEdit);
             }
-            GridSearch.CellClick += GridSearchCellClickMthod;
+            GridSearch.CellClick += GridSearchCellClickMethod;
         } //Clave de Método: Users-GSLDM
 
-        private void GridSearchCellClickMthod(object sender, DataGridViewCellEventArgs e)
+        private void GridSearchCellClickMethod(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == GridSearch.Columns["EDITAR"].Index)
             {
@@ -113,7 +107,6 @@ namespace Presentation
                     {
                         PopUpUsers ObjPopUpUsers = new PopUpUsers();
                         ObjPopUpUsers.Show();
-                        GridSearchLoadDataMethod();
                         break;
                     }
                 case 1: //PictureBoxInfo

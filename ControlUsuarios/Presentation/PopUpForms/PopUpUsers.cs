@@ -22,6 +22,7 @@ namespace Presentation.PopUpForms
         public PopUpUsers()
         {
             InitializeComponent();
+            TextBoxNumControl.Enabled = true;
             ArrayControl = new Control[] { ButtonAccept, ButtonCancel, RadioButtonMan, RadioButtonWoman, RadioButtonActive, RadioButtonDisable };
             TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
             foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
@@ -33,6 +34,7 @@ namespace Presentation.PopUpForms
             InitializeComponent();
             ArrayControl = new Control[] { ButtonAccept, ButtonCancel, RadioButtonMan, RadioButtonWoman, RadioButtonActive, RadioButtonDisable };
             this.ObjModifyUsers = ObjModifyUsers;
+            TextBoxNumControl.Enabled = false;
             TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
             foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
             ComboDepartmentCareer.DataSource = ListaComboBox;
@@ -102,19 +104,33 @@ namespace Presentation.PopUpForms
             {
                 case 0: //ButtonAccept
                     {
-                        ObjModifyUsers2.NumControl = TextBoxNumControl.Text;
-                        ObjModifyUsers2.FirstName = TextBoxFirstName.Text;
-                        ObjModifyUsers2.SecondName = TextBoxSecondName.Text;
-                        ObjModifyUsers2.FirstLastName = TextBoxLastName.Text;
-                        ObjModifyUsers2.SecondLastName = TextBoxLastName2.Text;
+                        ObjModifyUsers2.NumControl = TextBoxNumControl.Text.Trim();
+                        ObjModifyUsers2.FirstName = TextBoxFirstName.Text.Trim().ToUpper();
+                        ObjModifyUsers2.SecondName = TextBoxSecondName.Text.Trim().ToUpper();
+                        ObjModifyUsers2.FirstLastName = TextBoxLastName.Text.Trim().ToUpper();
+                        ObjModifyUsers2.SecondLastName = TextBoxLastName2.Text.Trim().ToUpper();
                         ObjModifyUsers2.Department = ComboDepartmentCareer.SelectedItem.ToString();
                         ObjModifyUsers2.Sex = (RadioButtonMan.Checked) ? 'M' : 'F';
                         ObjModifyUsers2.Status = (RadioButtonActive.Checked) ? 'A' : 'I';
                         ObjModifyUsers2.IndexDeparment = (byte)ComboDepartmentCareer.SelectedIndex;
 
-                        if (TextBoxNumControl.Text.Trim() == string.Empty)
+                        if (TextBoxNumControl.Enabled)
                         {
-
+                            switch(ObjValidations.AddUser(TypeModules.Users, ObjModifyUsers2))
+                            {
+                                case Result.Correct:
+                                    {
+                                        break;
+                                    }
+                                case Result.Incorrect:
+                                    {
+                                        break;
+                                    }
+                                case Result.Warning:
+                                    {
+                                        break;
+                                    }
+                            }
                         }
                         else
                         {

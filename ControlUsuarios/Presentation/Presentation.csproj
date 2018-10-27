@@ -82,6 +82,12 @@
     <Compile Include="PopUpForms\PopUpFather.Designer.cs">
       <DependentUpon>PopUpFather.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpForms\PopUpGridSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpGridSearch.Designer.cs">
+      <DependentUpon>PopUpGridSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUpForms\PopUpUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpForms\PopUpFather.resx">
       <DependentUpon>PopUpFather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpForms\PopUpGridSearch.resx">
+      <DependentUpon>PopUpGridSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpForms\PopUpUsers.resx">
       <DependentUpon>PopUpUsers.cs</DependentUpon>

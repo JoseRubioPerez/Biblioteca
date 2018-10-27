@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUpUsers));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -275,7 +276,6 @@
             // TextBoxNumControl
             // 
             this.TextBoxNumControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxNumControl.Enabled = false;
             this.TextBoxNumControl.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.TextBoxNumControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
             this.TextBoxNumControl.Location = new System.Drawing.Point(188, 84);
@@ -352,6 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 519);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PopUpUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PopUpUsers";

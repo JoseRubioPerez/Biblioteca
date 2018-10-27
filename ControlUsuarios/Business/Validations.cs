@@ -13,7 +13,7 @@ namespace Business
         private Queries ObjQueries = new Queries();
         private List<object> ValueForms = new List<object>();
 
-        private void CatchExceptions(Exception Error, TypeModules Identificador)
+        private void CatchExceptions(Exception Error, TypeModules Modulo)
         {
             ValueForms.Clear();
             ValueForms.Add(Error.InnerException); //Tipo de Error
@@ -25,7 +25,7 @@ namespace Business
             ObjQueries.Procedimiento("Errors", ValueForms);
         } //Clave de Método: Validations-CE
 
-        public DataTable LogSession(TypeModules Identificador, string NumControl, string Password)
+        public DataTable LogSession(TypeModules Modulo, string NumControl, string Password)
         {
             ValueForms.Clear();
             try
@@ -45,7 +45,7 @@ namespace Business
             }
             catch (Exception Error)
             {
-                CatchExceptions(Error, Identificador);
+                CatchExceptions(Error, Modulo);
                 return null;
             }
             finally
@@ -54,7 +54,7 @@ namespace Business
             }
         } //Clave de Método: Validations-LG
 
-        public DataTable GridSearchMethod(TypeModules Identificador, TypeSearch Option)
+        public DataTable GridSearchMethod(TypeModules Modulo, TypeSearch Option)
         {
             ValueForms.Clear();
             try
@@ -91,7 +91,7 @@ namespace Business
                 return ObjQueries.Procedimiento(StoredProcedure, ValueForms);
             }catch(Exception Error)
             {
-                CatchExceptions(Error, Identificador);
+                CatchExceptions(Error, Modulo);
                 return null;
             }
             finally
@@ -100,7 +100,7 @@ namespace Business
             }
         } //Clave de Método: Validations-GSM
 
-        public DataTable ComboSearchMethod(TypeModules Identificador, TypeSearch Option)
+        public DataTable ComboSearchMethod(TypeModules Modulo, TypeSearch Option)
         {
             ValueForms.Clear();
             try
@@ -112,7 +112,7 @@ namespace Business
             }
             catch (Exception Error)
             {
-                CatchExceptions(Error, Identificador);
+                CatchExceptions(Error, Modulo);
                 return null;
             }
             finally
@@ -121,7 +121,7 @@ namespace Business
             }
         } //Clave de Método: Validations-CSM
 
-        public DataTable ExistUsuario(TypeModules Identificador, string NumControl)
+        public DataTable ExistUsuario(TypeModules Modulo, string NumControl)
         {
             ValueForms.Clear();
             try
@@ -133,7 +133,7 @@ namespace Business
             }
             catch(Exception Error)
             {
-                CatchExceptions(Error, Identificador);
+                CatchExceptions(Error, Modulo);
                 return null;
             }
             finally
@@ -142,7 +142,7 @@ namespace Business
             }
         } //Clave de Método: Validations-EU
 
-        public void UpdateUser(TypeModules Identificador, ModifyUsers ObjModifyUser)
+        public void UpdateUser(TypeModules Modulo, ModifyUsers ObjModifyUser)
         {
             ValueForms.Clear();
             try
@@ -158,7 +158,7 @@ namespace Business
             }
             catch(Exception Error)
             {
-                CatchExceptions(Error, Identificador);
+                CatchExceptions(Error, Modulo);
             }
             finally
             {
@@ -166,26 +166,14 @@ namespace Business
             }
         } //Clave de Método: Validations-UU
 
-        public DataTable SearchUser(TypeModules Identificador, byte IndexSearch, string InputText, char Sex, byte IndexArea, char Status)
+        public DataTable SearchUser(TypeModules Modulo, byte IndexSearch, string InputText, char Sex, byte IndexArea, char Status)
         {
             sbyte i = 0;
             ValueForms.Clear();
             try
             {
                 ValueForms.Add(IndexSearch);
-                if(Regex.IsMatch(InputText, "[ÁÉÍÓÚ]+"))
-                {
-                    foreach (char item in InputText)
-                    {
-                        switch (item)
-                        {
-                            case 'Á': { InputText = InputText.Replace(item, 'A'); break; }
-                            case 'É': { InputText = InputText.Replace(item, 'E'); break; }
-                            case 'Í': { InputText = InputText.Replace(item, 'I'); break; }
-                            case 'Ó': { InputText = InputText.Replace(item, 'O'); break; }
-                        }
-                    }
-                }
+                InputText = OnlyWordsMethod(InputText);
                 if (InputText.Trim().Split(' ').Length > 1)
                 {
                     ValueForms.Add(InputText);
@@ -207,7 +195,7 @@ namespace Business
             }
             catch (Exception Error)
             {
-                CatchExceptions(Error, Identificador);
+                CatchExceptions(Error, Modulo);
                 return null;
             }
             finally
@@ -216,6 +204,106 @@ namespace Business
                 i = 0;
             }
         } //Clave de Método: Validations-SU
+
+        public void SearchMoves(TypeModules Modulo, Search ObjSearch)
+        {
+            ValueForms.Clear();
+            try
+            {
+                ValueForms.Add(ObjSearch.FirstLastName);
+                ValueForms.Add(ObjSearch.SecondLastName);
+                ValueForms.Add(ObjSearch.IndexDeparmentStart);
+                ValueForms.Add(ObjSearch.IndexDeparmentEnd);
+                ValueForms.Add(ObjSearch.SexStart);
+                ValueForms.Add(ObjSearch.SexEnd);
+                ValueForms.Add(ObjSearch.DateStart.ToShortDateString());
+                ValueForms.Add(ObjSearch.DateEnd.ToShortDateString());
+                ObjSearch.Table = ObjQueries.Procedimiento("SearchMoves", ValueForms);
+            }
+            catch(Exception Error)
+            {
+                CatchExceptions(Error, Modulo);
+            }
+            finally
+            {
+                ValueForms.Clear();
+            }
+        } //Clave de Método: Validations-SM
+
+        public Result AddUser(TypeModules Modulo, ModifyUsers ObjModifyUser)
+        {
+            ValueForms.Clear();
+            try
+            {
+                if(ExistUsuario(Modulo, ObjModifyUser.NumControl).Rows.Count > 0)
+                {
+                    throw new DuplicateNameException();
+                }
+                ValueForms.Add(ObjModifyUser.NumControl);
+                ValueForms.Add(OnlyWordsMethod(ObjModifyUser.SecondName != string.Empty ? ObjModifyUser.FirstName + " " + ObjModifyUser.SecondName : ObjModifyUser.FirstName));
+                ValueForms.Add(OnlyWordsMethod(ObjModifyUser.FirstLastName));
+                ValueForms.Add(OnlyWordsMethod(ObjModifyUser.SecondLastName));
+                ValueForms.Add(ObjModifyUser.Sex);
+                ValueForms.Add(ObjModifyUser.Department);
+                ValueForms.Add(ObjModifyUser.Status);
+                ObjQueries.Procedimiento("AddUser", ValueForms);
+                return Result.Correct;
+            }
+            catch(DuplicateNameException)
+            {
+                return Result.Warning;
+            }
+            catch(Exception Error)
+            {
+                CatchExceptions(Error, Modulo);
+                return Result.Incorrect;
+            }
+            finally
+            {
+                ValueForms.Clear();
+            }
+        } //Clave de Método: Validations-AU
+
+        public void SearchStats(TypeModules Modulo, Search ObjSearch)
+        {
+            ValueForms.Clear();
+            try
+            {
+                ValueForms.Add(ObjSearch.SexStart);
+                ValueForms.Add(ObjSearch.SexEnd);
+                for (int i = 0; i < ObjSearch.Services.Count; i++) ValueForms.Add(ObjSearch.Services[i]);
+                ValueForms.Add(ObjSearch.DateStart.ToShortDateString());
+                ValueForms.Add(ObjSearch.DateEnd.ToShortDateString());
+                ObjSearch.Table = ObjQueries.Procedimiento("SearchStats", ValueForms);
+            }
+            catch (Exception Error)
+            {
+                CatchExceptions(Error, Modulo);
+            }
+            finally
+            {
+                ValueForms.Clear();
+            }
+        } //Clave de Método: Validations-NS
+
+        public string OnlyWordsMethod(string str)
+        {
+            if (Regex.IsMatch(str, "[ÁÉÍÓÚ]+"))
+            {
+                foreach (char item in str)
+                {
+                    switch (item)
+                    {
+                        case 'Á': { str = str.Replace(item, 'A'); break; }
+                        case 'É': { str = str.Replace(item, 'E'); break; }
+                        case 'Í': { str = str.Replace(item, 'I'); break; }
+                        case 'Ó': { str = str.Replace(item, 'O'); break; }
+                        default: { break; }
+                    }
+                }
+            }
+            return Regex.Replace(Regex.Replace(str, "[^A-ZÑ ]+", ""), @"\s{2,}", " ").Trim();
+        } //Clave de Método: Validations-OWM
 
         //Clave de Método: Validations-PUUV
         public bool PopUpUsersValidations(ModifyUsers ObjModifyUsersSource, ModifyUsers ObjModifyUsers) => ObjModifyUsersSource.NumControl == ObjModifyUsers.NumControl && (ObjModifyUsersSource.FirstName != ObjModifyUsers.FirstName || ObjModifyUsersSource.SecondName != ObjModifyUsers.SecondName || ObjModifyUsersSource.FirstLastName != ObjModifyUsers.FirstLastName || ObjModifyUsersSource.SecondLastName != ObjModifyUsers.SecondLastName || ObjModifyUsersSource.Department != ObjModifyUsers.Department || ObjModifyUsersSource.Status != ObjModifyUsers.Status || ObjModifyUsersSource.Sex != ObjModifyUsers.Sex);

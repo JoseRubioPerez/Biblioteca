@@ -137,7 +137,7 @@
             this.GroupBoxStatusAndSex.Location = new System.Drawing.Point(420, 36);
             this.GroupBoxStatusAndSex.Name = "GroupBoxStatusAndSex";
             this.GroupBoxStatusAndSex.Size = new System.Drawing.Size(266, 66);
-            this.GroupBoxStatusAndSex.TabIndex = 8;
+            this.GroupBoxStatusAndSex.TabIndex = 3;
             this.GroupBoxStatusAndSex.TabStop = false;
             // 
             // RadioButtonOption2
@@ -149,7 +149,7 @@
             this.RadioButtonOption2.Location = new System.Drawing.Point(87, 25);
             this.RadioButtonOption2.Name = "RadioButtonOption2";
             this.RadioButtonOption2.Size = new System.Drawing.Size(84, 38);
-            this.RadioButtonOption2.TabIndex = 10;
+            this.RadioButtonOption2.TabIndex = 5;
             this.RadioButtonOption2.TabStop = true;
             this.RadioButtonOption2.Text = "Hombre";
             this.RadioButtonOption2.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             this.RadioButtonOption1.Location = new System.Drawing.Point(3, 25);
             this.RadioButtonOption1.Name = "RadioButtonOption1";
             this.RadioButtonOption1.Size = new System.Drawing.Size(84, 38);
-            this.RadioButtonOption1.TabIndex = 9;
+            this.RadioButtonOption1.TabIndex = 4;
             this.RadioButtonOption1.TabStop = true;
             this.RadioButtonOption1.Text = "Hombre";
             this.RadioButtonOption1.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.ComboTypeDepartment.Location = new System.Drawing.Point(275, 69);
             this.ComboTypeDepartment.Name = "ComboTypeDepartment";
             this.ComboTypeDepartment.Size = new System.Drawing.Size(405, 28);
-            this.ComboTypeDepartment.TabIndex = 6;
+            this.ComboTypeDepartment.TabIndex = 2;
             // 
             // TextBoxSearch
             // 
@@ -229,7 +229,7 @@
             this.ButtonSearch.Location = new System.Drawing.Point(692, 70);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(32, 32);
-            this.ButtonSearch.TabIndex = 3;
+            this.ButtonSearch.TabIndex = 6;
             this.ButtonSearch.UseVisualStyleBackColor = true;
             this.ButtonSearch.Click += new System.EventHandler(this.ControlClickMethod);
             // 
@@ -279,6 +279,7 @@
             this.GridSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridSearch.Size = new System.Drawing.Size(1056, 318);
             this.GridSearch.TabIndex = 0;
+            this.GridSearch.TabStop = false;
             this.GridSearch.DataSourceChanged += new System.EventHandler(this.DataSourceChangedMethod);
             // 
             // PanelComboUI
@@ -395,6 +396,7 @@
             this.ButtonNewUser.Name = "ButtonNewUser";
             this.ButtonNewUser.Size = new System.Drawing.Size(175, 47);
             this.ButtonNewUser.TabIndex = 0;
+            this.ButtonNewUser.TabStop = false;
             this.ButtonNewUser.Text = "Nuevo Usuario";
             this.ButtonNewUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonNewUser.UseVisualStyleBackColor = true;

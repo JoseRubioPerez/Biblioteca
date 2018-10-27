@@ -32,4 +32,11 @@
         Warning = 2,
         Danger = 3
     }
+
+    public enum Result
+    {
+        Correct = 1,
+        Incorrect = 2,
+        Warning = 3
+    }
 }

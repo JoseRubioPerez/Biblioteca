@@ -48,7 +48,8 @@
             this.DateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.GroupBoxDateTime = new System.Windows.Forms.GroupBox();
-            this.RadioButtonAll = new System.Windows.Forms.RadioButton();
+            this.RadioButtonPersonalize = new System.Windows.Forms.RadioButton();
+            this.RadioButtonAnyDate = new System.Windows.Forms.RadioButton();
             this.RadioButtonYear = new System.Windows.Forms.RadioButton();
             this.RadioButtonMonth = new System.Windows.Forms.RadioButton();
             this.RadioButtonWeek = new System.Windows.Forms.RadioButton();
@@ -59,7 +60,7 @@
             this.ButtonCancel = new System.Windows.Forms.Button();
             this.ButtonCreateReport = new System.Windows.Forms.Button();
             this.PanelDate = new System.Windows.Forms.Panel();
-            this.RadioButtonPersonalize = new System.Windows.Forms.RadioButton();
+            this.LabelInfoDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).BeginInit();
             this.PanelInfo.SuspendLayout();
             this.GroupBoxSex.SuspendLayout();
@@ -119,7 +120,7 @@
             this.GroupBoxSex.Location = new System.Drawing.Point(217, 168);
             this.GroupBoxSex.Name = "GroupBoxSex";
             this.GroupBoxSex.Size = new System.Drawing.Size(249, 56);
-            this.GroupBoxSex.TabIndex = 10;
+            this.GroupBoxSex.TabIndex = 1;
             this.GroupBoxSex.TabStop = false;
             // 
             // RadioButtonBothSex
@@ -132,7 +133,7 @@
             this.RadioButtonBothSex.Name = "RadioButtonBothSex";
             this.RadioButtonBothSex.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonBothSex.Size = new System.Drawing.Size(82, 31);
-            this.RadioButtonBothSex.TabIndex = 13;
+            this.RadioButtonBothSex.TabIndex = 4;
             this.RadioButtonBothSex.TabStop = true;
             this.RadioButtonBothSex.Text = "Ambos";
             this.RadioButtonBothSex.UseVisualStyleBackColor = true;
@@ -147,7 +148,7 @@
             this.RadioButtonMan.Name = "RadioButtonMan";
             this.RadioButtonMan.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonMan.Size = new System.Drawing.Size(89, 31);
-            this.RadioButtonMan.TabIndex = 11;
+            this.RadioButtonMan.TabIndex = 3;
             this.RadioButtonMan.TabStop = true;
             this.RadioButtonMan.Text = "Hombre";
             this.RadioButtonMan.UseVisualStyleBackColor = true;
@@ -162,7 +163,7 @@
             this.RadioButtonWoman.Name = "RadioButtonWoman";
             this.RadioButtonWoman.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonWoman.Size = new System.Drawing.Size(72, 31);
-            this.RadioButtonWoman.TabIndex = 12;
+            this.RadioButtonWoman.TabIndex = 2;
             this.RadioButtonWoman.TabStop = true;
             this.RadioButtonWoman.Text = "Mujer";
             this.RadioButtonWoman.UseVisualStyleBackColor = true;
@@ -175,7 +176,7 @@
             this.CheckBoxService1.Location = new System.Drawing.Point(270, 274);
             this.CheckBoxService1.Name = "CheckBoxService1";
             this.CheckBoxService1.Size = new System.Drawing.Size(176, 27);
-            this.CheckBoxService1.TabIndex = 11;
+            this.CheckBoxService1.TabIndex = 5;
             this.CheckBoxService1.Text = "Consulta o referencia";
             this.CheckBoxService1.UseVisualStyleBackColor = true;
             // 
@@ -198,7 +199,7 @@
             this.CheckBoxService2.Location = new System.Drawing.Point(452, 274);
             this.CheckBoxService2.Name = "CheckBoxService2";
             this.CheckBoxService2.Size = new System.Drawing.Size(137, 27);
-            this.CheckBoxService2.TabIndex = 13;
+            this.CheckBoxService2.TabIndex = 6;
             this.CheckBoxService2.Text = "Bases de datos";
             this.CheckBoxService2.UseVisualStyleBackColor = true;
             // 
@@ -210,7 +211,7 @@
             this.CheckBoxService3.Location = new System.Drawing.Point(595, 274);
             this.CheckBoxService3.Name = "CheckBoxService3";
             this.CheckBoxService3.Size = new System.Drawing.Size(98, 27);
-            this.CheckBoxService3.TabIndex = 14;
+            this.CheckBoxService3.TabIndex = 7;
             this.CheckBoxService3.Text = "Cubículos";
             this.CheckBoxService3.UseVisualStyleBackColor = true;
             // 
@@ -222,7 +223,7 @@
             this.CheckBoxService4.Location = new System.Drawing.Point(270, 307);
             this.CheckBoxService4.Name = "CheckBoxService4";
             this.CheckBoxService4.Size = new System.Drawing.Size(207, 27);
-            this.CheckBoxService4.TabIndex = 15;
+            this.CheckBoxService4.TabIndex = 8;
             this.CheckBoxService4.Text = "Sala de trabajo en equipo";
             this.CheckBoxService4.UseVisualStyleBackColor = true;
             // 
@@ -234,7 +235,7 @@
             this.CheckBoxService5.Location = new System.Drawing.Point(483, 307);
             this.CheckBoxService5.Name = "CheckBoxService5";
             this.CheckBoxService5.Size = new System.Drawing.Size(132, 27);
-            this.CheckBoxService5.TabIndex = 16;
+            this.CheckBoxService5.TabIndex = 9;
             this.CheckBoxService5.Text = "Sala de lectura";
             this.CheckBoxService5.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +247,7 @@
             this.CheckBoxService6.Location = new System.Drawing.Point(621, 307);
             this.CheckBoxService6.Name = "CheckBoxService6";
             this.CheckBoxService6.Size = new System.Drawing.Size(74, 27);
-            this.CheckBoxService6.TabIndex = 17;
+            this.CheckBoxService6.TabIndex = 10;
             this.CheckBoxService6.Text = "Baños";
             this.CheckBoxService6.UseVisualStyleBackColor = true;
             // 
@@ -258,7 +259,7 @@
             this.CheckBoxService7.Location = new System.Drawing.Point(701, 307);
             this.CheckBoxService7.Name = "CheckBoxService7";
             this.CheckBoxService7.Size = new System.Drawing.Size(66, 27);
-            this.CheckBoxService7.TabIndex = 18;
+            this.CheckBoxService7.TabIndex = 11;
             this.CheckBoxService7.Text = "Otros";
             this.CheckBoxService7.UseVisualStyleBackColor = true;
             // 
@@ -293,9 +294,11 @@
             this.DateTimePickerStart.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.DateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerStart.Location = new System.Drawing.Point(109, 29);
+            this.DateTimePickerStart.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerStart.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
             this.DateTimePickerStart.Name = "DateTimePickerStart";
             this.DateTimePickerStart.Size = new System.Drawing.Size(135, 29);
-            this.DateTimePickerStart.TabIndex = 22;
+            this.DateTimePickerStart.TabIndex = 19;
             // 
             // label3
             // 
@@ -311,7 +314,7 @@
             // GroupBoxDateTime
             // 
             this.GroupBoxDateTime.Controls.Add(this.RadioButtonPersonalize);
-            this.GroupBoxDateTime.Controls.Add(this.RadioButtonAll);
+            this.GroupBoxDateTime.Controls.Add(this.RadioButtonAnyDate);
             this.GroupBoxDateTime.Controls.Add(this.RadioButtonYear);
             this.GroupBoxDateTime.Controls.Add(this.RadioButtonMonth);
             this.GroupBoxDateTime.Controls.Add(this.RadioButtonWeek);
@@ -320,23 +323,39 @@
             this.GroupBoxDateTime.Location = new System.Drawing.Point(145, 376);
             this.GroupBoxDateTime.Name = "GroupBoxDateTime";
             this.GroupBoxDateTime.Size = new System.Drawing.Size(839, 58);
-            this.GroupBoxDateTime.TabIndex = 24;
+            this.GroupBoxDateTime.TabIndex = 12;
             this.GroupBoxDateTime.TabStop = false;
             // 
-            // RadioButtonAll
+            // RadioButtonPersonalize
             // 
-            this.RadioButtonAll.AutoSize = true;
-            this.RadioButtonAll.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RadioButtonAll.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.RadioButtonAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.RadioButtonAll.Location = new System.Drawing.Point(442, 22);
-            this.RadioButtonAll.Name = "RadioButtonAll";
-            this.RadioButtonAll.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.RadioButtonAll.Size = new System.Drawing.Size(239, 33);
-            this.RadioButtonAll.TabIndex = 15;
-            this.RadioButtonAll.TabStop = true;
-            this.RadioButtonAll.Text = "Origen de los datos a la fecha";
-            this.RadioButtonAll.UseVisualStyleBackColor = true;
+            this.RadioButtonPersonalize.AutoSize = true;
+            this.RadioButtonPersonalize.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonPersonalize.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonPersonalize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonPersonalize.Location = new System.Drawing.Point(606, 22);
+            this.RadioButtonPersonalize.Name = "RadioButtonPersonalize";
+            this.RadioButtonPersonalize.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.RadioButtonPersonalize.Size = new System.Drawing.Size(133, 33);
+            this.RadioButtonPersonalize.TabIndex = 18;
+            this.RadioButtonPersonalize.TabStop = true;
+            this.RadioButtonPersonalize.Text = "Personalizada";
+            this.RadioButtonPersonalize.UseVisualStyleBackColor = true;
+            this.RadioButtonPersonalize.CheckedChanged += new System.EventHandler(this.RadioButtonPersonalizeCheckedChangedMethod);
+            // 
+            // RadioButtonAnyDate
+            // 
+            this.RadioButtonAnyDate.AutoSize = true;
+            this.RadioButtonAnyDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonAnyDate.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonAnyDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonAnyDate.Location = new System.Drawing.Point(442, 22);
+            this.RadioButtonAnyDate.Name = "RadioButtonAnyDate";
+            this.RadioButtonAnyDate.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.RadioButtonAnyDate.Size = new System.Drawing.Size(164, 33);
+            this.RadioButtonAnyDate.TabIndex = 17;
+            this.RadioButtonAnyDate.TabStop = true;
+            this.RadioButtonAnyDate.Text = "Todos los registros";
+            this.RadioButtonAnyDate.UseVisualStyleBackColor = true;
             // 
             // RadioButtonYear
             // 
@@ -348,7 +367,7 @@
             this.RadioButtonYear.Name = "RadioButtonYear";
             this.RadioButtonYear.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonYear.Size = new System.Drawing.Size(106, 33);
-            this.RadioButtonYear.TabIndex = 14;
+            this.RadioButtonYear.TabIndex = 16;
             this.RadioButtonYear.TabStop = true;
             this.RadioButtonYear.Text = "Último año";
             this.RadioButtonYear.UseVisualStyleBackColor = true;
@@ -363,7 +382,7 @@
             this.RadioButtonMonth.Name = "RadioButtonMonth";
             this.RadioButtonMonth.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonMonth.Size = new System.Drawing.Size(109, 33);
-            this.RadioButtonMonth.TabIndex = 13;
+            this.RadioButtonMonth.TabIndex = 15;
             this.RadioButtonMonth.TabStop = true;
             this.RadioButtonMonth.Text = "Último mes";
             this.RadioButtonMonth.UseVisualStyleBackColor = true;
@@ -378,7 +397,7 @@
             this.RadioButtonWeek.Name = "RadioButtonWeek";
             this.RadioButtonWeek.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonWeek.Size = new System.Drawing.Size(136, 33);
-            this.RadioButtonWeek.TabIndex = 11;
+            this.RadioButtonWeek.TabIndex = 14;
             this.RadioButtonWeek.TabStop = true;
             this.RadioButtonWeek.Text = "Última semana";
             this.RadioButtonWeek.UseVisualStyleBackColor = true;
@@ -393,7 +412,7 @@
             this.RadioButtonToday.Name = "RadioButtonToday";
             this.RadioButtonToday.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.RadioButtonToday.Size = new System.Drawing.Size(88, 33);
-            this.RadioButtonToday.TabIndex = 12;
+            this.RadioButtonToday.TabIndex = 13;
             this.RadioButtonToday.TabStop = true;
             this.RadioButtonToday.Text = "Este día";
             this.RadioButtonToday.UseVisualStyleBackColor = true;
@@ -427,9 +446,11 @@
             this.DateTimePickerEnd.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.DateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerEnd.Location = new System.Drawing.Point(325, 29);
+            this.DateTimePickerEnd.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerEnd.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
             this.DateTimePickerEnd.Name = "DateTimePickerEnd";
             this.DateTimePickerEnd.Size = new System.Drawing.Size(135, 29);
-            this.DateTimePickerEnd.TabIndex = 27;
+            this.DateTimePickerEnd.TabIndex = 20;
             // 
             // ButtonCancel
             // 
@@ -443,7 +464,7 @@
             this.ButtonCancel.Location = new System.Drawing.Point(809, 553);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(175, 47);
-            this.ButtonCancel.TabIndex = 28;
+            this.ButtonCancel.TabIndex = 22;
             this.ButtonCancel.Text = "Cancelar";
             this.ButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonCancel.UseVisualStyleBackColor = true;
@@ -461,7 +482,7 @@
             this.ButtonCreateReport.Location = new System.Drawing.Point(621, 553);
             this.ButtonCreateReport.Name = "ButtonCreateReport";
             this.ButtonCreateReport.Size = new System.Drawing.Size(175, 47);
-            this.ButtonCreateReport.TabIndex = 29;
+            this.ButtonCreateReport.TabIndex = 21;
             this.ButtonCreateReport.Text = "Crear Reporte";
             this.ButtonCreateReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonCreateReport.UseVisualStyleBackColor = true;
@@ -473,31 +494,27 @@
             this.PanelDate.Controls.Add(this.DateTimePickerStart);
             this.PanelDate.Controls.Add(this.label5);
             this.PanelDate.Controls.Add(this.DateTimePickerEnd);
-            this.PanelDate.Location = new System.Drawing.Point(521, 440);
+            this.PanelDate.Location = new System.Drawing.Point(521, 455);
             this.PanelDate.Name = "PanelDate";
             this.PanelDate.Size = new System.Drawing.Size(463, 80);
-            this.PanelDate.TabIndex = 30;
+            this.PanelDate.TabIndex = 0;
             // 
-            // RadioButtonPersonalize
+            // LabelInfoDate
             // 
-            this.RadioButtonPersonalize.AutoSize = true;
-            this.RadioButtonPersonalize.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RadioButtonPersonalize.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.RadioButtonPersonalize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.RadioButtonPersonalize.Location = new System.Drawing.Point(681, 22);
-            this.RadioButtonPersonalize.Name = "RadioButtonPersonalize";
-            this.RadioButtonPersonalize.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.RadioButtonPersonalize.Size = new System.Drawing.Size(133, 33);
-            this.RadioButtonPersonalize.TabIndex = 16;
-            this.RadioButtonPersonalize.TabStop = true;
-            this.RadioButtonPersonalize.Text = "Personalizada";
-            this.RadioButtonPersonalize.UseVisualStyleBackColor = true;
+            this.LabelInfoDate.AutoSize = true;
+            this.LabelInfoDate.Font = new System.Drawing.Font("Arial Narrow", 16F);
+            this.LabelInfoDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.LabelInfoDate.Location = new System.Drawing.Point(79, 455);
+            this.LabelInfoDate.Name = "LabelInfoDate";
+            this.LabelInfoDate.Size = new System.Drawing.Size(0, 26);
+            this.LabelInfoDate.TabIndex = 31;
             // 
-            // Reports
+            // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 698);
+            this.Controls.Add(this.LabelInfoDate);
             this.Controls.Add(this.PanelDate);
             this.Controls.Add(this.ButtonCreateReport);
             this.Controls.Add(this.ButtonCancel);
@@ -517,7 +534,7 @@
             this.Controls.Add(this.GroupBoxSex);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LabelComboSearch);
-            this.Name = "Reports";
+            this.Name = "Stats";
             this.Text = "Reports";
             this.Controls.SetChildIndex(this.LabelComboSearch, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -539,6 +556,7 @@
             this.Controls.SetChildIndex(this.ButtonCancel, 0);
             this.Controls.SetChildIndex(this.ButtonCreateReport, 0);
             this.Controls.SetChildIndex(this.PanelDate, 0);
+            this.Controls.SetChildIndex(this.LabelInfoDate, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).EndInit();
             this.PanelInfo.ResumeLayout(false);
             this.PanelInfo.PerformLayout();
@@ -585,7 +603,8 @@
         private System.Windows.Forms.Button ButtonCancel;
         private System.Windows.Forms.Button ButtonCreateReport;
         private System.Windows.Forms.Panel PanelDate;
-        private System.Windows.Forms.RadioButton RadioButtonAll;
+        private System.Windows.Forms.RadioButton RadioButtonAnyDate;
         private System.Windows.Forms.RadioButton RadioButtonPersonalize;
+        private System.Windows.Forms.Label LabelInfoDate;
     }
 }

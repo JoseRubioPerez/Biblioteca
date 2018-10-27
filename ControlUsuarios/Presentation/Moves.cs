@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Entity;
 using Business;
 using Options;
+using Presentation.PopUpForms;
 
 namespace Presentation
 {
@@ -12,37 +13,34 @@ namespace Presentation
     {
         private Validations ObjValidations = new Validations();
         private readonly Session ObjSession = new Session();
-        private DataTable TablaComboSearch = new DataTable();
-        private List<string> ListaComboBox = new List<string>();
+        private Search ObjSearch = new Search();
+        private DataTable TablaComboDepartment = new DataTable();
+        private List<string> ListCombo = new List<string>();
         private Alerts ObjAlerts;
         private readonly Control[] ArrayControl;
         private byte Index;
-        private DialogResult ObjDialog;
-
-        public Moves()
-        {
-            InitializeComponent();
-            ArrayControl = new Control[] { ButtonSearch, ButtonCleanSearch, ButtonCreateReport, PictureBoxInfo };
-        } //Clave de Constructor: Moves-C1
 
         public Moves(Session ObjSession)
         {
             InitializeComponent();
             this.ObjSession = ObjSession;
-            ArrayControl = new Control[] { ButtonSearch, ButtonCleanSearch, ButtonCreateReport, PictureBoxInfo };
-        } //Clave de Constructor: Moves-C2
+            ArrayControl = new Control[] { ButtonSearch, ButtonSearchAll, ButtonCleanSearch, PictureBoxInfo };
+            MovesLoadMethod();
+        } //Clave de Constructor: Moves-C1
 
-        private void MovesLoadMethod(object sender, EventArgs e)
+        private void MovesLoadMethod()
         {
-            GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Moves, TypeSearch.Moves);
-            ComboTypeSearch.Items.Insert(0, "Buscar en todos los registros");
-            ComboTypeSearch.Items.Insert(1, "ID de Registro");
-            ComboTypeSearch.Items.Insert(2, "Número de Control");
-            ComboTypeSearch.Items.Insert(3, "Departamento o Carrera");
-            ComboTypeSearch.Items.Insert(4, "Sexo");
-            ComboTypeSearch.Items.Insert(5, "Servicio");
-            ComboTypeSearch.Items.Insert(6, "Hora");
-            ComboTypeSearch.Items.Insert(7, "Fecha");
+            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
+            foreach (DataRow row in TablaComboDepartment.Rows) ListCombo.Add(row["AREA"].ToString());
+            ComboDepartment.DataSource = ListCombo;
+            ComboDepartment.Visible = false;
+            RadioButtonAll.Checked = false;
+            RadioButtonMan.Checked = false;
+            RadioButtonWoman.Checked = false;
+            RadioButtonAllDepartments.Checked = false;
+            RadioButtonSearchDepartment.Checked = false;
+            DateTimePickerStart.Value = DateTime.Now.AddMonths(-1);
+            DateTimePickerEnd.Value = DateTime.Now;
         } //Clave de Método: Moves-MLM
 
         private void ControlClickMethod(object sender, EventArgs e)
@@ -52,29 +50,78 @@ namespace Presentation
                     break;
             switch (Index)
             {
-                case 0:
+                case 0: // ButtonSearch
                     {
+                        ObjSearch.FirstLastName = ObjValidations.OnlyWordsMethod(TextBoxFirstLastName.TextTextBox.ToUpper().Trim());
+                        ObjSearch.SecondLastName = ObjValidations.OnlyWordsMethod(TextBoxSecondLastName.TextTextBox.ToUpper().Trim());
+                        if (RadioButtonAllDepartments.Checked || (!RadioButtonAllDepartments.Checked && !RadioButtonSearchDepartment.Checked))
+                        {
+                            ObjSearch.IndexDeparmentStart = 0;
+                            ObjSearch.IndexDeparmentEnd = 30;
+                        }
+                        else
+                        {
+                            ObjSearch.IndexDeparmentStart = ComboDepartment.SelectedIndex;
+                            ObjSearch.IndexDeparmentEnd = ComboDepartment.SelectedIndex;
+                        }
+                        if (RadioButtonAll.Checked || (!RadioButtonAll.Checked && !RadioButtonMan.Checked && !RadioButtonWoman.Checked))
+                        {
+                            ObjSearch.SexStart = 'M';
+                            ObjSearch.SexEnd = 'F';
+                        }
+                        else if(RadioButtonMan.Checked)
+                        {
+                            ObjSearch.SexStart = 'M';
+                            ObjSearch.SexEnd = 'M';
+                        }
+                        else
+                        {
+                            ObjSearch.SexStart = 'F';
+                            ObjSearch.SexEnd = 'F';
+                        }
+                        ObjSearch.DateStart = DateTimePickerStart.Value;
+                        ObjSearch.DateEnd = DateTimePickerEnd.Value;
+                        ObjValidations.SearchMoves(TypeModules.Moves, ObjSearch);
+                        PopUpGridSearch ObjPopUpGridSearch = new PopUpGridSearch(TypeModules.Moves, ObjSearch, "Búsqueda de Movimientos");
+                        ObjPopUpGridSearch.Show();
                         break;
                     }
-                case 1:
+                case 1: // ButtonSearchAll
                     {
-                        GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Moves, TypeSearch.Moves);
-                        LabelTotalResults.Text = "0";
-                        TextBoxSearch.TextTextBox = string.Empty;
-                        ComboTypeSearch.SelectedIndex = -1;
+                        ObjSearch.FirstLastName = "";
+                        ObjSearch.SecondLastName = "";
+                        ObjSearch.IndexDeparmentStart = 0;
+                        ObjSearch.IndexDeparmentEnd = 30;
+                        ObjSearch.SexStart = 'A';
+                        ObjSearch.SexEnd = 'A';
+                        ObjSearch.DateStart = DateTimePickerStart.Value;
+                        ObjSearch.DateEnd = DateTimePickerEnd.Value;
+                        ObjValidations.SearchMoves(TypeModules.Moves, ObjSearch);
+                        PopUpGridSearch ObjPopUpGridSearch = new PopUpGridSearch(TypeModules.Moves, ObjSearch, "Búsqueda de Movimientos");
+                        ObjPopUpGridSearch.Show();
                         break;
                     }
-                case 2:
+                case 2: //ButtonCleanSearch
                     {
-                        break;
-                    }
-                case 3:
-                    {
+                        ComboDepartment.Visible = false;
+                        RadioButtonAll.Checked = false;
+                        RadioButtonMan.Checked = false;
+                        RadioButtonWoman.Checked = false;
+                        RadioButtonAllDepartments.Checked = false;
+                        RadioButtonSearchDepartment.Checked = false;
+                        DateTimePickerStart.Value = DateTime.Now.AddMonths(-1);
+                        DateTimePickerEnd.Value = DateTime.Now;
                         break;
                     }
                 default:
                     throw new Exception("Excepción en Método: Moves-CCM", new IndexOutOfRangeException());
             }
+            Index = 0;
         } //Clave de Método: Moves-CCM
+
+        private void RadioButtonDepartmentCheckedChangedMethod(object sender, EventArgs e)
+        {
+            ComboDepartment.Visible = !RadioButtonAllDepartments.Checked || RadioButtonSearchDepartment.Checked;
+        } //Clave de Método: Moves-RBADCCM
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace Entity
 {
@@ -31,5 +29,19 @@ namespace Entity
         public string Department { get; set; }
         public char Sex { get; set; }
         public char Status { get; set; }
+    }
+
+    public class Search
+    {
+        public string FirstLastName { get; set; }
+        public string SecondLastName { get; set; }
+        public int IndexDeparmentStart { get; set; }
+        public int IndexDeparmentEnd { get; set; }
+        public char SexStart { get; set; }
+        public char SexEnd { get; set; }
+        public DateTime DateStart { get; set; }
+        public DateTime DateEnd { get; set; }
+        public DataTable Table { get; set; }
+        public List<byte> Services = new List<byte>();
     }
 }

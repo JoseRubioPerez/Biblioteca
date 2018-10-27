@@ -30,32 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Moves));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutPanelContent = new System.Windows.Forms.TableLayoutPanel();
-            this.TableLayoutPanelGrid = new System.Windows.Forms.TableLayoutPanel();
-            this.PanelSearch = new System.Windows.Forms.Panel();
-            this.TextBoxSearch = new Presentation.Inputs.TextBoxUI();
+            this.PanelBorder = new System.Windows.Forms.Panel();
+            this.PanelForm = new System.Windows.Forms.Panel();
+            this.ComboDepartment = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RadioButtonSearchDepartment = new System.Windows.Forms.RadioButton();
+            this.RadioButtonAllDepartments = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.DateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ButtonSearchAll = new System.Windows.Forms.Button();
             this.ButtonSearch = new System.Windows.Forms.Button();
-            this.GridSearch = new System.Windows.Forms.DataGridView();
-            this.PanelResults = new System.Windows.Forms.Panel();
-            this.LabelTotalResults = new System.Windows.Forms.Label();
-            this.LabelResults = new System.Windows.Forms.Label();
-            this.PanelFilter = new System.Windows.Forms.Panel();
-            this.ButtonCleanSearch = new System.Windows.Forms.Button();
-            this.LabelComboSearch = new System.Windows.Forms.Label();
-            this.ComboTypeSearch = new System.Windows.Forms.ComboBox();
-            this.ButtonCreateReport = new System.Windows.Forms.Button();
             this.ImageListOptions = new System.Windows.Forms.ImageList(this.components);
+            this.GroupBoxStatusAndSex = new System.Windows.Forms.GroupBox();
+            this.RadioButtonWoman = new System.Windows.Forms.RadioButton();
+            this.RadioButtonMan = new System.Windows.Forms.RadioButton();
+            this.RadioButtonAll = new System.Windows.Forms.RadioButton();
+            this.TextBoxSecondLastName = new Presentation.Inputs.TextBoxUI();
+            this.TextBoxFirstLastName = new Presentation.Inputs.TextBoxUI();
+            this.ButtonCleanSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).BeginInit();
             this.PanelInfo.SuspendLayout();
             this.TableLayoutPanelContent.SuspendLayout();
-            this.TableLayoutPanelGrid.SuspendLayout();
-            this.PanelSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).BeginInit();
-            this.PanelResults.SuspendLayout();
-            this.PanelFilter.SuspendLayout();
+            this.PanelForm.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.GroupBoxStatusAndSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // PictureBoxInfo
@@ -83,248 +84,308 @@
             // 
             this.TableLayoutPanelContent.ColumnCount = 1;
             this.TableLayoutPanelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanelContent.Controls.Add(this.TableLayoutPanelGrid, 0, 1);
-            this.TableLayoutPanelContent.Controls.Add(this.PanelFilter, 0, 0);
-            this.TableLayoutPanelContent.Controls.Add(this.ButtonCreateReport, 0, 2);
+            this.TableLayoutPanelContent.Controls.Add(this.PanelBorder, 0, 0);
+            this.TableLayoutPanelContent.Controls.Add(this.PanelForm, 0, 1);
             this.TableLayoutPanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanelContent.Location = new System.Drawing.Point(0, 68);
             this.TableLayoutPanelContent.Name = "TableLayoutPanelContent";
-            this.TableLayoutPanelContent.RowCount = 3;
-            this.TableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.TableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.TableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.TableLayoutPanelContent.RowCount = 2;
+            this.TableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.TableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 96F));
             this.TableLayoutPanelContent.Size = new System.Drawing.Size(1062, 630);
             this.TableLayoutPanelContent.TabIndex = 1;
             // 
-            // TableLayoutPanelGrid
+            // PanelBorder
             // 
-            this.TableLayoutPanelGrid.ColumnCount = 2;
-            this.TableLayoutPanelGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.TableLayoutPanelGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.TableLayoutPanelGrid.Controls.Add(this.PanelSearch, 0, 0);
-            this.TableLayoutPanelGrid.Controls.Add(this.GridSearch, 0, 1);
-            this.TableLayoutPanelGrid.Controls.Add(this.PanelResults, 1, 0);
-            this.TableLayoutPanelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TableLayoutPanelGrid.Location = new System.Drawing.Point(3, 97);
-            this.TableLayoutPanelGrid.Name = "TableLayoutPanelGrid";
-            this.TableLayoutPanelGrid.RowCount = 3;
-            this.TableLayoutPanelGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutPanelGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutPanelGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.TableLayoutPanelGrid.Size = new System.Drawing.Size(1056, 466);
-            this.TableLayoutPanelGrid.TabIndex = 13;
+            this.PanelBorder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelBorder.Location = new System.Drawing.Point(0, 0);
+            this.PanelBorder.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelBorder.Name = "PanelBorder";
+            this.PanelBorder.Size = new System.Drawing.Size(1062, 25);
+            this.PanelBorder.TabIndex = 0;
             // 
-            // PanelSearch
+            // PanelForm
             // 
-            this.PanelSearch.Controls.Add(this.TextBoxSearch);
-            this.PanelSearch.Controls.Add(this.ButtonSearch);
-            this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelSearch.Location = new System.Drawing.Point(0, 0);
-            this.PanelSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelSearch.Name = "PanelSearch";
-            this.PanelSearch.Size = new System.Drawing.Size(739, 93);
-            this.PanelSearch.TabIndex = 12;
+            this.PanelForm.Controls.Add(this.ButtonCleanSearch);
+            this.PanelForm.Controls.Add(this.ComboDepartment);
+            this.PanelForm.Controls.Add(this.groupBox1);
+            this.PanelForm.Controls.Add(this.label2);
+            this.PanelForm.Controls.Add(this.DateTimePickerEnd);
+            this.PanelForm.Controls.Add(this.DateTimePickerStart);
+            this.PanelForm.Controls.Add(this.label1);
+            this.PanelForm.Controls.Add(this.ButtonSearchAll);
+            this.PanelForm.Controls.Add(this.ButtonSearch);
+            this.PanelForm.Controls.Add(this.GroupBoxStatusAndSex);
+            this.PanelForm.Controls.Add(this.TextBoxSecondLastName);
+            this.PanelForm.Controls.Add(this.TextBoxFirstLastName);
+            this.PanelForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelForm.Location = new System.Drawing.Point(0, 25);
+            this.PanelForm.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelForm.Name = "PanelForm";
+            this.PanelForm.Size = new System.Drawing.Size(1062, 605);
+            this.PanelForm.TabIndex = 1;
             // 
-            // TextBoxSearch
+            // ComboDepartment
             // 
-            this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            this.TextBoxSearch.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            this.TextBoxSearch.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.TextBoxSearch.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            this.TextBoxSearch.EnableTextBox = true;
-            this.TextBoxSearch.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.TextBoxSearch.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.TextBoxSearch.Location = new System.Drawing.Point(3, 53);
-            this.TextBoxSearch.MaxLengthTextBox = 32767;
-            this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.PasswordTextBox = '\0';
-            this.TextBoxSearch.SelectionLengthTextBox = 0;
-            this.TextBoxSearch.SelectionStartTextBox = 0;
-            this.TextBoxSearch.Size = new System.Drawing.Size(683, 36);
-            this.TextBoxSearch.TabIndex = 2;
-            this.TextBoxSearch.TextLabel = "Change my text";
-            this.TextBoxSearch.TextTextBox = "";
+            this.ComboDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ComboDepartment.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.ComboDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ComboDepartment.FormattingEnabled = true;
+            this.ComboDepartment.IntegralHeight = false;
+            this.ComboDepartment.Location = new System.Drawing.Point(610, 201);
+            this.ComboDepartment.Name = "ComboDepartment";
+            this.ComboDepartment.Size = new System.Drawing.Size(412, 28);
+            this.ComboDepartment.TabIndex = 8;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.RadioButtonSearchDepartment);
+            this.groupBox1.Controls.Add(this.RadioButtonAllDepartments);
+            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.groupBox1.Location = new System.Drawing.Point(27, 168);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(577, 66);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            // 
+            // RadioButtonSearchDepartment
+            // 
+            this.RadioButtonSearchDepartment.AutoSize = true;
+            this.RadioButtonSearchDepartment.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonSearchDepartment.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonSearchDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonSearchDepartment.Location = new System.Drawing.Point(285, 25);
+            this.RadioButtonSearchDepartment.Name = "RadioButtonSearchDepartment";
+            this.RadioButtonSearchDepartment.Size = new System.Drawing.Size(273, 38);
+            this.RadioButtonSearchDepartment.TabIndex = 7;
+            this.RadioButtonSearchDepartment.TabStop = true;
+            this.RadioButtonSearchDepartment.Text = "Especificar Carrera y Departamento";
+            this.RadioButtonSearchDepartment.UseVisualStyleBackColor = true;
+            this.RadioButtonSearchDepartment.CheckedChanged += new System.EventHandler(this.RadioButtonDepartmentCheckedChangedMethod);
+            // 
+            // RadioButtonAllDepartments
+            // 
+            this.RadioButtonAllDepartments.AutoSize = true;
+            this.RadioButtonAllDepartments.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonAllDepartments.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonAllDepartments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonAllDepartments.Location = new System.Drawing.Point(3, 25);
+            this.RadioButtonAllDepartments.Name = "RadioButtonAllDepartments";
+            this.RadioButtonAllDepartments.Size = new System.Drawing.Size(282, 38);
+            this.RadioButtonAllDepartments.TabIndex = 6;
+            this.RadioButtonAllDepartments.TabStop = true;
+            this.RadioButtonAllDepartments.Text = "Todas las Carreras y Departamentos";
+            this.RadioButtonAllDepartments.UseVisualStyleBackColor = true;
+            this.RadioButtonAllDepartments.CheckedChanged += new System.EventHandler(this.RadioButtonDepartmentCheckedChangedMethod);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 16F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.label2.Location = new System.Drawing.Point(304, 376);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 26);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Hasta:";
+            // 
+            // DateTimePickerEnd
+            // 
+            this.DateTimePickerEnd.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.DateTimePickerEnd.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.DateTimePickerEnd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DateTimePickerEnd.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.DateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTimePickerEnd.Location = new System.Drawing.Point(384, 375);
+            this.DateTimePickerEnd.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerEnd.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerEnd.Name = "DateTimePickerEnd";
+            this.DateTimePickerEnd.Size = new System.Drawing.Size(198, 29);
+            this.DateTimePickerEnd.TabIndex = 14;
+            // 
+            // DateTimePickerStart
+            // 
+            this.DateTimePickerStart.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.DateTimePickerStart.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.DateTimePickerStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DateTimePickerStart.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.DateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTimePickerStart.Location = new System.Drawing.Point(100, 375);
+            this.DateTimePickerStart.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerStart.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerStart.Name = "DateTimePickerStart";
+            this.DateTimePickerStart.Size = new System.Drawing.Size(198, 29);
+            this.DateTimePickerStart.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 16F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.label1.Location = new System.Drawing.Point(25, 376);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 26);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Desde:";
+            // 
+            // ButtonSearchAll
+            // 
+            this.ButtonSearchAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonSearchAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonSearchAll.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.ButtonSearchAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ButtonSearchAll.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ButtonSearchAll.Location = new System.Drawing.Point(18, 14);
+            this.ButtonSearchAll.Name = "ButtonSearchAll";
+            this.ButtonSearchAll.Size = new System.Drawing.Size(202, 42);
+            this.ButtonSearchAll.TabIndex = 13;
+            this.ButtonSearchAll.TabStop = false;
+            this.ButtonSearchAll.Text = "Ver todos los registros";
+            this.ButtonSearchAll.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ButtonSearchAll.UseVisualStyleBackColor = true;
+            this.ButtonSearchAll.Click += new System.EventHandler(this.ControlClickMethod);
             // 
             // ButtonSearch
             // 
-            this.ButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonSearch.FlatAppearance.BorderSize = 0;
             this.ButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSearch.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.ButtonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.ButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSearch.Image")));
-            this.ButtonSearch.Location = new System.Drawing.Point(692, 57);
+            this.ButtonSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ButtonSearch.ImageIndex = 0;
+            this.ButtonSearch.ImageList = this.ImageListOptions;
+            this.ButtonSearch.Location = new System.Drawing.Point(30, 456);
             this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(32, 32);
-            this.ButtonSearch.TabIndex = 3;
+            this.ButtonSearch.Size = new System.Drawing.Size(202, 42);
+            this.ButtonSearch.TabIndex = 15;
+            this.ButtonSearch.Text = "Realizar Búsqueda";
+            this.ButtonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.ButtonSearch.UseVisualStyleBackColor = true;
             this.ButtonSearch.Click += new System.EventHandler(this.ControlClickMethod);
-            // 
-            // GridSearch
-            // 
-            this.GridSearch.AllowUserToAddRows = false;
-            this.GridSearch.AllowUserToDeleteRows = false;
-            this.GridSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.GridSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.GridSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            this.GridSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.GridSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableLayoutPanelGrid.SetColumnSpan(this.GridSearch, 2);
-            this.GridSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridSearch.EnableHeadersVisualStyles = false;
-            this.GridSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.GridSearch.Location = new System.Drawing.Point(0, 93);
-            this.GridSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.GridSearch.Name = "GridSearch";
-            this.GridSearch.ReadOnly = true;
-            this.GridSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.GridSearch.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.TableLayoutPanelGrid.SetRowSpan(this.GridSearch, 2);
-            this.GridSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridSearch.Size = new System.Drawing.Size(1056, 373);
-            this.GridSearch.TabIndex = 0;
-            // 
-            // PanelResults
-            // 
-            this.PanelResults.Controls.Add(this.LabelTotalResults);
-            this.PanelResults.Controls.Add(this.LabelResults);
-            this.PanelResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelResults.Location = new System.Drawing.Point(739, 0);
-            this.PanelResults.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelResults.Name = "PanelResults";
-            this.PanelResults.Size = new System.Drawing.Size(317, 93);
-            this.PanelResults.TabIndex = 12;
-            // 
-            // LabelTotalResults
-            // 
-            this.LabelTotalResults.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelTotalResults.AutoSize = true;
-            this.LabelTotalResults.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTotalResults.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.LabelTotalResults.Location = new System.Drawing.Point(114, 59);
-            this.LabelTotalResults.Name = "LabelTotalResults";
-            this.LabelTotalResults.Size = new System.Drawing.Size(25, 27);
-            this.LabelTotalResults.TabIndex = 6;
-            this.LabelTotalResults.Text = "0";
-            // 
-            // LabelResults
-            // 
-            this.LabelResults.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelResults.AutoSize = true;
-            this.LabelResults.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.LabelResults.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.LabelResults.Location = new System.Drawing.Point(16, 63);
-            this.LabelResults.Name = "LabelResults";
-            this.LabelResults.Size = new System.Drawing.Size(92, 23);
-            this.LabelResults.TabIndex = 4;
-            this.LabelResults.Text = "Resultados:";
-            // 
-            // PanelFilter
-            // 
-            this.PanelFilter.Controls.Add(this.ButtonCleanSearch);
-            this.PanelFilter.Controls.Add(this.LabelComboSearch);
-            this.PanelFilter.Controls.Add(this.ComboTypeSearch);
-            this.PanelFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelFilter.Location = new System.Drawing.Point(0, 0);
-            this.PanelFilter.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelFilter.Name = "PanelFilter";
-            this.PanelFilter.Size = new System.Drawing.Size(1062, 94);
-            this.PanelFilter.TabIndex = 0;
-            // 
-            // ButtonCleanSearch
-            // 
-            this.ButtonCleanSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonCleanSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonCleanSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCleanSearch.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.ButtonCleanSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.ButtonCleanSearch.Location = new System.Drawing.Point(901, 48);
-            this.ButtonCleanSearch.Name = "ButtonCleanSearch";
-            this.ButtonCleanSearch.Size = new System.Drawing.Size(149, 36);
-            this.ButtonCleanSearch.TabIndex = 11;
-            this.ButtonCleanSearch.TabStop = false;
-            this.ButtonCleanSearch.Text = "Limpiar Búsqueda";
-            this.ButtonCleanSearch.UseVisualStyleBackColor = true;
-            this.ButtonCleanSearch.Click += new System.EventHandler(this.ControlClickMethod);
-            // 
-            // LabelComboSearch
-            // 
-            this.LabelComboSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelComboSearch.AutoSize = true;
-            this.LabelComboSearch.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.LabelComboSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.LabelComboSearch.Location = new System.Drawing.Point(14, 48);
-            this.LabelComboSearch.Name = "LabelComboSearch";
-            this.LabelComboSearch.Size = new System.Drawing.Size(145, 23);
-            this.LabelComboSearch.TabIndex = 7;
-            this.LabelComboSearch.Text = "Filtro de Búsqueda:";
-            // 
-            // ComboTypeSearch
-            // 
-            this.ComboTypeSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ComboTypeSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ComboTypeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ComboTypeSearch.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.ComboTypeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.ComboTypeSearch.FormattingEnabled = true;
-            this.ComboTypeSearch.Location = new System.Drawing.Point(165, 43);
-            this.ComboTypeSearch.Name = "ComboTypeSearch";
-            this.ComboTypeSearch.Size = new System.Drawing.Size(344, 28);
-            this.ComboTypeSearch.TabIndex = 6;
-            // 
-            // ButtonCreateReport
-            // 
-            this.ButtonCreateReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonCreateReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.ButtonCreateReport.FlatAppearance.BorderSize = 3;
-            this.ButtonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCreateReport.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.ButtonCreateReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.ButtonCreateReport.ImageKey = "ReportBlack.png";
-            this.ButtonCreateReport.ImageList = this.ImageListOptions;
-            this.ButtonCreateReport.Location = new System.Drawing.Point(3, 569);
-            this.ButtonCreateReport.Name = "ButtonCreateReport";
-            this.ButtonCreateReport.Size = new System.Drawing.Size(1056, 58);
-            this.ButtonCreateReport.TabIndex = 1;
-            this.ButtonCreateReport.Text = "Generar reporte a partir de la búsqueda realizada";
-            this.ButtonCreateReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonCreateReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonCreateReport.UseVisualStyleBackColor = true;
-            this.ButtonCreateReport.Click += new System.EventHandler(this.ControlClickMethod);
             // 
             // ImageListOptions
             // 
             this.ImageListOptions.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageListOptions.ImageStream")));
             this.ImageListOptions.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageListOptions.Images.SetKeyName(0, "ReportBlack.png");
+            this.ImageListOptions.Images.SetKeyName(0, "SearchBlack.png");
+            // 
+            // GroupBoxStatusAndSex
+            // 
+            this.GroupBoxStatusAndSex.Controls.Add(this.RadioButtonWoman);
+            this.GroupBoxStatusAndSex.Controls.Add(this.RadioButtonMan);
+            this.GroupBoxStatusAndSex.Controls.Add(this.RadioButtonAll);
+            this.GroupBoxStatusAndSex.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.GroupBoxStatusAndSex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.GroupBoxStatusAndSex.Location = new System.Drawing.Point(27, 272);
+            this.GroupBoxStatusAndSex.Name = "GroupBoxStatusAndSex";
+            this.GroupBoxStatusAndSex.Size = new System.Drawing.Size(304, 66);
+            this.GroupBoxStatusAndSex.TabIndex = 9;
+            this.GroupBoxStatusAndSex.TabStop = false;
+            // 
+            // RadioButtonWoman
+            // 
+            this.RadioButtonWoman.AutoSize = true;
+            this.RadioButtonWoman.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonWoman.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonWoman.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonWoman.Location = new System.Drawing.Point(212, 25);
+            this.RadioButtonWoman.Name = "RadioButtonWoman";
+            this.RadioButtonWoman.Size = new System.Drawing.Size(67, 38);
+            this.RadioButtonWoman.TabIndex = 12;
+            this.RadioButtonWoman.TabStop = true;
+            this.RadioButtonWoman.Text = "Mujer";
+            this.RadioButtonWoman.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonMan
+            // 
+            this.RadioButtonMan.AutoSize = true;
+            this.RadioButtonMan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonMan.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonMan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonMan.Location = new System.Drawing.Point(128, 25);
+            this.RadioButtonMan.Name = "RadioButtonMan";
+            this.RadioButtonMan.Size = new System.Drawing.Size(84, 38);
+            this.RadioButtonMan.TabIndex = 11;
+            this.RadioButtonMan.TabStop = true;
+            this.RadioButtonMan.Text = "Hombre";
+            this.RadioButtonMan.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonAll
+            // 
+            this.RadioButtonAll.AutoSize = true;
+            this.RadioButtonAll.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RadioButtonAll.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.RadioButtonAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.RadioButtonAll.Location = new System.Drawing.Point(3, 25);
+            this.RadioButtonAll.Name = "RadioButtonAll";
+            this.RadioButtonAll.Size = new System.Drawing.Size(125, 38);
+            this.RadioButtonAll.TabIndex = 10;
+            this.RadioButtonAll.TabStop = true;
+            this.RadioButtonAll.Text = "Ambos Sexos";
+            this.RadioButtonAll.UseVisualStyleBackColor = true;
+            // 
+            // TextBoxSecondLastName
+            // 
+            this.TextBoxSecondLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.TextBoxSecondLastName.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.TextBoxSecondLastName.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.TextBoxSecondLastName.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.TextBoxSecondLastName.EnableTextBox = true;
+            this.TextBoxSecondLastName.Font = new System.Drawing.Font("Arial Narrow", 2F);
+            this.TextBoxSecondLastName.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.TextBoxSecondLastName.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.TextBoxSecondLastName.Location = new System.Drawing.Point(542, 106);
+            this.TextBoxSecondLastName.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.TextBoxSecondLastName.MaxLengthTextBox = 32767;
+            this.TextBoxSecondLastName.Name = "TextBoxSecondLastName";
+            this.TextBoxSecondLastName.PasswordTextBox = '\0';
+            this.TextBoxSecondLastName.SelectionLengthTextBox = 0;
+            this.TextBoxSecondLastName.SelectionStartTextBox = 0;
+            this.TextBoxSecondLastName.Size = new System.Drawing.Size(496, 35);
+            this.TextBoxSecondLastName.TabIndex = 4;
+            this.TextBoxSecondLastName.TextLabel = "Apellido Materno:";
+            this.TextBoxSecondLastName.TextTextBox = "";
+            // 
+            // TextBoxFirstLastName
+            // 
+            this.TextBoxFirstLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.TextBoxFirstLastName.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.TextBoxFirstLastName.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.TextBoxFirstLastName.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            this.TextBoxFirstLastName.EnableTextBox = true;
+            this.TextBoxFirstLastName.Font = new System.Drawing.Font("Arial Narrow", 2F);
+            this.TextBoxFirstLastName.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.TextBoxFirstLastName.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.TextBoxFirstLastName.Location = new System.Drawing.Point(27, 106);
+            this.TextBoxFirstLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxFirstLastName.MaxLengthTextBox = 32767;
+            this.TextBoxFirstLastName.Name = "TextBoxFirstLastName";
+            this.TextBoxFirstLastName.PasswordTextBox = '\0';
+            this.TextBoxFirstLastName.SelectionLengthTextBox = 0;
+            this.TextBoxFirstLastName.SelectionStartTextBox = 0;
+            this.TextBoxFirstLastName.Size = new System.Drawing.Size(496, 35);
+            this.TextBoxFirstLastName.TabIndex = 3;
+            this.TextBoxFirstLastName.TextLabel = "Apellido Paterno:";
+            this.TextBoxFirstLastName.TextTextBox = "";
+            // 
+            // ButtonCleanSearch
+            // 
+            this.ButtonCleanSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonCleanSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCleanSearch.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.ButtonCleanSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ButtonCleanSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ButtonCleanSearch.Location = new System.Drawing.Point(279, 456);
+            this.ButtonCleanSearch.Name = "ButtonCleanSearch";
+            this.ButtonCleanSearch.Size = new System.Drawing.Size(165, 42);
+            this.ButtonCleanSearch.TabIndex = 18;
+            this.ButtonCleanSearch.Text = "Limpiar Búsqueda";
+            this.ButtonCleanSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ButtonCleanSearch.UseVisualStyleBackColor = true;
+            this.ButtonCleanSearch.Click += new System.EventHandler(this.ControlClickMethod);
             // 
             // Moves
             // 
@@ -334,20 +395,18 @@
             this.Controls.Add(this.TableLayoutPanelContent);
             this.Name = "Moves";
             this.Text = "Moves";
-            this.Load += new System.EventHandler(this.MovesLoadMethod);
             this.Controls.SetChildIndex(this.PanelInfo, 0);
             this.Controls.SetChildIndex(this.TableLayoutPanelContent, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).EndInit();
             this.PanelInfo.ResumeLayout(false);
             this.PanelInfo.PerformLayout();
             this.TableLayoutPanelContent.ResumeLayout(false);
-            this.TableLayoutPanelGrid.ResumeLayout(false);
-            this.PanelSearch.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).EndInit();
-            this.PanelResults.ResumeLayout(false);
-            this.PanelResults.PerformLayout();
-            this.PanelFilter.ResumeLayout(false);
-            this.PanelFilter.PerformLayout();
+            this.PanelForm.ResumeLayout(false);
+            this.PanelForm.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.GroupBoxStatusAndSex.ResumeLayout(false);
+            this.GroupBoxStatusAndSex.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -355,19 +414,25 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel TableLayoutPanelContent;
-        private System.Windows.Forms.Panel PanelFilter;
-        private System.Windows.Forms.Label LabelComboSearch;
-        public System.Windows.Forms.ComboBox ComboTypeSearch;
-        private System.Windows.Forms.Button ButtonCreateReport;
+        private System.Windows.Forms.Panel PanelBorder;
+        public System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.ImageList ImageListOptions;
+        private System.Windows.Forms.Panel PanelForm;
+        public Inputs.TextBoxUI TextBoxSecondLastName;
+        public Inputs.TextBoxUI TextBoxFirstLastName;
+        private System.Windows.Forms.GroupBox GroupBoxStatusAndSex;
+        private System.Windows.Forms.RadioButton RadioButtonMan;
+        private System.Windows.Forms.RadioButton RadioButtonAll;
+        public System.Windows.Forms.ComboBox ComboDepartment;
+        public System.Windows.Forms.Button ButtonSearchAll;
+        private System.Windows.Forms.RadioButton RadioButtonWoman;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DateTimePickerStart;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker DateTimePickerEnd;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton RadioButtonSearchDepartment;
+        private System.Windows.Forms.RadioButton RadioButtonAllDepartments;
         public System.Windows.Forms.Button ButtonCleanSearch;
-        public System.Windows.Forms.TableLayoutPanel TableLayoutPanelGrid;
-        private System.Windows.Forms.Panel PanelSearch;
-        public Inputs.TextBoxUI TextBoxSearch;
-        private System.Windows.Forms.Button ButtonSearch;
-        public System.Windows.Forms.DataGridView GridSearch;
-        private System.Windows.Forms.Panel PanelResults;
-        private System.Windows.Forms.Label LabelTotalResults;
-        private System.Windows.Forms.Label LabelResults;
     }
 }
