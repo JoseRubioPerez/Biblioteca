@@ -17,7 +17,6 @@ namespace Presentation.PopUpForms
         private List<string> ListaComboBox = new List<string>();
         private readonly Control[] ArrayControl;
         private byte Index;
-        private DialogResult ObjDialog;
 
         public PopUpUsers()
         {
@@ -124,14 +123,26 @@ namespace Presentation.PopUpForms
                             {
                                 case Result.Correct:
                                     {
+                                        using (Alerts ObjAlerts = new Alerts("Usuario Añadido Correctamente", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" ha sido agregado correctamente.", 1, "", "", "OK", TypeIcon.Info))
+                                        {
+                                            if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
+                                        }
                                         break;
                                     }
                                 case Result.Incorrect:
                                     {
+                                        using (Alerts ObjAlerts = new Alerts("Error Inexplicable", "", "Ha ocurrido un problema interno en el programa.\n\nRecomendamos que verifique los datos que ingresó y/o que inicie sesión nuevamente en el sistema.", 1, "", "", "OK", TypeIcon.Danger))
+                                        {
+                                            if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
+                                        }
                                         break;
                                     }
                                 case Result.Warning:
                                     {
+                                        using (Alerts ObjAlerts = new Alerts("Acción No Valida", "", "No se puede ingresar usuarios sin número de control.", 1, "", "", "OK", TypeIcon.Warning))
+                                        {
+                                            if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
+                                        }
                                         break;
                                     }
                             }
@@ -143,34 +154,25 @@ namespace Presentation.PopUpForms
                                 try
                                 {
                                     ObjValidations.UpdateUser(TypeModules.Users, ObjModifyUsers2);
-                                    Alerts ObjAlerts = new Alerts("Actualización Exitosa", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" ha sido modificado correctamente.", 1, "", "", "OK", TypeIcon.Info);
-                                    ObjAlerts.ShowDialog();
-                                    if (ObjDialog == DialogResult.OK)
+                                    using (Alerts ObjAlerts = new Alerts("Actualización Exitosa", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" ha sido modificado correctamente.", 1, "", "", "OK", TypeIcon.Info))
                                     {
-                                        ObjAlerts.Close();
-                                        ObjAlerts.Dispose();
+                                        if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
                                     }
                                 }
                                 catch
                                 {
-                                    Alerts ObjAlerts = new Alerts("Actualización Fallida", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" NO se ha actualizado de manera correcta\nRevisa los datos que ingresaste y verifica que sean correctos o cumplan los requisitos de validación..", 1, "", "", "OK", TypeIcon.Info);
-                                    ObjAlerts.ShowDialog();
-                                    if (ObjDialog == DialogResult.OK)
+                                    using (Alerts ObjAlerts = new Alerts("Actualización Fallida", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" NO se ha actualizado de manera correcta\nRevisa los datos que ingresaste y verifica que sean correctos o cumplan los requisitos de validación..", 1, "", "", "OK", TypeIcon.Info))
                                     {
-                                        ObjAlerts.Close();
-                                        ObjAlerts.Dispose();
+                                        if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
                                     }
                                 }
                             }
                             else
                             {
-                                Alerts ObjAlerts = new Alerts("Edición de Usuario Fallida", "", "No se pudo completar la edición de los cambios al usuario: " + ObjModifyUsers.FirstName + " " + ObjModifyUsers.SecondName + " " + ObjModifyUsers.FirstLastName + " " + ObjModifyUsers.SecondLastName
-                                                    + "\nPara poder editar un usuario, necesitas modificar los valores antiguos por unos nuevos. Es importante que no sean iguales, de lo contrario no se realizarán cambios porque no es necesario.", 1, "", "", "OK", TypeIcon.Warning);
-                                ObjAlerts.ShowDialog();
-                                if (ObjDialog == DialogResult.OK)
+                                using (Alerts ObjAlerts = new Alerts("Edición de Usuario Fallida", "", "No se pudo completar la edición de los cambios al usuario: " + ObjModifyUsers.FirstName + " " + ObjModifyUsers.SecondName + " " + ObjModifyUsers.FirstLastName + " " + ObjModifyUsers.SecondLastName
+                                                    + "\nPara poder editar un usuario, necesitas modificar los valores antiguos por unos nuevos. Es importante que no sean iguales, de lo contrario no se realizarán cambios porque no es necesario.", 1, "", "", "OK", TypeIcon.Warning))
                                 {
-                                    ObjAlerts.Close();
-                                    ObjAlerts.Dispose();
+                                    if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
                                 }
                             }
                         }

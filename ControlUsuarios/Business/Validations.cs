@@ -175,7 +175,7 @@ namespace Business
                 ValueForms.Add(IndexSearch);
                 if (IndexSearch > 0)
                 {
-                    InputText = OnlyWordsMethod(InputText); //ERROR, EL METODO OnlyWordsMethod esta removiendo el numero de control.
+                    InputText = OnlyWordsMethod(InputText);
                 }
                 if (InputText.Trim().Split(' ').Length > 1)
                 {
@@ -238,10 +238,7 @@ namespace Business
             ValueForms.Clear();
             try
             {
-                if(ExistUsuario(Modulo, ObjModifyUser.NumControl).Rows.Count > 0)
-                {
-                    throw new DuplicateNameException();
-                }
+                if(ExistUsuario(Modulo, ObjModifyUser.NumControl).Rows.Count > 0) throw new DuplicateNameException();
                 ValueForms.Add(ObjModifyUser.NumControl);
                 ValueForms.Add(OnlyWordsMethod(ObjModifyUser.SecondName != string.Empty ? ObjModifyUser.FirstName + " " + ObjModifyUser.SecondName : ObjModifyUser.FirstName));
                 ValueForms.Add(OnlyWordsMethod(ObjModifyUser.FirstLastName));

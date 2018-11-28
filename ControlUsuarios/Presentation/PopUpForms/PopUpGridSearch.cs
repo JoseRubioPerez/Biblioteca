@@ -16,8 +16,6 @@ namespace Presentation.PopUpForms
 {
     public partial class PopUpGridSearch : PopUpFather
     {
-        private CreateExcel ObjExcel = new CreateExcel();
-
         public PopUpGridSearch()
         {
             InitializeComponent();
@@ -43,10 +41,13 @@ namespace Presentation.PopUpForms
                 {
                     if (ObjDialog.ShowDialog() == DialogResult.OK)
                     {
-                        ObjExcel.ExportDataGridView(ObjDialog.FileName, (DataTable)GridSearch.DataSource);
-                        using (Alerts ObjAlerts = new Alerts("Información Exportada", "", "La información de su reporte fue exportada en Excel (formato \".xls\").\n\nSe generó un reporte con " + GridSearch.Rows.Count.ToString() + " filas.", 1))
+                        using (CreateExcel ObjExcel = new CreateExcel())
                         {
-                            ObjAlerts.ShowDialog();
+                            ObjExcel.ExportDataGridView(ObjDialog.FileName, (DataTable)GridSearch.DataSource);
+                            using (Alerts ObjAlerts = new Alerts("Información Exportada", "", "La información de su reporte fue exportada en Excel (formato \".xls\").\n\nSe generó un reporte con " + GridSearch.Rows.Count.ToString() + " filas.", 1))
+                            {
+                                ObjAlerts.ShowDialog();
+                            }
                         }
                     }
                 }

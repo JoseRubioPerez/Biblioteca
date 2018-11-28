@@ -13,14 +13,15 @@ namespace Presentation
         private readonly Session ObjSession = new Session();
         private DataTable TablaComboSearch = new DataTable();
         private List<string> ListaComboBox = new List<string>();
-        private Alerts ObjAlerts;
+        //private Alerts ObjAlerts;
         private readonly Control[] ArrayControl;
         private byte Index;
-        private DialogResult ObjDialog;
+        //private DialogResult ObjDialog;
 
         public Binnacle()
         {
             InitializeComponent();
+            ArrayControl = new Control[] { };
         }
 
         private void ControlClickMethod(object sender, EventArgs e)

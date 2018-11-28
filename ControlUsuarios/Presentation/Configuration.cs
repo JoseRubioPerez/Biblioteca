@@ -11,8 +11,8 @@ namespace Presentation
         private Validations ObjValidations = new Validations();
         private readonly Session ObjSession = new Session();
         private readonly Control[] ArrayControl;
-        private DialogResult ObjDialog;
-        private Alerts ObjAlerts;
+        //private DialogResult ObjDialog;
+        //private Alerts ObjAlerts;
         private byte Index;
 
         public Configuration()

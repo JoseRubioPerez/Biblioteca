@@ -1,8 +1,9 @@
-﻿using ClosedXML.Excel;
+﻿using System;
+using ClosedXML.Excel;
 
 namespace Report
 {
-    public class CreateExcel
+    public class CreateExcel : IDisposable
     {
         public void ExportDataGridView(string NombreArchivo, System.Data.DataTable Tabla)
         {
@@ -13,6 +14,11 @@ namespace Report
                 Hoja.Columns().AdjustToContents();
                 Libro.SaveAs(NombreArchivo + ".xlsx");
             }
+        }
+
+        void IDisposable.Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

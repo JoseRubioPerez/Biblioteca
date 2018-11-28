@@ -16,7 +16,7 @@ namespace Presentation
         private Search ObjSearch = new Search();
         private DataTable TablaComboDepartment = new DataTable();
         private List<string> ListCombo = new List<string>();
-        private Alerts ObjAlerts;
+        //private Alerts ObjAlerts;
         private readonly Control[] ArrayControl;
         private byte Index;
 

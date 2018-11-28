@@ -17,7 +17,6 @@ namespace Presentation.PopUpForms
         private List<string> ListaComboBox = new List<string>();
         private readonly Control[] ArrayControl;
         private byte Index;
-        private DialogResult ObjDialog;
 
         public PopUpImports()
         {
