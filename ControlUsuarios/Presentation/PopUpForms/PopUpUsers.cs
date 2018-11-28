@@ -23,6 +23,8 @@ namespace Presentation.PopUpForms
         {
             InitializeComponent();
             TextBoxNumControl.Enabled = true;
+            ButtonAccept.DialogResult = DialogResult.OK;
+            ButtonCancel.DialogResult = DialogResult.Cancel;
             ArrayControl = new Control[] { ButtonAccept, ButtonCancel, RadioButtonMan, RadioButtonWoman, RadioButtonActive, RadioButtonDisable };
             TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
             foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
@@ -32,6 +34,8 @@ namespace Presentation.PopUpForms
         public PopUpUsers(ModifyUsers ObjModifyUsers)
         {
             InitializeComponent();
+            ButtonAccept.DialogResult = DialogResult.OK;
+            ButtonCancel.DialogResult = DialogResult.Cancel;
             ArrayControl = new Control[] { ButtonAccept, ButtonCancel, RadioButtonMan, RadioButtonWoman, RadioButtonActive, RadioButtonDisable };
             this.ObjModifyUsers = ObjModifyUsers;
             TextBoxNumControl.Enabled = false;

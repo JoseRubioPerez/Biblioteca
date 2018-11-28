@@ -39,9 +39,9 @@
             this.PictureUser = new System.Windows.Forms.PictureBox();
             this.ButtonCancel = new System.Windows.Forms.Button();
             this.ButtonShowPassword = new System.Windows.Forms.Button();
-            this.TextBoxPassword = new Presentation.Inputs.TextBoxUI();
-            this.TextBoxUser = new Presentation.Inputs.TextBoxUI();
             this.PanelContent = new System.Windows.Forms.Panel();
+            this.TextBoxUser = new Presentation.Inputs.TextBoxUI();
+            this.TextBoxPassword = new Presentation.Inputs.TextBoxUI();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).BeginInit();
@@ -170,46 +170,6 @@
             this.ButtonShowPassword.UseVisualStyleBackColor = true;
             this.ButtonShowPassword.Click += new System.EventHandler(this.ClickMethod);
             // 
-            // TextBoxPassword
-            // 
-            this.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TextBoxPassword.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TextBoxPassword.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.TextBoxPassword.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TextBoxPassword.EnableTextBox = true;
-            this.TextBoxPassword.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.TextBoxPassword.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.TextBoxPassword.Location = new System.Drawing.Point(69, 98);
-            this.TextBoxPassword.MaxLengthTextBox = 32767;
-            this.TextBoxPassword.Name = "TextBoxPassword";
-            this.TextBoxPassword.PasswordTextBox = '\0';
-            this.TextBoxPassword.Size = new System.Drawing.Size(491, 32);
-            this.TextBoxPassword.TabIndex = 2;
-            this.TextBoxPassword.TextLabel = "Contraseña: ";
-            this.TextBoxPassword.TextTextBox = "";
-            this.TextBoxPassword.Enter += new System.EventHandler(this.EnterTextBoxUI);
-            this.TextBoxPassword.Leave += new System.EventHandler(this.LeaveTextBoxUI);
-            // 
-            // TextBoxUser
-            // 
-            this.TextBoxUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TextBoxUser.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TextBoxUser.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.TextBoxUser.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TextBoxUser.EnableTextBox = true;
-            this.TextBoxUser.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.TextBoxUser.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.TextBoxUser.Location = new System.Drawing.Point(69, 40);
-            this.TextBoxUser.MaxLengthTextBox = 32767;
-            this.TextBoxUser.Name = "TextBoxUser";
-            this.TextBoxUser.PasswordTextBox = '\0';
-            this.TextBoxUser.Size = new System.Drawing.Size(491, 32);
-            this.TextBoxUser.TabIndex = 1;
-            this.TextBoxUser.TextLabel = "Usuario: ";
-            this.TextBoxUser.TextTextBox = "";
-            this.TextBoxUser.Enter += new System.EventHandler(this.EnterTextBoxUI);
-            this.TextBoxUser.Leave += new System.EventHandler(this.LeaveTextBoxUI);
-            // 
             // PanelContent
             // 
             this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
@@ -225,6 +185,50 @@
             this.PanelContent.Name = "PanelContent";
             this.PanelContent.Size = new System.Drawing.Size(638, 236);
             this.PanelContent.TabIndex = 7;
+            // 
+            // TextBoxUser
+            // 
+            this.TextBoxUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TextBoxUser.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TextBoxUser.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.TextBoxUser.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TextBoxUser.EnableTextBox = true;
+            this.TextBoxUser.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.TextBoxUser.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.TextBoxUser.Location = new System.Drawing.Point(69, 40);
+            this.TextBoxUser.MaxLengthTextBox = 32767;
+            this.TextBoxUser.Name = "TextBoxUser";
+            this.TextBoxUser.PasswordTextBox = '\0';
+            this.TextBoxUser.SelectionLengthTextBox = 0;
+            this.TextBoxUser.SelectionStartTextBox = 0;
+            this.TextBoxUser.Size = new System.Drawing.Size(491, 32);
+            this.TextBoxUser.TabIndex = 1;
+            this.TextBoxUser.TextLabel = "Usuario: ";
+            this.TextBoxUser.TextTextBox = "";
+            this.TextBoxUser.Enter += new System.EventHandler(this.EnterTextBoxUI);
+            this.TextBoxUser.Leave += new System.EventHandler(this.LeaveTextBoxUI);
+            // 
+            // TextBoxPassword
+            // 
+            this.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TextBoxPassword.BackColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TextBoxPassword.BackColorPanel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.TextBoxPassword.BackColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TextBoxPassword.EnableTextBox = true;
+            this.TextBoxPassword.ForeColorLabel = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.TextBoxPassword.ForeColorTextBox = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.TextBoxPassword.Location = new System.Drawing.Point(69, 98);
+            this.TextBoxPassword.MaxLengthTextBox = 32767;
+            this.TextBoxPassword.Name = "TextBoxPassword";
+            this.TextBoxPassword.PasswordTextBox = '\0';
+            this.TextBoxPassword.SelectionLengthTextBox = 0;
+            this.TextBoxPassword.SelectionStartTextBox = 0;
+            this.TextBoxPassword.Size = new System.Drawing.Size(491, 32);
+            this.TextBoxPassword.TabIndex = 2;
+            this.TextBoxPassword.TextLabel = "Contraseña: ";
+            this.TextBoxPassword.TextTextBox = "";
+            this.TextBoxPassword.Enter += new System.EventHandler(this.EnterTextBoxUI);
+            this.TextBoxPassword.Leave += new System.EventHandler(this.LeaveTextBoxUI);
             // 
             // LogUser
             // 

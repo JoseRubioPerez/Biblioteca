@@ -20,13 +20,13 @@ namespace Presentation
         private List<string> ListaComboBox2 = new List<string>();
         private readonly Control[] ArrayControl;
         private byte Index;
-        private DialogResult ObjDialog;
 
         public Users(Session ObjSession)
         {
             InitializeComponent();
             this.ObjSession = ObjSession;
             ArrayControl = new Control[] { ButtonNewUser, PictureBoxInfo, ButtonCleanSearch, ButtonSearch };
+            GridSearch.CellClick += GridSearchCellClickMethod;
         } //Clave de Constructor: Users-C1
 
         private void UsersLoadMethod(object sender, EventArgs e)
@@ -48,6 +48,9 @@ namespace Presentation
 
         public void GridSearchLoadDataMethod()
         {
+            GridSearch.DataSource = null;
+            GridSearch.Columns.Clear();
+            GridSearch.Rows.Clear();
             GridSearch.DataSource = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Users);
             DataGridViewButtonColumn ObjButtonColumnEdit = new DataGridViewButtonColumn();
             {
@@ -58,7 +61,6 @@ namespace Presentation
                 ObjButtonColumnEdit.UseColumnTextForButtonValue = true;
                 GridSearch.Columns.Add(ObjButtonColumnEdit);
             }
-            GridSearch.CellClick += GridSearchCellClickMethod;
         } //Clave de Método: Users-GSLDM
 
         private void GridSearchCellClickMethod(object sender, DataGridViewCellEventArgs e)
@@ -81,8 +83,13 @@ namespace Presentation
                 ObjModifyUsers.Sex = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value.ToString());
                 ObjModifyUsers.Department = GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value.ToString();
                 ObjModifyUsers.Status = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value.ToString());
-                PopUpUsers ObjPopUpUsers = new PopUpUsers(ObjModifyUsers);
-                ObjPopUpUsers.Show();
+                using (PopUpUsers ObjPopUpUsers = new PopUpUsers(ObjModifyUsers))
+                {
+                    if (ObjPopUpUsers.ShowDialog() == DialogResult.OK)
+                    {
+                        GridSearchLoadDataMethod();
+                    }
+                }
             }
         } //Clave de Método: Users-GSCCM
 
@@ -166,8 +173,7 @@ namespace Presentation
                         {
                             Alerts ObjAlerts = new Alerts("Búsqueda Fallida", "", "Parece que ser que la búsqueda no se pudo completar.\nPor favor, revise los siguientes puntos:\n1. Es necesario que eliga un filtro de búsqueda."
                                                 + "\n2. Ingrese un texto a buscar o seleccione una opción de búsqueda..\n3. Haga clic en el botón de búsqueda (lupa).", 1, "", "", "OK", TypeIcon.Warning);
-                            ObjAlerts.ShowDialog();
-                            if (ObjDialog == DialogResult.OK)
+                            if (ObjAlerts.ShowDialog() == DialogResult.OK)
                             {
                                 ObjAlerts.Close();
                                 ObjAlerts.Dispose();

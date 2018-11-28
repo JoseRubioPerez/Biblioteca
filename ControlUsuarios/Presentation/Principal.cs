@@ -13,6 +13,7 @@ namespace Presentation
         private Users ObjUsers;
         private Moves ObjMoves;
         private Stats ObjStats;
+        private Imports ObjImports;
         private Configuration ObjConfiguration;
         private readonly Session ObjSession = new Session();
         private Validations ObjValidations = new Validations();
@@ -21,19 +22,11 @@ namespace Presentation
         private readonly string[] ArrayButtonText = new string[] { "Usuarios", "Movimientos", "Reportes", "Bitácoras", "Importar Usuarios", "Configuraciones", "Cerrar Sesión" };
         private byte Index;
 
-        public Principal()
-        {
-            InitializeComponent();
-            PanelCanvas.Height = 698;
-            PanelCanvas.Width = 90;
-            ArrayButton = new Button[] { ButtonUsers, ButtonMoves, ButtonStats, ButtonBinnacle, ButtonImportUsers, ButtonConfiguration, ButtonLogOut };
-            Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-            MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-        } //Clave de Constructor: Principal-C1
-
         public Principal(Session ObjSession)
         {
             InitializeComponent();
+            ButtonBinnacle.Visible = false;
+            ButtonConfiguration.Visible = false;
             this.ObjSession = ObjSession;
             ObjLogUser = new LogUser(ObjSession, TypeSession.LogOut);
             PanelCanvas.Height = 698;
@@ -42,7 +35,7 @@ namespace Presentation
             ArrayButton = new Button[] { ButtonUsers, ButtonMoves, ButtonStats, ButtonBinnacle, ButtonImportUsers, ButtonConfiguration, ButtonLogOut };
             Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-        } //Clave de Constructor: Principal-C2
+        } //Clave de Constructor: Principal-C1
 
         public void MostrarForm(Form Formulario)
         {
@@ -104,6 +97,15 @@ namespace Presentation
                     }
                 case 4: //ButtonImportUsers
                     {
+                        try
+                        {
+                            MostrarForm(ObjImports);
+                        }
+                        catch (NullReferenceException)
+                        {
+                            ObjImports = new Imports(ObjSession);
+                            MostrarForm(ObjImports);
+                        }
                         break;
                     }
                 case 5: //ButtonConfiguration

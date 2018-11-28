@@ -23,6 +23,7 @@ namespace Entity
         public string NumControl { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
+        public string FirstAndSecondName { get; set; }
         public string FirstLastName { get; set; }
         public string SecondLastName { get; set; }
         public byte IndexDeparment { get; set; }

@@ -64,6 +64,12 @@
     <Compile Include="Configuration.Designer.cs">
       <DependentUpon>Configuration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Imports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports.Designer.cs">
+      <DependentUpon>Imports.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="PopUpForms\PopUpGridSearch.Designer.cs">
       <DependentUpon>PopUpGridSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpImports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpForms\PopUpImports.Designer.cs">
+      <DependentUpon>PopUpImports.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpForms\PopUpUsers.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,9 @@
     <EmbeddedResource Include="FormFather.resx">
       <DependentUpon>FormFather.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imports.resx">
+      <DependentUpon>Imports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogUser.resx">
       <DependentUpon>LogUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpForms\PopUpGridSearch.resx">
       <DependentUpon>PopUpGridSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpForms\PopUpImports.resx">
+      <DependentUpon>PopUpImports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpForms\PopUpUsers.resx">
       <DependentUpon>PopUpUsers.cs</DependentUpon>
@@ -211,6 +229,10 @@
     <ProjectReference Include="..\Options\Options.csproj">
       <Project>{9176c82e-e9f2-4ff0-81d0-28d602a91758}</Project>
       <Name>Options</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{9d0bdfd1-af1e-47cf-b840-cad6ed83f1e6}</Project>
+      <Name>Report</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

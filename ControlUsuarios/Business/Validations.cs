@@ -173,7 +173,10 @@ namespace Business
             try
             {
                 ValueForms.Add(IndexSearch);
-                InputText = OnlyWordsMethod(InputText);
+                if (IndexSearch > 0)
+                {
+                    InputText = OnlyWordsMethod(InputText); //ERROR, EL METODO OnlyWordsMethod esta removiendo el numero de control.
+                }
                 if (InputText.Trim().Split(' ').Length > 1)
                 {
                     ValueForms.Add(InputText);
@@ -304,6 +307,31 @@ namespace Business
             }
             return Regex.Replace(Regex.Replace(str, "[^A-ZÑ ]+", ""), @"\s{2,}", " ").Trim();
         } //Clave de Método: Validations-OWM
+
+        public string RemoveAccent(string str)
+        {
+            if (Regex.IsMatch(str, "[ÁÉÍÓÚ]+"))
+            {
+                foreach (char item in str)
+                {
+                    switch (item)
+                    {
+                        case 'Á': { str = str.Replace(item, 'A'); break; }
+                        case 'É': { str = str.Replace(item, 'E'); break; }
+                        case 'Í': { str = str.Replace(item, 'I'); break; }
+                        case 'Ó': { str = str.Replace(item, 'O'); break; }
+                        default: { break; }
+                    }
+                }
+            }
+            return str;
+        }
+
+        public string CleanLineaImport(string str) => Regex.Replace(str, @"[^A-Z0-9, ]|\s{2,}", "").Trim().ToUpper(); //Clave de Método: Validations-OWON
+
+        public bool NumControlCheck(string str) => Regex.IsMatch(str, @"^[CB]?\d{8}$"); //Clave de Método: Validations-NCC
+
+        public bool NamesAndLastNameCheck(string str) => Regex.IsMatch(str, @"^[A-Z]+\s[A-Z]+$"); //Clave de Método: Validations-NALNC
 
         //Clave de Método: Validations-PUUV
         public bool PopUpUsersValidations(ModifyUsers ObjModifyUsersSource, ModifyUsers ObjModifyUsers) => ObjModifyUsersSource.NumControl == ObjModifyUsers.NumControl && (ObjModifyUsersSource.FirstName != ObjModifyUsers.FirstName || ObjModifyUsersSource.SecondName != ObjModifyUsers.SecondName || ObjModifyUsersSource.FirstLastName != ObjModifyUsers.FirstLastName || ObjModifyUsersSource.SecondLastName != ObjModifyUsers.SecondLastName || ObjModifyUsersSource.Department != ObjModifyUsers.Department || ObjModifyUsersSource.Status != ObjModifyUsers.Status || ObjModifyUsersSource.Sex != ObjModifyUsers.Sex);

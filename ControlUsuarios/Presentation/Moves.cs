@@ -103,12 +103,12 @@ namespace Presentation
                     }
                 case 2: //ButtonCleanSearch
                     {
-                        ComboDepartment.Visible = false;
                         RadioButtonAll.Checked = false;
                         RadioButtonMan.Checked = false;
                         RadioButtonWoman.Checked = false;
                         RadioButtonAllDepartments.Checked = false;
                         RadioButtonSearchDepartment.Checked = false;
+                        ComboDepartment.Visible = false;
                         DateTimePickerStart.Value = DateTime.Now.AddMonths(-1);
                         DateTimePickerEnd.Value = DateTime.Now;
                         break;
