@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [dbo].[NewMove]
+@p1 VARCHAR(9),
+@p2 TINYINT
+AS
+BEGIN
+INSERT INTO dbo.Movimientos (nc,servicio, hora,fecha)
+VALUES (@p1,@p2,CONVERT(TIME,GETDATE(),108),CONVERT(DATE,GETDATE(),103))
+END

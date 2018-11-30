@@ -171,12 +171,14 @@ namespace Presentation
                         }
                         catch (Exception)
                         {
-                            Alerts ObjAlerts = new Alerts("Búsqueda Fallida", "", "Parece que ser que la búsqueda no se pudo completar.\nPor favor, revise los siguientes puntos:\n1. Es necesario que eliga un filtro de búsqueda."
-                                                + "\n2. Ingrese un texto a buscar o seleccione una opción de búsqueda..\n3. Haga clic en el botón de búsqueda (lupa).", 1, "", "", "OK", TypeIcon.Warning);
-                            if (ObjAlerts.ShowDialog() == DialogResult.OK)
+                            using (Alerts ObjAlerts = new Alerts("Búsqueda Fallida", "", "Parece que ser que la búsqueda no se pudo completar.\nPor favor, revise los siguientes puntos:\n1. Es necesario que eliga un filtro de búsqueda."
+                                                + "\n2. Ingrese un texto a buscar o seleccione una opción de búsqueda..\n3. Haga clic en el botón de búsqueda (lupa).", 1, "", "", "OK", TypeIcon.Warning))
                             {
-                                ObjAlerts.Close();
-                                ObjAlerts.Dispose();
+                                if (ObjAlerts.ShowDialog() == DialogResult.OK)
+                                {
+                                    ObjAlerts.Close();
+                                    ObjAlerts.Dispose();
+                                }
                             }
                         }
                         break;

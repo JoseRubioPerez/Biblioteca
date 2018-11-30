@@ -355,7 +355,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PopUpUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PopUpUsers";
+            this.Text = "Formulario para Editar Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).EndInit();
             this.PanelContent.ResumeLayout(false);
             this.PanelContent.PerformLayout();

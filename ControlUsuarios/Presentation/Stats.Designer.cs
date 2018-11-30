@@ -295,7 +295,7 @@
             this.DateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerStart.Location = new System.Drawing.Point(109, 29);
             this.DateTimePickerStart.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
-            this.DateTimePickerStart.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerStart.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.DateTimePickerStart.Name = "DateTimePickerStart";
             this.DateTimePickerStart.Size = new System.Drawing.Size(135, 29);
             this.DateTimePickerStart.TabIndex = 19;
@@ -447,7 +447,7 @@
             this.DateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerEnd.Location = new System.Drawing.Point(325, 29);
             this.DateTimePickerEnd.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
-            this.DateTimePickerEnd.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerEnd.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.DateTimePickerEnd.Name = "DateTimePickerEnd";
             this.DateTimePickerEnd.Size = new System.Drawing.Size(135, 29);
             this.DateTimePickerEnd.TabIndex = 20;

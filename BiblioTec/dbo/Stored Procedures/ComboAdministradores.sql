@@ -1,0 +1,6 @@
+﻿--SP PARA CONSULTAR TODOS LOS ADMINISTRADORES QUE NO SON SUPER USUARIOS Y MOSTRARLOS EN UN COMBOBOX
+CREATE PROCEDURE ComboAdministradores
+AS
+BEGIN
+SELECT nc, nombres, apellidopat, apellidomat FROM dbo.Administradores WHERE superus = 'N' ORDER BY nc
+END

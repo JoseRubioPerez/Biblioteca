@@ -242,7 +242,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LogUser";
+            this.Text = "Inicio de Sesión";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingMethod);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();

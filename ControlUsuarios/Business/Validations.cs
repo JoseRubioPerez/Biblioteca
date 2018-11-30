@@ -100,27 +100,6 @@ namespace Business
             }
         } //Clave de Método: Validations-GSM
 
-        public DataTable ComboSearchMethod(TypeModules Modulo, TypeSearch Option)
-        {
-            ValueForms.Clear();
-            try
-            {
-                if (Option.Equals(0))
-                    throw new Exception();
-                ValueForms.Add(Option);
-                return ObjQueries.Procedimiento("LoadFilters", ValueForms);
-            }
-            catch (Exception Error)
-            {
-                CatchExceptions(Error, Modulo);
-                return null;
-            }
-            finally
-            {
-                ValueForms.Clear();
-            }
-        } //Clave de Método: Validations-CSM
-
         public DataTable ExistUsuario(TypeModules Modulo, string NumControl)
         {
             ValueForms.Clear();
@@ -213,8 +192,7 @@ namespace Business
             ValueForms.Clear();
             try
             {
-                ValueForms.Add(ObjSearch.FirstLastName);
-                ValueForms.Add(ObjSearch.SecondLastName);
+                ValueForms.Add(ObjSearch.NumControl);
                 ValueForms.Add(ObjSearch.IndexDeparmentStart);
                 ValueForms.Add(ObjSearch.IndexDeparmentEnd);
                 ValueForms.Add(ObjSearch.SexStart);

@@ -84,7 +84,7 @@ namespace Presentation
                                     }
                                 case 4:
                                     {
-                                        ObjSearch.DateStart = DateTime.Parse("2016-01-01");
+                                        ObjSearch.DateStart = DateTime.Parse("2000-01-01");
                                         ObjSearch.DateEnd = DateTime.Now;
                                         break;
                                     }

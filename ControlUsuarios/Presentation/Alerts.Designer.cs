@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.PanelHeader = new System.Windows.Forms.Panel();
-            this.PictureClose = new System.Windows.Forms.PictureBox();
-            this.LabelSubTitle = new System.Windows.Forms.Label();
+            this.TableLayoutPanelHeader = new System.Windows.Forms.TableLayoutPanel();
             this.LabelTitle = new System.Windows.Forms.Label();
+            this.LabelSubTitle = new System.Windows.Forms.Label();
+            this.PictureClose = new System.Windows.Forms.PictureBox();
             this.PictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.TableLayoutPanelContent = new System.Windows.Forms.TableLayoutPanel();
             this.PanelButtons = new System.Windows.Forms.Panel();
@@ -40,14 +41,13 @@
             this.ButtonCancel = new System.Windows.Forms.Button();
             this.FlowLayoutPanelText = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelText = new System.Windows.Forms.Label();
-            this.TableLayoutPanelHeader = new System.Windows.Forms.TableLayoutPanel();
             this.PanelHeader.SuspendLayout();
+            this.TableLayoutPanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIcon)).BeginInit();
             this.TableLayoutPanelContent.SuspendLayout();
             this.PanelButtons.SuspendLayout();
             this.FlowLayoutPanelText.SuspendLayout();
-            this.TableLayoutPanelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -62,18 +62,34 @@
             this.PanelHeader.Size = new System.Drawing.Size(851, 80);
             this.PanelHeader.TabIndex = 0;
             // 
-            // PictureClose
+            // TableLayoutPanelHeader
             // 
-            this.PictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureClose.Image = global::Presentation.Properties.Resources.CloseWindowWhite;
-            this.PictureClose.Location = new System.Drawing.Point(807, 12);
-            this.PictureClose.Name = "PictureClose";
-            this.PictureClose.Size = new System.Drawing.Size(32, 32);
-            this.PictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureClose.TabIndex = 7;
-            this.PictureClose.TabStop = false;
-            this.PictureClose.Click += new System.EventHandler(this.PictureCloseClickMethod);
+            this.TableLayoutPanelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableLayoutPanelHeader.ColumnCount = 2;
+            this.TableLayoutPanelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.TableLayoutPanelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.TableLayoutPanelHeader.Controls.Add(this.LabelTitle, 0, 0);
+            this.TableLayoutPanelHeader.Controls.Add(this.LabelSubTitle, 1, 0);
+            this.TableLayoutPanelHeader.Location = new System.Drawing.Point(59, 18);
+            this.TableLayoutPanelHeader.Margin = new System.Windows.Forms.Padding(0);
+            this.TableLayoutPanelHeader.Name = "TableLayoutPanelHeader";
+            this.TableLayoutPanelHeader.RowCount = 1;
+            this.TableLayoutPanelHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanelHeader.Size = new System.Drawing.Size(745, 44);
+            this.TableLayoutPanelHeader.TabIndex = 8;
+            // 
+            // LabelTitle
+            // 
+            this.LabelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelTitle.AutoSize = true;
+            this.LabelTitle.Font = new System.Drawing.Font("Arial Narrow", 22F);
+            this.LabelTitle.ForeColor = System.Drawing.Color.White;
+            this.LabelTitle.Location = new System.Drawing.Point(3, 9);
+            this.LabelTitle.Name = "LabelTitle";
+            this.LabelTitle.Size = new System.Drawing.Size(162, 35);
+            this.LabelTitle.TabIndex = 5;
+            this.LabelTitle.Text = "Iniciar Sesión";
             // 
             // LabelSubTitle
             // 
@@ -87,17 +103,18 @@
             this.LabelSubTitle.TabIndex = 6;
             this.LabelSubTitle.Text = "¡Bienvenido!";
             // 
-            // LabelTitle
+            // PictureClose
             // 
-            this.LabelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("Arial Narrow", 22F);
-            this.LabelTitle.ForeColor = System.Drawing.Color.White;
-            this.LabelTitle.Location = new System.Drawing.Point(3, 9);
-            this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(162, 35);
-            this.LabelTitle.TabIndex = 5;
-            this.LabelTitle.Text = "Iniciar Sesión";
+            this.PictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureClose.Image = global::Presentation.Properties.Resources.CloseWindowWhite;
+            this.PictureClose.Location = new System.Drawing.Point(807, 12);
+            this.PictureClose.Name = "PictureClose";
+            this.PictureClose.Size = new System.Drawing.Size(32, 32);
+            this.PictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureClose.TabIndex = 7;
+            this.PictureClose.TabStop = false;
+            this.PictureClose.Click += new System.EventHandler(this.PictureCloseClickMethod);
             // 
             // PictureBoxIcon
             // 
@@ -210,23 +227,6 @@
             this.LabelText.Text = "Change My Text";
             this.LabelText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // TableLayoutPanelHeader
-            // 
-            this.TableLayoutPanelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableLayoutPanelHeader.ColumnCount = 2;
-            this.TableLayoutPanelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.TableLayoutPanelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.TableLayoutPanelHeader.Controls.Add(this.LabelTitle, 0, 0);
-            this.TableLayoutPanelHeader.Controls.Add(this.LabelSubTitle, 1, 0);
-            this.TableLayoutPanelHeader.Location = new System.Drawing.Point(59, 18);
-            this.TableLayoutPanelHeader.Margin = new System.Windows.Forms.Padding(0);
-            this.TableLayoutPanelHeader.Name = "TableLayoutPanelHeader";
-            this.TableLayoutPanelHeader.RowCount = 1;
-            this.TableLayoutPanelHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanelHeader.Size = new System.Drawing.Size(745, 44);
-            this.TableLayoutPanelHeader.TabIndex = 8;
-            // 
             // Alerts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -240,16 +240,16 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Alerts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alerts";
+            this.Text = "¡Alerta!";
             this.PanelHeader.ResumeLayout(false);
+            this.TableLayoutPanelHeader.ResumeLayout(false);
+            this.TableLayoutPanelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIcon)).EndInit();
             this.TableLayoutPanelContent.ResumeLayout(false);
             this.PanelButtons.ResumeLayout(false);
             this.FlowLayoutPanelText.ResumeLayout(false);
             this.FlowLayoutPanelText.PerformLayout();
-            this.TableLayoutPanelHeader.ResumeLayout(false);
-            this.TableLayoutPanelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }

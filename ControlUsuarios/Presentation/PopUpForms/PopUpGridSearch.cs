@@ -19,8 +19,10 @@ namespace Presentation.PopUpForms
         public PopUpGridSearch()
         {
             InitializeComponent();
-            ButtonCancel.Visible = false;
             ButtonAccept.Visible = false;
+            ButtonAccept.DialogResult = DialogResult.OK;
+            ButtonCancel.Visible = false;
+            ButtonCancel.DialogResult = DialogResult.Cancel;
         }
 
         public PopUpGridSearch(TypeModules Module, Search ObjSearch, string ModuloText)
@@ -29,8 +31,10 @@ namespace Presentation.PopUpForms
             GridSearch.DataSource = ObjSearch.Table;
             LabelTotalResults.Text = ObjSearch.Table.Rows.Count.ToString();
             LabelComboSearch.Text = ModuloText;
-            ButtonCancel.Visible = false;
             ButtonAccept.Visible = false;
+            ButtonAccept.DialogResult = DialogResult.OK;
+            ButtonCancel.Visible = false;
+            ButtonCancel.DialogResult = DialogResult.Cancel;
         }
 
         private void ButtonCreateReport_Click(object sender, EventArgs e)

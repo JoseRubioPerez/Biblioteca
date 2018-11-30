@@ -347,7 +347,7 @@
             this.ClientSize = new System.Drawing.Size(1028, 519);
             this.Name = "PopUpImports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PopUpImports";
+            this.Text = "Formulario para Editar Usuario a Importar";
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).EndInit();
             this.PanelContent.ResumeLayout(false);
             this.PanelContent.PerformLayout();

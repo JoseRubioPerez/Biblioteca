@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutPanelContent = new System.Windows.Forms.TableLayoutPanel();
             this.TableLayoutPanelGrid = new System.Windows.Forms.TableLayoutPanel();
             this.PanelSearch = new System.Windows.Forms.Panel();
@@ -50,10 +50,10 @@
             this.PanelResults = new System.Windows.Forms.Panel();
             this.LabelTotalResults = new System.Windows.Forms.Label();
             this.LabelResults = new System.Windows.Forms.Label();
-            this.ButtonCleanSearch = new System.Windows.Forms.Button();
             this.PanelButtonOptiosn = new System.Windows.Forms.Panel();
             this.ButtonNewUser = new System.Windows.Forms.Button();
             this.ImageListOptions = new System.Windows.Forms.ImageList(this.components);
+            this.ButtonCleanSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).BeginInit();
             this.PanelInfo.SuspendLayout();
             this.TableLayoutPanelContent.SuspendLayout();
@@ -102,7 +102,6 @@
             this.TableLayoutPanelGrid.Controls.Add(this.GridSearch, 0, 2);
             this.TableLayoutPanelGrid.Controls.Add(this.PanelComboUI, 0, 0);
             this.TableLayoutPanelGrid.Controls.Add(this.PanelResults, 1, 1);
-            this.TableLayoutPanelGrid.Controls.Add(this.ButtonCleanSearch, 1, 0);
             this.TableLayoutPanelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanelGrid.Location = new System.Drawing.Point(3, 97);
             this.TableLayoutPanelGrid.Name = "TableLayoutPanelGrid";
@@ -243,14 +242,14 @@
             this.GridSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.GridSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableLayoutPanelGrid.SetColumnSpan(this.GridSearch, 2);
             this.GridSearch.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -261,21 +260,21 @@
             this.GridSearch.Name = "GridSearch";
             this.GridSearch.ReadOnly = true;
             this.GridSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.GridSearch.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GridSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridSearch.Size = new System.Drawing.Size(1056, 318);
             this.GridSearch.TabIndex = 0;
@@ -356,25 +355,10 @@
             this.LabelResults.TabIndex = 4;
             this.LabelResults.Text = "Resultados:";
             // 
-            // ButtonCleanSearch
-            // 
-            this.ButtonCleanSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonCleanSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonCleanSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCleanSearch.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.ButtonCleanSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.ButtonCleanSearch.Location = new System.Drawing.Point(904, 3);
-            this.ButtonCleanSearch.Name = "ButtonCleanSearch";
-            this.ButtonCleanSearch.Size = new System.Drawing.Size(149, 36);
-            this.ButtonCleanSearch.TabIndex = 10;
-            this.ButtonCleanSearch.TabStop = false;
-            this.ButtonCleanSearch.Text = "Limpiar Búsqueda";
-            this.ButtonCleanSearch.UseVisualStyleBackColor = true;
-            this.ButtonCleanSearch.Click += new System.EventHandler(this.ControlClickMethod);
-            // 
             // PanelButtonOptiosn
             // 
             this.PanelButtonOptiosn.Controls.Add(this.ButtonNewUser);
+            this.PanelButtonOptiosn.Controls.Add(this.ButtonCleanSearch);
             this.PanelButtonOptiosn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelButtonOptiosn.Location = new System.Drawing.Point(0, 0);
             this.PanelButtonOptiosn.Margin = new System.Windows.Forms.Padding(0);
@@ -409,6 +393,24 @@
             this.ImageListOptions.Images.SetKeyName(0, "PlusBlack.png");
             this.ImageListOptions.Images.SetKeyName(1, "EditBlack.png");
             this.ImageListOptions.Images.SetKeyName(2, "DeleteBlack.png");
+            // 
+            // ButtonCleanSearch
+            // 
+            this.ButtonCleanSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonCleanSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonCleanSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ButtonCleanSearch.FlatAppearance.BorderSize = 3;
+            this.ButtonCleanSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCleanSearch.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.ButtonCleanSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ButtonCleanSearch.Location = new System.Drawing.Point(886, 24);
+            this.ButtonCleanSearch.Name = "ButtonCleanSearch";
+            this.ButtonCleanSearch.Size = new System.Drawing.Size(166, 36);
+            this.ButtonCleanSearch.TabIndex = 10;
+            this.ButtonCleanSearch.TabStop = false;
+            this.ButtonCleanSearch.Text = "Limpiar Búsqueda";
+            this.ButtonCleanSearch.UseVisualStyleBackColor = true;
+            this.ButtonCleanSearch.Click += new System.EventHandler(this.ControlClickMethod);
             // 
             // Users
             // 

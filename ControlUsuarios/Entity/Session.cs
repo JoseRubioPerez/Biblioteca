@@ -34,6 +34,7 @@ namespace Entity
 
     public class Search
     {
+        public string NumControl { get; set; }
         public string FirstLastName { get; set; }
         public string SecondLastName { get; set; }
         public int IndexDeparmentStart { get; set; }

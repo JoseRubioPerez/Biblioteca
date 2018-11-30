@@ -112,12 +112,6 @@
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inputs\GridViewUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Inputs\GridViewUI.Designer.cs">
-      <DependentUpon>GridViewUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inputs\TextBoxUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inputs\GridViewUI.resx">
-      <DependentUpon>GridViewUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inputs\TextBoxUI.resx">
       <DependentUpon>TextBoxUI.cs</DependentUpon>
