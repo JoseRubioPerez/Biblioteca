@@ -72,8 +72,6 @@
     <Build Include="dbo\Tables\Usuarios.sql" />
     <Build Include="dbo\Stored Procedures\UpdateAdmin.sql" />
     <Build Include="dbo\Stored Procedures\Search.sql" />
-    <Build Include="dbo\Stored Procedures\ReporteUsuariosSalasPorSexo.sql" />
-    <Build Include="dbo\Stored Procedures\ReporteServiciosPorSexo.sql" />
     <Build Include="dbo\Stored Procedures\NewUser.sql" />
     <Build Include="dbo\Stored Procedures\NewMove.sql" />
     <Build Include="dbo\Stored Procedures\NewAdmin.sql" />

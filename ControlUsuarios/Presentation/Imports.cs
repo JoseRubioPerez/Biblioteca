@@ -23,7 +23,10 @@ namespace Presentation
         {
             InitializeComponent();
             this.ObjSession = ObjSession;
-            ArrayControl = new Control[] { ButtonExamine, ButtonImportTable };
+            ArrayControl = new Control[] { ButtonExamine, ButtonImportTable, ButtonRedo };
+
+            ButtonImportTable.Enabled = false;
+            PanelLoad.Visible = false;
 
             DataColumn ColumnaNumControl = new DataColumn("NUMERO DE CONTROL", typeof(string)) { Caption = "NUMERO DE CONTROL", MaxLength = 9, ReadOnly = false, AutoIncrement = false, AllowDBNull = false };
             DataColumn ColumnaNombres = new DataColumn("NOMBRES", typeof(string)) { Caption = "NOMBRES", ReadOnly = false, AutoIncrement = false, AllowDBNull = false };
@@ -41,6 +44,20 @@ namespace Presentation
             ObjSearch.Table.Columns.Add(ColumnaDepartamento);
             ObjSearch.Table.Columns.Add(ColumnaSexo);
             ObjSearch.Table.Columns.Add(ColumnaStatus);
+        }
+
+        public void RedoInterface()
+        {
+            ButtonImportTable.Enabled = false;
+            PanelLoad.Visible = false;
+            LabelFinish.Visible = false;
+            ObjSearch.Table.Rows.Clear();
+            GridSearch.DataSource = null;
+            if (GridSearch.Columns.Count > 0) GridSearch.Columns.Clear();
+            if (GridSearch.Rows.Count > 0) GridSearch.Rows.Clear();
+            LabelCantidadFilas.Text = "0 de 0";
+            LabelTotal.Text = "0";
+            ButtonExamine.Focus();
         }
 
         public void ControlClickMethod(object sender, EventArgs e)
@@ -65,6 +82,7 @@ namespace Presentation
                                 try
                                 {
                                     string[] Lineas = File.ReadAllLines(ObjFile.FileName);
+                                    ObjSearch.Table.Rows.Clear();
                                     GridSearch.DataSource = null;
                                     if (GridSearch.Columns.Count > 0) GridSearch.Columns.Clear();
                                     if (GridSearch.Rows.Count > 0) GridSearch.Rows.Clear();
@@ -115,37 +133,74 @@ namespace Presentation
                         }
                         break;
                     }
-                case 1:
+                case 1: //ButtonImportTable
                     {
                         if (GridSearch.Rows.Count > 0)
                         {
-                            for (int i = 0; i < GridSearch.Rows.Count - 1; i++)
+                            using (Alerts ObjAlerts = new Alerts("Confirmación de Importación", "", "Usted está por realizar una importación de usuarios. La cantidad de usuarios a importar es de: " + GridSearch.Rows.Count.ToString() + "\n\n¿Está seguro de importar esta cantidad?", 1, "", "", "OK", TypeIcon.Warning))
                             {
-                                if (ObjValidations.ExistUsuario(TypeModules.Import, GridSearch.Rows[i].Cells["NUMERO DE CONTROL"].Value.ToString()).Rows.Count > 0)
+                                if (ObjAlerts.ShowDialog() == DialogResult.OK)
                                 {
-
-                                }
-                                else
-                                {
-                                    ObjModifyUsers.NumControl = GridSearch.Rows[i].Cells["NUMERO DE CONTROL"].Value.ToString().Trim();
-                                    if (GridSearch.Rows[i].Cells["NOMBRES"].Value.ToString().Contains(" "))
+                                    DataTable TablaAuxiliar;
+                                    TablaAuxiliar = ObjSearch.Table.Copy();
+                                    TablaAuxiliar.Rows.Clear();
+                                    int FilasTotales = ObjSearch.Table.Rows.Count;
+                                    int FilasIguales = 0;
+                                    int Contador = 0;
+                                    ProgressBarImport.Value = 0;
+                                    ProgressBarImport.Maximum = FilasTotales;
+                                    PanelLoad.Visible = true;
+                                    foreach (DataRow FilaTabla in ObjSearch.Table.Rows)
                                     {
-                                        ObjModifyUsers.FirstName = GridSearch.Rows[i].Cells["NOMBRES"].Value.ToString().Split(' ')[0].Trim();
-                                        ObjModifyUsers.SecondName = GridSearch.Rows[i].Cells["NOMBRES"].Value.ToString().Split(' ')[1].Trim();
+                                        if (ObjValidations.ExistUsuario(TypeModules.Import, FilaTabla["NUMERO DE CONTROL"].ToString()).Rows.Count > 0)
+                                        {
+                                            DataRow FilaAuxiliar = TablaAuxiliar.NewRow();
+                                            FilaAuxiliar["NUMERO DE CONTROL"] = FilaTabla["NUMERO DE CONTROL"];
+                                            FilaAuxiliar["NOMBRES"] = FilaTabla["NOMBRES"];
+                                            FilaAuxiliar["APELLIDO PATERNO"] = FilaTabla["APELLIDO PATERNO"];
+                                            FilaAuxiliar["APELLIDO MATERNO"] = FilaTabla["APELLIDO MATERNO"];
+                                            FilaAuxiliar["DEPARTAMENTO O CARRERA"] = FilaTabla["DEPARTAMENTO O CARRERA"];
+                                            FilaAuxiliar["SEXO"] = FilaTabla["SEXO"];
+                                            FilaAuxiliar["STATUS"] = FilaTabla["STATUS"];
+                                            TablaAuxiliar.Rows.Add(FilaAuxiliar);
+                                            FilasIguales++;
+                                        }
+                                        else
+                                        {
+                                            ObjModifyUsers.NumControl = FilaTabla["NUMERO DE CONTROL"].ToString().Trim(); //VALIDAR DE IGUAL FORMA QUE EL USUARIO SEA VALIDO
+                                            if (FilaTabla["NOMBRES"].ToString().Contains(" "))
+                                            {
+                                                ObjModifyUsers.FirstName = FilaTabla["NOMBRES"].ToString().Split(' ')[0].Trim();
+                                                ObjModifyUsers.SecondName = FilaTabla["NOMBRES"].ToString().Split(' ')[1].Trim();
+                                            }
+                                            else
+                                            {
+                                                ObjModifyUsers.FirstName = FilaTabla["NOMBRES"].ToString().Trim();
+                                                ObjModifyUsers.SecondName = string.Empty;
+                                            }
+                                            ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(FilaTabla["APELLIDO PATERNO"].ToString().Trim())) ? string.Empty : FilaTabla["APELLIDO PATERNO"].ToString();
+                                            ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(FilaTabla["APELLIDO MATERNO"].ToString().Trim())) ? string.Empty : FilaTabla["APELLIDO MATERNO"].ToString();
+                                            ObjModifyUsers.Sex = Convert.ToChar(FilaTabla["SEXO"].ToString());
+                                            ObjModifyUsers.IndexDeparment = Convert.ToByte(FilaTabla["DEPARTAMENTO O CARRERA"].ToString());
+                                            ObjModifyUsers.Status = Convert.ToChar(FilaTabla["STATUS"].ToString());
+                                            Contador++;
+                                            LabelCantidadFilas.Text = Contador + " de " + FilasTotales;
+                                        }
+                                        ProgressBarImport.PerformStep();
                                     }
-                                    else
-                                    {
-                                        ObjModifyUsers.FirstName = GridSearch.Rows[i].Cells["NOMBRES"].Value.ToString().Trim();
-                                        ObjModifyUsers.SecondName = string.Empty;
-                                    }
-                                    ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(GridSearch.Rows[i].Cells["APELLIDO PATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[i].Cells["APELLIDO PATERNO"].Value.ToString();
-                                    ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(GridSearch.Rows[i].Cells["APELLIDO MATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[i].Cells["APELLIDO MATERNO"].Value.ToString();
-                                    ObjModifyUsers.Sex = Convert.ToChar(GridSearch.Rows[i].Cells["SEXO"].Value.ToString());
-                                    ObjModifyUsers.IndexDeparment = Convert.ToByte(GridSearch.Rows[i].Cells["DEPARTAMENTO O CARRERA"].Value.ToString());
-                                    ObjModifyUsers.Status = Convert.ToChar(GridSearch.Rows[i].Cells["STATUS"].Value.ToString());
+                                    GridSearch.DataSource = null;
+                                    if (GridSearch.Columns.Count > 0) GridSearch.Columns.Clear();
+                                    if (GridSearch.Rows.Count > 0) GridSearch.Rows.Clear();
+                                    GridSearch.DataSource = TablaAuxiliar;
                                 }
                             }
+                            LabelFinish.Visible = true;
                         }
+                        break;
+                    }
+                case 2: //ButtonRedo
+                    {
+                        RedoInterface();
                         break;
                     }
                 default:
