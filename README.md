@@ -19,6 +19,7 @@ Conforme el proyecto avance, se irá actualizando este archivo.
   - Mostrar fotografía del usuario en el registro de usuarios.
   - Removiendo interfaces gráficas de "Bitácoras" (gracias por su recomendación, chicos de Nearsoft <3 ).
   - Trabajando en aspectos finales de importación de usuarios.
+  - Planeando migración de nase de datos a PostgreSQL.
 
 ## Control de Usuarios
 
@@ -41,7 +42,7 @@ A continuación, se describen las capas utilizadas para la creación del proyect
 | Entity | Contiene las entidades que representan los datos que se manejan en las tablas de la base de datos o para pasar información de un formulario a otro. |
 | Options | Creada para las elecciones que haga el usuario, es decir, las opciones de diversos módulos del sistema serán las que definan las acciones de ciertos formularios. |
 | Presentation | Contiene, en su mayoría, el diseño de las interfaces de usuario. |
-| Reportes | Es la capa encargada de generar los reportes en PDF para el usuario por medio de la librería [iTextPdf]. |
+| Reportes | Es la capa encargada de generar los reportes en PDF con [iTextPdf] y reportes en Excel con [ClosedXML]. |
 | Install | Contiene el instalador del proyecto. Compilarlo implica generar el instalador. |
 
 ## Registro de Usuarios
