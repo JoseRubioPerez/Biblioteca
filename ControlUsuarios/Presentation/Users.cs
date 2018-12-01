@@ -141,7 +141,7 @@ namespace Presentation
                                 case 3:
                                 case 4:
                                     {
-                                        Flag = !string.IsNullOrWhiteSpace(TextBoxSearch.TextTextBox) || !string.IsNullOrEmpty(TextBoxSearch.TextTextBox) ? true : false;
+                                        Flag = !string.IsNullOrEmpty(TextBoxSearch.TextTextBox) ? true : false;
                                         break;
                                     }
                                 case 5:

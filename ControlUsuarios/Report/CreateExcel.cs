@@ -11,7 +11,6 @@ namespace Report
             {
                 IXLWorksheet Hoja = Libro.Worksheets.Add(Tabla, "Reporte");
                 Hoja.Table(0).ShowAutoFilter = false;
-                Hoja.Columns().AdjustToContents();
                 Libro.SaveAs(NombreArchivo + ".xlsx");
             }
         }

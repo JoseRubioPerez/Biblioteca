@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{58526A20-ADED-47CF-9DB9-39BB8EB8F071}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report", "Report\Report.csproj", "{9D0BDFD1-AF1E-47CF-B840-CAD6ED83F1E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reportes", "Report\Reportes.csproj", "{9D0BDFD1-AF1E-47CF-B840-CAD6ED83F1E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connections", "Connections\Connections.csproj", "{58E5D396-C31D-428E-A8D1-4A03FA899DA7}"
 EndProject

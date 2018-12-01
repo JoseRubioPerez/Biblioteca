@@ -39,7 +39,7 @@ BEGIN
 			,b.apellidomat AS 'APELLIDO MATERNO'
 			,c.area AS 'DEPARTAMENTO O CARRERA'
 			,b.sexo AS 'SEXO'
-			,b.STATUS AS 'STATUS'
+			,b.status AS 'STATUS'
 		FROM dbo.Usuarios AS b
 		INNER JOIN dbo.Areas AS c ON c.id = b.area
 		WHERE b.nombres LIKE '%' + @p3 + '%'
@@ -81,7 +81,7 @@ BEGIN
 			,b.apellidomat AS 'APELLIDO MATERNO'
 			,c.area AS 'DEPARTAMENTO O CARRERA'
 			,b.sexo AS 'SEXO'
-			,b.STATUS AS 'STATUS'
+			,b.status AS 'STATUS'
 		FROM dbo.Usuarios AS b
 		INNER JOIN dbo.Areas AS c ON c.id = b.area
 		WHERE b.apellidopat LIKE '%' + @p4 + '%'
