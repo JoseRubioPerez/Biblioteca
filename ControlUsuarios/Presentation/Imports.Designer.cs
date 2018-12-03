@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelComboSearch = new System.Windows.Forms.Label();
             this.ButtonExamine = new System.Windows.Forms.Button();
             this.GridSearch = new System.Windows.Forms.DataGridView();
@@ -38,11 +38,11 @@
             this.LabelTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.PanelLoad = new System.Windows.Forms.Panel();
+            this.LabelFinish = new System.Windows.Forms.Label();
             this.ProgressBarImport = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.LabelCantidadFilas = new System.Windows.Forms.Label();
             this.ButtonRedo = new System.Windows.Forms.Button();
-            this.LabelFinish = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).BeginInit();
             this.PanelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSearch)).BeginInit();
@@ -95,46 +95,46 @@
             // 
             this.GridSearch.AllowUserToAddRows = false;
             this.GridSearch.AllowUserToDeleteRows = false;
-            this.GridSearch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.GridSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.GridSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
             this.GridSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.GridSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GridSearch.EnableHeadersVisualStyles = false;
             this.GridSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.GridSearch.Location = new System.Drawing.Point(11, 324);
+            this.GridSearch.Location = new System.Drawing.Point(0, 333);
             this.GridSearch.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.GridSearch.Name = "GridSearch";
             this.GridSearch.ReadOnly = true;
             this.GridSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridSearch.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(205)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.GridSearch.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GridSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridSearch.Size = new System.Drawing.Size(1039, 365);
+            this.GridSearch.Size = new System.Drawing.Size(1062, 365);
             this.GridSearch.TabIndex = 11;
             // 
             // ButtonImportTable
@@ -184,6 +184,19 @@
             this.PanelLoad.Size = new System.Drawing.Size(1032, 130);
             this.PanelLoad.TabIndex = 14;
             // 
+            // LabelFinish
+            // 
+            this.LabelFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelFinish.AutoSize = true;
+            this.LabelFinish.Font = new System.Drawing.Font("Arial Narrow", 16F);
+            this.LabelFinish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.LabelFinish.Location = new System.Drawing.Point(104, 74);
+            this.LabelFinish.Name = "LabelFinish";
+            this.LabelFinish.Size = new System.Drawing.Size(824, 26);
+            this.LabelFinish.TabIndex = 17;
+            this.LabelFinish.Text = "¡Importación Finalizada! La tabla de abajo mostrará los resultados de cada fila q" +
+    "ue se intentó importar\r\n";
+            // 
             // ProgressBarImport
             // 
             this.ProgressBarImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -228,19 +241,6 @@
             this.ButtonRedo.Text = "Reiniciar todo";
             this.ButtonRedo.UseVisualStyleBackColor = true;
             this.ButtonRedo.Click += new System.EventHandler(this.ControlClickMethod);
-            // 
-            // LabelFinish
-            // 
-            this.LabelFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelFinish.AutoSize = true;
-            this.LabelFinish.Font = new System.Drawing.Font("Arial Narrow", 16F);
-            this.LabelFinish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.LabelFinish.Location = new System.Drawing.Point(65, 74);
-            this.LabelFinish.Name = "LabelFinish";
-            this.LabelFinish.Size = new System.Drawing.Size(903, 26);
-            this.LabelFinish.TabIndex = 17;
-            this.LabelFinish.Text = "¡Importación Finalizada! Abajo estarán los usuarios que no se registraron porque " +
-    "ya existen en la base de datos\r\n";
             // 
             // Imports
             // 

@@ -144,57 +144,86 @@ namespace Presentation
                                     DataTable TablaAuxiliar;
                                     TablaAuxiliar = ObjSearch.Table.Copy();
                                     TablaAuxiliar.Rows.Clear();
-                                    int FilasTotales = ObjSearch.Table.Rows.Count;
-                                    int FilasIguales = 0;
+                                    DataColumn ColumnaError = new DataColumn("RESULTADO DE OPERACION", typeof(string)) { Caption = "RESULTADO DE OPERACION", ReadOnly = false, AutoIncrement = false, AllowDBNull = false };
+                                    TablaAuxiliar.Columns.Add(ColumnaError);
                                     int Contador = 0;
                                     ProgressBarImport.Value = 0;
-                                    ProgressBarImport.Maximum = FilasTotales;
+                                    ProgressBarImport.Maximum = GridSearch.Rows.Count;
                                     PanelLoad.Visible = true;
                                     foreach (DataRow FilaTabla in ObjSearch.Table.Rows)
                                     {
-                                        if (ObjValidations.ExistUsuario(TypeModules.Import, FilaTabla["NUMERO DE CONTROL"].ToString()).Rows.Count > 0)
+                                        ObjModifyUsers.NumControl = FilaTabla["NUMERO DE CONTROL"].ToString().Trim();
+                                        if (FilaTabla["NOMBRES"].ToString().Contains(" "))
                                         {
-                                            DataRow FilaAuxiliar = TablaAuxiliar.NewRow();
-                                            FilaAuxiliar["NUMERO DE CONTROL"] = FilaTabla["NUMERO DE CONTROL"];
-                                            FilaAuxiliar["NOMBRES"] = FilaTabla["NOMBRES"];
-                                            FilaAuxiliar["APELLIDO PATERNO"] = FilaTabla["APELLIDO PATERNO"];
-                                            FilaAuxiliar["APELLIDO MATERNO"] = FilaTabla["APELLIDO MATERNO"];
-                                            FilaAuxiliar["DEPARTAMENTO O CARRERA"] = FilaTabla["DEPARTAMENTO O CARRERA"];
-                                            FilaAuxiliar["SEXO"] = FilaTabla["SEXO"];
-                                            FilaAuxiliar["STATUS"] = FilaTabla["STATUS"];
-                                            TablaAuxiliar.Rows.Add(FilaAuxiliar);
-                                            FilasIguales++;
+                                            ObjModifyUsers.FirstName = FilaTabla["NOMBRES"].ToString().Split(' ')[0].Trim();
+                                            ObjModifyUsers.SecondName = FilaTabla["NOMBRES"].ToString().Split(' ')[1].Trim();
                                         }
                                         else
                                         {
-                                            ObjModifyUsers.NumControl = FilaTabla["NUMERO DE CONTROL"].ToString().Trim(); //VALIDAR DE IGUAL FORMA QUE EL USUARIO SEA VALIDO
-                                            if (FilaTabla["NOMBRES"].ToString().Contains(" "))
-                                            {
-                                                ObjModifyUsers.FirstName = FilaTabla["NOMBRES"].ToString().Split(' ')[0].Trim();
-                                                ObjModifyUsers.SecondName = FilaTabla["NOMBRES"].ToString().Split(' ')[1].Trim();
-                                            }
-                                            else
-                                            {
-                                                ObjModifyUsers.FirstName = FilaTabla["NOMBRES"].ToString().Trim();
-                                                ObjModifyUsers.SecondName = string.Empty;
-                                            }
-                                            ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(FilaTabla["APELLIDO PATERNO"].ToString().Trim())) ? string.Empty : FilaTabla["APELLIDO PATERNO"].ToString();
-                                            ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(FilaTabla["APELLIDO MATERNO"].ToString().Trim())) ? string.Empty : FilaTabla["APELLIDO MATERNO"].ToString();
-                                            ObjModifyUsers.Sex = Convert.ToChar(FilaTabla["SEXO"].ToString());
-                                            ObjModifyUsers.IndexDeparment = Convert.ToByte(FilaTabla["DEPARTAMENTO O CARRERA"].ToString());
-                                            ObjModifyUsers.Status = Convert.ToChar(FilaTabla["STATUS"].ToString());
-                                            Contador++;
-                                            LabelCantidadFilas.Text = Contador + " de " + FilasTotales;
+                                            ObjModifyUsers.FirstName = FilaTabla["NOMBRES"].ToString().Trim();
+                                            ObjModifyUsers.SecondName = string.Empty;
                                         }
+                                        ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(FilaTabla["APELLIDO PATERNO"].ToString().Trim())) ? string.Empty : FilaTabla["APELLIDO PATERNO"].ToString();
+                                        ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(FilaTabla["APELLIDO MATERNO"].ToString().Trim())) ? string.Empty : FilaTabla["APELLIDO MATERNO"].ToString();
+                                        ObjModifyUsers.IndexDeparment = Convert.ToByte(FilaTabla["DEPARTAMENTO O CARRERA"].ToString());
+                                        ObjModifyUsers.Status = Convert.ToChar(FilaTabla["STATUS"].ToString());
+                                        ObjModifyUsers.Sex = Convert.ToChar(FilaTabla["SEXO"].ToString());
+
+                                        DataRow FilaAuxiliar = TablaAuxiliar.NewRow();
+                                        FilaAuxiliar["NUMERO DE CONTROL"] = FilaTabla["NUMERO DE CONTROL"];
+                                        FilaAuxiliar["NOMBRES"] = FilaTabla["NOMBRES"];
+                                        FilaAuxiliar["APELLIDO PATERNO"] = FilaTabla["APELLIDO PATERNO"];
+                                        FilaAuxiliar["APELLIDO MATERNO"] = FilaTabla["APELLIDO MATERNO"];
+                                        FilaAuxiliar["DEPARTAMENTO O CARRERA"] = FilaTabla["DEPARTAMENTO O CARRERA"];
+                                        FilaAuxiliar["SEXO"] = FilaTabla["SEXO"];
+                                        FilaAuxiliar["STATUS"] = FilaTabla["STATUS"];
+
+                                        switch (ObjValidations.AddUser(TypeModules.Users, ObjModifyUsers))
+                                        {
+                                            case Result.Correct:
+                                                {
+                                                    FilaAuxiliar["RESULTADO DE OPERACION"] = "Registro importado correctamente.";
+                                                    Contador++;
+                                                    break;
+                                                }
+
+                                            case Result.Duplicate:
+                                                {
+                                                    FilaAuxiliar["RESULTADO DE OPERACION"] = "Ya existe este registro en la base de datos.";
+                                                    break;
+                                                }
+                                            case Result.Invalid:
+                                                {
+                                                    FilaAuxiliar["RESULTADO DE OPERACION"] = "El número de control no tiene el formato correcto.";
+                                                    break;
+                                                }
+                                            case Result.NullNames:
+                                                {
+                                                    FilaAuxiliar["RESULTADO DE OPERACION"] = "No existen nombres para este usuario.";
+                                                    break;
+                                                }
+                                            case Result.NullLastNames:
+                                                {
+                                                    FilaAuxiliar["RESULTADO DE OPERACION"] = "No existen apellidos para este usuario.";
+                                                    break;
+                                                }
+                                            default:
+                                                {
+                                                    FilaAuxiliar["RESULTADO DE OPERACION"] = "El origen del error es desconocido...";
+                                                    break;
+                                                }
+                                        }
+                                        TablaAuxiliar.Rows.Add(FilaAuxiliar);
                                         ProgressBarImport.PerformStep();
                                     }
+                                    LabelCantidadFilas.Text = +Contador + " de " + GridSearch.Rows.Count;
+                                    LabelFinish.Visible = true;
                                     GridSearch.DataSource = null;
                                     if (GridSearch.Columns.Count > 0) GridSearch.Columns.Clear();
                                     if (GridSearch.Rows.Count > 0) GridSearch.Rows.Clear();
                                     GridSearch.DataSource = TablaAuxiliar;
                                 }
                             }
-                            LabelFinish.Visible = true;
                         }
                         break;
                     }

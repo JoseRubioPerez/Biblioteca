@@ -4,3 +4,6 @@
 **/v15/Server/sqlite3/*.*
 *.csproj.user
 *.pfx
+*.dbmsl
+*.jfm
+*.dbmdl

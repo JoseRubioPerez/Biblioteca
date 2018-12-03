@@ -137,7 +137,7 @@ namespace Presentation.PopUpForms
                                         }
                                         break;
                                     }
-                                case Result.Warning:
+                                default:
                                     {
                                         using (Alerts ObjAlerts = new Alerts("Acción No Valida", "", "No se puede ingresar usuarios sin número de control.", 1, "", "", "OK", TypeIcon.Warning))
                                         {

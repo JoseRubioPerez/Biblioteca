@@ -35,8 +35,12 @@
 
     public enum Result
     {
-        Correct = 1,
-        Incorrect = 2,
-        Warning = 3
+        Duplicate = 1,
+        Invalid = 2,
+        NullNames = 3,
+        NullLastNames = 4,
+        Correct = 5,
+        Incorrect = 6,
+        Warning = 7
     }
 }

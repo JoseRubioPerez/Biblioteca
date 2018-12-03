@@ -217,6 +217,9 @@ namespace Business
             try
             {
                 if(ExistUsuario(Modulo, ObjModifyUser.NumControl).Rows.Count > 0) throw new DuplicateNameException();
+                if (!NumControlCheck(ObjModifyUser.NumControl)) throw new InvalidCastException();
+                if (string.IsNullOrEmpty(ObjModifyUser.FirstName) && string.IsNullOrEmpty(ObjModifyUser.SecondName)) throw new NullReferenceException();
+                if (string.IsNullOrEmpty(ObjModifyUser.FirstLastName) && string.IsNullOrEmpty(ObjModifyUser.SecondLastName)) throw new FormatException();
                 ValueForms.Add(ObjModifyUser.NumControl);
                 ValueForms.Add(OnlyWordsMethod(ObjModifyUser.SecondName != string.Empty ? ObjModifyUser.FirstName + " " + ObjModifyUser.SecondName : ObjModifyUser.FirstName));
                 ValueForms.Add(OnlyWordsMethod(ObjModifyUser.FirstLastName));
@@ -229,7 +232,19 @@ namespace Business
             }
             catch(DuplicateNameException)
             {
-                return Result.Warning;
+                return Result.Duplicate;
+            }
+            catch (InvalidCastException)
+            {
+                return Result.Invalid;
+            }
+            catch (NullReferenceException)
+            {
+                return Result.NullNames;
+            }
+            catch (FormatException)
+            {
+                return Result.NullLastNames;
             }
             catch(Exception Error)
             {
