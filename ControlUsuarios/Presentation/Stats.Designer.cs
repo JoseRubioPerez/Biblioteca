@@ -61,6 +61,9 @@
             this.ButtonCreateReport = new System.Windows.Forms.Button();
             this.PanelDate = new System.Windows.Forms.Panel();
             this.LabelInfoDate = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ComboDepartmentCareer = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).BeginInit();
             this.PanelInfo.SuspendLayout();
             this.GroupBoxSex.SuspendLayout();
@@ -173,7 +176,7 @@
             this.CheckBoxService1.AutoSize = true;
             this.CheckBoxService1.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService1.Location = new System.Drawing.Point(270, 274);
+            this.CheckBoxService1.Location = new System.Drawing.Point(270, 347);
             this.CheckBoxService1.Name = "CheckBoxService1";
             this.CheckBoxService1.Size = new System.Drawing.Size(176, 27);
             this.CheckBoxService1.TabIndex = 5;
@@ -185,7 +188,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.label2.Location = new System.Drawing.Point(80, 278);
+            this.label2.Location = new System.Drawing.Point(80, 351);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 23);
             this.label2.TabIndex = 12;
@@ -196,7 +199,7 @@
             this.CheckBoxService2.AutoSize = true;
             this.CheckBoxService2.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService2.Location = new System.Drawing.Point(452, 274);
+            this.CheckBoxService2.Location = new System.Drawing.Point(452, 347);
             this.CheckBoxService2.Name = "CheckBoxService2";
             this.CheckBoxService2.Size = new System.Drawing.Size(137, 27);
             this.CheckBoxService2.TabIndex = 6;
@@ -208,7 +211,7 @@
             this.CheckBoxService3.AutoSize = true;
             this.CheckBoxService3.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService3.Location = new System.Drawing.Point(595, 274);
+            this.CheckBoxService3.Location = new System.Drawing.Point(595, 347);
             this.CheckBoxService3.Name = "CheckBoxService3";
             this.CheckBoxService3.Size = new System.Drawing.Size(98, 27);
             this.CheckBoxService3.TabIndex = 7;
@@ -220,7 +223,7 @@
             this.CheckBoxService4.AutoSize = true;
             this.CheckBoxService4.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService4.Location = new System.Drawing.Point(270, 307);
+            this.CheckBoxService4.Location = new System.Drawing.Point(270, 380);
             this.CheckBoxService4.Name = "CheckBoxService4";
             this.CheckBoxService4.Size = new System.Drawing.Size(207, 27);
             this.CheckBoxService4.TabIndex = 8;
@@ -232,7 +235,7 @@
             this.CheckBoxService5.AutoSize = true;
             this.CheckBoxService5.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService5.Location = new System.Drawing.Point(483, 307);
+            this.CheckBoxService5.Location = new System.Drawing.Point(483, 380);
             this.CheckBoxService5.Name = "CheckBoxService5";
             this.CheckBoxService5.Size = new System.Drawing.Size(132, 27);
             this.CheckBoxService5.TabIndex = 9;
@@ -244,7 +247,7 @@
             this.CheckBoxService6.AutoSize = true;
             this.CheckBoxService6.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService6.Location = new System.Drawing.Point(621, 307);
+            this.CheckBoxService6.Location = new System.Drawing.Point(621, 380);
             this.CheckBoxService6.Name = "CheckBoxService6";
             this.CheckBoxService6.Size = new System.Drawing.Size(74, 27);
             this.CheckBoxService6.TabIndex = 10;
@@ -256,7 +259,7 @@
             this.CheckBoxService7.AutoSize = true;
             this.CheckBoxService7.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.CheckBoxService7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.CheckBoxService7.Location = new System.Drawing.Point(701, 307);
+            this.CheckBoxService7.Location = new System.Drawing.Point(701, 380);
             this.CheckBoxService7.Name = "CheckBoxService7";
             this.CheckBoxService7.Size = new System.Drawing.Size(66, 27);
             this.CheckBoxService7.TabIndex = 11;
@@ -274,7 +277,7 @@
             // PanelBorder2
             // 
             this.PanelBorder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.PanelBorder2.Location = new System.Drawing.Point(84, 243);
+            this.PanelBorder2.Location = new System.Drawing.Point(84, 316);
             this.PanelBorder2.Name = "PanelBorder2";
             this.PanelBorder2.Size = new System.Drawing.Size(900, 4);
             this.PanelBorder2.TabIndex = 20;
@@ -282,7 +285,7 @@
             // PanelBorder3
             // 
             this.PanelBorder3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.PanelBorder3.Location = new System.Drawing.Point(84, 360);
+            this.PanelBorder3.Location = new System.Drawing.Point(84, 433);
             this.PanelBorder3.Name = "PanelBorder3";
             this.PanelBorder3.Size = new System.Drawing.Size(900, 4);
             this.PanelBorder3.TabIndex = 21;
@@ -305,7 +308,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.label3.Location = new System.Drawing.Point(80, 403);
+            this.label3.Location = new System.Drawing.Point(80, 476);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 23);
             this.label3.TabIndex = 23;
@@ -320,7 +323,7 @@
             this.GroupBoxDateTime.Controls.Add(this.RadioButtonWeek);
             this.GroupBoxDateTime.Controls.Add(this.RadioButtonToday);
             this.GroupBoxDateTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.GroupBoxDateTime.Location = new System.Drawing.Point(145, 376);
+            this.GroupBoxDateTime.Location = new System.Drawing.Point(145, 449);
             this.GroupBoxDateTime.Name = "GroupBoxDateTime";
             this.GroupBoxDateTime.Size = new System.Drawing.Size(839, 58);
             this.GroupBoxDateTime.TabIndex = 12;
@@ -461,7 +464,7 @@
             this.ButtonCancel.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.ButtonCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
             this.ButtonCancel.ImageKey = "PlusBlack.png";
-            this.ButtonCancel.Location = new System.Drawing.Point(809, 553);
+            this.ButtonCancel.Location = new System.Drawing.Point(809, 626);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(175, 47);
             this.ButtonCancel.TabIndex = 22;
@@ -479,7 +482,7 @@
             this.ButtonCreateReport.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.ButtonCreateReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
             this.ButtonCreateReport.ImageKey = "PlusBlack.png";
-            this.ButtonCreateReport.Location = new System.Drawing.Point(621, 553);
+            this.ButtonCreateReport.Location = new System.Drawing.Point(621, 626);
             this.ButtonCreateReport.Name = "ButtonCreateReport";
             this.ButtonCreateReport.Size = new System.Drawing.Size(175, 47);
             this.ButtonCreateReport.TabIndex = 21;
@@ -494,7 +497,7 @@
             this.PanelDate.Controls.Add(this.DateTimePickerStart);
             this.PanelDate.Controls.Add(this.label5);
             this.PanelDate.Controls.Add(this.DateTimePickerEnd);
-            this.PanelDate.Location = new System.Drawing.Point(521, 455);
+            this.PanelDate.Location = new System.Drawing.Point(521, 528);
             this.PanelDate.Name = "PanelDate";
             this.PanelDate.Size = new System.Drawing.Size(463, 80);
             this.PanelDate.TabIndex = 0;
@@ -504,16 +507,51 @@
             this.LabelInfoDate.AutoSize = true;
             this.LabelInfoDate.Font = new System.Drawing.Font("Arial Narrow", 16F);
             this.LabelInfoDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
-            this.LabelInfoDate.Location = new System.Drawing.Point(79, 455);
+            this.LabelInfoDate.Location = new System.Drawing.Point(79, 528);
             this.LabelInfoDate.Name = "LabelInfoDate";
             this.LabelInfoDate.Size = new System.Drawing.Size(0, 26);
             this.LabelInfoDate.TabIndex = 31;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.panel1.Location = new System.Drawing.Point(84, 241);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(900, 4);
+            this.panel1.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.label6.Location = new System.Drawing.Point(80, 272);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 23);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Carrera:";
+            // 
+            // ComboDepartmentCareer
+            // 
+            this.ComboDepartmentCareer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboDepartmentCareer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboDepartmentCareer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ComboDepartmentCareer.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.ComboDepartmentCareer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(32)))));
+            this.ComboDepartmentCareer.FormattingEnabled = true;
+            this.ComboDepartmentCareer.Location = new System.Drawing.Point(153, 269);
+            this.ComboDepartmentCareer.Name = "ComboDepartmentCareer";
+            this.ComboDepartmentCareer.Size = new System.Drawing.Size(328, 31);
+            this.ComboDepartmentCareer.TabIndex = 33;
             // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 698);
+            this.Controls.Add(this.ComboDepartmentCareer);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.LabelInfoDate);
             this.Controls.Add(this.PanelDate);
             this.Controls.Add(this.ButtonCreateReport);
@@ -557,6 +595,9 @@
             this.Controls.SetChildIndex(this.ButtonCreateReport, 0);
             this.Controls.SetChildIndex(this.PanelDate, 0);
             this.Controls.SetChildIndex(this.LabelInfoDate, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.ComboDepartmentCareer, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInfo)).EndInit();
             this.PanelInfo.ResumeLayout(false);
             this.PanelInfo.PerformLayout();
@@ -606,5 +647,8 @@
         private System.Windows.Forms.RadioButton RadioButtonAnyDate;
         private System.Windows.Forms.RadioButton RadioButtonPersonalize;
         private System.Windows.Forms.Label LabelInfoDate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox ComboDepartmentCareer;
     }
 }

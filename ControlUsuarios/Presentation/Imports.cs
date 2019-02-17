@@ -240,47 +240,54 @@ namespace Presentation
 
         private void GridSearchCellClickMethod(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == GridSearch.Columns["EDITAR"].Index)
+            try
             {
-                ObjModifyUsers.NumControl = GridSearch.Rows[e.RowIndex].Cells["NUMERO DE CONTROL"].Value.ToString().Trim();
-                if (GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Contains(" "))
+                if (e.ColumnIndex == GridSearch.Columns["EDITAR"].Index)
                 {
-                    ObjModifyUsers.FirstName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Split(' ')[0].Trim();
-                    ObjModifyUsers.SecondName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Split(' ')[1].Trim();
-                }
-                else
-                {
-                    ObjModifyUsers.FirstName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Trim();
-                    ObjModifyUsers.SecondName = string.Empty;
-                }
-                ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value.ToString();
-                ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value.ToString();
-                ObjModifyUsers.Sex = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value.ToString());
-                ObjModifyUsers.IndexDeparment = Convert.ToByte(GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value.ToString());
-                ObjModifyUsers.Status = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value.ToString());
-                using (PopUpImports ObjPopUpImports = new PopUpImports(ObjModifyUsers))
-                {
-                    ObjDialog = ObjPopUpImports.ShowDialog();
-                    if (ObjDialog == DialogResult.OK)
+                    ObjModifyUsers.NumControl = GridSearch.Rows[e.RowIndex].Cells["NUMERO DE CONTROL"].Value.ToString().Trim();
+                    if (GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Contains(" "))
                     {
-                        if (!string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.NumControl))
+                        ObjModifyUsers.FirstName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Split(' ')[0].Trim();
+                        ObjModifyUsers.SecondName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Split(' ')[1].Trim();
+                    }
+                    else
+                    {
+                        ObjModifyUsers.FirstName = GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value.ToString().Trim();
+                        ObjModifyUsers.SecondName = string.Empty;
+                    }
+                    ObjModifyUsers.FirstLastName = (string.IsNullOrEmpty(GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value.ToString();
+                    ObjModifyUsers.SecondLastName = (string.IsNullOrEmpty(GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value.ToString().Trim())) ? string.Empty : GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value.ToString();
+                    ObjModifyUsers.Sex = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value.ToString());
+                    ObjModifyUsers.IndexDeparment = Convert.ToByte(GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value.ToString());
+                    ObjModifyUsers.Status = Convert.ToChar(GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value.ToString());
+                    using (PopUpImports ObjPopUpImports = new PopUpImports(ObjModifyUsers))
+                    {
+                        ObjDialog = ObjPopUpImports.ShowDialog();
+                        if (ObjDialog == DialogResult.OK)
                         {
-                            if (!string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.FirstName))
+                            if (!string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.NumControl))
                             {
-                                if (!string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.FirstLastName) && !string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.SecondLastName))
+                                if (!string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.FirstName))
                                 {
-                                    GridSearch.Rows[e.RowIndex].Cells["NUMERO DE CONTROL"].Value = ObjPopUpImports.ObjModifyUsers2.NumControl;
-                                    GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value = ObjPopUpImports.ObjModifyUsers2.FirstAndSecondName;
-                                    GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value = ObjPopUpImports.ObjModifyUsers2.FirstLastName;
-                                    GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value = ObjPopUpImports.ObjModifyUsers2.SecondLastName;
-                                    GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value = ObjPopUpImports.ObjModifyUsers2.IndexDeparment;
-                                    GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value = ObjPopUpImports.ObjModifyUsers2.Sex;
-                                    GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value = ObjPopUpImports.ObjModifyUsers2.Status;
+                                    if (!string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.FirstLastName) && !string.IsNullOrEmpty(ObjPopUpImports.ObjModifyUsers2.SecondLastName))
+                                    {
+                                        GridSearch.Rows[e.RowIndex].Cells["NUMERO DE CONTROL"].Value = ObjPopUpImports.ObjModifyUsers2.NumControl;
+                                        GridSearch.Rows[e.RowIndex].Cells["NOMBRES"].Value = ObjPopUpImports.ObjModifyUsers2.FirstAndSecondName;
+                                        GridSearch.Rows[e.RowIndex].Cells["APELLIDO PATERNO"].Value = ObjPopUpImports.ObjModifyUsers2.FirstLastName;
+                                        GridSearch.Rows[e.RowIndex].Cells["APELLIDO MATERNO"].Value = ObjPopUpImports.ObjModifyUsers2.SecondLastName;
+                                        GridSearch.Rows[e.RowIndex].Cells["DEPARTAMENTO O CARRERA"].Value = ObjPopUpImports.ObjModifyUsers2.IndexDeparment;
+                                        GridSearch.Rows[e.RowIndex].Cells["SEXO"].Value = ObjPopUpImports.ObjModifyUsers2.Sex;
+                                        GridSearch.Rows[e.RowIndex].Cells["STATUS"].Value = ObjPopUpImports.ObjModifyUsers2.Status;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
             }
         } //Clave de Método: Imports-GSCCM
     }

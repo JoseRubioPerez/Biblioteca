@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Business;
 using Entity;
@@ -16,6 +18,8 @@ namespace Presentation
         private readonly RadioButton[] ArrayRadioDate;
         private readonly RadioButton[] ArrayRadioSex;
         private readonly CheckBox[] ArrayCheckBox;
+        private DataTable TablaComboDepartment = new DataTable();
+        private List<string> ListaComboBox = new List<string>();
         private byte Index;
 
         public Stats(Session ObjSession)
@@ -29,6 +33,11 @@ namespace Presentation
             ArrayCheckBox = new CheckBox[] { CheckBoxService1, CheckBoxService2, CheckBoxService3, CheckBoxService4, CheckBoxService5, CheckBoxService6, CheckBoxService7 };
             RadioButtonWoman.Checked = false;
             RadioButtonToday.Checked = false;
+            TablaComboDepartment = ObjValidations.GridSearchMethod(TypeModules.Users, TypeSearch.Areas);
+            foreach (DataRow row in TablaComboDepartment.Rows) ListaComboBox.Add(row["AREA"].ToString());
+            ListaComboBox.RemoveAt(0);
+            ListaComboBox.Insert(0, "TODAS LAS CARRERAS");
+            ComboDepartmentCareer.DataSource = ListaComboBox;
         } //Clave de Método: Stats-C1
 
         public void CleanInputsMethod()
@@ -122,6 +131,18 @@ namespace Presentation
                                 if (Value.Checked) ObjSearch.Services.Add(i); else ObjSearch.Services.Add(0);
                                 i++;
                             }
+
+                            if (ComboDepartmentCareer.SelectedIndex == 0)
+                            {
+                                ObjSearch.IndexDeparmentStart = 0;
+                                ObjSearch.IndexDeparmentEnd = 30;
+                            }
+                            else
+                            {
+                                ObjSearch.IndexDeparmentStart = ComboDepartmentCareer.SelectedIndex;
+                                ObjSearch.IndexDeparmentEnd = ComboDepartmentCareer.SelectedIndex;
+                            }
+
                             ObjValidations.SearchStats(TypeModules.Stats, ObjSearch);
                             PopUpGridSearch ObjPopUpGridSearch = new PopUpGridSearch(TypeModules.Moves, ObjSearch, "Búsqueda para Reportes");
                             ObjPopUpGridSearch.Show();

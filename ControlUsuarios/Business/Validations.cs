@@ -267,6 +267,8 @@ namespace Business
                 for (int i = 0; i < ObjSearch.Services.Count; i++) ValueForms.Add(ObjSearch.Services[i]);
                 ValueForms.Add(ObjSearch.DateStart.ToShortDateString());
                 ValueForms.Add(ObjSearch.DateEnd.ToShortDateString());
+                ValueForms.Add(ObjSearch.IndexDeparmentStart);
+                ValueForms.Add(ObjSearch.IndexDeparmentEnd);
                 ObjSearch.Table = ObjQueries.Procedimiento("SearchStats", ValueForms);
             }
             catch (Exception Error)
