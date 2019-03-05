@@ -22,18 +22,24 @@
         "Entry"
         {
         "MsmKey" = "8:_014CA495348B4F826EA4B34BF7FDAB10"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_17E56EA53241ADD0E26087803D7ED71F"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3B8B128D8F8347918739A80250B0135C"
+        "MsmKey" = "8:_1D6C8C1F890A4B5CA970242932B00921"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,7 +52,7 @@
         "Entry"
         {
         "MsmKey" = "8:_4E1AF534E62127C4CD67AF7533D22E80"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_5C69889A74212EE68C2F0A947CC89FE1"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,19 +76,13 @@
         "Entry"
         {
         "MsmKey" = "8:_706EF67C5D5988EF950699EC8B76EE31"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_E474821F738A2F3DE2BC956D21FF059E"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,13 +100,19 @@
         "Entry"
         {
         "MsmKey" = "8:_EBCB4197FAB62FD6D1A7E8CED0A33808"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+        "OwnerKey" = "8:_4E1AF534E62127C4CD67AF7533D22E80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -143,12 +149,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EBCB4197FAB62FD6D1A7E8CED0A33808"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4E1AF534E62127C4CD67AF7533D22E80"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -308,9 +308,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3B8B128D8F8347918739A80250B0135C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1D6C8C1F890A4B5CA970242932B00921"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Icons new ControlUsuarios\\IconProgram.ico"
+            "SourcePath" = "8:..\\..\\Iconos\\IconProgram.ico"
             "TargetName" = "8:IconProgram.ico"
             "Tag" = "8:"
             "Folder" = "8:_0314AF1E0BEF4F1AB0E0F3FBDDF4CB2C"
@@ -680,7 +680,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5694F44590594B89BCBCA0B38FAF4249"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8D992103F4644F389EDD752C40732AE2"
             {
             "Name" = "8:Control de Usuarios"
             "Arguments" = "8:"
@@ -688,13 +688,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+            "Target" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
             "Folder" = "8:_B2ED0DE5219E4742AAB4A639F8F84907"
             "WorkingFolder" = "8:_0314AF1E0BEF4F1AB0E0F3FBDDF4CB2C"
-            "Icon" = "8:_3B8B128D8F8347918739A80250B0135C"
+            "Icon" = "8:_1D6C8C1F890A4B5CA970242932B00921"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_98B52207360543ADB5A538D6F0BB1EE4"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B9676C03A6C94FD48C1A07FB38349A0F"
             {
             "Name" = "8:Control de Usuarios"
             "Arguments" = "8:"
@@ -702,10 +702,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_9BF0B2570C194FCEA9C14575C494D44C"
+            "Target" = "8:_40EDF1AF0E8C48CCA1488C1564C4543B"
             "Folder" = "8:_48710088BF124E1BB8D8466855F92B3D"
             "WorkingFolder" = "8:_0314AF1E0BEF4F1AB0E0F3FBDDF4CB2C"
-            "Icon" = "8:_3B8B128D8F8347918739A80250B0135C"
+            "Icon" = "8:_1D6C8C1F890A4B5CA970242932B00921"
             "Feature" = "8:"
             }
         }
@@ -1107,7 +1107,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9BF0B2570C194FCEA9C14575C494D44C"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_40EDF1AF0E8C48CCA1488C1564C4543B"
             {
             "SourcePath" = "8:..\\Presentation\\obj\\Debug\\Presentation.exe"
             "TargetName" = "8:"
