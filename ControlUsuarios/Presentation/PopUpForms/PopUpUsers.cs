@@ -119,11 +119,12 @@ namespace Presentation.PopUpForms
 
                         if (TextBoxNumControl.Enabled)
                         {
-                            switch(ObjValidations.AddUser(TypeModules.Users, ObjModifyUsers2))
+                            Result Resultado = ObjValidations.AddUser(TypeModules.Users, ObjModifyUsers2);
+                            switch (Resultado)
                             {
                                 case Result.Correct:
                                     {
-                                        using (Alerts ObjAlerts = new Alerts("Usuario Añadido Correctamente", "", "El usuario con número de control \"" + ObjModifyUsers.NumControl + "\" ha sido agregado correctamente.", 1, "", "", "OK", TypeIcon.Info))
+                                        using (Alerts ObjAlerts = new Alerts("Usuario Añadido Correctamente", "", "El usuario con número de control \"" + ObjModifyUsers2.NumControl + "\" ha sido agregado correctamente.", 1, "", "", "OK", TypeIcon.Info))
                                         {
                                             if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
                                         }
@@ -132,6 +133,14 @@ namespace Presentation.PopUpForms
                                 case Result.Incorrect:
                                     {
                                         using (Alerts ObjAlerts = new Alerts("Error Inexplicable", "", "Ha ocurrido un problema interno en el programa.\n\nRecomendamos que verifique los datos que ingresó y/o que inicie sesión nuevamente en el sistema.", 1, "", "", "OK", TypeIcon.Danger))
+                                        {
+                                            if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
+                                        }
+                                        break;
+                                    }
+                                case Result.Duplicate:
+                                    {
+                                        using (Alerts ObjAlerts = new Alerts("Acción No Valida", "", "El usuario " + ObjModifyUsers2.NumControl + " no se puede agregar porque ya existe.", 1, "", "", "OK", TypeIcon.Warning))
                                         {
                                             if (ObjAlerts.ShowDialog() == DialogResult.OK) ObjAlerts.Close();
                                         }

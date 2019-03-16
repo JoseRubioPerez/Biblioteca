@@ -22,7 +22,7 @@ namespace Business
             ValueForms.Add(Error.TargetSite); //Método que generó la excepción
             ValueForms.Add(DateTime.Now.ToShortDateString()); //Fecha
             ValueForms.Add(DateTime.Now.ToLongTimeString()); //Hora
-            ObjQueries.Procedimiento("Errors", ValueForms);
+            ObjQueries.ConsultaCUD("Errors", ValueForms);
         } //Clave de Método: Validations-CE
 
         public DataTable LogSession(TypeModules Modulo, string NumControl, string Password)
@@ -41,7 +41,7 @@ namespace Business
                         throw new Exception();
                 }
                 ValueForms.Add(NumControl); ValueForms.Add(Password);
-                return ObjQueries.Procedimiento(nameof(LogSession), ValueForms);
+                return ObjQueries.ConsultaLeerRegistros(nameof(LogSession), ValueForms);
             }
             catch (Exception Error)
             {
@@ -88,7 +88,7 @@ namespace Business
                     default:
                         throw new Exception();
                 }
-                return ObjQueries.Procedimiento(StoredProcedure, ValueForms);
+                return ObjQueries.ConsultaLeerRegistros(StoredProcedure, ValueForms);
             }catch(Exception Error)
             {
                 CatchExceptions(Error, Modulo);
@@ -108,7 +108,7 @@ namespace Business
                 if (string.IsNullOrEmpty(NumControl) || ReferenceEquals(1, int.Parse(NumControl)))
                     throw new Exception();
                 ValueForms.Add(NumControl);
-                return ObjQueries.Procedimiento("ExistUser", ValueForms);
+                return ObjQueries.ConsultaLeerRegistros("ExistUser", ValueForms);
             }
             catch(Exception Error)
             {
@@ -133,7 +133,7 @@ namespace Business
                 ValueForms.Add(ObjModifyUser.Sex);
                 ValueForms.Add(ObjModifyUser.IndexDeparment);
                 ValueForms.Add(ObjModifyUser.Status);
-                ObjQueries.Procedimiento("UpdateUser", ValueForms);
+                ObjQueries.ConsultaCUD("UpdateUser", ValueForms);
             }
             catch(Exception Error)
             {
@@ -173,7 +173,7 @@ namespace Business
                     ValueForms.Add(IndexArea);
                     ValueForms.Add(Status);
                 }
-                return ObjQueries.Procedimiento("SearchUsers", ValueForms);
+                return ObjQueries.ConsultaLeerRegistros("SearchUsers", ValueForms);
             }
             catch (Exception Error)
             {
@@ -199,7 +199,7 @@ namespace Business
                 ValueForms.Add(ObjSearch.SexEnd);
                 ValueForms.Add(ObjSearch.DateStart.ToShortDateString());
                 ValueForms.Add(ObjSearch.DateEnd.ToShortDateString());
-                ObjSearch.Table = ObjQueries.Procedimiento("SearchMoves", ValueForms);
+                ObjSearch.Table = ObjQueries.ConsultaLeerRegistros("SearchMoves", ValueForms);
             }
             catch(Exception Error)
             {
@@ -225,9 +225,9 @@ namespace Business
                 ValueForms.Add(OnlyWordsMethod(ObjModifyUser.FirstLastName));
                 ValueForms.Add(OnlyWordsMethod(ObjModifyUser.SecondLastName));
                 ValueForms.Add(ObjModifyUser.Sex);
-                ValueForms.Add(ObjModifyUser.Department);
+                ValueForms.Add(ObjModifyUser.IndexDeparment);
                 ValueForms.Add(ObjModifyUser.Status);
-                ObjQueries.Procedimiento("AddUser", ValueForms);
+                ObjQueries.ConsultaCUD("AddUser", ValueForms);
                 return Result.Correct;
             }
             catch(DuplicateNameException)
@@ -269,7 +269,7 @@ namespace Business
                 ValueForms.Add(ObjSearch.DateEnd.ToShortDateString());
                 ValueForms.Add(ObjSearch.IndexDeparmentStart);
                 ValueForms.Add(ObjSearch.IndexDeparmentEnd);
-                ObjSearch.Table = ObjQueries.Procedimiento("SearchStats", ValueForms);
+                ObjSearch.Table = ObjQueries.ConsultaLeerRegistros("SearchStats", ValueForms);
             }
             catch (Exception Error)
             {
